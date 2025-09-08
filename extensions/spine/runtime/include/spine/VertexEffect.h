@@ -27,43 +27,79 @@
  * THE SPINE RUNTIMES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *****************************************************************************/
 
-#ifndef Spine_DeformTimeline_h
-#define Spine_DeformTimeline_h
+#ifndef Spine_VertexEffect_h
+#define Spine_VertexEffect_h
 
-#include <spine/CurveTimeline.h>
+#include <spine/SpineObject.h>
+#include <spine/MathUtil.h>
 
 namespace spine {
-	class VertexAttachment;
 
-	class SP_API DeformTimeline : public CurveTimeline {
-		friend class SkeletonBinary;
-		friend class SkeletonJson;
+class Skeleton;
+class Color;
 
-		RTTI_DECL
+class SP_API VertexEffect: public SpineObject {
+public:
+	virtual void begin(Skeleton& skeleton) = 0;
+	virtual void transform(float& x, float& y, float &u, float &v, Color &light, Color &dark) = 0;
+	virtual void end() = 0;
+};
 
-	public:
-		explicit DeformTimeline(int frameCount);
+class SP_API JitterVertexEffect: public VertexEffect {
+public:
+	JitterVertexEffect(float jitterX, float jitterY);
 
-		virtual void apply(Skeleton& skeleton, float lastTime, float time, Vector<Event*>* pEvents, float alpha, MixBlend blend, MixDirection direction);
+	void begin(Skeleton& skeleton);
+	void transform(float& x, float& y, float &u, float &v, Color &light, Color &dark);
+	void end();
 
-		virtual int getPropertyId();
+	void setJitterX(float jitterX);
+	float getJitterX();
 
-		/// Sets the time and value of the specified keyframe.
-		void setFrame(int frameIndex, float time, Vector<float>& vertices);
+	void setJitterY(float jitterY);
+	float getJitterY();
 
-		int getSlotIndex();
-		void setSlotIndex(int inValue);
-		Vector<float>& getFrames();
-		Vector< Vector<float> >& getVertices();
-		VertexAttachment* getAttachment();
-		void setAttachment(VertexAttachment* inValue);
+protected:
+	float _jitterX;
+	float _jitterY;
+};
 
-	private:
-		int _slotIndex;
-		Vector<float> _frames;
-		Vector< Vector<float> > _frameVertices;
-		VertexAttachment* _attachment;
-	};
+class SP_API SwirlVertexEffect: public VertexEffect {
+public:
+	SwirlVertexEffect(float radius, Interpolation &interpolation);
+
+	void begin(Skeleton& skeleton);
+	void transform(float& x, float& y, float &u, float &v, Color &light, Color &dark);
+	void end();
+
+	void setCenterX(float centerX);
+	float getCenterX();
+
+	void setCenterY(float centerY);
+	float getCenterY();
+
+	void setRadius(float radius);
+	float getRadius();
+
+	void setAngle(float angle);
+	float getAngle();
+
+	void setWorldX(float worldX);
+	float getWorldX();
+
+	void setWorldY(float worldY);
+	float getWorldY();
+
+protected:
+	float _centerX;
+	float _centerY;
+	float _radius;
+	float _angle;
+	float _worldX;
+	float _worldY;
+
+	Interpolation& _interpolation;
+};
 }
 
-#endif /* Spine_DeformTimeline_h */
+#endif /* Spine_VertexEffect_h */
