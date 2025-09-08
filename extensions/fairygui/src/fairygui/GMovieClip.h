@@ -27,6 +27,7 @@ public:
     void setTimeScale(float value);
 
     void advance(float time);
+    void reverse();
 
     FlipType getFlip() const;
     void setFlip(FlipType value);
@@ -41,6 +42,8 @@ public:
 
     virtual ax::Value getProp(ObjectPropID propId) override;
     virtual void setProp(ObjectPropID propId, const ax::Value& value) override;
+
+    SCRIPT_HANDLER_SYNTHESIZE(PlaySettings);
 
 protected:
     virtual void handleInit() override;
@@ -76,6 +79,9 @@ public:
 
     void setPlaySettings(int start, int end, int times, int endAt, std::function<void()> completeCallback = nullptr);
     void setAnimation(ax::Animation *animation, float repeatDelay = 0, bool swing = false);
+
+    
+    SCRIPT_HANDLER_SYNTHESIZE(PlaySettings);
 
 private:
     void drawFrame();

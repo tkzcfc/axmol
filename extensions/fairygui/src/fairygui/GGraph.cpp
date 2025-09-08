@@ -193,6 +193,23 @@ void GGraph::setColor(const ax::Color3B& value)
     updateShape();
 }
 
+void GGraph::setPolygonPoints(const cocos2d::Vec2* points, int count)
+{
+    if (_polygonPoints == nullptr)
+        _polygonPoints = new std::vector<Vec2>();
+    else
+        _polygonPoints->clear();
+    float h             = getHeight();
+    _polygonPointOffset = h;
+    for (int i = 0; i < count; i++)
+    {
+        Vec2 pt = *(points + i);
+        pt.y    = h - pt.y;
+        _polygonPoints->push_back(pt);
+    }
+    updateShape();
+}
+
 ax::Value GGraph::getProp(ObjectPropID propId)
 {
     switch (propId)

@@ -41,6 +41,11 @@ void UIObjectFactory::setPackageItemExtension(const string& url, GComponentCreat
     _packageItemExtensions[url] = creator;
 }
 
+void UIObjectFactory::clearPackageItemExtension()
+{
+    _packageItemExtensions.clear();
+}
+
 GObject* UIObjectFactory::newObject(PackageItem* pi)
 {
     GObject* obj;

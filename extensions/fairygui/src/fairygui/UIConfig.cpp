@@ -23,7 +23,10 @@ Color4F UIConfig::modalLayerColor = Color4F(0, 0, 0, 0.4f);
 bool UIConfig::bringWindowToFrontOnClick = true;
 std::string UIConfig::windowModalWaiting = "";
 std::string UIConfig::popupMenu = "";
-std::string UIConfig::popupMenu_seperator = "";
+std::string UIConfig::popupMenu_seperator                              = "";
+bool UIConfig::useEngineTextureCache = true;
+bool UIConfig::useSkeletonCache = false;
+std::function<void(const std::string& path, float volumnScale)> UIConfig::onMusicCallback = nullptr;
 
 std::unordered_map<std::string, UIConfig::FontNameItem> UIConfig::_fontNames;
 
@@ -57,6 +60,11 @@ const std::string& UIConfig::getRealFontName(const std::string& aliasName, bool*
             *isTTF = false;
         return aliasName;
     }
+}
+
+void UIConfig::clearFont()
+{
+    _fontNames.clear();
 }
 
 NS_FGUI_END

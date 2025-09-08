@@ -60,6 +60,9 @@ public:
     bool getLoop() const { return _loop; }
     void setLoop(bool value);
 
+    void setForceReplaySpine(bool value) { _forceReplaySpine = value; }
+    bool isForceReplaySpine() { return _forceReplaySpine; }
+
     virtual ax::Value getProp(ObjectPropID propId) override;
     virtual void setProp(ObjectPropID propId, const ax::Value& value) override;
 
@@ -97,6 +100,7 @@ private:
     bool _playing;
     int _frame;
     bool _loop;
+    bool _forceReplaySpine;
     std::string _animationName;
     std::string _skinName;
     ax::Color3B _color;

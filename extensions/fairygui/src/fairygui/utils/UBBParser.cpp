@@ -14,6 +14,15 @@ UBBParser * UBBParser::getInstance()
     return _inst;
 }
 
+void UBBParser::destroyInstance()
+{
+    if (_inst)
+    {
+        delete _inst;
+        _inst = NULL;
+    }
+}
+
 UBBParser::UBBParser() :
     defaultImgWidth(0),
     defaultImgHeight(0),

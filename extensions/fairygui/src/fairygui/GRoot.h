@@ -61,6 +61,8 @@ public:
     void setSoundEnabled(bool value);
     float getSoundVolumeScale() const { return _soundVolumeScale; }
     void setSoundVolumeScale(float value);
+    void setIgnoreWindowSizeChanged(bool value);
+    bool isIgnoreWindowSizeChanged() { return _isIgnoreWindowSizeChanged; }
 
     static int contentScaleLevel;
 
@@ -91,10 +93,15 @@ private:
     GObject* _tooltipWin;
     GObject* _defaultTooltipWin;
 
+    bool _isIgnoreWindowSizeChanged;
+
     static bool _soundEnabled;
     static float _soundVolumeScale;
 
     static GRoot* _inst;
+
+public:
+    static GRoot* _forceRefInst;
 };
 
 NS_FGUI_END

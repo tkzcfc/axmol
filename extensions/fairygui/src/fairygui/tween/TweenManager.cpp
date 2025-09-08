@@ -1,6 +1,8 @@
 #include "TweenManager.h"
 #include "GTweener.h"
 
+#define _USE_TWEENER_POOL 0
+
 NS_FGUI_BEGIN
 using namespace ax;
 
@@ -121,7 +123,11 @@ void TweenManager::update(float dt)
         else if (tweener->_killed)
         {
             tweener->_reset();
+#if _USE_TWEENER_POOL
             _tweenerPool.push_back(tweener);
+#else
+            tweener->release();
+#endif
             _activeTweens[i] = nullptr;
 
             if (freePosStart == -1)
@@ -177,6 +183,19 @@ void TweenManager::init()
     ax::Director::getInstance()->getEventDispatcher()->addCustomEventListener(ax::Director::EVENT_RESET, &reset);
 }
 
+void TweenManager::killAllTweens()
+{
+    int cnt          = _totalActiveTweens;
+    for (int i = 0; i < cnt; i++)
+    {
+        GTweener* tweener = _activeTweens[i];
+        if (tweener)
+        {
+            tweener->kill(false);
+        }
+    }
+}
+
 void TweenManager::reset(ax::EventCustom*)
 {
     int cnt = _totalActiveTweens;
@@ -186,7 +205,11 @@ void TweenManager::reset(ax::EventCustom*)
         if (tweener != nullptr)
         {
             tweener->_reset();
+#if _USE_TWEENER_POOL
             _tweenerPool.push_back(tweener);
+#else
+            tweener->release();
+#endif
             _activeTweens[i] = nullptr;
         }
     }

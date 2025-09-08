@@ -150,6 +150,8 @@ bool FUILabel::setBMFontFilePath(std::string_view bmfontFilePath, const Vec2& im
 
     _bmFontPath = bmfontFilePath;
     _bmFontCanTint = bmFont->canTint();
+    _bmRect        = imageRect;
+    _bmRotated     = imageRotated;
 
     _currentLabelType = LabelType::BMFONT;
     setFontAtlas(bmFont->getFontAtlas());

@@ -71,6 +71,11 @@ void UIPackage::setVar(const std::string& key, const std::string& value)
     _vars[key] = value;
 }
 
+void UIPackage::clearVar()
+{
+    _vars.clear();
+}
+
 UIPackage* UIPackage::getById(const string& id)
 {
     auto it = _packageInstById.find(id);
@@ -295,6 +300,11 @@ PackageItem* UIPackage::getItem(const string& itemId)
         return it->second;
     else
         return nullptr;
+}
+
+std::vector<PackageItem*> UIPackage::getItems()
+{
+    return _items;
 }
 
 PackageItem* UIPackage::getItemByName(const string& itemName)
@@ -602,7 +612,20 @@ void* UIPackage::getItemAsset(PackageItem* item)
 
 void UIPackage::loadAtlas(PackageItem* item)
 {
-    Image* image = new Image();
+    Texture2D* tex = nullptr;
+    if (UIConfig::useEngineTextureCache)
+    {
+        tex = Director::getInstance()->getTextureCache()->getTextureForKey(item->file);
+    }
+    if (tex)
+    {
+        tex->retain();
+        Director::getInstance()->getTextureCache()->removeTexture(tex);
+        item->texture = tex;
+    }
+    else
+    {
+        Image* image = new Image();
 #if COCOS2D_VERSION < 0x00031702
     Image::setPNGPremultipliedAlphaEnabled(false);
 #endif
@@ -621,10 +644,11 @@ void UIPackage::loadAtlas(PackageItem* item)
     Image::setPNGPremultipliedAlphaEnabled(true);
 #endif
 
-    Texture2D* tex = new Texture2D();
+    tex = new Texture2D();
     tex->initWithImage(image);
     item->texture = tex;
     delete image;
+}
 
     string alphaFilePath;
     string ext = FileUtils::getPathExtension(item->file);
@@ -637,7 +661,7 @@ void UIPackage::loadAtlas(PackageItem* item)
     bool hasAlphaTexture = ToolSet::isFileExist(alphaFilePath);
     if (hasAlphaTexture)
     {
-        image = new Image();
+        auto image = new Image();
         if (!image->initWithImageFile(alphaFilePath))
         {
             delete image;

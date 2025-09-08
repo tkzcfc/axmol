@@ -99,6 +99,9 @@ public:
 
     bool _buildingDisplayList;
 
+    void setupOverflowHidden(bool value);
+    bool isOverflowHidden();
+
 protected:
     virtual void constructExtension(ByteBuffer* buffer);
     virtual void onConstruct();

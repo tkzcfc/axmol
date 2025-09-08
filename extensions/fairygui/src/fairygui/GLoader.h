@@ -63,7 +63,9 @@ public:
     float getFillAmount() const;
     void setFillAmount(float value);
 
+    FUISprite* getSprite() const { return _content; }
     GComponent* getComponent() const { return _content2; }
+    ActionMovieClip* getActionMovieClip() const { return _playAction; }
 
     virtual ax::Value getProp(ObjectPropID propId) override;
     virtual void setProp(ObjectPropID propId, const ax::Value& value) override;

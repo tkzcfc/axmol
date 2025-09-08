@@ -35,6 +35,7 @@ public:
     const std::string& getName() const { return _name; }
 
     PackageItem* getItem(const std::string& itemId);
+    std::vector<PackageItem*> getItems();
     PackageItem* getItemByName(const std::string& itemName);
     void* getItemAsset(PackageItem* item);
 
@@ -42,6 +43,7 @@ public:
     static void setBranch(const std::string& value);
     static const std::string& getVar(const std::string& key);
     static void setVar(const std::string& key, const std::string& value);
+    static void clearVar();
 
     static int _constructing;
     static const std::string URL_PREFIX;

@@ -36,6 +36,7 @@ using namespace ax::experimental;
 #endif
 
 GRoot* GRoot::_inst = nullptr;
+GRoot* GRoot::_forceRefInst    = nullptr;
 bool GRoot::_soundEnabled = true;
 float GRoot::_soundVolumeScale = 1.0f;
 int GRoot::contentScaleLevel = 0;
@@ -61,12 +62,15 @@ GRoot::GRoot() : _windowSizeListener(nullptr),
                  _modalLayer(nullptr),
                  _modalWaitPane(nullptr),
                  _tooltipWin(nullptr),
-                 _defaultTooltipWin(nullptr)
+                _defaultTooltipWin(nullptr),
+                _isIgnoreWindowSizeChanged(false)
 {
 }
 
 GRoot::~GRoot()
 {
+    if (_forceRefInst == this)
+        _forceRefInst = nullptr;
     delete _inputProcessor;
     AX_SAFE_RELEASE(_modalWaitPane);
     AX_SAFE_RELEASE(_defaultTooltipWin);
@@ -506,8 +510,10 @@ void GRoot::playSound(const std::string& url, float volumnScale)
         return;
 
     PackageItem* pi = UIPackage::getItemByURL(url);
-    if (pi)
-        AudioEngine::play2d(pi->file, false, _soundVolumeScale * volumnScale);
+    if (pi && UIConfig::onMusicCallback)
+    {
+        UIConfig::onMusicCallback(pi->file, _soundVolumeScale * volumnScale);
+    }
 }
 
 void GRoot::setSoundEnabled(bool value)
@@ -518,6 +524,11 @@ void GRoot::setSoundEnabled(bool value)
 void GRoot::setSoundVolumeScale(float value)
 {
     _soundVolumeScale = value;
+}
+
+void GRoot::setIgnoreWindowSizeChanged(bool value)
+{
+    _isIgnoreWindowSizeChanged = value;
 }
 
 void GRoot::onTouchEvent(int eventType)
@@ -565,6 +576,7 @@ bool GRoot::initWithScene(ax::Scene* scene, int zOrder)
 #endif
     onWindowSizeChanged();
 
+    _displayObject->setName("GRoot");
     scene->addChild(_displayObject, zOrder);
 
     return true;
@@ -572,6 +584,9 @@ bool GRoot::initWithScene(ax::Scene* scene, int zOrder)
 
 void GRoot::onWindowSizeChanged()
 {
+    if (_isIgnoreWindowSizeChanged)
+        return;
+
     const ax::Size& rs = Director::getInstance()->getRenderView()->getDesignResolutionSize();
     setSize(rs.width, rs.height);
 

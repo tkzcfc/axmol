@@ -34,6 +34,9 @@ public:
     bool isModal() const { return _modal; }
     void setModal(bool value) { _modal = value; }
 
+    void enableCustomAnimation(bool value) { _enableCustomAnimation = value; }
+    bool isEnableCustomAnimation() { return _enableCustomAnimation; }
+
     void showModalWait() { showModalWait(0); }
     void showModalWait(int requestingCmd);
     bool closeModalWait() { return closeModalWait(0); }
@@ -60,9 +63,9 @@ public:
 
 protected:
     virtual void handleInit() override;
-    virtual void onInit() {};
-    virtual void onShown() {};
-    virtual void onHide() {};
+    virtual void onInit();  // lua can't override, send a event callback
+    virtual void onShown();  // lua can't override, send a event callback
+    virtual void onHide();    // lua can't override, send a event callback
     virtual void doShowAnimation();
     virtual void doHideAnimation();
 
@@ -92,6 +95,8 @@ private:
     ax::Vector<IUISource*> _uiSources;
     bool _inited;
     bool _loading;
+	
+    bool _enableCustomAnimation;
 };
 
 NS_FGUI_END

@@ -19,6 +19,7 @@ public:
     static void update(float dt);
     static void clean();
     static void init();
+    static void killAllTweens();
 
 private:
     static void reset(ax::EventCustom*);

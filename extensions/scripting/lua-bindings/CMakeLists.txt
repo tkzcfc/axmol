@@ -28,6 +28,7 @@ set(lua_bindings_manual_headers
   manual/cocostudio/CustomGUIReader.h
   manual/ui/axlua_ui_manual.hpp
   manual/controller/axlua_controller_manual.hpp
+  manual/fairygui/lua_fairygui.hpp
   manual/fairygui/axlua_fairygui_manual.hpp
   manual/fairygui/axlua_fairygui_conversions.h
 )
@@ -63,6 +64,7 @@ set(lua_bindings_manual_files
   manual/physics3d/axlua_physics3d_manual.cpp
   manual/navmesh/axlua_navmesh_conversions.cpp
   manual/navmesh/axlua_navmesh_manual.cpp
+  manual/fairygui/lua_fairygui.cpp
   manual/fairygui/axlua_fairygui_manual.cpp
   manual/fairygui/axlua_fairygui_conversions.cpp
 )

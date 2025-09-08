@@ -72,6 +72,8 @@ public:
 
     CREATE_FUNC(GBasicTextField);
 
+    void setUnderlineColor(const ax::Color3B& color) { _label->setUnderlineColor(color); }
+
     virtual void setAutoSize(AutoSizeType value) override;
 
     virtual bool isSingleLine() const override { return _label->isWrapEnabled(); }

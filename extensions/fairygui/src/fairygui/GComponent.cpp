@@ -1341,6 +1341,23 @@ void GComponent::constructFromResource(std::vector<GObject*>* objectPool, int po
     onConstruct();
 }
 
+void GComponent::setupOverflowHidden(bool value)
+{
+    if (value)
+    {
+        setupOverflow(OverflowType::HIDDEN);
+    }
+    else
+    {
+        ((FUIContainer*)_displayObject)->setClippingEnabled(false);
+    }
+}
+
+bool GComponent::isOverflowHidden()
+{
+    return ((FUIContainer*)_displayObject)->isClippingEnabled();
+}
+
 void GComponent::constructExtension(ByteBuffer* buffer)
 {
 }

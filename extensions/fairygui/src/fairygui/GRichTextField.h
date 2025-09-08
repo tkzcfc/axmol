@@ -25,6 +25,7 @@ public:
     virtual void applyTextFormat() override;
 
     HtmlObject* getControl(const std::string& name) const;
+    const std::vector<HtmlObject*>& getControls() const;
 
     virtual GObject* hitTest(const ax::Vec2& worldPoint, const ax::Camera* camera) override;
 protected:

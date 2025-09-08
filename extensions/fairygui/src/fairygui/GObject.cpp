@@ -44,7 +44,7 @@ GObject::GObject() : _scale{1, 1},
                      _underConstruct(false),
                      _gearLocked(false),
                      _packageItem(nullptr),
-                     _data(nullptr),
+                     _userData(nullptr),
                      _touchDisabled(false),
                      _alignToBL(false),
                      _weakPtrRef(0)

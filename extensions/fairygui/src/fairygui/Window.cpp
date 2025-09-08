@@ -16,7 +16,8 @@ Window::Window() :
     _contentArea(nullptr),
     _modal(false),
     _inited(false),
-    _loading(false)
+    _loading(false),
+    _enableCustomAnimation(false)
 {
     _bringToFontOnClick = UIConfig::bringWindowToFrontOnClick;
 }
@@ -232,16 +233,34 @@ void Window::addUISource(IUISource * uiSource)
 
 void Window::doShowAnimation()
 {
-    onShown();
+    if (_enableCustomAnimation)
+    {
+        dispatchEvent(UIEventType::DoShowAnimation);
+    }
+    else
+    {
+        onShown();
+    }
 }
 
 void Window::doHideAnimation()
 {
-    hideImmediately();
+    if (_enableCustomAnimation)
+    {
+        dispatchEvent(UIEventType::DoHideAnimation);
+    }
+    else
+    {
+        hideImmediately();
+    }
 }
 
 void Window::closeEventHandler(EventContext * context)
 {
+    if (UIConfig::onMusicCallback)
+    {
+        UIConfig::onMusicCallback("closeButton", 1.0f);  // Use for play close btn sound.
+    }
     hide();
 }
 
@@ -292,5 +311,20 @@ void Window::onDragStart(EventContext * context)
     startDrag(context->getInput()->getTouchId());
 }
 
+// wappper for lua, by http://www.cocos2d-lua.org/
+void Window::onInit()
+{
+    dispatchEvent(UIEventType::OnInit);
+}
+
+void Window::onShown()
+{
+    dispatchEvent(UIEventType::OnShown);
+}
+
+void Window::onHide()
+{
+    dispatchEvent(UIEventType::OnHide);
+}
 
 NS_FGUI_END

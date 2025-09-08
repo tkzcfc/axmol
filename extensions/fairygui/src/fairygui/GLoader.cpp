@@ -1,4 +1,4 @@
-#include "GLoader.h"
+﻿#include "GLoader.h"
 #include "GComponent.h"
 #include "GMovieClip.h"
 #include "UIPackage.h"
@@ -569,12 +569,16 @@ void GLoader::setup_beforeAdd(ByteBuffer* buffer, int beginPos)
     int fillMethod = buffer->readByte();
     if (fillMethod != 0)
     {
-        _content->setFillMethod((FillMethod)fillMethod);
         _content->setFillOrigin((FillOrigin)buffer->readByte());
         _content->setFillClockwise(buffer->readBool());
         _content->setFillAmount(buffer->readFloat());
+        _content->setFillMethod((FillMethod)fillMethod);
     }
 
+    // 此处有Bug如果GLoader设置了填充方式就会导致图片或者动画无法显示
+    // 将这句话放在 int fillMethod = buffer->readByte() 之前执行就行了
+    // 或者手动调用GLoader的 setFillMethod setFillOrigin setFillClockwise setFillAmount 方法中的任意一个触发 FUISprite 重绘
+    // 这儿不修复，强制开发者手动调用方法触发重绘，兼容老包显示
     if (_url.length() > 0)
         loadContent();
 }

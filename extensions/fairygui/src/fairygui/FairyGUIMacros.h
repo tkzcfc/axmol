@@ -29,6 +29,20 @@ if (!ax::Director::getInstance()->getScheduler()->isScheduled(AX_SCHEDULE_SELECT
 #define CALL_PER_FRAME_CANCEL(__TYPE__,__FUNC__) \
 ax::Director::getInstance()->getScheduler()->unschedule(AX_SCHEDULE_SELECTOR(__TYPE__::__FUNC__), this)
 
+#define SCRIPT_HANDLER_SYNTHESIZE(varName)    \
+protected:                                    \
+    int _scriptHandler_##varName = 0;                       \
+                                              \
+public:                                       \
+    inline int getScriptHandler##varName() const   \
+    {                                         \
+        return _scriptHandler_##varName;                    \
+    }                                         \
+    inline void setScriptHandler##varName(int var) \
+    {                                         \
+        _scriptHandler_##varName = var;                     \
+    }
+
 #define UIRoot GRoot::getInstance()
 
 #include "FieldTypes.h"

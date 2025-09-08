@@ -6,6 +6,7 @@
 #include "utils/ByteBuffer.h"
 #include "utils/ToolSet.h"
 
+#include "GCache.h"
 #include "spine/spine-cocos2dx.h"
 
 NS_FGUI_BEGIN
@@ -24,6 +25,7 @@ GLoader3D::GLoader3D()
     _playing(true),
     _frame(0),
     _loop(false),
+    _forceReplaySpine(true),
     _color(255, 255, 255)
 {
 }
@@ -44,6 +46,7 @@ void GLoader3D::handleInit()
     _container = FUIContainer::create();
     _container->retain();
     _container->setAnchorPoint(Vec2::ZERO);
+    _container->setCascadeOpacityEnabled(true);
     _displayObject->addChild(_container);
 }
 
@@ -145,18 +148,25 @@ void GLoader3D::setAnimationName(const std::string& value)
 
 void GLoader3D::setSkinName(const std::string& value)
 {
-    _skinName = value;
+    _skinName            = value;
+    auto oldValue        = _forceReplaySpine;
+    _forceReplaySpine    = false;
     onChange();
+    _forceReplaySpine    = oldValue;
 }
 
 void GLoader3D::setLoop(bool value)
 {
-    _loop = value;
+    _loop                = value;
+    auto oldValue        = _forceReplaySpine;
+    _forceReplaySpine    = false;
     onChange();
+    _forceReplaySpine    = oldValue;
 }
 
 void GLoader3D::setContent(ax::Node* value)
 {
+    _url = "force_clear";
     setURL(STD_STRING_EMPTY);
 
     _content = value;
@@ -198,12 +208,29 @@ void GLoader3D::loadFromPackage()
             std::string atlasFile = _contentItem->file.substr(0, pos + 1).append("atlas");
             if (!ToolSet::isFileExist(atlasFile))
                 atlasFile = _contentItem->file.substr(0, pos + 1).append("atlas.txt");
+
+            
             spine::SkeletonAnimation* skeletonAni;
-            if (FileUtils::getPathExtension(_contentItem->file) == ".skel")
-                skeletonAni = spine::SkeletonAnimation::createWithBinaryFile(_contentItem->file, atlasFile);
+            if (UIConfig::useSkeletonCache)
+            {
+                auto skeletonData = GCache::getInstance()->getOrCreateSkeletonData(_contentItem->file, atlasFile);
+                if (skeletonData == nullptr)
+                {
+					AXLOGW("FairyGUI: load skeletonData failed, file is {}", _contentItem->file);
+                }
+                skeletonAni = spine::SkeletonAnimation::createWithData(skeletonData, false);
+            }
             else
-                skeletonAni = spine::SkeletonAnimation::createWithJsonFile(_contentItem->file, atlasFile);
-            skeletonAni->setPosition(_contentItem->skeletonAnchor->x, _contentItem->skeletonAnchor->y);
+            {
+                if (FileUtils::getInstance()->getFileExtension(_contentItem->file) == ".skel")
+                    skeletonAni = spine::SkeletonAnimation::createWithBinaryFile(_contentItem->file, atlasFile);
+                else
+                    skeletonAni = spine::SkeletonAnimation::createWithJsonFile(_contentItem->file, atlasFile);
+            }
+
+            skeletonAni->setPosition(_contentItem->skeletonAnchor->x,
+                                     _contentItem->height - _contentItem->skeletonAnchor->y);
+
             skeletonAni->retain();
 
             _content = skeletonAni;
@@ -242,11 +269,19 @@ void GLoader3D::onChangeSpine()
     if (aniToUse != nullptr)
     {
         spine::TrackEntry* entry = state->getCurrent(0);
-        if (entry == nullptr || strcmp(entry->getAnimation()->getName().buffer(), _animationName.c_str()) != 0
-            || entry->isComplete() && !entry->getLoop())
+
+        if (_forceReplaySpine)
+        {
             entry = state->setAnimation(0, aniToUse, _loop);
+        }
         else
-            entry->setLoop(_loop);
+        {
+            if (entry == nullptr || strcmp(entry->getAnimation()->getName().buffer(), _animationName.c_str()) != 0 ||
+                entry->isComplete() && !entry->getLoop())
+                entry = state->setAnimation(0, aniToUse, _loop);
+            else
+                entry->setLoop(_loop);
+        }
 
         if (_playing)
             entry->setTimeScale(1);

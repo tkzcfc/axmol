@@ -79,8 +79,15 @@ void GSlider::setWholeNumbers(bool value)
 
 void GSlider::update()
 {
-    float percent = MIN((_value - _min) / (_max - _min), 1);
-    updateWithPercent(percent, false);
+    if (_max == _min)
+    {
+        updateWithPercent(1, false);
+    }
+    else
+    {
+        float percent = MIN((_value - _min) / (_max - _min), 1);
+        updateWithPercent(percent, false);
+    }
 }
 
 void GSlider::updateWithPercent(float percent, bool manual)

@@ -23,6 +23,7 @@ public:
 
     ax::Color3B getColor() const;
     void setColor(const ax::Color3B& value);
+    void setPolygonPoints(const cocos2d::Vec2* points, int count);
 
     virtual ax::Value getProp(ObjectPropID propId) override;
     virtual void setProp(ObjectPropID propId, const ax::Value& value) override;

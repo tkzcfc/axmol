@@ -5,6 +5,7 @@
 #include "tween/GTween.h"
 #include "utils/ByteBuffer.h"
 #include "utils/ToolSet.h"
+#include "GLoader3D.h"
 
 NS_FGUI_BEGIN
 using namespace ax;
@@ -30,6 +31,8 @@ public:
     int frame;
     bool playing;
     bool flag;
+    std::optional<std::string> animationName = std::nullopt;
+    std::optional<std::string> skinName      = std::nullopt;
 };
 
 class TValue_Sound : public TValueBase
@@ -561,6 +564,17 @@ void Transition::setValue(const std::string& label, const ValueVector& values)
             tvalue->frame = values[0].asInt();
             if (values.size() > 1)
                 tvalue->playing = values[1].asBool();
+
+            if (values.size() > 2)
+                tvalue->animationName = values[2].asString();
+            else
+                tvalue->animationName = std::nullopt;
+
+            if (values.size() > 3)
+                tvalue->skinName = values[3].asString();
+            else
+                tvalue->skinName = std::nullopt;
+
             break;
         }
 
@@ -1285,6 +1299,14 @@ void Transition::applyValue(TransitionItem* item)
             item->target->setProp(ObjectPropID::Frame, Value(value->frame));
         item->target->setProp(ObjectPropID::Playing, Value(value->playing));
         item->target->setProp(ObjectPropID::TimeScale, Value(_timeScale));
+
+        if (auto loader3D = dynamic_cast<GLoader3D*>(item->target))
+        {
+            if (value->animationName.has_value())
+                loader3D->setAnimationName(value->animationName.value());
+            if (value->skinName.has_value())
+                loader3D->setSkinName(value->skinName.value());
+        }
         break;
     }
 
@@ -1493,7 +1515,17 @@ void Transition::decodeValue(TransitionItem* item, ByteBuffer* buffer, void* val
     case TransitionActionType::Animation:
     {
         ((TValue_Animation*)value)->playing = buffer->readBool();
-        ((TValue_Animation*)value)->frame = buffer->readInt();
+        ((TValue_Animation*)value)->frame   = buffer->readInt();
+        if (buffer->version >= 6)
+        {
+            ((TValue_Animation*)value)->animationName = buffer->readS();
+            ((TValue_Animation*)value)->skinName      = buffer->readS();
+        }
+        else
+        {
+            ((TValue_Animation*)value)->animationName = std::nullopt;
+            ((TValue_Animation*)value)->skinName      = std::nullopt;
+        }
         break;
     }
 

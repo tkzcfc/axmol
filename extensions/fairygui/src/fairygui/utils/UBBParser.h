@@ -15,6 +15,7 @@ public:
     virtual ~UBBParser();
 
     static UBBParser* getInstance();
+    static void destroyInstance();
 
     std::string parse(const char *text, bool remove = false);
 

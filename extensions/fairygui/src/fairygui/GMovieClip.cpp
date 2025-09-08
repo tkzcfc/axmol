@@ -72,6 +72,22 @@ void GMovieClip::advance(float time)
     _playAction->advance(time);
 }
 
+void GMovieClip::reverse()
+{
+    ActionMovieClip* oldAction = _playAction;
+    bool oldPlaying            = _playing;
+    if (oldPlaying)
+    {
+        setPlaying(false);
+    }
+    _playAction = _playAction->reverse();
+    if (oldPlaying)
+    {
+        setPlaying(true);
+    }
+    oldAction->release();
+}
+
 FlipType GMovieClip::getFlip() const
 {
     if (_content->isFlippedX() && _content->isFlippedY())

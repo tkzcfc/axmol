@@ -30,6 +30,7 @@ public:
     static void kill(ax::Object* target, TweenPropType propType = TweenPropType::None, bool complete = false);
     static GTweener* getTween(ax::Object* target, TweenPropType propType = TweenPropType::None);
     static void clean();
+    static void killAllTweens();
 };
 
 NS_FGUI_END

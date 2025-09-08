@@ -35,6 +35,15 @@ DragDropManager* DragDropManager::getInstance()
     return _inst;
 }
 
+void DragDropManager::destroyInstance()
+{
+    if(_inst)
+	{
+	    delete _inst;
+	    _inst = nullptr;
+	}
+}
+
 void DragDropManager::startDrag(const std::string & icon, const Value& sourceData, int touchPointID)
 {
     if (_agent->getParent() != nullptr)

@@ -35,7 +35,12 @@
 #include "lua-bindings/manual/audioengine/axlua_audioengine_manual.h"
 #include "lua-bindings/manual/physics3d/axlua_physics3d_manual.h"
 #include "lua-bindings/manual/navmesh/axlua_navmesh_manual.h"
+
+#if defined(AX_USE_ENGINE_FAIRYGUI_LUA_BINDING)
 #include "lua-bindings/manual/fairygui/axlua_fairygui_manual.hpp"
+#else
+#include "lua-bindings/manual/fairygui/lua_fairygui.hpp"
+#endif  // defined(AX_USE_ENGINE_FAIRYGUI_LUA_BINDING)
 #include "lua_cjson.h"
 #include "yasio/bindings/yasio_axlua.hpp"
 
@@ -75,7 +80,11 @@ int lua_module_register(lua_State* L)
     register_navmesh_module(L);
 #endif
 #if defined(AX_ENABLE_EXT_FAIRYGUI)
+#if defined(AX_USE_ENGINE_FAIRYGUI_LUA_BINDING)
     register_fairygui_module(L);
+#else
+    register_fairygui_manual(L);
+#endif  // defined(AX_USE_ENGINE_FAIRYGUI_LUA_BINDING)
 #endif // defined(AX_ENABLE_EXT_FAIRYGUI)
     // register extensions: yaiso, lua-cjson
     lua_register_extensions(L);

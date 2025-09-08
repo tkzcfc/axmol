@@ -342,6 +342,31 @@ void GButton::handleControllerChanged(GController* c)
         setSelected(_relatedPageId.compare(c->getSelectedPageId()) == 0);
 }
 
+void GButton::handleGrayedChanged()
+{
+    if (_buttonController != nullptr && _buttonController->hasPage(DISABLED))
+    {
+        if (this->isGrayed())
+        {
+            if (_selected)
+                setState(SELECTED_DISABLED);
+            else
+                setState(DISABLED);
+        }
+        else
+        {
+            if (_selected)
+                setState(DOWN);
+            else
+                setState(UP);
+        }
+    }
+    else
+    {
+        GComponent::handleGrayedChanged();
+    }
+}
+
 void GButton::onRollOver(EventContext* context)
 {
     if (_buttonController == nullptr || !_buttonController->hasPage(OVER))

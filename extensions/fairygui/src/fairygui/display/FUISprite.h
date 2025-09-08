@@ -4,9 +4,19 @@
 #include "cocos2d.h"
 #include "FairyGUIMacros.h"
 
+#define FGUI_SPRITE_USE_WEBM 0
+
+#if FGUI_SPRITE_USE_WEBM
+#include "webm/Webm.h"
+#endif
+
 NS_FGUI_BEGIN
 
+#if FGUI_SPRITE_USE_WEBM
+class FUISprite : public ax::Webm
+#else
 class FUISprite : public ax::Sprite
+#endif
 {
 public:
     FUISprite();

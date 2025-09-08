@@ -52,6 +52,9 @@ public:
 
     std::string name;
 
+    
+    SCRIPT_HANDLER_SYNTHESIZE(Play);
+
 private:
     void play(int times, float delay, float startTime, float endTime, PlayCompleteCallback onComplete, bool reverse);
     void stopItem(TransitionItem* item, bool setToComplete);
