@@ -222,7 +222,7 @@ void GLoader3D::loadFromPackage()
             }
             else
             {
-                if (FileUtils::getInstance()->getFileExtension(_contentItem->file) == ".skel")
+                if (FileUtils::getFileExtension(_contentItem->file) == ".skel")
                     skeletonAni = spine::SkeletonAnimation::createWithBinaryFile(_contentItem->file, atlasFile);
                 else
                     skeletonAni = spine::SkeletonAnimation::createWithJsonFile(_contentItem->file, atlasFile);
