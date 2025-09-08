@@ -1,5 +1,3 @@
-#if defined(AX_USE_ENGINE_FAIRYGUI_LUA_BINDING)
-
 #include "axlua_fairygui_conversions.h"
 #include "lua-bindings/manual/LuaBasicConversions.h"
 
@@ -63,4 +61,4 @@ bool luaval_to_margin(lua_State* L, int lo, fairygui::Margin* outValue, const ch
 
     return ok;
 }
-#endif  // defined(AX_USE_ENGINE_FAIRYGUI_LUA_BINDING)
+

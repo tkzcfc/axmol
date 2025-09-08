@@ -797,8 +797,8 @@ static int lua_fairygui_EventContext_getSender(lua_State* tolua_S)
 
     //argc = lua_gettop(tolua_S)-1;
     if(true){//if (argc == 0) {
-        ax::Ref* ret = cobj->getSender();
-        object_to_luaval<ax::Ref>(tolua_S, "ax.Ref",(ax::Ref*)ret);
+        ax::Object* ret = cobj->getSender();
+        object_to_luaval<ax::Object>(tolua_S, "ax.Object",(ax::Object*)ret);
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fairygui.EventContext:getSender",argc, 0);
@@ -959,8 +959,8 @@ static int lua_fairygui_EventContext_getData(lua_State* tolua_S)
 
     //argc = lua_gettop(tolua_S)-1;
     if(true){//if (argc == 0) {
-        ax::Ref *ret = (ax::Ref *)cobj->getData();
-        object_to_luaval<ax::Ref>(tolua_S, "ax.Ref", ret);
+        ax::Object *ret = (ax::Object *)cobj->getData();
+        object_to_luaval<ax::Object>(tolua_S, "ax.Object", ret);
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fairygui.EventContext:getData",argc,0);
@@ -1141,9 +1141,9 @@ static int lua_fairygui_UIEventDispatcher_dispatchEvent(lua_State* tolua_S)
     }
     if (argc == 2) {
         int arg0;
-        ax::Ref *arg1;
+        ax::Object *arg1;
         ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0, "fairygui.UIEventDispatcher:dispatchEvent");
-        ok &= luaval_to_object<ax::Ref>(tolua_S, 3, "ax.Ref", &arg1, "fairygui.UIEventDispatcher:dispatchEvent");
+        ok &= luaval_to_object<ax::Object>(tolua_S, 3, "ax.Object", &arg1, "fairygui.UIEventDispatcher:dispatchEvent");
         if (!ok) {
             tolua_error(tolua_S,"invalid arguments in function 'lua_fairygui_UIEventDispatcher_dispatchEvent'", nullptr);
             return 0;
@@ -1154,10 +1154,10 @@ static int lua_fairygui_UIEventDispatcher_dispatchEvent(lua_State* tolua_S)
     }
     if (argc == 3) {
         int arg0;
-        ax::Ref *arg1;
+        ax::Object *arg1;
         ax::Value arg2;
         ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0, "fairygui.UIEventDispatcher:dispatchEvent");
-        ok &= luaval_to_object<ax::Ref>(tolua_S, 3, "ax.Ref", &arg1, "fairygui.UIEventDispatcher:dispatchEvent");
+        ok &= luaval_to_object<ax::Object>(tolua_S, 3, "ax.Object", &arg1, "fairygui.UIEventDispatcher:dispatchEvent");
         ok &= luaval_to_ccvalue(tolua_S, 4, &arg2, "fairygui.UIEventDispatcher:dispatchEvent");
         if (!ok) {
             tolua_error(tolua_S,"invalid arguments in function 'lua_fairygui_UIEventDispatcher_dispatchEvent'", nullptr);
@@ -1209,9 +1209,9 @@ static int lua_fairygui_UIEventDispatcher_bubbleEvent(lua_State* tolua_S)
     }
     if (argc == 2) {
         int arg0;
-        ax::Ref *arg1;
+        ax::Object *arg1;
         ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0, "fairygui.UIEventDispatcher:bubbleEvent");
-        ok &= luaval_to_object<ax::Ref>(tolua_S, 3, "ax.Ref", &arg1, "fairygui.UIEventDispatcher:bubbleEvent");
+        ok &= luaval_to_object<ax::Object>(tolua_S, 3, "ax.Object", &arg1, "fairygui.UIEventDispatcher:bubbleEvent");
         if (!ok) {
             tolua_error(tolua_S,"invalid arguments in function 'lua_fairygui_UIEventDispatcher_bubbleEvent'", nullptr);
             return 0;
@@ -1222,10 +1222,10 @@ static int lua_fairygui_UIEventDispatcher_bubbleEvent(lua_State* tolua_S)
     }
     if (argc == 3) {
         int arg0;
-        ax::Ref *arg1;
+        ax::Object *arg1;
         ax::Value arg2;
         ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0, "fairygui.UIEventDispatcher:bubbleEvent");
-        ok &= luaval_to_object<ax::Ref>(tolua_S, 3, "ax.Ref", &arg1, "fairygui.UIEventDispatcher:bubbleEvent");
+        ok &= luaval_to_object<ax::Object>(tolua_S, 3, "ax.Object", &arg1, "fairygui.UIEventDispatcher:bubbleEvent");
         ok &= luaval_to_ccvalue(tolua_S, 4, &arg2, "fairygui.UIEventDispatcher:bubbleEvent");
         if (!ok) {
             tolua_error(tolua_S,"invalid arguments in function 'lua_fairygui_UIEventDispatcher_bubbleEvent'", nullptr);
@@ -1434,7 +1434,7 @@ tolua_lerror:
 static int lua_register_fairygui_UIEventDispatcher(lua_State* tolua_S) // Unity -> EventDispatcher
 {
     tolua_usertype(tolua_S,"fairygui.UIEventDispatcher");
-    tolua_cclass(tolua_S,"UIEventDispatcher","fairygui.UIEventDispatcher","ax.Ref",nullptr);
+    tolua_cclass(tolua_S,"UIEventDispatcher","fairygui.UIEventDispatcher","ax.Object",nullptr);
 
     tolua_beginmodule(tolua_S, "UIEventDispatcher");
 
@@ -3309,13 +3309,13 @@ static int lua_fairygui_GObject_setUserData(lua_State* tolua_S)
 
     argc = lua_gettop(tolua_S)-1;
     if (argc == 1) {
-        ax::Ref *arg0;
-        ok &= luaval_to_object<ax::Ref>(tolua_S, 2, "ax.Ref", &arg0, "fairygui.GObject:setData");
+        ax::Object *arg0;
+        ok &= luaval_to_object<ax::Object>(tolua_S, 2, "ax.Object", &arg0, "fairygui.GObject:setData");
         if (!ok) {
             tolua_error(tolua_S,"invalid arguments in function 'lua_fairygui_GObject_setUserData'", nullptr);
             return 0;
         }
-        cobj->setUserData((void *)arg0);
+        cobj->setData((void *)arg0);
         return 0;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fairygui.GObject:setData",argc, 1);
@@ -3346,7 +3346,7 @@ static int lua_fairygui_GObject_getUserData(lua_State* tolua_S)
 #endif
 
 
-    object_to_luaval<ax::Ref>(tolua_S, "ax.Ref", (ax::Ref*)cobj->getUserData());
+    object_to_luaval<ax::Object>(tolua_S, /*"cc."*/ "ax.Object", (ax::Object*)cobj->getData());
     return 1;
 
 #if _TYPE_CHECK_ENABLED >= 1
@@ -13436,7 +13436,7 @@ tolua_lerror:
 static int lua_register_fairygui_Transition(lua_State* tolua_S)
 {
     tolua_usertype(tolua_S,"fairygui.Transition");
-    tolua_cclass(tolua_S,"Transition","fairygui.Transition","ax.Ref",nullptr);
+    tolua_cclass(tolua_S,"Transition","fairygui.Transition","ax.Object",nullptr);
 
     tolua_beginmodule(tolua_S,"Transition");
 
@@ -15712,7 +15712,7 @@ tolua_lerror:
 static int lua_register_fairygui_ScrollPane(lua_State* tolua_S)
 {
     tolua_usertype(tolua_S,"fairygui.ScrollPane");
-    tolua_cclass(tolua_S,"ScrollPane","fairygui.ScrollPane","ax.Ref",nullptr);
+    tolua_cclass(tolua_S,"ScrollPane","fairygui.ScrollPane","ax.Object",nullptr);
 
     tolua_beginmodule(tolua_S,"ScrollPane");
 
@@ -25544,7 +25544,7 @@ static int lua_fairygui_PopupMenu_create(lua_State* tolua_S)
 static int lua_register_fairygui_PopupMenu(lua_State* tolua_S)
 {
     tolua_usertype(tolua_S,"fairygui.PopupMenu");
-    tolua_cclass(tolua_S,"PopupMenu","fairygui.PopupMenu","ax.Ref",nullptr);
+    tolua_cclass(tolua_S,"PopupMenu","fairygui.PopupMenu","ax.Object",nullptr);
 
     tolua_beginmodule(tolua_S,"PopupMenu");
 
@@ -26792,9 +26792,9 @@ static int lua_fairygui_GTween_IsTweening(lua_State* tolua_S)
     argc = lua_gettop(tolua_S);
     if (argc >= 1)
     {
-        ax::Ref* arg0;
+        ax::Object* arg0;
 
-        ok &= luaval_to_object<ax::Ref>(tolua_S, 1, "ax.Ref", &arg0, "fairygui.GTween.isTweening");
+        ok &= luaval_to_object<ax::Object>(tolua_S, 1, "ax.Object", &arg0, "fairygui.GTween.isTweening");
         if (!ok)
         {
             tolua_error(tolua_S, "invalid arguments in function 'lua_fairygui_GTween_isTweening'", nullptr);
@@ -26828,8 +26828,8 @@ static int lua_fairygui_GTween_Kill(lua_State* tolua_S)
     argc = lua_gettop(tolua_S);
     if (argc >= 1)
     {
-        ax::Ref* arg0;
-        ok &= luaval_to_object<ax::Ref>(tolua_S, 1, "ax.Ref", &arg0, "fairygui.GTween.kill");
+        ax::Object* arg0;
+        ok &= luaval_to_object<ax::Object>(tolua_S, 1, "ax.Object", &arg0, "fairygui.GTween.kill");
         if (!ok)
         {
             tolua_error(tolua_S, "invalid arguments in function 'lua_fairygui_GTween_kill'", nullptr);
@@ -26860,7 +26860,7 @@ static int lua_fairygui_GTween_Kill(lua_State* tolua_S)
                 tolua_error(tolua_S, "invalid arguments in function 'lua_fairygui_GTween_kill'", nullptr);
                 return 0;
             }
-            fairygui::GTween::kill(arg0, arg1);
+            fairygui::GTween::kill(arg0, fairygui::TweenPropType::None, arg1);
             return 0;
         }
         fairygui::GTween::kill(arg0);
@@ -26879,8 +26879,8 @@ static int lua_fairygui_GTween_GetTween(lua_State* tolua_S)
     argc = lua_gettop(tolua_S);
     if (argc >= 1)
     {
-        ax::Ref* arg0;
-        ok &= luaval_to_object<ax::Ref>(tolua_S, 1, "ax.Ref", &arg0, "fairygui.GTween.getTween");
+        ax::Object* arg0;
+        ok &= luaval_to_object<ax::Object>(tolua_S, 1, "ax.Object", &arg0, "fairygui.GTween.getTween");
         if (!ok)
         {
             tolua_error(tolua_S, "invalid arguments in function 'lua_fairygui_GTween_getTween'", nullptr);
@@ -27437,7 +27437,6 @@ static int lua_fairygui_GTweener_getRepeat(lua_State* tolua_S)
         goto tolua_lerror;
 #endif
     cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S, 1, 0);
-    ax::log("cobj: %p", cobj);
 #if _NULL_PTR_CHECK_ENABLED >= 1
     if (!cobj)
     {
@@ -27576,9 +27575,9 @@ static int lua_fairygui_GTweener_setTarget(lua_State* tolua_S)
     argc = lua_gettop(tolua_S) - 1;
     if (argc == 2)
     {
-        ax::Ref* arg0;
+        ax::Object* arg0;
         int arg1;
-        ok &= luaval_to_object<ax::Ref>(tolua_S, 2, "ax.Ref", &arg0, "fairygui.GTweener:setTarget");
+        ok &= luaval_to_object<ax::Object>(tolua_S, 2, "ax.Object", &arg0, "fairygui.GTweener:setTarget");
         ok &= luaval_to_int32(tolua_S, 3, &arg1, "fairygui.GTweener:setTarget");
         if (!ok)
         {
@@ -27591,8 +27590,8 @@ static int lua_fairygui_GTweener_setTarget(lua_State* tolua_S)
     }
     if (argc == 1)
     {
-        ax::Ref* arg0;
-        ok &= luaval_to_object<ax::Ref>(tolua_S, 2, "ax.Ref", &arg0, "fairygui.GTweener:setTarget");
+        ax::Object* arg0;
+        ok &= luaval_to_object<ax::Object>(tolua_S, 2, "ax.Object", &arg0, "fairygui.GTweener:setTarget");
         if (!ok)
         {
             tolua_error(tolua_S, "invalid arguments in function 'lua_fairygui_GTweener_setTarget'", nullptr);
@@ -27636,7 +27635,7 @@ static int lua_fairygui_GTweener_getTarget(lua_State* tolua_S)
     if (true)
     {  // if (argc == 0) {
         auto rtn = cobj->getTarget();
-        object_to_luaval<ax::Ref>(tolua_S, "ax.Ref", (ax::Ref*)rtn);
+        object_to_luaval<ax::Object>(tolua_S, "ax.Object", (ax::Object*)rtn);
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fairygui.GTweener:getTarget",
@@ -28242,7 +28241,7 @@ static int lua_fairygui_GTweener_startValue_getter(lua_State* tolua_S)
     }
 #endif
 
-    object_to_luaval<fairygui::TweenValue>(tolua_S, "ax.Ref", (fairygui::TweenValue*)&cobj->startValue);
+    object_to_luaval<fairygui::TweenValue>(tolua_S, "ax.Object", (fairygui::TweenValue*)&cobj->startValue);
     return 1;
 
 #if _TYPE_CHECK_ENABLED >= 1
@@ -28271,7 +28270,7 @@ static int lua_fairygui_GTweener_endValue_getter(lua_State* tolua_S)
     }
 #endif
 
-    object_to_luaval<fairygui::TweenValue>(tolua_S, "ax.Ref", (fairygui::TweenValue*)&cobj->endValue);
+    object_to_luaval<fairygui::TweenValue>(tolua_S, "ax.Object", (fairygui::TweenValue*)&cobj->endValue);
     return 1;
 
 #if _TYPE_CHECK_ENABLED >= 1
@@ -28300,7 +28299,7 @@ static int lua_fairygui_GTweener_deltaValue_getter(lua_State* tolua_S)
     }
 #endif
 
-    object_to_luaval<fairygui::TweenValue>(tolua_S, "ax.Ref", (fairygui::TweenValue*)&cobj->deltaValue);
+    object_to_luaval<fairygui::TweenValue>(tolua_S, "ax.Object", (fairygui::TweenValue*)&cobj->deltaValue);
     return 1;
 
 #if _TYPE_CHECK_ENABLED >= 1
@@ -28329,7 +28328,7 @@ static int lua_fairygui_GTweener_value_getter(lua_State* tolua_S)
     }
 #endif
 
-    object_to_luaval<fairygui::TweenValue>(tolua_S, "ax.Ref", (fairygui::TweenValue*)&cobj->value);
+    object_to_luaval<fairygui::TweenValue>(tolua_S, "ax.Object", (fairygui::TweenValue*)&cobj->value);
     return 1;
 
 #if _TYPE_CHECK_ENABLED >= 1
@@ -28342,7 +28341,7 @@ tolua_lerror:
 static int lua_register_fairygui_GTweener(lua_State* tolua_S)
 {
     tolua_usertype(tolua_S, "fairygui.GTweener");
-    tolua_cclass(tolua_S, "GTweener", "fairygui.GTweener", "ax.Ref", nullptr);
+    tolua_cclass(tolua_S, "GTweener", "fairygui.GTweener", "ax.Object", nullptr);
 
     tolua_beginmodule(tolua_S, "GTweener");
 
@@ -32252,7 +32251,7 @@ tolua_lerror:
 static int lua_register_fairygui_GTreeNode(lua_State* tolua_S)// Unity没有的API
 {
     tolua_usertype(tolua_S,"fairygui.GTreeNode");
-    tolua_cclass(tolua_S,"GTreeNode","fairygui.GTreeNode","ax.Ref",nullptr);
+    tolua_cclass(tolua_S,"GTreeNode","fairygui.GTreeNode","ax.Object",nullptr);
 
     tolua_beginmodule(tolua_S,"GTreeNode");
     tolua_function(tolua_S,"__call", lua_fairygui_GTreeNode_create);

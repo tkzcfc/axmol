@@ -39,7 +39,7 @@ public:
     bool isShrinkOnly() const { return _shrinkOnly; }
     void setShrinkOnly(bool value);
 
-    const ax::Node* getContent() { return _content; }
+    ax::Node* getContent() { return _content; }
     void setContent(ax::Node* value);
 
     ax::Color3B getColor() const;

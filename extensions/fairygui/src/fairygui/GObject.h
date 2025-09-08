@@ -102,8 +102,8 @@ public:
     BlendMode getBlendMode() const { return _blendMode; }
     void setBlendMode(BlendMode blendMode);
 
-    void* getUserData() const { return _userData; };
-    void setUserData(void* value) { _userData = value; }
+    void* getData() const { return _data; };
+    void setData(void* value) { _data = value; }
     const ax::Value& getCustomData() const { return _customData; }
     void setCustomData(const ax::Value& value) { _customData = value; }
 
@@ -238,7 +238,7 @@ private:
     float _sizePercentInGroup;
     Relations* _relations;
     GearBase* _gears[10];
-    void* _userData;
+    void* _data;
     ax::Value _customData;
     ax::Vec2 _dragTouchStartPos;
     ax::Rect* _dragBounds;
