@@ -2714,7 +2714,7 @@ void TargetedAction::setForcedTarget(Node* forcedTarget)
 
 // ActionFloat
 
-ActionFloat* ActionFloat::create(float duration, float from, float to, ActionFloatCallback callback)
+ActionFloat* ActionFloat::create(float duration, double from, double to, ActionFloatCallback callback)
 {
     auto ref = new ActionFloat();
     if (ref->initWithDuration(duration, from, to, callback))
@@ -2727,7 +2727,7 @@ ActionFloat* ActionFloat::create(float duration, float from, float to, ActionFlo
     return nullptr;
 }
 
-bool ActionFloat::initWithDuration(float duration, float from, float to, ActionFloatCallback callback)
+bool ActionFloat::initWithDuration(float duration, double from, double to, ActionFloatCallback callback)
 {
     if (ActionInterval::initWithDuration(duration))
     {
@@ -2752,7 +2752,7 @@ void ActionFloat::startWithTarget(Node* target)
 
 void ActionFloat::update(float delta)
 {
-    float value = _to - _delta * (1 - delta);
+    double value = _to - _delta * (1.0 - (double)delta);
 
     if (_callback)
     {

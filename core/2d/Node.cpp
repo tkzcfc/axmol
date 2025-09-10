@@ -125,6 +125,7 @@ Node::Node()
     , _onExitCallback(nullptr)
     , _onEnterTransitionDidFinishCallback(nullptr)
     , _onExitTransitionDidStartCallback(nullptr)
+    , _isMultipleTouchEnabled(false)
 #if defined(AX_ENABLE_PHYSICS)
     , _physicsBody(nullptr)
 #endif
@@ -2280,6 +2281,16 @@ void Node::updateProgramStateTexture(Texture2D* texture)
 backend::ProgramState* Node::getProgramState() const
 {
     return _programState;
+}
+
+void Node::setMultipleTouchEnabled(bool value)
+{
+    _isMultipleTouchEnabled = value;
+}
+
+bool Node::isMultipleTouchEnabled()
+{
+    return _isMultipleTouchEnabled;
 }
 
 }

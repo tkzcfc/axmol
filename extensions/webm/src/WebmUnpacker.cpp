@@ -4,7 +4,7 @@
 #include <thread>
 
 struct WebmInfo {
-    struct ax::Webm webm;
+    struct ax::XWebm webm;
     std::vector<std::vector<uint8_t>> frames;
     std::vector<bool> frameLoaded;
     vpx_codec_iface* iface{};
@@ -78,7 +78,12 @@ void destroy_decoder(void* ptr) {
     }
 }
 
-void decode_frame(std::vector<uint8_t>& bytes, struct ax::Webm& webm, vpx_codec_ctx_t& ctx, vpx_codec_ctx_t& ctxAlpha, int frame) {
+void decode_frame(std::vector<uint8_t>& bytes,
+                  struct ax::XWebm& webm,
+                  vpx_codec_ctx_t& ctx,
+                  vpx_codec_ctx_t& ctxAlpha,
+                  int frame)
+{
     webm.DecodeFrame(bytes, frame, ctx, ctxAlpha);
 }
 

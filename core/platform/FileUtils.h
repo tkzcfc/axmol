@@ -52,6 +52,8 @@ namespace ax
  * @{
  */
 
+typedef void (*FiledataDecoder)(Data& data);
+
 class ResizableBuffer
 {
 public:
@@ -790,6 +792,11 @@ public:
      */
     virtual std::unique_ptr<IFileStream> openFileStream(std::string_view filePath, IFileStream::Mode mode) const;
 
+    /**
+     *  Set decoder callback for read data from file.
+     */
+    void setFileDataDecoder(FiledataDecoder decoder);
+
 protected:
     /**
      *  The default constructor.
@@ -875,6 +882,10 @@ protected:
      */
     static std::string s_exeDir;
 #endif
+
+    /** user decoder */
+    FiledataDecoder dataDecoder;
+
     /**
      *  The singleton pointer of FileUtils.
      */

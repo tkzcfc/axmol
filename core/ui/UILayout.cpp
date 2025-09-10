@@ -68,7 +68,7 @@ Layout::Layout()
     , _cOpacity(255)
     , _clippingEnabled(false)
     , _layoutType(Type::ABSOLUTE)
-    , _clippingType(ClippingType::STENCIL)
+    , _clippingType(ClippingType::SCISSOR)
     , _clippingStencil(nullptr)
     , _clippingRect(Rect::ZERO)
     , _clippingParent(nullptr)
@@ -799,6 +799,7 @@ void Layout::setBackGroundColorOpacity(uint8_t opacity)
         break;
     case BackGroundColorType::SOLID:
         _colorRender->setOpacity(opacity);
+        _colorRender->setVisible(opacity > 0);
         break;
     case BackGroundColorType::GRADIENT:
         _gradientRender->setOpacity(opacity);

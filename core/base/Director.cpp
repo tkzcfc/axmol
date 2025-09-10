@@ -1126,6 +1126,8 @@ void Director::restartDirector()
 
     _eventDispatcher->addEventListenerWithFixedPriority(_rendererRecreatedListener, -1);
 #endif
+
+    Application::getInstance()->onRestart();
 }
 
 void Director::setNextScene()
@@ -1554,6 +1556,8 @@ void Director::mainLoop()
     }
     else if (!_invalid)
     {
+        Application::getInstance()->onUpdate();
+
         drawScene();
 
         // release the objects

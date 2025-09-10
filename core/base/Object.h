@@ -108,6 +108,8 @@ public:
      */
     unsigned int getReferenceCount() const;
 
+    static int getRefObjectCount();
+
 protected:
     /**
      * Constructor
@@ -142,6 +144,15 @@ public:
 #if AX_OBJECT_LEAK_DETECTION
 public:
     static void printLeaks();
+
+    static void startCollecting();
+
+    static void stopCollecting();
+
+    static void printDifferenceSnapshot();
+
+    static void setRefLockGuardEnabled(bool value);
+
 #endif
 };
 

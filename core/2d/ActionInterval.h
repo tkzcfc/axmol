@@ -1568,7 +1568,7 @@ public:
     /**
      *  Callback function used to report back result
      */
-    typedef std::function<void(float value)> ActionFloatCallback;
+    typedef std::function<void(double value)> ActionFloatCallback;
 
     /**
      * Creates FloatAction with specified duration, from value, to value and callback to report back
@@ -1580,7 +1580,7 @@ public:
      *
      * @return An autoreleased ActionFloat object
      */
-    static ActionFloat* create(float duration, float from, float to, ActionFloatCallback callback);
+    static ActionFloat* create(float duration, double from, double to, ActionFloatCallback callback);
 
     /**
      * Overridden ActionInterval methods
@@ -1593,15 +1593,15 @@ public:
     ActionFloat(){};
     virtual ~ActionFloat(){};
 
-    bool initWithDuration(float duration, float from, float to, ActionFloatCallback callback);
+    bool initWithDuration(float duration, double from, double to, ActionFloatCallback callback);
 
 protected:
     /* From value */
-    float _from;
+    double _from;
     /* To value */
-    float _to;
+    double _to;
     /* delta time */
-    float _delta;
+    double _delta;
 
     /* Callback to report back results */
     ActionFloatCallback _callback;

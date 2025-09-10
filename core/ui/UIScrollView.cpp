@@ -79,12 +79,14 @@ ScrollView::ScrollView()
     , _bounceEnabled(false)
     , _outOfBoundaryAmount(Vec2::ZERO)
     , _outOfBoundaryAmountDirty(true)
-    , _scrollBarEnabled(true)
+    , _scrollBarEnabled(false)
     , _verticalScrollBar(nullptr)
     , _horizontalScrollBar(nullptr)
     , _scrollViewEventListener(nullptr)
     , _eventCallback(nullptr)
     , _scrollTime(DEFAULT_TIME_IN_SEC_FOR_SCROLL_TO_ITEM)
+    , _inertiaMovementFactor(0.75f)
+    , _inertiaTimeFactor(1.0f)
 {
     setTouchEnabled(true);
     setMouseEnabled(true);
@@ -391,8 +393,7 @@ Vec2 ScrollView::calculateTouchMoveVelocity() const
 
 void ScrollView::startInertiaScroll(const Vec2& touchMoveVelocity)
 {
-    const float MOVEMENT_FACTOR = 0.7f;
-    Vec2 inertiaTotalMovement   = touchMoveVelocity * MOVEMENT_FACTOR;
+    Vec2 inertiaTotalMovement   = touchMoveVelocity * this->_inertiaMovementFactor;
     startAttenuatingAutoScroll(inertiaTotalMovement, touchMoveVelocity);
 }
 
@@ -490,7 +491,7 @@ static float calculateAutoScrollTimeByInitialSpeed(float initialSpeed)
 
 void ScrollView::startAttenuatingAutoScroll(const Vec2& deltaMove, const Vec2& initialVelocity)
 {
-    float time = calculateAutoScrollTimeByInitialSpeed(initialVelocity.length());
+    float time = calculateAutoScrollTimeByInitialSpeed(initialVelocity.length()) * this->_inertiaTimeFactor;
     startAutoScroll(deltaMove, time, true);
 }
 
@@ -1669,6 +1670,16 @@ void ScrollView::scrollToItem(Node* item, const Vec2& positionRatioInView, const
     }
     auto destination = calculateItemDestination(positionRatioInView, item, itemAnchorPoint);
     startAutoScrollToDestination(destination, timeInSec, true);
+}
+
+ void ScrollView::setInertiaMovementFactor(float value)
+{
+    _inertiaMovementFactor = value;
+}
+
+void ScrollView::setInertiaTimeFactor(float value)
+{
+    _inertiaTimeFactor = value;
 }
 }  // namespace ui
 

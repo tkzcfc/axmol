@@ -523,6 +523,16 @@ public:
     int getResourceType() const { return _fileType; }
     std::string_view getResourceName() const { return _fileName; }
 
+    // FC-Fix
+    /*
+     * Set the gradient color
+     * @param vpos 0:Top Left, 1:Top Right, 2:Bottom Left, 4:Bottom Right
+     */
+    void setGradientColor(const Color4B& color, int vpos);
+
+    // Whether to enable gradient
+    void enableGradientColor(bool enable);
+
     /**
      */
     Sprite();
@@ -731,6 +741,10 @@ protected:
     bool _autoUpdatePS   = true;
 
     bool _autoSizeEnabled = true;
+	
+    // FC-Fix
+    bool _enableGradientColor = false;
+    Color4B _gradientColorArr[4];
 
 private:
     AX_DISALLOW_COPY_AND_ASSIGN(Sprite);

@@ -45,12 +45,14 @@ static void trackRef(Object* ref);
 static void untrackRef(Object* ref);
 #endif
 
+static int gRefObjectCount = 0;
 Object::Object()
     : _referenceCount(1)  // when the Object is created, the reference count of it is 1
 #if AX_ENABLE_SCRIPT_BINDING
     , _luaID(0)
 #endif
 {
+    gRefObjectCount++;
 #if AX_ENABLE_SCRIPT_BINDING
     static unsigned int uObjectCount = 0;
     _ID                              = ++uObjectCount;
@@ -63,6 +65,7 @@ Object::Object()
 
 Object::~Object()
 {
+    gRefObjectCount--;
 #if AX_ENABLE_SCRIPT_BINDING
     ScriptEngineProtocol* pEngine = ScriptEngineManager::getInstance()->getScriptEngine();
     if (pEngine != nullptr && _luaID)
@@ -145,14 +148,24 @@ unsigned int Object::getReferenceCount() const
     return _referenceCount;
 }
 
+int Object::getRefObjectCount()
+{
+    return gRefObjectCount;
+}
 #if AX_OBJECT_LEAK_DETECTION
 
 static std::vector<Object*> __refAllocationList;
 static std::mutex __refMutex;
+static bool __refLockGuardEnabled = false;
+static std::vector<Object*> __refSnapshot;
+static std::vector<Object*> __refDifferenceSnapshot;
 
 void Object::printLeaks()
 {
-    std::lock_guard<std::mutex> refLockGuard(__refMutex);
+    if (__refLockGuardEnabled)
+    {
+        std::lock_guard<std::mutex> refLockGuard(__refMutex);
+    }
     // Dump Object object memory leaks
     if (__refAllocationList.empty())
     {
@@ -172,9 +185,68 @@ void Object::printLeaks()
     }
 }
 
+
+void Object::setRefLockGuardEnabled(bool value)
+{
+    __refLockGuardEnabled = value;
+}
+
+void Object::startCollecting()
+{
+    if (__refLockGuardEnabled)
+    {
+        std::lock_guard<std::mutex> refLockGuard(__refMutex);
+    }
+    __refSnapshot = __refAllocationList;
+}
+
+void Object::stopCollecting()
+{
+    if (__refLockGuardEnabled)
+    {
+        std::lock_guard<std::mutex> refLockGuard(__refMutex);
+    }
+    __refDifferenceSnapshot.clear();
+    for (auto ref : __refAllocationList)
+    {
+        if (__refSnapshot.end() == std::find(__refSnapshot.begin(), __refSnapshot.end(), ref))
+        {
+            __refDifferenceSnapshot.push_back(ref);
+        }
+    }
+}
+
+void Object::printDifferenceSnapshot()
+{
+    if (__refLockGuardEnabled)
+    {
+        std::lock_guard<std::mutex> refLockGuard(__refMutex);
+    }
+    // Dump Ref object memory leaks
+    if (__refDifferenceSnapshot.empty())
+    {
+        AXLOGI("[memory] All Object objects successfully cleaned up (no leaks detected).\n");
+    }
+    else
+    {
+        AXLOGI("[memory] WARNING: {} Object objects still active in memory.\n", (int)__refDifferenceSnapshot.size());
+
+        for (const auto& ref : __refDifferenceSnapshot)
+        {
+            AX_ASSERT(ref);
+            const char* type = typeid(*ref).name();
+            AXLOGI("[memory] LEAK: Object object '{}' still active with reference count {}.\n", (type ? type : ""),
+                ref->getReferenceCount());
+        }
+    }
+}
+
 static void trackRef(Object* ref)
 {
-    std::lock_guard<std::mutex> refLockGuard(__refMutex);
+    if (__refLockGuardEnabled)
+    {
+        std::lock_guard<std::mutex> refLockGuard(__refMutex);
+    }
     AXASSERT(ref, "Invalid parameter, ref should not be null!");
 
     // Create memory allocation record.
@@ -183,7 +255,10 @@ static void trackRef(Object* ref)
 
 static void untrackRef(Object* ref)
 {
-    std::lock_guard<std::mutex> refLockGuard(__refMutex);
+    if (__refLockGuardEnabled)
+    {
+        std::lock_guard<std::mutex> refLockGuard(__refMutex);
+    }
     auto iter = std::find(__refAllocationList.begin(), __refAllocationList.end(), ref);
     if (iter == __refAllocationList.end())
     {
@@ -192,8 +267,22 @@ static void untrackRef(Object* ref)
     }
 
     __refAllocationList.erase(iter);
+
+    if (!__refSnapshot.empty())
+    {
+        iter = std::find(__refSnapshot.begin(), __refSnapshot.end(), ref);
+        if (iter != __refSnapshot.end())
+            __refSnapshot.erase(iter);
+    }
+
+    if (!__refDifferenceSnapshot.empty())
+    {
+        iter = std::find(__refDifferenceSnapshot.begin(), __refDifferenceSnapshot.end(), ref);
+        if (iter != __refDifferenceSnapshot.end())
+            __refDifferenceSnapshot.erase(iter);
+    }
 }
 
-#endif  // #if AX_OBJECT_LEAK_DETECTION
+#endif  // #if AX_REF_LEAK_DETECTION
 
 }

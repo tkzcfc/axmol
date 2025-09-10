@@ -370,6 +370,10 @@ public:
 
     std::string getPath() const { return _filePath; }
 
+    static int getTextureCount();
+
+    static const std::vector<Texture2D*>& getAllTextures();
+
 private:
     /**
      * A struct for storing 9-patch image capInsets.

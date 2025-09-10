@@ -36,7 +36,9 @@
 #include "lua-bindings/manual/physics3d/axlua_physics3d_manual.h"
 #include "lua-bindings/manual/navmesh/axlua_navmesh_manual.h"
 #include "lua-bindings/manual/webm/ax_webm_manual.hpp"
+#if AX_TARGET_PLATFORM == AX_PLATFORM_WIN32
 #include "lua-bindings/manual/imgui/imgui_lua.hpp"
+#endif  // AX_TARGET_PLATFORM == AX_PLATFORM_WIN32
 
 #if defined(AX_USE_ENGINE_FAIRYGUI_LUA_BINDING)
 #include "lua-bindings/manual/fairygui/axlua_fairygui_manual.hpp"
@@ -72,6 +74,9 @@ static void lua_register_extensions(lua_State* L)
 
 int lua_module_register(lua_State* L)
 {
+#if AX_TARGET_PLATFORM == AX_PLATFORM_WIN32
+    luaopen_imgui(L);
+#endif
     // Don't change the module register order unless you know what your are doing
     register_network_module(L);
     register_cocostudio_module(L);
@@ -100,7 +105,6 @@ int lua_module_register(lua_State* L)
 #endif // defined(AX_ENABLE_EXT_FAIRYGUI)
 
     register_webm_module(L);
-    luaopen_imgui(L);
 
     // register extensions: yaiso, lua-cjson
     lua_register_extensions(L);

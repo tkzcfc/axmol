@@ -423,6 +423,22 @@ public:
     /** Returns the text color of the Label.*/
     const Color4B& getTextColor() const { return _textColor; }
 
+    // FC-Fix
+    /*
+     * Set the gradient color
+     * @param vpos 0:Top Left, 1:Top Right, 2:Bottom Left ,4: Bottom Right
+     */
+    void setGradientColor(const Color4B& color, int vpos);
+
+    // Whether to enable gradient
+    void enableGradientColor(bool enable);
+
+    // Get gradient color
+    Color4B getGradientColor(int vpos);
+
+    // Whether to enable gradient
+    bool isEnableGradientColor();
+
     /**
      * Enable shadow effect to Label.
      *
@@ -944,6 +960,11 @@ protected:
     backend::UniformLocation _textColorLocation;
     backend::UniformLocation _effectColorLocation;
     backend::UniformLocation _effectTypeLocation;
+	
+	
+    // FC-Fix
+    bool _enableGradientColor;
+    Color4B _gradientColorArr[4];
 
 private:
     AX_DISALLOW_COPY_AND_ASSIGN(Label);

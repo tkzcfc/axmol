@@ -107,6 +107,7 @@ set(lua_bindings_auto_files
   auto/axlua_webm_auto.cpp
 )
 
+if(WINDOWS)
 set(lua_bindings_manual_headers
     ${lua_bindings_manual_headers}
     manual/imgui/imgui_lua.hpp
@@ -133,6 +134,7 @@ set(lua_bindings_manual_files
     manual/imgui/lua_imguiViewport_auto.cpp
     manual/imgui/lua_implot_auto.cpp
     )
+endif()
 
 if(APPLE)
   # CCLuaObjcBridge.mm needed by ios and mac

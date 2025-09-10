@@ -97,6 +97,12 @@ public:
      */
     static Text* create(std::string_view textContent, std::string_view fontName, float fontSize);
 
+    
+    static bool isAutoSetOverflowShrink();
+
+    static void setAutoSetOverflowShrink(bool value);
+
+
     /**
      * Changes the string value of label.
      *
@@ -110,6 +116,19 @@ public:
      * @return String value.
      */
     std::string_view getString() const;
+
+    
+    void setRawString(std::string text);
+
+    std::string getRawString() const;
+
+    static bool customLocalizationEnabled();
+
+    static void setCustomLocalizationEnabled(bool value);
+
+    static void setDefaultFontName(const std::string& fontName);
+
+    static std::string getDefaultFontName();
 
     /**
      * Gets the string length of the label.
@@ -315,6 +334,22 @@ public:
      */
     Color4B getEffectColor() const;
 
+    // FC-Fix
+    /*
+     * Set the gradient color
+     * @param vpos 0:Top Left, 1:Top Right, 2:Bottom Left ,4: Bottom Right
+     */
+    void setGradientColor(const Color4B& color, int vpos);
+
+    // Whether to enable gradient
+    void enableGradientColor(bool enable);
+
+    // Get gradient color
+    Color4B getGradientColor(int vpos);
+
+    // Whether to enable gradient
+    bool isEnableGradientColor();
+
     /**
      * Provides a way to treat each character like a Sprite.
      * @warning No support system font.
@@ -358,6 +393,7 @@ protected:
     float _normalScaleValueX;
     float _normalScaleValueY;
     std::string _fontName;
+    std::string _rawString;
     float _fontSize;
     float _onSelectedScaleOffset;
     Label* _labelRenderer;

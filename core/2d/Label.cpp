@@ -636,6 +636,13 @@ void Label::reset()
     _textColorF   = Color4F::WHITE;
     setColor(Color3B::WHITE);
 
+    // FC-Fix
+    _gradientColorArr[0] = Color4B::WHITE;
+    _gradientColorArr[1] = Color4B::WHITE;
+    _gradientColorArr[2] = Color4B::WHITE;
+    _gradientColorArr[3] = Color4B::WHITE;
+    _enableGradientColor = false;
+
     _shadowDirty      = false;
     _shadowEnabled    = false;
     _shadowBlurRadius = 0.f;
@@ -1675,6 +1682,13 @@ void Label::createSpriteForSystemFont(const FontDefinition& fontDef)
     _textSprite->retain();
     _textSprite->updateDisplayedColor(_displayedColor);
     _textSprite->updateDisplayedOpacity(_displayedOpacity);
+
+    // FC-Fix
+    _textSprite->setGradientColor(_gradientColorArr[0], 0);
+    _textSprite->setGradientColor(_gradientColorArr[1], 1);
+    _textSprite->setGradientColor(_gradientColorArr[2], 2);
+    _textSprite->setGradientColor(_gradientColorArr[3], 3);
+    _textSprite->enableGradientColor(_enableGradientColor);
 }
 
 void Label::createShadowSpriteForSystemFont(const FontDefinition& fontDef)
@@ -2526,6 +2540,71 @@ void Label::setTextColor(const Color4B& color)
         setColor(Color3B(color));
 }
 
+void Label::setGradientColor(const Color4B& color, int vpos)
+{
+    AXASSERT(vpos >= 0 && vpos <= 3, "'vpos' value range 0-3");
+
+    if (vpos < 0 || vpos > 3)
+    {
+        return;
+    }
+
+    if (_gradientColorArr[vpos] != color)
+    {
+        _gradientColorArr[vpos] = color;
+        _contentDirty           = true;
+    }
+
+    if (_textSprite)
+    {
+        _textSprite->setGradientColor(color, vpos);
+    }
+    // if (_shadowNode)
+    //{
+    //	_shadowNode->setGradientColor(color, vpos);
+    // }
+}
+
+void Label::enableGradientColor(bool enable)
+{
+    if (_enableGradientColor != enable)
+    {
+        _contentDirty        = true;
+        _enableGradientColor = enable;
+    }
+
+    if (_textSprite)
+    {
+        _textSprite->enableGradientColor(enable);
+    }
+    // if (_shadowNode)
+    //{
+    //	_shadowNode->enableGradientColor(enable);
+    // }
+
+    if (enable)
+    {
+        this->setTextColor(Color4B::WHITE);
+    }
+}
+
+Color4B Label::getGradientColor(int vpos)
+{
+    AXASSERT(vpos >= 0 && vpos <= 3, "'vpos' value range 0-3");
+
+    if (vpos < 0 || vpos > 3)
+    {
+        return Color4B::WHITE;
+    }
+
+    return _gradientColorArr[vpos];
+}
+
+bool Label::isEnableGradientColor()
+{
+    return _enableGradientColor;
+}
+
 void Label::updateColor()
 {
     if (_batchNodes.empty())
@@ -2553,10 +2632,53 @@ void Label::updateColor()
 
         for (int index = 0; index < count; ++index)
         {
-            quads[index].bl.colors = color4;
-            quads[index].br.colors = color4;
-            quads[index].tl.colors = color4;
-            quads[index].tr.colors = color4;
+            if (_enableGradientColor)
+            {
+                if (_isOpacityModifyRGB)
+                {
+                    Color4B color4b(_gradientColorArr[0].r, _gradientColorArr[0].g, _gradientColorArr[0].b,
+                                    _gradientColorArr[0].a);
+                    color4b.r *= _displayedOpacity / 255.0f;
+                    color4b.g *= _displayedOpacity / 255.0f;
+                    color4b.b *= _displayedOpacity / 255.0f;
+                    quads[index].tl.colors = color4b;
+
+                    color4b = Color4B(_gradientColorArr[1].r, _gradientColorArr[1].g, _gradientColorArr[1].b,
+                                      _gradientColorArr[1].a);
+                    color4b.r *= _displayedOpacity / 255.0f;
+                    color4b.g *= _displayedOpacity / 255.0f;
+                    color4b.b *= _displayedOpacity / 255.0f;
+                    quads[index].tr.colors = color4b;
+
+                    color4b = Color4B(_gradientColorArr[2].r, _gradientColorArr[2].g, _gradientColorArr[2].b,
+                                      _gradientColorArr[2].a);
+                    color4b.r *= _displayedOpacity / 255.0f;
+                    color4b.g *= _displayedOpacity / 255.0f;
+                    color4b.b *= _displayedOpacity / 255.0f;
+                    quads[index].bl.colors = color4b;
+
+                    color4b = Color4B(_gradientColorArr[3].r, _gradientColorArr[3].g, _gradientColorArr[3].b,
+                                      _gradientColorArr[3].a);
+                    color4b.r *= _displayedOpacity / 255.0f;
+                    color4b.g *= _displayedOpacity / 255.0f;
+                    color4b.b *= _displayedOpacity / 255.0f;
+                    quads[index].br.colors = color4b;
+                }
+                else
+                {
+                    quads[index].tl.colors = _gradientColorArr[0];
+                    quads[index].tr.colors = _gradientColorArr[1];
+                    quads[index].bl.colors = _gradientColorArr[2];
+                    quads[index].br.colors = _gradientColorArr[3];
+                }
+            }
+            else
+            {
+                 quads[index].bl.colors = color4;
+                 quads[index].br.colors = color4;
+                 quads[index].tl.colors = color4;
+                 quads[index].tr.colors = color4;
+            }
             textureAtlas->updateQuad(quads[index], index);
         }
     }
@@ -2655,7 +2777,8 @@ FontDefinition Label::_getFontDefinition() const
         systemFontDef._stroke._strokeEnabled = false;
     }
 
-#if (AX_TARGET_PLATFORM != AX_PLATFORM_ANDROID) && (AX_TARGET_PLATFORM != AX_PLATFORM_IOS)
+#if (AX_TARGET_PLATFORM != AX_PLATFORM_ANDROID) && (AX_TARGET_PLATFORM != AX_PLATFORM_IOS) && \
+    (AX_TARGET_PLATFORM != AX_PLATFORM_WIN32)
     if (systemFontDef._stroke._strokeEnabled)
     {
         AXLOGE("Stroke Currently only supported on iOS and Android!");

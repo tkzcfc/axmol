@@ -194,6 +194,9 @@ void EventDispatcher::EventListenerVector::clear()
     clearFixedListeners();
 }
 
+int EventDispatcher::INVALID_TOUCH_INDEX = -1;
+bool EventDispatcher::global_multi_touch_enabled = false;
+
 EventDispatcher::EventDispatcher() : _inDispatch(0), _isEnabled(false), _nodePriorityIndex(0)
 {
     _toAddedListeners.reserve(50);
@@ -204,6 +207,11 @@ EventDispatcher::EventDispatcher() : _inDispatch(0), _isEnabled(false), _nodePri
     _internalCustomListenerIDs.insert(EVENT_COME_TO_FOREGROUND);
     _internalCustomListenerIDs.insert(EVENT_COME_TO_BACKGROUND);
     _internalCustomListenerIDs.insert(EVENT_RENDERER_RECREATED);
+
+	for (int i = 0; i < MAX_CACHE_TOUCH_COUNT; ++i)
+	{
+		lastForceTouchIndexArr[i] = INVALID_TOUCH_INDEX;
+	}
 }
 
 EventDispatcher::~EventDispatcher()
@@ -1019,6 +1027,16 @@ bool EventDispatcher::hasEventListener(std::string_view listenerID) const
     return getListeners(listenerID) != nullptr;
 }
 
+void EventDispatcher::setGlobalMultiTouchEnabled(bool enabled)
+{
+	global_multi_touch_enabled = enabled;
+}
+
+bool EventDispatcher::isGlobalMultiTouchEnabled()
+{
+	return global_multi_touch_enabled;
+}
+
 void EventDispatcher::dispatchTouchEvent(EventTouch* event)
 {
     sortEventListeners(EventListenerTouchOneByOne::LISTENER_ID);
@@ -1028,8 +1046,14 @@ void EventDispatcher::dispatchTouchEvent(EventTouch* event)
     auto allAtOnceListeners = getListeners(EventListenerTouchAllAtOnce::LISTENER_ID);
 
     // If there aren't any touch listeners, return directly.
-    if (nullptr == oneByOneListeners && nullptr == allAtOnceListeners)
-        return;
+	if (nullptr == oneByOneListeners && nullptr == allAtOnceListeners)
+	{
+		for (int i = 0; i < MAX_CACHE_TOUCH_COUNT; ++i)
+		{
+			lastForceTouchIndexArr[i] = INVALID_TOUCH_INDEX;
+		}
+		return;
+	}
 
     bool isNeedsMutableSet = (oneByOneListeners && allAtOnceListeners);
 
@@ -1041,6 +1065,15 @@ void EventDispatcher::dispatchTouchEvent(EventTouch* event)
     //
     if (oneByOneListeners)
     {
+		int invalidCount = 0;
+		for (int i = 0; i < MAX_CACHE_TOUCH_COUNT; ++i)
+		{
+			if (lastForceTouchIndexArr[i] == INVALID_TOUCH_INDEX)
+			{
+				invalidCount++;
+			}
+		}
+
         auto mutableTouchesIter = mutableTouches.begin();
 
         for (auto&& touches : originalTouches)
@@ -1063,6 +1096,29 @@ void EventDispatcher::dispatchTouchEvent(EventTouch* event)
 
                 if (eventCode == EventTouch::EventCode::BEGAN)
                 {
+					//cocos2d::log("[lua] touch began invalidCount [%d]", invalidCount);
+					if (!global_multi_touch_enabled)
+					{
+						if (invalidCount < MAX_CACHE_TOUCH_COUNT)
+						{
+							if (listener->_node && listener->_node->isMultipleTouchEnabled())
+							{
+                                // Turn off this logic to support cross-node multi-touch
+                                // That is: you can click two nodes with isMultipleTouchEnabled enabled at the same time
+#if 0
+								if (listener->_claimedTouches.size() <= 0)
+								{
+									return false;
+								}
+#endif
+							}
+							else
+							{
+								return false;
+							}
+						}
+					}
+
                     if (listener->onTouchBegan)
                     {
                         isClaimed = listener->onTouchBegan(touches, event);
@@ -1137,6 +1193,47 @@ void EventDispatcher::dispatchTouchEvent(EventTouch* event)
 
             //
             dispatchTouchEventToListeners(oneByOneListeners, onTouchEvent);
+
+			if (event->getEventCode() <= EventTouch::EventCode::MOVED)
+			{
+				bool isContain = false;
+				for (int i = 0; i < MAX_CACHE_TOUCH_COUNT; ++i)
+				{
+					if (lastForceTouchIndexArr[i] == touches->getID())
+					{
+						isContain = true;
+						break;
+					}
+				}
+
+				if (!isContain)
+				{
+					for (int i = 0; i < MAX_CACHE_TOUCH_COUNT; ++i)
+					{
+						if (lastForceTouchIndexArr[i] == INVALID_TOUCH_INDEX)
+						{
+							lastForceTouchIndexArr[i] = touches->getID();
+							invalidCount--;
+							//cocos2d::log("[lua] invalidCount--  [%d]", invalidCount);
+							break;
+						}
+					}
+				}
+			}
+			else
+			{
+				for (int i = 0; i < MAX_CACHE_TOUCH_COUNT; ++i)
+				{
+					if (lastForceTouchIndexArr[i] != INVALID_TOUCH_INDEX && lastForceTouchIndexArr[i] == touches->getID())
+					{
+						lastForceTouchIndexArr[i] = INVALID_TOUCH_INDEX;
+						invalidCount++;
+						//cocos2d::log("[lua] invalidCount++  [%d]", invalidCount);
+						break;
+					}
+				}
+			}
+
             if (event->isStopped())
             {
                 return;

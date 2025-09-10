@@ -605,6 +605,10 @@ public:
 
     static Vec2 calculateItemPositionWithAnchor(const Node* node, const Vec2& itemAnchorPoint);
 
+    void setInertiaMovementFactor(float value);
+
+    void setInertiaTimeFactor(float value);
+	
 protected:
     enum class MoveDirection
     {
@@ -702,6 +706,8 @@ protected:
     Vec2 _autoScrollBrakingStartPosition;
 
     bool _inertiaScrollEnabled;
+    float _inertiaMovementFactor;
+    float _inertiaTimeFactor;
 
     bool _bounceEnabled;
 

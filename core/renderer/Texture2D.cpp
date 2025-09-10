@@ -56,6 +56,12 @@ THE SOFTWARE.
 namespace ax
 {
 
+static int gTextureCount = 0;
+#ifdef AX_PLATFORM_PC
+std::mutex gTextureSetLock;
+std::vector<Texture2D*> gAllTextureSetPtr;
+#endif
+
 // CLASS IMPLEMENTATIONS:
 
 // If the image has alpha, you can create RGBA8 (32-bit) or RGBA4 (16-bit) or RGB5A1 (16-bit)
@@ -73,6 +79,12 @@ Texture2D::Texture2D()
     , _ninePatchInfo(nullptr)
     , _valid(true)
 {
+#ifdef AX_PLATFORM_PC
+    gTextureSetLock.lock();
+    gAllTextureSetPtr.push_back(this);
+    gTextureSetLock.unlock();
+#endif
+    gTextureCount++;
     backend::TextureDescriptor textureDescriptor;
     textureDescriptor.textureFormat = PixelFormat::NONE;
     _texture = static_cast<backend::Texture2DBackend*>(backend::DriverBase::getInstance()->newTexture(textureDescriptor));
@@ -80,6 +92,12 @@ Texture2D::Texture2D()
 
 Texture2D::~Texture2D()
 {
+#ifdef AX_PLATFORM_PC
+    gTextureSetLock.lock();
+    gAllTextureSetPtr.erase(std::find(gAllTextureSetPtr.begin(), gAllTextureSetPtr.end(), this));
+    gTextureSetLock.unlock();
+#endif
+    gTextureCount--;
 #if AX_ENABLE_CACHE_TEXTURE_DATA
     VolatileTextureMgr::removeTexture(this);
 #endif
@@ -117,6 +135,20 @@ Vec2 Texture2D::getContentSize() const
     ret.height = _contentSize.height / AX_CONTENT_SCALE_FACTOR();
 
     return ret;
+}
+
+int Texture2D::getTextureCount()
+{
+    return gTextureCount;
+}
+
+const std::vector<Texture2D*>& Texture2D::getAllTextures()
+{
+#ifdef AX_PLATFORM_PC
+    return gAllTextureSetPtr;
+#else
+    return {};
+#endif
 }
 
 const Vec2& Texture2D::getContentSizeInPixels()
@@ -528,7 +560,8 @@ bool Texture2D::initWithString(std::string_view text, const FontDefinition& text
         return false;
     }
 
-#if (AX_TARGET_PLATFORM != AX_PLATFORM_ANDROID) && (AX_TARGET_PLATFORM != AX_PLATFORM_IOS)
+#if (AX_TARGET_PLATFORM != AX_PLATFORM_ANDROID) && (AX_TARGET_PLATFORM != AX_PLATFORM_IOS) && \
+    (AX_TARGET_PLATFORM != AX_PLATFORM_WIN32)
     AXASSERT(textDefinition._stroke._strokeEnabled == false, "Currently stroke only supported on iOS and Android!");
 #endif
 

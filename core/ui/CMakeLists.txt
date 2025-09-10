@@ -151,6 +151,14 @@ set(_AX_UI_HEADER
   ui/UITextFieldEx.h
   ui/UIVBox.h
   ui/UIWidget.h
+  ui/UIQrCode/UIQrCode.h
+  ui/UIQrCode/QrEncode/bitstream.h
+  ui/UIQrCode/QrEncode/mask.h
+  ui/UIQrCode/QrEncode/qrencode.h
+  ui/UIQrCode/QrEncode/qrinput.h
+  ui/UIQrCode/QrEncode/qrspec.h
+  ui/UIQrCode/QrEncode/rscode.h
+  ui/UIQrCode/QrEncode/split.h
 )
 
 set(_AX_UI_SRC
@@ -188,4 +196,12 @@ set(_AX_UI_SRC
   ui/UIEditBox/UIEditBoxImpl-common.cpp
   ui/UITabControl.cpp
   ui/UITextFieldEx.cpp
+  ui/UIQrCode/UIQrCode.cpp
+  ui/UIQrCode/QrEncode/bitstream.cpp
+  ui/UIQrCode/QrEncode/mask.cpp
+  ui/UIQrCode/QrEncode/qrencode.cpp
+  ui/UIQrCode/QrEncode/qrinput.cpp
+  ui/UIQrCode/QrEncode/qrspec.cpp
+  ui/UIQrCode/QrEncode/rscode.cpp
+  ui/UIQrCode/QrEncode/split.cpp
 )

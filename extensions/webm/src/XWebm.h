@@ -36,7 +36,7 @@ struct MyScopeGuard
 
 namespace ax {
     // webm 解析后的容易使用的存储形态
-    struct Webm {
+    struct XWebm {
         // 0: vp8;	1: vp9
         uint8_t codecId = 0;
 
@@ -67,11 +67,11 @@ namespace ax {
         // todo: 可能还有别的附加信息存储. 例如 中心点坐标, 显示缩放比
         // todo: 动画信息? 多少帧到多少帧 定义为一个动画? 每帧的显示延迟设定? 时间轴?
 
-        Webm() = default;
-        Webm(Webm const&) = delete;
-        Webm(Webm&&) = default;
-        Webm& operator=(Webm const&) = delete;
-        Webm& operator=(Webm&&) = default;
+        XWebm() = default;
+        XWebm(XWebm const&) = delete;
+        XWebm(XWebm&&) = default;
+        XWebm& operator=(XWebm const&) = delete;
+        XWebm& operator=(XWebm&&)      = default;
 
         inline operator bool() {
             return count != 0;

@@ -1517,6 +1517,56 @@ void Sprite::updateColor()
     // so it is important to update _quad colors as well.
     _quad.bl.colors = _quad.tl.colors = _quad.br.colors = _quad.tr.colors = color4;
 
+	// FC-Fix
+    if (_enableGradientColor)
+    {
+        if (_opacityModifyRGB)
+        {
+            Color4B color4b(_gradientColorArr[0].r, _gradientColorArr[0].g, _gradientColorArr[0].b,
+                            _gradientColorArr[0].a);
+            color4b.r *= _displayedOpacity / 255.0f;
+            color4b.g *= _displayedOpacity / 255.0f;
+            color4b.b *= _displayedOpacity / 255.0f;
+            _quad.tl.colors = color4b;
+            //_polyInfo.triangles.verts[0].colors = color4b;
+
+            color4b =
+                Color4B(_gradientColorArr[1].r, _gradientColorArr[1].g, _gradientColorArr[1].b, _gradientColorArr[1].a);
+            color4b.r *= _displayedOpacity / 255.0f;
+            color4b.g *= _displayedOpacity / 255.0f;
+            color4b.b *= _displayedOpacity / 255.0f;
+            _quad.tr.colors = color4b;
+            //_polyInfo.triangles.verts[1].colors = color4b;
+
+            color4b =
+                Color4B(_gradientColorArr[2].r, _gradientColorArr[2].g, _gradientColorArr[2].b, _gradientColorArr[2].a);
+            color4b.r *= _displayedOpacity / 255.0f;
+            color4b.g *= _displayedOpacity / 255.0f;
+            color4b.b *= _displayedOpacity / 255.0f;
+            _quad.bl.colors = color4b;
+            //_polyInfo.triangles.verts[2].colors = color4b;
+
+            color4b =
+                Color4B(_gradientColorArr[3].r, _gradientColorArr[3].g, _gradientColorArr[3].b, _gradientColorArr[3].a);
+            color4b.r *= _displayedOpacity / 255.0f;
+            color4b.g *= _displayedOpacity / 255.0f;
+            color4b.b *= _displayedOpacity / 255.0f;
+            _quad.br.colors = color4b;
+            //_polyInfo.triangles.verts[2].colors = color4b;
+        }
+        else
+        {
+            _quad.tl.colors = _gradientColorArr[0];
+            _quad.tr.colors = _gradientColorArr[1];
+            _quad.bl.colors = _gradientColorArr[2];
+            _quad.br.colors = _gradientColorArr[3];
+
+            //_polyInfo.triangles.verts[0].colors = _gradientColorArr[0];
+            //_polyInfo.triangles.verts[1].colors = _gradientColorArr[1];
+            //_polyInfo.triangles.verts[2].colors = _gradientColorArr[2];
+        }
+    }
+
     // renders using batch node
     if (_renderMode == RenderMode::QUAD_BATCHNODE)
     {
@@ -1544,6 +1594,31 @@ void Sprite::setOpacityModifyRGB(bool modify)
 bool Sprite::isOpacityModifyRGB() const
 {
     return _opacityModifyRGB;
+}
+
+void Sprite::setGradientColor(const Color4B& color, int vpos)
+{
+    AXASSERT(vpos >= 0 && vpos <= 3, "'vpos' value range 0-3");
+
+    if (vpos < 0 || vpos > 3)
+    {
+        return;
+    }
+
+    if (_gradientColorArr[vpos] != color)
+    {
+        _gradientColorArr[vpos] = color;
+        updateColor();
+    }
+}
+
+void Sprite::enableGradientColor(bool enable)
+{
+    if (_enableGradientColor != enable)
+    {
+        _enableGradientColor = enable;
+        updateColor();
+    }
 }
 
 // MARK: Frames

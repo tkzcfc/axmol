@@ -496,16 +496,40 @@ void TextReader::setPropsWithFlatBuffers(ax::Node* node, const flatbuffers::Tabl
         }
     }
 
+    if (ax::ui::Text::isAutoSetOverflowShrink() && options->isCustomSize() != 0)
+    {
+        auto labelRenderer = dynamic_cast<ax::Label*>(label->getVirtualRenderer());
+        labelRenderer->setOverflow(ax::Label::Overflow::SHRINK);
+
+        auto widgetOptions = options->widgetOptions();
+        Size contentSize(widgetOptions->size()->width(), widgetOptions->size()->height());
+        label->setTextAreaSize(contentSize);
+    }
+
     std::string text = options->text()->c_str();
     bool isLocalized = options->isLocalized() != 0;
     if (isLocalized)
     {
         ILocalizationManager* lm = LocalizationHelper::getCurrentManager();
+        label->setRawString(text);
         label->setString(lm->getLocalizationString(text));
     }
     else
     {
-        label->setString(text);
+        label->setRawString(text);
+        do
+        {
+            if (Text::customLocalizationEnabled())
+            {
+                auto widgetOptions = options->widgetOptions();
+                std::string name   = widgetOptions->name()->c_str();
+                if (name.starts_with("_lang"))
+                {
+                    break;
+                }
+            }
+            label->setString(text);
+        } while (false);
     }
 
     // Save node color before set widget properties

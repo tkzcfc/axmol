@@ -36,13 +36,38 @@ namespace ui
 
 static const int LABEL_RENDERER_Z = (-1);
 
+static bool gIsAutoSetOverflowShrink = true;
+static std::string gDefaultFontName  = "Thonburi";
+
 IMPLEMENT_CLASS_GUI_INFO(Text)
+
+
+bool Text::isAutoSetOverflowShrink()
+{
+    return gIsAutoSetOverflowShrink;
+}
+
+void Text::setAutoSetOverflowShrink(bool value)
+{
+    gIsAutoSetOverflowShrink = value;
+}
+
+void Text::setDefaultFontName(const std::string& fontName)
+{
+    gDefaultFontName = fontName;
+}
+
+std::string Text::getDefaultFontName()
+{
+    return gDefaultFontName;
+}
+
 
 Text::Text()
     : _touchScaleChangeEnabled(false)
     , _normalScaleValueX(1.0f)
     , _normalScaleValueY(1.0f)
-    , _fontName("Thonburi")
+    , _fontName(gDefaultFontName)
     , _fontSize(10.f)
     , _onSelectedScaleOffset(0.5)
     , _labelRenderer(nullptr)
@@ -124,9 +149,30 @@ std::string_view Text::getString() const
     return _labelRenderer->getString();
 }
 
+void Text::setRawString(std::string text)
+{
+    _rawString = text;
+}
+
+std::string Text::getRawString() const
+{
+    return _rawString;
+}
+
 ssize_t Text::getStringLength() const
 {
     return _labelRenderer->getStringLength();
+}
+
+static bool _customLocalizationEnabled = false;
+
+bool Text::customLocalizationEnabled()
+{
+    return _customLocalizationEnabled;
+}
+void Text::setCustomLocalizationEnabled(bool value)
+{
+    _customLocalizationEnabled = value;
 }
 
 void Text::setFontSize(float size)
@@ -400,6 +446,26 @@ Color4B Text::getEffectColor() const
     return Color4B(effect.r * 255, effect.g * 255, effect.b * 255, effect.a * 255);
 }
 
+void Text::setGradientColor(const Color4B& color, int vpos)
+{
+    _labelRenderer->setGradientColor(color, vpos);
+}
+
+void Text::enableGradientColor(bool enable)
+{
+    _labelRenderer->enableGradientColor(enable);
+}
+
+Color4B Text::getGradientColor(int vpos)
+{
+    return _labelRenderer->getGradientColor(vpos);
+}
+
+bool Text::isEnableGradientColor()
+{
+    return _labelRenderer->isEnableGradientColor();
+}
+
 Sprite* Text::getLetter(int lettetIndex)
 {
     return _labelRenderer->getLetter(lettetIndex);
@@ -427,6 +493,11 @@ void Text::copySpecialProperties(Widget* widget)
     {
         setFontName(label->_fontName);
         setFontSize(label->getFontSize());
+        setGradientColor(label->getGradientColor(0), 0);
+        setGradientColor(label->getGradientColor(1), 1);
+        setGradientColor(label->getGradientColor(2), 2);
+        setGradientColor(label->getGradientColor(3), 3);
+        enableGradientColor(label->isEnableGradientColor());
         setTextColor(label->getTextColor());
         setString(label->getString());
         setTouchScaleChangeEnabled(label->_touchScaleChangeEnabled);

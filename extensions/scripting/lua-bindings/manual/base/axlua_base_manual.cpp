@@ -1046,6 +1046,74 @@ tolua_lerror:
 #endif
 }
 
+static int tolua_cocos2d_ActionFloat_create(lua_State* tolua_S)
+{
+    if (NULL == tolua_S)
+        return 0;
+
+    int argc = 0;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+    if (!tolua_isusertable(tolua_S, 1, "ax.ActionFloat", 0, &tolua_err))
+        goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 4)
+    {
+        bool ok = true;
+        double duration, from, to;
+        ok &= luaval_to_number(tolua_S, 2, (double*)&duration, "ax.ActionFloat:create");
+        if (!ok)
+        {
+            tolua_error(tolua_S, "invalid arguments in function 'lua_ActionFloat_create'", nullptr);
+            return 0;
+        }
+        ok &= luaval_to_number(tolua_S, 3, (double*)&from, "ax.ActionFloat:create");
+        if (!ok)
+        {
+            tolua_error(tolua_S, "invalid arguments in function 'lua_ActionFloat_create'", nullptr);
+            return 0;
+        }
+        ok &= luaval_to_number(tolua_S, 4, (double*)&to, "ax.ActionFloat:create");
+        if (!ok)
+        {
+            tolua_error(tolua_S, "invalid arguments in function 'lua_ActionFloat_create'", nullptr);
+            return 0;
+        }
+#if _AX_DEBUG >= 1
+        if (!toluafix_isfunction(tolua_S, 5, "LUA_FUNCTION", 0, &tolua_err))
+            goto tolua_lerror;
+#endif
+
+        LUA_FUNCTION handler = toluafix_ref_function(tolua_S, 5, 0);
+
+        ActionFloat* tolua_ret  = ActionFloat::create((float)duration, from, to, [=](double value) {
+            auto L = LuaEngine::getInstance()->getLuaStack()->getLuaState();
+            lua_pushnumber(L, (lua_Number)value);
+            LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 1);
+        });
+        ScriptHandlerMgr::getInstance()->addObjectHandler((void*)tolua_ret, handler,
+                                                          ScriptHandlerMgr::HandlerType::CALLFUNC);
+
+        int nID     = (tolua_ret) ? (int)tolua_ret->_ID : -1;
+        int* pLuaID = (tolua_ret) ? &tolua_ret->_luaID : NULL;
+        toluafix_pushusertype_object(tolua_S, nID, pLuaID, (void*)tolua_ret, "ax.ActionFloat");
+        return 1;
+    }
+
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n", "ax.ActionFloat:create", argc, 1);
+    return 0;
+
+#if _AX_DEBUG >= 1
+tolua_lerror:
+    tolua_error(tolua_S, "#ferror in function 'tolua_cocos2d_ActionFloat_create'.", &tolua_err);
+    return 0;
+#endif
+}
+
 static int tolua_cocos2d_Node_registerScriptHandler(lua_State* tolua_S)
 {
     if (NULL == tolua_S)
@@ -2756,8 +2824,36 @@ static int toaxlua_FileUtils_getDataFromFile(lua_State* tolua_S)
             if (!data.isNull())
                 lua_pushlstring(tolua_S, reinterpret_cast<const char*>(data.getBytes()),
                                 static_cast<size_t>(data.getSize()));
+
+            return 1;
+        }
+    }
+    else if (2 == argc)
+    {
+        const char* arg0;
+        std::string arg0_tmp;
+        bool use_raw_data;
+        ok &= luaval_to_std_string(tolua_S, 2, &arg0_tmp, "ax.FileUtils:getDataFromFile");
+        ok &= luaval_to_boolean(tolua_S, 3, &use_raw_data, "ax.FileUtils:getDataFromFile");
+        arg0 = arg0_tmp.c_str();
+        if (ok)
+        {
+            if (use_raw_data)
+            {
+                Data data;
+                FileUtils::getInstance()->getContents(arg0, &data);
+                if (!data.isNull())
+                    lua_pushlstring(tolua_S, reinterpret_cast<const char*>(data.getBytes()),
+                                    static_cast<size_t>(data.getSize()));
+            }
             else
-                lua_pushnil(tolua_S);
+            {
+                auto data = FileUtils::getInstance()->getDataFromFile(arg0);
+                if (!data.isNull())
+                    lua_pushlstring(tolua_S, reinterpret_cast<const char*>(data.getBytes()),
+                                    static_cast<size_t>(data.getSize()));
+            }
+
             return 1;
         }
     }
@@ -2867,6 +2963,62 @@ tolua_lerror:
     tolua_error(tolua_S, "#ferror in function 'setTexParameters'.", &tolua_err);
     return 0;
 #endif
+}
+
+int tolua_Texture2D_getAllTextures(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S, 1, "ax.Texture2D", 0, &tolua_err))
+        goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if (!ok)
+        {
+            tolua_error(tolua_S, "invalid arguments in function 'tolua_Texture2D_getAllTextures'", nullptr);
+            return 0;
+        }
+        auto&& textures = ax::Texture2D::getAllTextures();
+
+        lua_newtable(tolua_S);
+
+        int indexTable = 1;
+        for (const auto& obj : textures)
+        {
+            if (nullptr == obj)
+                continue;
+
+            auto luaTypeName = getLuaTypeName(obj, nullptr);
+            if (luaTypeName)
+            {
+                lua_pushnumber(tolua_S, (lua_Number)indexTable);
+                int ID     = (obj) ? (int)obj->_ID : -1;
+                int* luaID = (obj) ? &obj->_luaID : NULL;
+                toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj, luaTypeName);
+                lua_rawset(tolua_S, -3);
+                ++indexTable;
+            }
+        }
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "ax.Texture2D:getAllTextures",
+               argc, 0);
+    return 0;
+#if _AX_DEBUG >= 1
+tolua_lerror:
+    tolua_error(tolua_S, "#ferror in function 'tolua_Texture2D_getAllTextures'.", &tolua_err);
+#endif
+    return 0;
 }
 
 static int toaxlua_SpriteBatchNode_getDescendants(lua_State* tolua_S)
@@ -3121,6 +3273,9 @@ static void extendTexture2D(lua_State* tolua_S)
         lua_pushstring(tolua_S, "setTexParameters");
         lua_pushcfunction(tolua_S, toaxlua_Texture2D_setTexParameters);
         lua_rawset(tolua_S, -3);
+        lua_pushstring(tolua_S, "getAllTextures");
+        lua_pushcfunction(tolua_S, tolua_Texture2D_getAllTextures);
+        lua_rawset(tolua_S, -3);
     }
     lua_pop(tolua_S, 1);
 }
@@ -3315,6 +3470,19 @@ static void extendCallFunc(lua_State* tolua_S)
     {
         lua_pushstring(tolua_S, "create");
         lua_pushcfunction(tolua_S, tolua_cocos2d_CallFunc_create);
+        lua_rawset(tolua_S, -3);
+    }
+    lua_pop(tolua_S, 1);
+}
+
+static void extendActionFloat(lua_State* tolua_S)
+{
+    lua_pushstring(tolua_S, "ax.ActionFloat");
+    lua_rawget(tolua_S, LUA_REGISTRYINDEX);
+    if (lua_istable(tolua_S, -1))
+    {
+        lua_pushstring(tolua_S, "create");
+        lua_pushcfunction(tolua_S, tolua_cocos2d_ActionFloat_create);
         lua_rawset(tolua_S, -3);
     }
     lua_pop(tolua_S, 1);
@@ -6390,6 +6558,7 @@ int register_all_ax_manual(lua_State* tolua_S)
     extendScheduler(tolua_S);
     extendSequence(tolua_S);
     extendCallFunc(tolua_S);
+    extendActionFloat(tolua_S);
     extendSpawn(tolua_S);
     extendCardinalSplineBy(tolua_S);
     extendCatmullRomBy(tolua_S);

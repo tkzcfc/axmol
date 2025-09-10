@@ -560,10 +560,20 @@ void FileUtils::getStringFromFile(std::string_view path, std::function<void(std:
         std::move(callback));
 }
 #endif
+
+void FileUtils::setFileDataDecoder(FiledataDecoder decoder)
+{
+    dataDecoder = decoder;
+}
+
 Data FileUtils::getDataFromFile(std::string_view filename) const
 {
     Data d;
     getContents(filename, &d);
+    if (dataDecoder)
+    {
+        dataDecoder(d);
+    }
     return d;
 }
 #ifndef AX_CORE_PROFILE

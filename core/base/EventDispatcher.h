@@ -45,6 +45,8 @@
 namespace ax
 {
 
+#define MAX_CACHE_TOUCH_COUNT 5
+
 class Event;
 class EventTouch;
 class EventMouse;
@@ -190,6 +192,13 @@ public:
      */
     bool hasEventListener(std::string_view listenerID) const;
 
+    // Set whether to enable multi-touch globally
+    //  If turned off, this node can only receive multi-touch when node->setMultipleTouchEnabled(true)
+    //  If turned on, all nodes can receive multi-touch messages
+	void setGlobalMultiTouchEnabled(bool enabled);
+
+	bool isGlobalMultiTouchEnabled();
+	
     /////////////////////////////////////////////
 
     /** Constructor of EventDispatcher.
@@ -360,6 +369,13 @@ protected:
     int _nodePriorityIndex;
 
     std::set<std::string> _internalCustomListenerIDs;
+
+
+	static int INVALID_TOUCH_INDEX;
+
+	int lastForceTouchIndexArr[MAX_CACHE_TOUCH_COUNT];
+
+	static bool global_multi_touch_enabled;
 };
 
 }

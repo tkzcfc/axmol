@@ -1843,6 +1843,11 @@ public:
     // Compatible old Layer::create
     bool initLayer();
 
+    void setMultipleTouchEnabled(bool value);
+
+    bool isMultipleTouchEnabled();
+
+
 protected:
     /// lazy allocs
     void childrenAlloc();
@@ -2004,6 +2009,8 @@ protected:
     std::function<void()> _onExitTransitionDidStartCallback;
 
     backend::ProgramState* _programState = nullptr;
+
+    bool _isMultipleTouchEnabled;
 
 // Physics:remaining backwardly compatible
 #if defined(AX_ENABLE_PHYSICS)
