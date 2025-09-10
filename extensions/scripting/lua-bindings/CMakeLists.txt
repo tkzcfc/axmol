@@ -31,6 +31,7 @@ set(lua_bindings_manual_headers
   manual/fairygui/lua_fairygui.hpp
   manual/fairygui/axlua_fairygui_manual.hpp
   manual/fairygui/axlua_fairygui_conversions.h
+  manual/webm/ax_webm_manual.hpp
 )
 
 set(lua_bindings_manual_files
@@ -67,6 +68,7 @@ set(lua_bindings_manual_files
   manual/fairygui/lua_fairygui.cpp
   manual/fairygui/axlua_fairygui_manual.cpp
   manual/fairygui/axlua_fairygui_conversions.cpp
+  manual/webm/ax_webm_manual.cpp
 )
 
 set(lua_bindings_auto_headers
@@ -84,6 +86,7 @@ set(lua_bindings_auto_headers
   auto/axlua_extension_auto.hpp
   auto/axlua_backend_auto.hpp
   auto/axlua_fairygui_auto.hpp
+  auto/axlua_webm_auto.hpp
 )
 
 set(lua_bindings_auto_files
@@ -101,7 +104,35 @@ set(lua_bindings_auto_files
   auto/axlua_navmesh_auto.cpp
   auto/axlua_backend_auto.cpp
   auto/axlua_fairygui_auto.cpp
+  auto/axlua_webm_auto.cpp
 )
+
+set(lua_bindings_manual_headers
+    ${lua_bindings_manual_headers}
+    manual/imgui/imgui_lua.hpp
+    manual/imgui/lua_conversion.hpp
+    manual/imgui/lua_conversion_tolua.hpp
+    manual/imgui/lua_imgui_auto.hpp
+    manual/imgui/lua_ImGuiColorTextEdit_auto.hpp
+    manual/imgui/lua_imguiDrawList_auto.hpp
+    manual/imgui/lua_imguiFont_auto.hpp
+    manual/imgui/lua_imguiIO_auto.hpp
+    manual/imgui/lua_imguiStyle_auto.hpp
+    manual/imgui/lua_imguiViewport_auto.hpp
+    manual/imgui/lua_implot_auto.hpp
+    )
+set(lua_bindings_manual_files
+    ${lua_bindings_manual_files}
+    manual/imgui/imgui_lua.cpp
+    manual/imgui/lua_imgui_auto.cpp
+    manual/imgui/lua_ImGuiColorTextEdit_auto.cpp
+    manual/imgui/lua_imguiDrawList_auto.cpp
+    manual/imgui/lua_imguiFont_auto.cpp
+    manual/imgui/lua_imguiIO_auto.cpp
+    manual/imgui/lua_imguiStyle_auto.cpp
+    manual/imgui/lua_imguiViewport_auto.cpp
+    manual/imgui/lua_implot_auto.cpp
+    )
 
 if(APPLE)
   # CCLuaObjcBridge.mm needed by ios and mac
@@ -231,6 +262,8 @@ target_include_directories(${_AX_LUA_LIB}
   PRIVATE ${ax_root}/extensions/fairygui/src
   PRIVATE ${ax_root}/extensions/fairygui/src/fairygui
   PRIVATE ${ax_root}/extensions/Particle3D/src
+  PRIVATE ${ax_root}/extensions/ImGui/src
+  PRIVATE ${ax_root}/extensions/ImGui/src/ImGui
   INTERFACE ${ax_root}/extensions/scripting/lua-bindings/manual
 )
 

@@ -9,6 +9,8 @@ set(HEADER
   src/ImGui/imstb_textedit.h
   src/ImGui/misc/cpp/imgui_stdlib.h
   src/ImGui/misc/freetype/imgui_freetype.h
+  src/implot/implot.h
+  src/implot/implot_internal.h
 )
 
 set(SOURCE
@@ -20,6 +22,9 @@ set(SOURCE
   src/ImGui/imgui_tables.cpp
   src/ImGui/misc/cpp/imgui_stdlib.cpp
   src/ImGui/misc/freetype/imgui_freetype.cpp
+  src/implot/implot.cpp
+  src/implot/implot_demo.cpp
+  src/implot/implot_items.cpp
 )
 
 list(APPEND SOURCE src/ImGui/backends/imgui_impl_axmol.cpp)

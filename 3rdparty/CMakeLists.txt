@@ -11,9 +11,12 @@ option(AX_WITH_CURL "Build with internal curl support" ON)
 option(AX_WITH_UNZIP "Build with internal unzip support" ON)
 option(AX_WITH_ASTCENC "Build with internal ASTCENC support" ON)
 option(AX_WITH_CARES "Build with internal c-ares support" OFF)
-option(AX_WITH_KCP "Build with internal kcp support" OFF)
+option(AX_WITH_KCP "Build with internal kcp support" ON)
 option(AX_WITH_OBOE "Build with oboe support" OFF)
 option(AX_WITH_LLHTTP "Build with internal LLHTTP support" ON)
+option(AX_WITH_YUV "Build with internal yuv support" ON)
+option(AX_WITH_VPX "Build with vpx support" ON)
+option(AX_WITH_FANCYTEXT "Build with FancyText support" ON)
 
 # some libs not depended by axmol
 option(AX_WITH_LZ4 "Build with internal lz4 support" OFF)
@@ -238,12 +241,13 @@ if(AX_ENABLE_EXT_LUA)
   add_subdirectory(lua/${AX_LUA_ENGINE})
   add_subdirectory(lua/tolua)
   add_subdirectory(lua/lua-cjson)
+  add_subdirectory(lua/lua-protobuf)
   set_property(TARGET 3rdparty APPEND PROPERTY
-    AX_LUA_DEPEND ${AX_LUA_ENGINE} tolua lua-cjson
+    AX_LUA_DEPEND ${AX_LUA_ENGINE} tolua lua-cjson lua-protobuf
   )
 
   if(AX_USE_LUAJIT)
-    target_compile_definitions(lua-cjson PRIVATE USING_LUAJIT=1)
+    target_compile_definitions(lua-cjson lua-protobuf PRIVATE USING_LUAJIT=1)
   endif()
 endif()
 
@@ -348,6 +352,15 @@ endif()
 
 if(AX_WITH_LLHTTP)
   ax_add_3rd(llhttp)
+endif()
+
+
+if(AX_WITH_YUV)
+  ax_add_3rd(yuv)
+endif()
+
+if(AX_WITH_VPX)
+  ax_add_3rd(vpx)
 endif()
 
 # libvlc

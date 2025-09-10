@@ -35,6 +35,8 @@
 #include "lua-bindings/manual/audioengine/axlua_audioengine_manual.h"
 #include "lua-bindings/manual/physics3d/axlua_physics3d_manual.h"
 #include "lua-bindings/manual/navmesh/axlua_navmesh_manual.h"
+#include "lua-bindings/manual/webm/ax_webm_manual.hpp"
+#include "lua-bindings/manual/imgui/imgui_lua.hpp"
 
 #if defined(AX_USE_ENGINE_FAIRYGUI_LUA_BINDING)
 #include "lua-bindings/manual/fairygui/axlua_fairygui_manual.hpp"
@@ -44,10 +46,18 @@
 #include "lua_cjson.h"
 #include "yasio/bindings/yasio_axlua.hpp"
 
+extern "C" {
+int luaopen_pb(lua_State* L);
+}
+
 static void lua_register_extensions(lua_State* L)
 {
-
-    static luaL_Reg lua_exts[] = {{"yasio", luaopen_yasio_axlua}, {"cjson", luaopen_cjson}, {NULL, NULL}};
+    static luaL_Reg lua_exts[] = {
+        {"yasio", luaopen_yasio_axlua},
+        {"cjson", luaopen_cjson},
+        {"luapb", luaopen_pb},
+        {NULL, NULL}
+    };
 
     lua_getglobal(L, "package");
     lua_getfield(L, -1, "preload");
@@ -71,7 +81,9 @@ int lua_module_register(lua_State* L)
 #if defined(AX_ENABLE_EXT_SPINE)
     register_spine_module(L);
 #endif // defined(AX_ENABLE_EXT_SPINE)
+#if defined(AX_ENABLE_3D)
     register_cocos3d_module(L);
+#endif  // defined(AX_ENABLE_3D)
     register_audioengine_module(L);
 #if defined(AX_ENABLE_3D_PHYSICS)
     register_physics3d_module(L);
@@ -86,6 +98,10 @@ int lua_module_register(lua_State* L)
     register_fairygui_manual(L);
 #endif  // defined(AX_USE_ENGINE_FAIRYGUI_LUA_BINDING)
 #endif // defined(AX_ENABLE_EXT_FAIRYGUI)
+
+    register_webm_module(L);
+    luaopen_imgui(L);
+
     // register extensions: yaiso, lua-cjson
     lua_register_extensions(L);
     return 1;

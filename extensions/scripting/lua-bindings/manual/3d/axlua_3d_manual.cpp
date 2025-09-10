@@ -22,6 +22,7 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
  ****************************************************************************/
+#if defined(AX_ENABLE_3D)
 #include "lua-bindings/manual/3d/axlua_3d_manual.h"
 #include "lua-bindings/auto/axlua_3d_auto.hpp"
 #include "lua-bindings/manual/LuaBasicConversions.h"
@@ -2410,3 +2411,4 @@ int register_cocos3d_module(lua_State* L)
 
     return 1;
 }
+#endif  // #if AX_ENABLE_3D
