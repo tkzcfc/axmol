@@ -363,6 +363,15 @@ if(AX_WITH_VPX)
   ax_add_3rd(vpx)
 endif()
 
+if(WINDOWS)
+    if(AX_WITH_FANCYTEXT)
+        add_subdirectory(FancyTextRender)
+        
+        target_link_libraries(3rdparty INTERFACE FancyTextRender)
+        target_compile_definitions(3rdparty INTERFACE AX_USE_FANCYTEXT_RENDER=1)
+    endif(AX_WITH_FANCYTEXT)
+endif()
+
 # libvlc
 if(AX_ENABLE_VLC_MEDIA AND(NOT _AX_HAVE_VLC))
   message(STATUS "Using axmol prebuilt libvlc")

@@ -283,6 +283,15 @@ function(ax_link_cxx_prebuilt APP_NAME AX_ROOT_DIR AX_PREBUILT_DIR)
         target_link_libraries(${APP_NAME} "${_NUGET_PACKAGE_DIR}/Microsoft.Web.WebView2/build/native/Microsoft.Web.WebView2.targets")
       endif()
     endif()
+
+    add_custom_command(TARGET ${APP_NAME} POST_BUILD
+      COMMAND ${CMAKE_COMMAND} -E copy_if_different
+      "${AX_ROOT_DIR}/3rdparty/FancyTextRender/prebuilt/${PLATFORM_NAME}/${ARCH_ALIAS}/System.Drawing.Common.dll"
+      "${AX_ROOT_DIR}/3rdparty/FancyTextRender/prebuilt/${PLATFORM_NAME}/${ARCH_ALIAS}/Ijwhost.dll"
+      "${AX_ROOT_DIR}/3rdparty/FancyTextRender/prebuilt/${PLATFORM_NAME}/${ARCH_ALIAS}/FancyText.dll"
+      "${AX_ROOT_DIR}/3rdparty/FancyTextRender/prebuilt/${PLATFORM_NAME}/${ARCH_ALIAS}/FancyTextToCppBridge.runtimeconfig.json"
+      $<TARGET_FILE_DIR:${APP_NAME}>
+    )
   endif()
 
   # prebuilt, need copy axslc folder to target output directory

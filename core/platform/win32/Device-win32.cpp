@@ -30,6 +30,23 @@ THE SOFTWARE.
 
 #include "ntcvt/ntcvt.hpp"
 
+#if AX_USE_FANCYTEXT_RENDER
+#include "FancyTextRender/include/FancyText.h"
+#endif
+
+
+#if AX_USE_FANCYTEXT_RENDER
+#    define ALPHA_OFFSET 24
+#    define RED_OFFSET   16
+#    define GREEN_OFFSET 8
+#    define BLUE_OFFSET  0
+
+inline unsigned int argbToInt(unsigned char alpha, unsigned char red, unsigned char green, unsigned char blue)
+{
+    return (alpha << ALPHA_OFFSET) | (red << RED_OFFSET) | (green << GREEN_OFFSET) | (blue << BLUE_OFFSET);
+}
+#endif
+
 namespace ax
 {
 
@@ -422,6 +439,60 @@ Data Device::getTextureDataForText(std::string_view text,
                                    int& height,
                                    bool& hasPremultipliedAlpha)
 {
+#if AX_USE_FANCYTEXT_RENDER
+    Data ret;
+
+    int strokeSize   = 0;
+    auto strokeColor = argbToInt(0, 0, 0, 0);
+    if (textDefinition._stroke._strokeEnabled)
+    {
+        strokeSize  = (int)textDefinition._stroke._strokeSize;
+        strokeColor = argbToInt(textDefinition._stroke._strokeAlpha, textDefinition._stroke._strokeColor.r,
+                                textDefinition._stroke._strokeColor.g, textDefinition._stroke._strokeColor.b);
+    }
+    auto fontColor = argbToInt(textDefinition._fontAlpha, textDefinition._fontFillColor.r,
+                               textDefinition._fontFillColor.g, textDefinition._fontFillColor.b);
+    int fontStyle  = FancyText::FontStyle::Bold;
+
+    int dimensionsWidth  = textDefinition._dimensions.width;
+    int dimensionsHeight = textDefinition._dimensions.height;
+    size_t dataLen       = 0;
+
+    std::wstring wText     = ntcvt::from_chars(text);
+    std::wstring wFontName = ntcvt::from_chars(textDefinition._fontName);
+
+    FancyText::SetMallocCallback(malloc);
+    auto data = FancyText::Render(wText.c_str(), wFontName.c_str(), textDefinition._fontSize, fontStyle, (int)fontColor,
+                                  (int)align, strokeSize, (int)strokeColor, dimensionsWidth, dimensionsHeight,
+                                  textDefinition._overflow, textDefinition._enableWrap, true, &dataLen);
+
+    if (dataLen == 0)
+    {
+        width  = 0;
+        height = 0;
+        return ret;
+    }
+
+    width  = dimensionsWidth;
+    height = dimensionsHeight;
+
+    // bgr -> rgb
+    int index = 0;
+    for (int y = 0; y < dimensionsHeight; ++y)
+    {
+        for (int x = 0; x < dimensionsWidth; ++x)
+        {
+            index               = y * dimensionsWidth + x;
+            char b              = data[index * 4];
+            data[index * 4]     = data[index * 4 + 2];
+            data[index * 4 + 2] = b;
+        }
+    }
+
+    ret.fastSet((uint8_t*)data, (ssize_t)dataLen);
+    hasPremultipliedAlpha = false;
+    return ret;
+#else
     Data ret;
     do
     {
@@ -478,6 +549,7 @@ Data Device::getTextureDataForText(std::string_view text,
     } while (0);
 
     return ret;
+#endif
 }
 
 void Device::setKeepScreenOn(bool value)
