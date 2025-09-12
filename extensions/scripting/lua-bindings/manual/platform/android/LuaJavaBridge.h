@@ -198,6 +198,7 @@ private:
     };
 
     static int callJavaStaticMethod(lua_State* L);
+    static int checkJavaStaticMethod(lua_State* L);
     static int retainLuaFunction(lua_State* L, int functionIndex, int* retainCountReturn);
     static int getMethodInfo(CallInfo* call, const char* className, const char* methodName, const char* paramCode);
     static int fetchArrayElements(lua_State* L, int index);

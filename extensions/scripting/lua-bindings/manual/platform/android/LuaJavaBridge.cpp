@@ -306,6 +306,11 @@ void LuaJavaBridge::luaopen_luaj(lua_State* L)
     lua_pushstring(L, "callStaticMethod");
     lua_pushcfunction(L, LuaJavaBridge::callJavaStaticMethod);
     lua_rawset(L, -3);
+
+    lua_pushstring(L, "checkStaticMethod");
+    lua_pushcfunction(L, LuaJavaBridge::checkJavaStaticMethod);
+    lua_rawset(L, -3);
+
     lua_setglobal(L, "LuaJavaBridge");
 }
 
@@ -391,6 +396,33 @@ int LuaJavaBridge::callJavaStaticMethod(lua_State* L)
 
     lua_pushboolean(L, 1);
     return 1 + call.pushReturnValue(L);
+}
+
+/*
+args:
+    const char *className
+    const char *methodName
+    const char *sig
+*/
+int LuaJavaBridge::checkJavaStaticMethod(lua_State* L)
+{
+    if (!lua_isstring(L, -3) || !lua_isstring(L, -2) || !lua_isstring(L, -1))
+    {
+        lua_pushboolean(L, 0);
+        return 0;
+    }
+
+    LOGD("%s", "LuaJavaBridge::checkJavaStaticMethod(lua_State *L)");
+
+    const char* className  = lua_tostring(L, -3);
+    const char* methodName = lua_tostring(L, -2);
+    const char* methodSig  = lua_tostring(L, -1);
+
+    ax::JniMethodInfo methodInfo;
+    bool ret   = ax::JniHelper::getStaticMethodInfo(methodInfo, className, methodName, methodSig);
+    int luaret = ret ? 1 : 0;
+    lua_pushboolean(L, luaret);
+    return 1;
 }
 
 // increase lua function reference counter, return counter

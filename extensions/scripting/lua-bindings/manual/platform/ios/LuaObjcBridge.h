@@ -53,6 +53,8 @@ public:
 
 protected:
     static int callObjcStaticMethod(lua_State* L);
+    
+    static int checkObjcStaticMethod(lua_State* L);
 
     static void pushValue(lua_State* L, void* val);
 };
