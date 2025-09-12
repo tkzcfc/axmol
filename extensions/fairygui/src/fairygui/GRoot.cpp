@@ -65,6 +65,7 @@ GRoot::GRoot() : _windowSizeListener(nullptr),
                 _defaultTooltipWin(nullptr),
                 _isIgnoreWindowSizeChanged(false)
 {
+    _forceRefInst = this;
 }
 
 GRoot::~GRoot()

@@ -87,7 +87,8 @@ public:
      */
     virtual void applicationWillEnterForeground() = 0;
 
-    virtual void onRestart() = 0;
+    virtual void onRestartBegin() = 0;
+    virtual void onRestartEnd() = 0;
     virtual void onUpdate()  = 0;
 
     /**

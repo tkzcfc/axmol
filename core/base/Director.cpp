@@ -1096,6 +1096,7 @@ void Director::cleanupDirector()
 
 void Director::restartDirector()
 {
+    Application::getInstance()->onRestartBegin();
     reset();
 
     // Texture cache need to be reinitialized
@@ -1126,8 +1127,7 @@ void Director::restartDirector()
 
     _eventDispatcher->addEventListenerWithFixedPriority(_rendererRecreatedListener, -1);
 #endif
-
-    Application::getInstance()->onRestart();
+    Application::getInstance()->onRestartEnd();
 }
 
 void Director::setNextScene()

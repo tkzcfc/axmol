@@ -30,7 +30,7 @@ THE SOFTWARE.
 #include "base/Macros.h"
 #include "base/ScriptSupport.h"
 
-#if AX_OBJECT_LEAK_DETECTION
+#if AX_OBJECT_LEAK_DETECTION && _AX_DEBUG > 0
 #    include <algorithm>  // std::find
 #    include <thread>
 #    include <mutex>
@@ -40,7 +40,7 @@ THE SOFTWARE.
 namespace ax
 {
 
-#if AX_OBJECT_LEAK_DETECTION
+#if AX_OBJECT_LEAK_DETECTION && _AX_DEBUG > 0
 static void trackRef(Object* ref);
 static void untrackRef(Object* ref);
 #endif
@@ -58,7 +58,7 @@ Object::Object()
     _ID                              = ++uObjectCount;
 #endif
 
-#if AX_OBJECT_LEAK_DETECTION
+#if AX_OBJECT_LEAK_DETECTION && _AX_DEBUG > 0
     trackRef(this);
 #endif
 }
@@ -75,7 +75,7 @@ Object::~Object()
     }
 #endif  // AX_ENABLE_SCRIPT_BINDING
 
-#if AX_OBJECT_LEAK_DETECTION
+#if AX_OBJECT_LEAK_DETECTION && _AX_DEBUG > 0
     if (_referenceCount != 0)
         untrackRef(this);
 #endif
@@ -130,7 +130,7 @@ void Object::release()
         }
 #endif
 
-#if AX_OBJECT_LEAK_DETECTION
+#if AX_OBJECT_LEAK_DETECTION && _AX_DEBUG > 0
         untrackRef(this);
 #endif
         delete this;
@@ -152,7 +152,7 @@ int Object::getRefObjectCount()
 {
     return gRefObjectCount;
 }
-#if AX_OBJECT_LEAK_DETECTION
+#if AX_OBJECT_LEAK_DETECTION && _AX_DEBUG > 0
 
 static std::vector<Object*> __refAllocationList;
 static std::mutex __refMutex;
