@@ -23,6 +23,10 @@ if g_debug_mode:
 
 g_ndk_root = None
 
+
+# PS D:\work\neon_arcade_new_engine\game> cd  D:\work\ax_engine\tools\ci
+# PS D:\work\ax_engine\tools\ci> .\genbindings.ps1
+
 def _check_ndk_root_env():
     ''' Checking the environment ANDROID_NDK, which will be used for building
     '''

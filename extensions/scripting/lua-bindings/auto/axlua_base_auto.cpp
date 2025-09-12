@@ -149,6 +149,40 @@ int lua_ax_base_Object_getReferenceCount(lua_State* tolua_S)
 
     return 0;
 }
+int lua_ax_base_Object_getRefObjectCount(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"ax.Object",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_Object_getRefObjectCount'", nullptr);
+            return 0;
+        }
+        auto&& ret = ax::Object::getRefObjectCount();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "ax.Object:getRefObjectCount",argc, 0);
+    return 0;
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_base_Object_getRefObjectCount'.",&tolua_err);
+#endif
+    return 0;
+}
 static int lua_ax_base_Object_finalize(lua_State* tolua_S)
 {
     AXLOGV("luabindings: finalizing LUA object (Object)");
@@ -164,6 +198,7 @@ int lua_register_ax_base_Object(lua_State* tolua_S)
         tolua_function(tolua_S,"retain",lua_ax_base_Object_retain);
         tolua_function(tolua_S,"release",lua_ax_base_Object_release);
         tolua_function(tolua_S,"getReferenceCount",lua_ax_base_Object_getReferenceCount);
+        tolua_function(tolua_S,"getRefObjectCount", lua_ax_base_Object_getRefObjectCount);
     tolua_endmodule(tolua_S);
     auto typeName = typeid(ax::Object).name(); // rtti is literal storage
     g_luaType[reinterpret_cast<uintptr_t>(typeName)] = "ax.Object";
@@ -2611,6 +2646,40 @@ int lua_ax_base_Texture2D_getDefaultAlphaPixelFormat(lua_State* tolua_S)
 #endif
     return 0;
 }
+int lua_ax_base_Texture2D_getTextureCount(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"ax.Texture2D",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_Texture2D_getTextureCount'", nullptr);
+            return 0;
+        }
+        auto&& ret = ax::Texture2D::getTextureCount();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "ax.Texture2D:getTextureCount",argc, 0);
+    return 0;
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_base_Texture2D_getTextureCount'.",&tolua_err);
+#endif
+    return 0;
+}
 int lua_ax_base_Texture2D_constructor(lua_State* tolua_S)
 {
     int argc = 0;
@@ -2693,6 +2762,7 @@ int lua_register_ax_base_Texture2D(lua_State* tolua_S)
         tolua_function(tolua_S,"getPath",lua_ax_base_Texture2D_getPath);
         tolua_function(tolua_S,"setDefaultAlphaPixelFormat", lua_ax_base_Texture2D_setDefaultAlphaPixelFormat);
         tolua_function(tolua_S,"getDefaultAlphaPixelFormat", lua_ax_base_Texture2D_getDefaultAlphaPixelFormat);
+        tolua_function(tolua_S,"getTextureCount", lua_ax_base_Texture2D_getTextureCount);
     tolua_endmodule(tolua_S);
     auto typeName = typeid(ax::Texture2D).name(); // rtti is literal storage
     g_luaType[reinterpret_cast<uintptr_t>(typeName)] = "ax.Texture2D";
@@ -11621,6 +11691,103 @@ int lua_ax_base_Node_initLayer(lua_State* tolua_S)
 
     return 0;
 }
+int lua_ax_base_Node_setMultipleTouchEnabled(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::Node* cobj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"ax.Node",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (ax::Node*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!cobj)
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_base_Node_setMultipleTouchEnabled'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        bool arg0;
+
+        ok &= luaval_to_boolean(tolua_S, 2,&arg0, "ax.Node:setMultipleTouchEnabled");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_Node_setMultipleTouchEnabled'", nullptr);
+            return 0;
+        }
+        cobj->setMultipleTouchEnabled(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "ax.Node:setMultipleTouchEnabled",argc, 1);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_base_Node_setMultipleTouchEnabled'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_ax_base_Node_isMultipleTouchEnabled(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::Node* cobj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"ax.Node",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (ax::Node*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!cobj)
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_base_Node_isMultipleTouchEnabled'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_Node_isMultipleTouchEnabled'", nullptr);
+            return 0;
+        }
+        auto&& ret = cobj->isMultipleTouchEnabled();
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "ax.Node:isMultipleTouchEnabled",argc, 0);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_base_Node_isMultipleTouchEnabled'.",&tolua_err);
+#endif
+
+    return 0;
+}
 int lua_ax_base_Node_setPhysicsBody(lua_State* tolua_S)
 {
     int argc = 0;
@@ -11980,6 +12147,8 @@ int lua_register_ax_base_Node(lua_State* tolua_S)
         tolua_function(tolua_S,"resetChild",lua_ax_base_Node_resetChild);
         tolua_function(tolua_S,"init",lua_ax_base_Node_init);
         tolua_function(tolua_S,"initLayer",lua_ax_base_Node_initLayer);
+        tolua_function(tolua_S,"setMultipleTouchEnabled",lua_ax_base_Node_setMultipleTouchEnabled);
+        tolua_function(tolua_S,"isMultipleTouchEnabled",lua_ax_base_Node_isMultipleTouchEnabled);
         tolua_function(tolua_S,"setPhysicsBody",lua_ax_base_Node_setPhysicsBody);
         tolua_function(tolua_S,"getPhysicsBody",lua_ax_base_Node_getPhysicsBody);
         tolua_function(tolua_S,"create", lua_ax_base_Node_create);
@@ -29479,7 +29648,7 @@ int lua_ax_base_ActionFloat_initWithDuration(lua_State* tolua_S)
         double arg0;
         double arg1;
         double arg2;
-        std::function<void (float)> arg3;
+        std::function<void (double)> arg3;
 
         ok &= luaval_to_number(tolua_S, 2,&arg0, "ax.ActionFloat:initWithDuration");
 
@@ -29531,7 +29700,7 @@ int lua_ax_base_ActionFloat_create(lua_State* tolua_S)
         double arg0;
         double arg1;
         double arg2;
-        std::function<void (float)> arg3;
+        std::function<void (double)> arg3;
         ok &= luaval_to_number(tolua_S, 2,&arg0, "ax.ActionFloat:create");
         ok &= luaval_to_number(tolua_S, 3,&arg1, "ax.ActionFloat:create");
         ok &= luaval_to_number(tolua_S, 4,&arg2, "ax.ActionFloat:create");
@@ -35207,6 +35376,103 @@ int lua_ax_base_EventDispatcher_hasEventListener(lua_State* tolua_S)
 
     return 0;
 }
+int lua_ax_base_EventDispatcher_setGlobalMultiTouchEnabled(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::EventDispatcher* cobj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"ax.EventDispatcher",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (ax::EventDispatcher*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!cobj)
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_base_EventDispatcher_setGlobalMultiTouchEnabled'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        bool arg0;
+
+        ok &= luaval_to_boolean(tolua_S, 2,&arg0, "ax.EventDispatcher:setGlobalMultiTouchEnabled");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_EventDispatcher_setGlobalMultiTouchEnabled'", nullptr);
+            return 0;
+        }
+        cobj->setGlobalMultiTouchEnabled(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "ax.EventDispatcher:setGlobalMultiTouchEnabled",argc, 1);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_base_EventDispatcher_setGlobalMultiTouchEnabled'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_ax_base_EventDispatcher_isGlobalMultiTouchEnabled(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::EventDispatcher* cobj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"ax.EventDispatcher",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (ax::EventDispatcher*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!cobj)
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_base_EventDispatcher_isGlobalMultiTouchEnabled'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_EventDispatcher_isGlobalMultiTouchEnabled'", nullptr);
+            return 0;
+        }
+        auto&& ret = cobj->isGlobalMultiTouchEnabled();
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "ax.EventDispatcher:isGlobalMultiTouchEnabled",argc, 0);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_base_EventDispatcher_isGlobalMultiTouchEnabled'.",&tolua_err);
+#endif
+
+    return 0;
+}
 int lua_ax_base_EventDispatcher_constructor(lua_State* tolua_S)
 {
     int argc = 0;
@@ -35273,6 +35539,8 @@ int lua_register_ax_base_EventDispatcher(lua_State* tolua_S)
         tolua_function(tolua_S,"dispatchEvent",lua_ax_base_EventDispatcher_dispatchEvent);
         tolua_function(tolua_S,"dispatchCustomEvent",lua_ax_base_EventDispatcher_dispatchCustomEvent);
         tolua_function(tolua_S,"hasEventListener",lua_ax_base_EventDispatcher_hasEventListener);
+        tolua_function(tolua_S,"setGlobalMultiTouchEnabled",lua_ax_base_EventDispatcher_setGlobalMultiTouchEnabled);
+        tolua_function(tolua_S,"isGlobalMultiTouchEnabled",lua_ax_base_EventDispatcher_isGlobalMultiTouchEnabled);
     tolua_endmodule(tolua_S);
     auto typeName = typeid(ax::EventDispatcher).name(); // rtti is literal storage
     g_luaType[reinterpret_cast<uintptr_t>(typeName)] = "ax.EventDispatcher";
@@ -54970,6 +55238,206 @@ int lua_ax_base_Label_getTextColor(lua_State* tolua_S)
 
     return 0;
 }
+int lua_ax_base_Label_setGradientColor(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::Label* cobj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"ax.Label",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (ax::Label*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!cobj)
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_base_Label_setGradientColor'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 2) 
+    {
+        ax::Color4B arg0;
+        int arg1;
+
+        ok &=luaval_to_color4b(tolua_S, 2, &arg0, "ax.Label:setGradientColor");
+
+        ok &= luaval_to_int32(tolua_S, 3,(int *)&arg1, "ax.Label:setGradientColor");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_Label_setGradientColor'", nullptr);
+            return 0;
+        }
+        cobj->setGradientColor(arg0, arg1);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "ax.Label:setGradientColor",argc, 2);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_base_Label_setGradientColor'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_ax_base_Label_enableGradientColor(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::Label* cobj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"ax.Label",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (ax::Label*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!cobj)
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_base_Label_enableGradientColor'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        bool arg0;
+
+        ok &= luaval_to_boolean(tolua_S, 2,&arg0, "ax.Label:enableGradientColor");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_Label_enableGradientColor'", nullptr);
+            return 0;
+        }
+        cobj->enableGradientColor(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "ax.Label:enableGradientColor",argc, 1);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_base_Label_enableGradientColor'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_ax_base_Label_getGradientColor(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::Label* cobj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"ax.Label",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (ax::Label*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!cobj)
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_base_Label_getGradientColor'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        int arg0;
+
+        ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0, "ax.Label:getGradientColor");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_Label_getGradientColor'", nullptr);
+            return 0;
+        }
+        auto&& ret = cobj->getGradientColor(arg0);
+        color4b_to_luaval(tolua_S, ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "ax.Label:getGradientColor",argc, 1);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_base_Label_getGradientColor'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_ax_base_Label_isEnableGradientColor(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::Label* cobj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"ax.Label",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (ax::Label*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!cobj)
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_base_Label_isEnableGradientColor'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_Label_isEnableGradientColor'", nullptr);
+            return 0;
+        }
+        auto&& ret = cobj->isEnableGradientColor();
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "ax.Label:isEnableGradientColor",argc, 0);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_base_Label_isEnableGradientColor'.",&tolua_err);
+#endif
+
+    return 0;
+}
 int lua_ax_base_Label_enableShadow(lua_State* tolua_S)
 {
     int argc = 0;
@@ -58226,6 +58694,10 @@ int lua_register_ax_base_Label(lua_State* tolua_S)
         tolua_function(tolua_S,"getStringLength",lua_ax_base_Label_getStringLength);
         tolua_function(tolua_S,"setTextColor",lua_ax_base_Label_setTextColor);
         tolua_function(tolua_S,"getTextColor",lua_ax_base_Label_getTextColor);
+        tolua_function(tolua_S,"setGradientColor",lua_ax_base_Label_setGradientColor);
+        tolua_function(tolua_S,"enableGradientColor",lua_ax_base_Label_enableGradientColor);
+        tolua_function(tolua_S,"getGradientColor",lua_ax_base_Label_getGradientColor);
+        tolua_function(tolua_S,"isEnableGradientColor",lua_ax_base_Label_isEnableGradientColor);
         tolua_function(tolua_S,"enableShadow",lua_ax_base_Label_enableShadow);
         tolua_function(tolua_S,"enableOutline",lua_ax_base_Label_enableOutline);
         tolua_function(tolua_S,"enableGlow",lua_ax_base_Label_enableGlow);
@@ -60316,6 +60788,109 @@ int lua_ax_base_Sprite_getResourceName(lua_State* tolua_S)
 
     return 0;
 }
+int lua_ax_base_Sprite_setGradientColor(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::Sprite* cobj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"ax.Sprite",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (ax::Sprite*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!cobj)
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_base_Sprite_setGradientColor'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 2) 
+    {
+        ax::Color4B arg0;
+        int arg1;
+
+        ok &=luaval_to_color4b(tolua_S, 2, &arg0, "ax.Sprite:setGradientColor");
+
+        ok &= luaval_to_int32(tolua_S, 3,(int *)&arg1, "ax.Sprite:setGradientColor");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_Sprite_setGradientColor'", nullptr);
+            return 0;
+        }
+        cobj->setGradientColor(arg0, arg1);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "ax.Sprite:setGradientColor",argc, 2);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_base_Sprite_setGradientColor'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_ax_base_Sprite_enableGradientColor(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::Sprite* cobj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"ax.Sprite",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (ax::Sprite*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!cobj)
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_base_Sprite_enableGradientColor'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        bool arg0;
+
+        ok &= luaval_to_boolean(tolua_S, 2,&arg0, "ax.Sprite:enableGradientColor");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_Sprite_enableGradientColor'", nullptr);
+            return 0;
+        }
+        cobj->enableGradientColor(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "ax.Sprite:enableGradientColor",argc, 1);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_base_Sprite_enableGradientColor'.",&tolua_err);
+#endif
+
+    return 0;
+}
 int lua_ax_base_Sprite_initWithTexture(lua_State* tolua_S)
 {
     int argc = 0;
@@ -60996,6 +61571,8 @@ int lua_register_ax_base_Sprite(lua_State* tolua_S)
         tolua_function(tolua_S,"getBlendFunc",lua_ax_base_Sprite_getBlendFunc);
         tolua_function(tolua_S,"getResourceType",lua_ax_base_Sprite_getResourceType);
         tolua_function(tolua_S,"getResourceName",lua_ax_base_Sprite_getResourceName);
+        tolua_function(tolua_S,"setGradientColor",lua_ax_base_Sprite_setGradientColor);
+        tolua_function(tolua_S,"enableGradientColor",lua_ax_base_Sprite_enableGradientColor);
         tolua_function(tolua_S,"initWithTexture",lua_ax_base_Sprite_initWithTexture);
         tolua_function(tolua_S,"initWithSpriteFrame",lua_ax_base_Sprite_initWithSpriteFrame);
         tolua_function(tolua_S,"initWithSpriteFrameName",lua_ax_base_Sprite_initWithSpriteFrameName);
@@ -102660,6 +103237,53 @@ int lua_ax_base_TextureCache_renameTextureWithKey(lua_State* tolua_S)
 
     return 0;
 }
+int lua_ax_base_TextureCache_getTextures(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::TextureCache* cobj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"ax.TextureCache",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (ax::TextureCache*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!cobj)
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_base_TextureCache_getTextures'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_TextureCache_getTextures'", nullptr);
+            return 0;
+        }
+        auto&& ret = cobj->getTextures();
+        ccvector_std_string_to_luaval(tolua_S, ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "ax.TextureCache:getTextures",argc, 0);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_base_TextureCache_getTextures'.",&tolua_err);
+#endif
+
+    return 0;
+}
 int lua_ax_base_TextureCache_setETC1AlphaFileSuffix(lua_State* tolua_S)
 {
     int argc = 0;
@@ -102796,6 +103420,7 @@ int lua_register_ax_base_TextureCache(lua_State* tolua_S)
         tolua_function(tolua_S,"waitForQuit",lua_ax_base_TextureCache_waitForQuit);
         tolua_function(tolua_S,"getTextureFilePath",lua_ax_base_TextureCache_getTextureFilePath);
         tolua_function(tolua_S,"renameTextureWithKey",lua_ax_base_TextureCache_renameTextureWithKey);
+        tolua_function(tolua_S,"getTextures",lua_ax_base_TextureCache_getTextures);
         tolua_function(tolua_S,"setETC1AlphaFileSuffix", lua_ax_base_TextureCache_setETC1AlphaFileSuffix);
         tolua_function(tolua_S,"getETC1AlphaFileSuffix", lua_ax_base_TextureCache_getETC1AlphaFileSuffix);
     tolua_endmodule(tolua_S);

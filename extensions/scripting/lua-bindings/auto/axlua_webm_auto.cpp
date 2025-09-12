@@ -1394,8 +1394,8 @@ TOLUA_API int register_all_ax_webm(lua_State* tolua_S)
 {
 	tolua_open(tolua_S);
 	
-	tolua_module(tolua_S,"fgui",0);
-	tolua_beginmodule(tolua_S,"fgui");
+	tolua_module(tolua_S,"ax",0);
+	tolua_beginmodule(tolua_S,"ax");
 
 	lua_register_ax_webm_Webm(tolua_S);
 
