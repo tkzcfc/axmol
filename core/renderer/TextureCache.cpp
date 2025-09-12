@@ -809,6 +809,17 @@ void TextureCache::renameTextureWithKey(std::string_view srcName, std::string_vi
     }
 }
 
+std::vector<std::string> TextureCache::getTextures()
+{
+    std::vector<std::string> names;
+    names.reserve(_textures.size());
+
+    for (auto&& it : _textures)
+        names.push_back(it.first);
+
+    return names;
+}
+
 #if AX_ENABLE_CACHE_TEXTURE_DATA
 
 std::list<VolatileTexture*> VolatileTextureMgr::_textures;

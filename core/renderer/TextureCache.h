@@ -220,6 +220,8 @@ public:
      */
     void renameTextureWithKey(std::string_view srcName, std::string_view dstName);
 
+    std::vector<std::string> getTextures();
+
 private:
     void addImageAsyncCallBack(float dt);
     void loadImage();

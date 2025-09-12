@@ -30,16 +30,12 @@ int luaReg_imgui_imguiImGuiWindowFlags(lua_State* lua_S)
 	LUA_ENUM_ENTRY("NoNav", ImGuiWindowFlags_::ImGuiWindowFlags_NoNav);
 	LUA_ENUM_ENTRY("NoDecoration", ImGuiWindowFlags_::ImGuiWindowFlags_NoDecoration);
 	LUA_ENUM_ENTRY("NoInputs", ImGuiWindowFlags_::ImGuiWindowFlags_NoInputs);
+	LUA_ENUM_ENTRY("DockNodeHost", ImGuiWindowFlags_::ImGuiWindowFlags_DockNodeHost);
 	LUA_ENUM_ENTRY("ChildWindow", ImGuiWindowFlags_::ImGuiWindowFlags_ChildWindow);
 	LUA_ENUM_ENTRY("Tooltip", ImGuiWindowFlags_::ImGuiWindowFlags_Tooltip);
 	LUA_ENUM_ENTRY("Popup", ImGuiWindowFlags_::ImGuiWindowFlags_Popup);
 	LUA_ENUM_ENTRY("Modal", ImGuiWindowFlags_::ImGuiWindowFlags_Modal);
 	LUA_ENUM_ENTRY("ChildMenu", ImGuiWindowFlags_::ImGuiWindowFlags_ChildMenu);
-    LUA_ENUM_ENTRY("DockNodeHost", ImGuiWindowFlags_::ImGuiWindowFlags_DockNodeHost);
-#ifndef IMGUI_DISABLE_OBSOLETE_FUNCTIONS
-    LUA_ENUM_ENTRY("NavFlattened", ImGuiWindowFlags_::ImGuiWindowFlags_NavFlattened);
-    LUA_ENUM_ENTRY("AlwaysUseWindowPadding", ImGuiWindowFlags_::ImGuiWindowFlags_AlwaysUseWindowPadding);
-#endif
 	LUA_ENUM_END();
 	LUA_ENTRY_END(1);
 	return 0;
@@ -51,26 +47,28 @@ int luaReg_imgui_imguiImGuiInputTextFlags(lua_State* lua_S)
 	LUA_ENUM_ENTRY("None", ImGuiInputTextFlags_::ImGuiInputTextFlags_None);
 	LUA_ENUM_ENTRY("CharsDecimal", ImGuiInputTextFlags_::ImGuiInputTextFlags_CharsDecimal);
 	LUA_ENUM_ENTRY("CharsHexadecimal", ImGuiInputTextFlags_::ImGuiInputTextFlags_CharsHexadecimal);
+	LUA_ENUM_ENTRY("CharsScientific", ImGuiInputTextFlags_::ImGuiInputTextFlags_CharsScientific);
 	LUA_ENUM_ENTRY("CharsUppercase", ImGuiInputTextFlags_::ImGuiInputTextFlags_CharsUppercase);
 	LUA_ENUM_ENTRY("CharsNoBlank", ImGuiInputTextFlags_::ImGuiInputTextFlags_CharsNoBlank);
-	LUA_ENUM_ENTRY("AutoSelectAll", ImGuiInputTextFlags_::ImGuiInputTextFlags_AutoSelectAll);
+	LUA_ENUM_ENTRY("AllowTabInput", ImGuiInputTextFlags_::ImGuiInputTextFlags_AllowTabInput);
 	LUA_ENUM_ENTRY("EnterReturnsTrue", ImGuiInputTextFlags_::ImGuiInputTextFlags_EnterReturnsTrue);
+	LUA_ENUM_ENTRY("EscapeClearsAll", ImGuiInputTextFlags_::ImGuiInputTextFlags_EscapeClearsAll);
+	LUA_ENUM_ENTRY("CtrlEnterForNewLine", ImGuiInputTextFlags_::ImGuiInputTextFlags_CtrlEnterForNewLine);
+	LUA_ENUM_ENTRY("ReadOnly", ImGuiInputTextFlags_::ImGuiInputTextFlags_ReadOnly);
+	LUA_ENUM_ENTRY("Password", ImGuiInputTextFlags_::ImGuiInputTextFlags_Password);
+	LUA_ENUM_ENTRY("AlwaysOverwrite", ImGuiInputTextFlags_::ImGuiInputTextFlags_AlwaysOverwrite);
+	LUA_ENUM_ENTRY("AutoSelectAll", ImGuiInputTextFlags_::ImGuiInputTextFlags_AutoSelectAll);
+	LUA_ENUM_ENTRY("ParseEmptyRefVal", ImGuiInputTextFlags_::ImGuiInputTextFlags_ParseEmptyRefVal);
+	LUA_ENUM_ENTRY("DisplayEmptyRefVal", ImGuiInputTextFlags_::ImGuiInputTextFlags_DisplayEmptyRefVal);
+	LUA_ENUM_ENTRY("NoHorizontalScroll", ImGuiInputTextFlags_::ImGuiInputTextFlags_NoHorizontalScroll);
+	LUA_ENUM_ENTRY("NoUndoRedo", ImGuiInputTextFlags_::ImGuiInputTextFlags_NoUndoRedo);
+	LUA_ENUM_ENTRY("ElideLeft", ImGuiInputTextFlags_::ImGuiInputTextFlags_ElideLeft);
 	LUA_ENUM_ENTRY("CallbackCompletion", ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackCompletion);
 	LUA_ENUM_ENTRY("CallbackHistory", ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackHistory);
 	LUA_ENUM_ENTRY("CallbackAlways", ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackAlways);
 	LUA_ENUM_ENTRY("CallbackCharFilter", ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackCharFilter);
-	LUA_ENUM_ENTRY("AllowTabInput", ImGuiInputTextFlags_::ImGuiInputTextFlags_AllowTabInput);
-	LUA_ENUM_ENTRY("CtrlEnterForNewLine", ImGuiInputTextFlags_::ImGuiInputTextFlags_CtrlEnterForNewLine);
-	LUA_ENUM_ENTRY("NoHorizontalScroll", ImGuiInputTextFlags_::ImGuiInputTextFlags_NoHorizontalScroll);
-	LUA_ENUM_ENTRY("AlwaysOverwrite", ImGuiInputTextFlags_::ImGuiInputTextFlags_AlwaysOverwrite);
-	LUA_ENUM_ENTRY("ReadOnly", ImGuiInputTextFlags_::ImGuiInputTextFlags_ReadOnly);
-	LUA_ENUM_ENTRY("Password", ImGuiInputTextFlags_::ImGuiInputTextFlags_Password);
-	LUA_ENUM_ENTRY("NoUndoRedo", ImGuiInputTextFlags_::ImGuiInputTextFlags_NoUndoRedo);
-	LUA_ENUM_ENTRY("CharsScientific", ImGuiInputTextFlags_::ImGuiInputTextFlags_CharsScientific);
 	LUA_ENUM_ENTRY("CallbackResize", ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackResize);
 	LUA_ENUM_ENTRY("CallbackEdit", ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackEdit);
-	LUA_ENUM_ENTRY("EscapeClearsAll", ImGuiInputTextFlags_::ImGuiInputTextFlags_EscapeClearsAll);
-	//LUA_ENUM_ENTRY("AlwaysInsertMode", ImGuiInputTextFlags_::ImGuiInputTextFlags_AlwaysInsertMode);
 	LUA_ENUM_END();
 	LUA_ENTRY_END(1);
 	return 0;
@@ -82,6 +80,7 @@ int luaReg_imgui_imguiImGuiTreeNodeFlags(lua_State* lua_S)
 	LUA_ENUM_ENTRY("None", ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_None);
 	LUA_ENUM_ENTRY("Selected", ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_Selected);
 	LUA_ENUM_ENTRY("Framed", ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_Framed);
+	LUA_ENUM_ENTRY("AllowOverlap", ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_AllowOverlap);
 	LUA_ENUM_ENTRY("NoTreePushOnOpen", ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_NoTreePushOnOpen);
 	LUA_ENUM_ENTRY("NoAutoOpenOnLog", ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_NoAutoOpenOnLog);
 	LUA_ENUM_ENTRY("DefaultOpen", ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_DefaultOpen);
@@ -92,12 +91,14 @@ int luaReg_imgui_imguiImGuiTreeNodeFlags(lua_State* lua_S)
 	LUA_ENUM_ENTRY("FramePadding", ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_FramePadding);
 	LUA_ENUM_ENTRY("SpanAvailWidth", ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_SpanAvailWidth);
 	LUA_ENUM_ENTRY("SpanFullWidth", ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_SpanFullWidth);
+	LUA_ENUM_ENTRY("SpanLabelWidth", ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_SpanLabelWidth);
+	LUA_ENUM_ENTRY("SpanAllColumns", ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_SpanAllColumns);
+	LUA_ENUM_ENTRY("LabelSpanAllColumns", ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_LabelSpanAllColumns);
+	LUA_ENUM_ENTRY("NavLeftJumpsToParent", ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_NavLeftJumpsToParent);
 	LUA_ENUM_ENTRY("CollapsingHeader", ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_CollapsingHeader);
-#ifndef IMGUI_DISABLE_OBSOLETE_FUNCTIONS
-    LUA_ENUM_ENTRY("NavLeftJumpsBackHere", ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_NavLeftJumpsBackHere);
-    LUA_ENUM_ENTRY("SpanTextWidth", ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_SpanTextWidth);
-    LUA_ENUM_ENTRY("AllowItemOverlap", ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_AllowItemOverlap);
-#endif
+	LUA_ENUM_ENTRY("DrawLinesNone", ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_DrawLinesNone);
+	LUA_ENUM_ENTRY("DrawLinesFull", ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_DrawLinesFull);
+	LUA_ENUM_ENTRY("DrawLinesToNodes", ImGuiTreeNodeFlags_::ImGuiTreeNodeFlags_DrawLinesToNodes);
 	LUA_ENUM_END();
 	LUA_ENTRY_END(1);
 	return 0;
@@ -112,6 +113,7 @@ int luaReg_imgui_imguiImGuiPopupFlags(lua_State* lua_S)
 	LUA_ENUM_ENTRY("MouseButtonMiddle", ImGuiPopupFlags_::ImGuiPopupFlags_MouseButtonMiddle);
 	LUA_ENUM_ENTRY("MouseButtonMask_", ImGuiPopupFlags_::ImGuiPopupFlags_MouseButtonMask_);
 	LUA_ENUM_ENTRY("MouseButtonDefault_", ImGuiPopupFlags_::ImGuiPopupFlags_MouseButtonDefault_);
+	LUA_ENUM_ENTRY("NoReopen", ImGuiPopupFlags_::ImGuiPopupFlags_NoReopen);
 	LUA_ENUM_ENTRY("NoOpenOverExistingPopup", ImGuiPopupFlags_::ImGuiPopupFlags_NoOpenOverExistingPopup);
 	LUA_ENUM_ENTRY("NoOpenOverItems", ImGuiPopupFlags_::ImGuiPopupFlags_NoOpenOverItems);
 	LUA_ENUM_ENTRY("AnyPopupId", ImGuiPopupFlags_::ImGuiPopupFlags_AnyPopupId);
@@ -126,13 +128,12 @@ int luaReg_imgui_imguiImGuiSelectableFlags(lua_State* lua_S)
 	LUA_ENTRY("imgui");
 	LUA_ENUM_DEF("ImGuiSelectableFlags");
 	LUA_ENUM_ENTRY("None", ImGuiSelectableFlags_::ImGuiSelectableFlags_None);
+	LUA_ENUM_ENTRY("NoAutoClosePopups", ImGuiSelectableFlags_::ImGuiSelectableFlags_NoAutoClosePopups);
 	LUA_ENUM_ENTRY("SpanAllColumns", ImGuiSelectableFlags_::ImGuiSelectableFlags_SpanAllColumns);
 	LUA_ENUM_ENTRY("AllowDoubleClick", ImGuiSelectableFlags_::ImGuiSelectableFlags_AllowDoubleClick);
-    LUA_ENUM_ENTRY("Disabled", ImGuiSelectableFlags_::ImGuiSelectableFlags_Disabled);
-#ifndef IMGUI_DISABLE_OBSOLETE_FUNCTIONS
-    LUA_ENUM_ENTRY("DontClosePopups", ImGuiSelectableFlags_::ImGuiSelectableFlags_DontClosePopups);
-    LUA_ENUM_ENTRY("AllowItemOverlap", ImGuiSelectableFlags_::ImGuiSelectableFlags_AllowItemOverlap);
-#endif
+	LUA_ENUM_ENTRY("Disabled", ImGuiSelectableFlags_::ImGuiSelectableFlags_Disabled);
+	LUA_ENUM_ENTRY("AllowOverlap", ImGuiSelectableFlags_::ImGuiSelectableFlags_AllowOverlap);
+	LUA_ENUM_ENTRY("Highlight", ImGuiSelectableFlags_::ImGuiSelectableFlags_Highlight);
 	LUA_ENUM_END();
 	LUA_ENTRY_END(1);
 	return 0;
@@ -149,6 +150,7 @@ int luaReg_imgui_imguiImGuiComboFlags(lua_State* lua_S)
 	LUA_ENUM_ENTRY("HeightLargest", ImGuiComboFlags_::ImGuiComboFlags_HeightLargest);
 	LUA_ENUM_ENTRY("NoArrowButton", ImGuiComboFlags_::ImGuiComboFlags_NoArrowButton);
 	LUA_ENUM_ENTRY("NoPreview", ImGuiComboFlags_::ImGuiComboFlags_NoPreview);
+	LUA_ENUM_ENTRY("WidthFitPreview", ImGuiComboFlags_::ImGuiComboFlags_WidthFitPreview);
 	LUA_ENUM_ENTRY("HeightMask_", ImGuiComboFlags_::ImGuiComboFlags_HeightMask_);
 	LUA_ENUM_END();
 	LUA_ENTRY_END(1);
@@ -165,6 +167,7 @@ int luaReg_imgui_imguiImGuiTabBarFlags(lua_State* lua_S)
 	LUA_ENUM_ENTRY("NoCloseWithMiddleMouseButton", ImGuiTabBarFlags_::ImGuiTabBarFlags_NoCloseWithMiddleMouseButton);
 	LUA_ENUM_ENTRY("NoTabListScrollingButtons", ImGuiTabBarFlags_::ImGuiTabBarFlags_NoTabListScrollingButtons);
 	LUA_ENUM_ENTRY("NoTooltip", ImGuiTabBarFlags_::ImGuiTabBarFlags_NoTooltip);
+	LUA_ENUM_ENTRY("DrawSelectedOverline", ImGuiTabBarFlags_::ImGuiTabBarFlags_DrawSelectedOverline);
 	LUA_ENUM_ENTRY("FittingPolicyResizeDown", ImGuiTabBarFlags_::ImGuiTabBarFlags_FittingPolicyResizeDown);
 	LUA_ENUM_ENTRY("FittingPolicyScroll", ImGuiTabBarFlags_::ImGuiTabBarFlags_FittingPolicyScroll);
 	LUA_ENUM_ENTRY("FittingPolicyMask_", ImGuiTabBarFlags_::ImGuiTabBarFlags_FittingPolicyMask_);
@@ -186,6 +189,7 @@ int luaReg_imgui_imguiImGuiTabItemFlags(lua_State* lua_S)
 	LUA_ENUM_ENTRY("NoReorder", ImGuiTabItemFlags_::ImGuiTabItemFlags_NoReorder);
 	LUA_ENUM_ENTRY("Leading", ImGuiTabItemFlags_::ImGuiTabItemFlags_Leading);
 	LUA_ENUM_ENTRY("Trailing", ImGuiTabItemFlags_::ImGuiTabItemFlags_Trailing);
+	LUA_ENUM_ENTRY("NoAssumedClosure", ImGuiTabItemFlags_::ImGuiTabItemFlags_NoAssumedClosure);
 	LUA_ENUM_END();
 	LUA_ENTRY_END(1);
 	return 0;
@@ -229,6 +233,7 @@ int luaReg_imgui_imguiImGuiTableFlags(lua_State* lua_S)
 	LUA_ENUM_ENTRY("ScrollY", ImGuiTableFlags_::ImGuiTableFlags_ScrollY);
 	LUA_ENUM_ENTRY("SortMulti", ImGuiTableFlags_::ImGuiTableFlags_SortMulti);
 	LUA_ENUM_ENTRY("SortTristate", ImGuiTableFlags_::ImGuiTableFlags_SortTristate);
+	LUA_ENUM_ENTRY("HighlightHoveredColumn", ImGuiTableFlags_::ImGuiTableFlags_HighlightHoveredColumn);
 	LUA_ENUM_ENTRY("SizingMask_", ImGuiTableFlags_::ImGuiTableFlags_SizingMask_);
 	LUA_ENUM_END();
 	LUA_ENTRY_END(1);
@@ -257,6 +262,7 @@ int luaReg_imgui_imguiImGuiTableColumnFlags(lua_State* lua_S)
 	LUA_ENUM_ENTRY("PreferSortDescending", ImGuiTableColumnFlags_::ImGuiTableColumnFlags_PreferSortDescending);
 	LUA_ENUM_ENTRY("IndentEnable", ImGuiTableColumnFlags_::ImGuiTableColumnFlags_IndentEnable);
 	LUA_ENUM_ENTRY("IndentDisable", ImGuiTableColumnFlags_::ImGuiTableColumnFlags_IndentDisable);
+	LUA_ENUM_ENTRY("AngledHeader", ImGuiTableColumnFlags_::ImGuiTableColumnFlags_AngledHeader);
 	LUA_ENUM_ENTRY("IsEnabled", ImGuiTableColumnFlags_::ImGuiTableColumnFlags_IsEnabled);
 	LUA_ENUM_ENTRY("IsVisible", ImGuiTableColumnFlags_::ImGuiTableColumnFlags_IsVisible);
 	LUA_ENUM_ENTRY("IsSorted", ImGuiTableColumnFlags_::ImGuiTableColumnFlags_IsSorted);
@@ -282,11 +288,11 @@ int luaReg_imgui_imguiImGuiTableRowFlags(lua_State* lua_S)
 int luaReg_imgui_imguiImGuiTableBgTarget(lua_State* lua_S)
 {
 	LUA_ENTRY("imgui");
-	LUA_ENUM_DEF("ImGuiTableBgTarget");
-	LUA_ENUM_ENTRY("None", ImGuiTableBgTarget_::ImGuiTableBgTarget_None);
-	LUA_ENUM_ENTRY("RowBg0", ImGuiTableBgTarget_::ImGuiTableBgTarget_RowBg0);
-	LUA_ENUM_ENTRY("RowBg1", ImGuiTableBgTarget_::ImGuiTableBgTarget_RowBg1);
-	LUA_ENUM_ENTRY("CellBg", ImGuiTableBgTarget_::ImGuiTableBgTarget_CellBg);
+    LUA_ENUM_DEF("ImGuiTableBgTarget");
+    LUA_ENUM_ENTRY("None", ImGuiTableBgTarget_::ImGuiTableBgTarget_None);
+    LUA_ENUM_ENTRY("RowBg0", ImGuiTableBgTarget_::ImGuiTableBgTarget_RowBg0);
+    LUA_ENUM_ENTRY("RowBg1", ImGuiTableBgTarget_::ImGuiTableBgTarget_RowBg1);
+    LUA_ENUM_ENTRY("CellBg", ImGuiTableBgTarget_::ImGuiTableBgTarget_CellBg);
 	LUA_ENUM_END();
 	LUA_ENTRY_END(1);
 	return 0;
@@ -318,13 +324,18 @@ int luaReg_imgui_imguiImGuiHoveredFlags(lua_State* lua_S)
 	LUA_ENUM_ENTRY("DockHierarchy", ImGuiHoveredFlags_::ImGuiHoveredFlags_DockHierarchy);
 	LUA_ENUM_ENTRY("AllowWhenBlockedByPopup", ImGuiHoveredFlags_::ImGuiHoveredFlags_AllowWhenBlockedByPopup);
 	LUA_ENUM_ENTRY("AllowWhenBlockedByActiveItem", ImGuiHoveredFlags_::ImGuiHoveredFlags_AllowWhenBlockedByActiveItem);
-	LUA_ENUM_ENTRY("AllowWhenOverlapped", ImGuiHoveredFlags_::ImGuiHoveredFlags_AllowWhenOverlapped);
+	LUA_ENUM_ENTRY("AllowWhenOverlappedByItem", ImGuiHoveredFlags_::ImGuiHoveredFlags_AllowWhenOverlappedByItem);
+	LUA_ENUM_ENTRY("AllowWhenOverlappedByWindow", ImGuiHoveredFlags_::ImGuiHoveredFlags_AllowWhenOverlappedByWindow);
 	LUA_ENUM_ENTRY("AllowWhenDisabled", ImGuiHoveredFlags_::ImGuiHoveredFlags_AllowWhenDisabled);
 	LUA_ENUM_ENTRY("NoNavOverride", ImGuiHoveredFlags_::ImGuiHoveredFlags_NoNavOverride);
+	LUA_ENUM_ENTRY("AllowWhenOverlapped", ImGuiHoveredFlags_::ImGuiHoveredFlags_AllowWhenOverlapped);
 	LUA_ENUM_ENTRY("RectOnly", ImGuiHoveredFlags_::ImGuiHoveredFlags_RectOnly);
 	LUA_ENUM_ENTRY("RootAndChildWindows", ImGuiHoveredFlags_::ImGuiHoveredFlags_RootAndChildWindows);
-	LUA_ENUM_ENTRY("DelayNormal", ImGuiHoveredFlags_::ImGuiHoveredFlags_DelayNormal);
+	LUA_ENUM_ENTRY("ForTooltip", ImGuiHoveredFlags_::ImGuiHoveredFlags_ForTooltip);
+	LUA_ENUM_ENTRY("Stationary", ImGuiHoveredFlags_::ImGuiHoveredFlags_Stationary);
+	LUA_ENUM_ENTRY("DelayNone", ImGuiHoveredFlags_::ImGuiHoveredFlags_DelayNone);
 	LUA_ENUM_ENTRY("DelayShort", ImGuiHoveredFlags_::ImGuiHoveredFlags_DelayShort);
+	LUA_ENUM_ENTRY("DelayNormal", ImGuiHoveredFlags_::ImGuiHoveredFlags_DelayNormal);
 	LUA_ENUM_ENTRY("NoSharedDelay", ImGuiHoveredFlags_::ImGuiHoveredFlags_NoSharedDelay);
 	LUA_ENUM_END();
 	LUA_ENTRY_END(1);
@@ -335,14 +346,13 @@ int luaReg_imgui_imguiImGuiDockNodeFlags(lua_State* lua_S)
 	LUA_ENTRY("imgui");
 	LUA_ENUM_DEF("ImGuiDockNodeFlags");
 	LUA_ENUM_ENTRY("None", ImGuiDockNodeFlags_::ImGuiDockNodeFlags_None);
-    LUA_ENUM_ENTRY("KeepAliveOnly", ImGuiDockNodeFlags_::ImGuiDockNodeFlags_KeepAliveOnly);
-#ifndef IMGUI_DISABLE_OBSOLETE_FUNCTIONS
-    LUA_ENUM_ENTRY("NoDockingInCentralNode", ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoDockingInCentralNode);
-    LUA_ENUM_ENTRY("NoSplit", ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoSplit);
-#endif
+	LUA_ENUM_ENTRY("KeepAliveOnly", ImGuiDockNodeFlags_::ImGuiDockNodeFlags_KeepAliveOnly);
+	LUA_ENUM_ENTRY("NoDockingOverCentralNode", ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoDockingOverCentralNode);
 	LUA_ENUM_ENTRY("PassthruCentralNode", ImGuiDockNodeFlags_::ImGuiDockNodeFlags_PassthruCentralNode);
+	LUA_ENUM_ENTRY("NoDockingSplit", ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoDockingSplit);
 	LUA_ENUM_ENTRY("NoResize", ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoResize);
 	LUA_ENUM_ENTRY("AutoHideTabBar", ImGuiDockNodeFlags_::ImGuiDockNodeFlags_AutoHideTabBar);
+	LUA_ENUM_ENTRY("NoUndocking", ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoUndocking);
 	LUA_ENUM_END();
 	LUA_ENTRY_END(1);
 	return 0;
@@ -357,9 +367,9 @@ int luaReg_imgui_imguiImGuiDragDropFlags(lua_State* lua_S)
 	LUA_ENUM_ENTRY("SourceNoHoldToOpenOthers", ImGuiDragDropFlags_::ImGuiDragDropFlags_SourceNoHoldToOpenOthers);
 	LUA_ENUM_ENTRY("SourceAllowNullID", ImGuiDragDropFlags_::ImGuiDragDropFlags_SourceAllowNullID);
 	LUA_ENUM_ENTRY("SourceExtern", ImGuiDragDropFlags_::ImGuiDragDropFlags_SourceExtern);
-#ifndef IMGUI_DISABLE_OBSOLETE_FUNCTIONS
-	LUA_ENUM_ENTRY("SourceAutoExpirePayload", ImGuiDragDropFlags_::ImGuiDragDropFlags_SourceAutoExpirePayload);
-#endif
+	LUA_ENUM_ENTRY("PayloadAutoExpire", ImGuiDragDropFlags_::ImGuiDragDropFlags_PayloadAutoExpire);
+	LUA_ENUM_ENTRY("PayloadNoCrossContext", ImGuiDragDropFlags_::ImGuiDragDropFlags_PayloadNoCrossContext);
+	LUA_ENUM_ENTRY("PayloadNoCrossProcess", ImGuiDragDropFlags_::ImGuiDragDropFlags_PayloadNoCrossProcess);
 	LUA_ENUM_ENTRY("AcceptBeforeDelivery", ImGuiDragDropFlags_::ImGuiDragDropFlags_AcceptBeforeDelivery);
 	LUA_ENUM_ENTRY("AcceptNoDrawDefaultRect", ImGuiDragDropFlags_::ImGuiDragDropFlags_AcceptNoDrawDefaultRect);
 	LUA_ENUM_ENTRY("AcceptNoPreviewTooltip", ImGuiDragDropFlags_::ImGuiDragDropFlags_AcceptNoPreviewTooltip);
@@ -382,6 +392,8 @@ int luaReg_imgui_imguiImGuiDataType(lua_State* lua_S)
 	LUA_ENUM_ENTRY("U64", ImGuiDataType_::ImGuiDataType_U64);
 	LUA_ENUM_ENTRY("Float", ImGuiDataType_::ImGuiDataType_Float);
 	LUA_ENUM_ENTRY("Double", ImGuiDataType_::ImGuiDataType_Double);
+	LUA_ENUM_ENTRY("Bool", ImGuiDataType_::ImGuiDataType_Bool);
+	LUA_ENUM_ENTRY("String", ImGuiDataType_::ImGuiDataType_String);
 	LUA_ENUM_ENTRY("COUNT", ImGuiDataType_::ImGuiDataType_COUNT);
 	LUA_ENUM_END();
 	LUA_ENTRY_END(1);
@@ -391,12 +403,12 @@ int luaReg_imgui_imguiImGuiDir(lua_State* lua_S)
 {
 	LUA_ENTRY("imgui");
 	LUA_ENUM_DEF("ImGuiDir");
-    LUA_ENUM_ENTRY("None", ImGuiDir::ImGuiDir_None);
-    LUA_ENUM_ENTRY("Left", ImGuiDir::ImGuiDir_Left);
-    LUA_ENUM_ENTRY("Right", ImGuiDir::ImGuiDir_Right);
-    LUA_ENUM_ENTRY("Up", ImGuiDir::ImGuiDir_Up);
-    LUA_ENUM_ENTRY("Down", ImGuiDir::ImGuiDir_Down);
-    LUA_ENUM_ENTRY("COUNT", ImGuiDir::ImGuiDir_COUNT);
+	LUA_ENUM_ENTRY("None", ImGuiDir::ImGuiDir_None);
+	LUA_ENUM_ENTRY("Left", ImGuiDir::ImGuiDir_Left);
+	LUA_ENUM_ENTRY("Right", ImGuiDir::ImGuiDir_Right);
+	LUA_ENUM_ENTRY("Up", ImGuiDir::ImGuiDir_Up);
+	LUA_ENUM_ENTRY("Down", ImGuiDir::ImGuiDir_Down);
+	LUA_ENUM_ENTRY("COUNT", ImGuiDir::ImGuiDir_COUNT);
 	LUA_ENUM_END();
 	LUA_ENTRY_END(1);
 	return 0;
@@ -417,6 +429,7 @@ int luaReg_imgui_imguiImGuiKey(lua_State* lua_S)
 	LUA_ENTRY("imgui");
 	LUA_ENUM_DEF("ImGuiKey");
 	LUA_ENUM_ENTRY("None", ImGuiKey::ImGuiKey_None);
+	LUA_ENUM_ENTRY("NamedKey_BEGIN", ImGuiKey::ImGuiKey_NamedKey_BEGIN);
 	LUA_ENUM_ENTRY("Tab", ImGuiKey::ImGuiKey_Tab);
 	LUA_ENUM_ENTRY("LeftArrow", ImGuiKey::ImGuiKey_LeftArrow);
 	LUA_ENUM_ENTRY("RightArrow", ImGuiKey::ImGuiKey_RightArrow);
@@ -489,6 +502,18 @@ int luaReg_imgui_imguiImGuiKey(lua_State* lua_S)
 	LUA_ENUM_ENTRY("F10", ImGuiKey::ImGuiKey_F10);
 	LUA_ENUM_ENTRY("F11", ImGuiKey::ImGuiKey_F11);
 	LUA_ENUM_ENTRY("F12", ImGuiKey::ImGuiKey_F12);
+	LUA_ENUM_ENTRY("F13", ImGuiKey::ImGuiKey_F13);
+	LUA_ENUM_ENTRY("F14", ImGuiKey::ImGuiKey_F14);
+	LUA_ENUM_ENTRY("F15", ImGuiKey::ImGuiKey_F15);
+	LUA_ENUM_ENTRY("F16", ImGuiKey::ImGuiKey_F16);
+	LUA_ENUM_ENTRY("F17", ImGuiKey::ImGuiKey_F17);
+	LUA_ENUM_ENTRY("F18", ImGuiKey::ImGuiKey_F18);
+	LUA_ENUM_ENTRY("F19", ImGuiKey::ImGuiKey_F19);
+	LUA_ENUM_ENTRY("F20", ImGuiKey::ImGuiKey_F20);
+	LUA_ENUM_ENTRY("F21", ImGuiKey::ImGuiKey_F21);
+	LUA_ENUM_ENTRY("F22", ImGuiKey::ImGuiKey_F22);
+	LUA_ENUM_ENTRY("F23", ImGuiKey::ImGuiKey_F23);
+	LUA_ENUM_ENTRY("F24", ImGuiKey::ImGuiKey_F24);
 	LUA_ENUM_ENTRY("Apostrophe", ImGuiKey::ImGuiKey_Apostrophe);
 	LUA_ENUM_ENTRY("Comma", ImGuiKey::ImGuiKey_Comma);
 	LUA_ENUM_ENTRY("Minus", ImGuiKey::ImGuiKey_Minus);
@@ -522,6 +547,9 @@ int luaReg_imgui_imguiImGuiKey(lua_State* lua_S)
 	LUA_ENUM_ENTRY("KeypadAdd", ImGuiKey::ImGuiKey_KeypadAdd);
 	LUA_ENUM_ENTRY("KeypadEnter", ImGuiKey::ImGuiKey_KeypadEnter);
 	LUA_ENUM_ENTRY("KeypadEqual", ImGuiKey::ImGuiKey_KeypadEqual);
+	LUA_ENUM_ENTRY("AppBack", ImGuiKey::ImGuiKey_AppBack);
+	LUA_ENUM_ENTRY("AppForward", ImGuiKey::ImGuiKey_AppForward);
+	LUA_ENUM_ENTRY("Oem102", ImGuiKey::ImGuiKey_Oem102);
 	LUA_ENUM_ENTRY("GamepadStart", ImGuiKey::ImGuiKey_GamepadStart);
 	LUA_ENUM_ENTRY("GamepadBack", ImGuiKey::ImGuiKey_GamepadBack);
 	LUA_ENUM_ENTRY("GamepadFaceLeft", ImGuiKey::ImGuiKey_GamepadFaceLeft);
@@ -557,26 +585,14 @@ int luaReg_imgui_imguiImGuiKey(lua_State* lua_S)
 	LUA_ENUM_ENTRY("ReservedForModShift", ImGuiKey::ImGuiKey_ReservedForModShift);
 	LUA_ENUM_ENTRY("ReservedForModAlt", ImGuiKey::ImGuiKey_ReservedForModAlt);
 	LUA_ENUM_ENTRY("ReservedForModSuper", ImGuiKey::ImGuiKey_ReservedForModSuper);
-	LUA_ENUM_ENTRY("ImGuiMod_None", ImGuiKey::ImGuiMod_None);
-	LUA_ENUM_ENTRY("ImGuiMod_Ctrl", ImGuiKey::ImGuiMod_Ctrl);
-	LUA_ENUM_ENTRY("ImGuiMod_Shift", ImGuiKey::ImGuiMod_Shift);
-	LUA_ENUM_ENTRY("ImGuiMod_Alt", ImGuiKey::ImGuiMod_Alt);
-	LUA_ENUM_ENTRY("ImGuiMod_Super", ImGuiKey::ImGuiMod_Super);
-	LUA_ENUM_ENTRY("ImGuiMod_Mask_", ImGuiKey::ImGuiMod_Mask_);
-	LUA_ENUM_ENTRY("NamedKey_BEGIN", ImGuiKey::ImGuiKey_NamedKey_BEGIN);
 	LUA_ENUM_ENTRY("NamedKey_END", ImGuiKey::ImGuiKey_NamedKey_END);
-    LUA_ENUM_ENTRY("NamedKey_COUNT", ImGuiKey::ImGuiKey_NamedKey_COUNT);
-#ifndef IMGUI_DISABLE_OBSOLETE_FUNCTIONS
-    LUA_ENUM_ENTRY("COUNT", ImGuiKey::ImGuiKey_COUNT);
-    LUA_ENUM_ENTRY("ImGuiMod_Shortcut", ImGuiKey::ImGuiMod_Shortcut);
-    LUA_ENUM_ENTRY("KeysData_SIZE", ImGuiKey::ImGuiKey_KeysData_SIZE);
-    LUA_ENUM_ENTRY("KeysData_OFFSET", ImGuiKey::ImGuiKey_KeysData_OFFSET);
-    LUA_ENUM_ENTRY("ModCtrl", ImGuiKey::ImGuiKey_ModCtrl);
-    LUA_ENUM_ENTRY("ModShift", ImGuiKey::ImGuiKey_ModShift);
-    LUA_ENUM_ENTRY("ModAlt", ImGuiKey::ImGuiKey_ModAlt);
-    LUA_ENUM_ENTRY("ModSuper", ImGuiKey::ImGuiKey_ModSuper);
-    LUA_ENUM_ENTRY("KeyPadEnter", ImGuiKey::ImGuiKey_KeyPadEnter);
-#endif
+	LUA_ENUM_ENTRY("NamedKey_COUNT", ImGuiKey::ImGuiKey_NamedKey_COUNT);
+	LUA_ENUM_ENTRY("None", ImGuiKey::ImGuiMod_None);
+	LUA_ENUM_ENTRY("Ctrl", ImGuiKey::ImGuiMod_Ctrl);
+	LUA_ENUM_ENTRY("Shift", ImGuiKey::ImGuiMod_Shift);
+	LUA_ENUM_ENTRY("Alt", ImGuiKey::ImGuiMod_Alt);
+	LUA_ENUM_ENTRY("Super", ImGuiKey::ImGuiMod_Super);
+	LUA_ENUM_ENTRY("Mask_", ImGuiKey::ImGuiMod_Mask_);
 	LUA_ENUM_END();
 	LUA_ENTRY_END(1);
 	return 0;
@@ -615,16 +631,11 @@ int luaReg_imgui_imguiImGuiConfigFlags(lua_State* lua_S)
 	LUA_ENUM_ENTRY("NavEnableGamepad", ImGuiConfigFlags_::ImGuiConfigFlags_NavEnableGamepad);
 	LUA_ENUM_ENTRY("NoMouse", ImGuiConfigFlags_::ImGuiConfigFlags_NoMouse);
 	LUA_ENUM_ENTRY("NoMouseCursorChange", ImGuiConfigFlags_::ImGuiConfigFlags_NoMouseCursorChange);
+	LUA_ENUM_ENTRY("NoKeyboard", ImGuiConfigFlags_::ImGuiConfigFlags_NoKeyboard);
 	LUA_ENUM_ENTRY("DockingEnable", ImGuiConfigFlags_::ImGuiConfigFlags_DockingEnable);
 	LUA_ENUM_ENTRY("ViewportsEnable", ImGuiConfigFlags_::ImGuiConfigFlags_ViewportsEnable);
 	LUA_ENUM_ENTRY("IsSRGB", ImGuiConfigFlags_::ImGuiConfigFlags_IsSRGB);
 	LUA_ENUM_ENTRY("IsTouchScreen", ImGuiConfigFlags_::ImGuiConfigFlags_IsTouchScreen);
-#ifndef IMGUI_DISABLE_OBSOLETE_FUNCTIONS
-    LUA_ENUM_ENTRY("NavEnableSetMousePos", ImGuiConfigFlags_::ImGuiConfigFlags_NavEnableSetMousePos);
-    LUA_ENUM_ENTRY("NavNoCaptureKeyboard", ImGuiConfigFlags_::ImGuiConfigFlags_NavNoCaptureKeyboard);
-    LUA_ENUM_ENTRY("DpiEnableScaleViewports", ImGuiConfigFlags_::ImGuiConfigFlags_DpiEnableScaleViewports);
-    LUA_ENUM_ENTRY("DpiEnableScaleFonts", ImGuiConfigFlags_::ImGuiConfigFlags_DpiEnableScaleFonts);
-#endif
 	LUA_ENUM_END();
 	LUA_ENTRY_END(1);
 	return 0;
@@ -638,6 +649,7 @@ int luaReg_imgui_imguiImGuiBackendFlags(lua_State* lua_S)
 	LUA_ENUM_ENTRY("HasMouseCursors", ImGuiBackendFlags_::ImGuiBackendFlags_HasMouseCursors);
 	LUA_ENUM_ENTRY("HasSetMousePos", ImGuiBackendFlags_::ImGuiBackendFlags_HasSetMousePos);
 	LUA_ENUM_ENTRY("RendererHasVtxOffset", ImGuiBackendFlags_::ImGuiBackendFlags_RendererHasVtxOffset);
+	LUA_ENUM_ENTRY("RendererHasTextures", ImGuiBackendFlags_::ImGuiBackendFlags_RendererHasTextures);
 	LUA_ENUM_ENTRY("PlatformHasViewports", ImGuiBackendFlags_::ImGuiBackendFlags_PlatformHasViewports);
 	LUA_ENUM_ENTRY("HasMouseHoveredViewport", ImGuiBackendFlags_::ImGuiBackendFlags_HasMouseHoveredViewport);
 	LUA_ENUM_ENTRY("RendererHasViewports", ImGuiBackendFlags_::ImGuiBackendFlags_RendererHasViewports);
@@ -682,8 +694,14 @@ int luaReg_imgui_imguiImGuiCol(lua_State* lua_S)
 	LUA_ENUM_ENTRY("ResizeGrip", ImGuiCol_::ImGuiCol_ResizeGrip);
 	LUA_ENUM_ENTRY("ResizeGripHovered", ImGuiCol_::ImGuiCol_ResizeGripHovered);
 	LUA_ENUM_ENTRY("ResizeGripActive", ImGuiCol_::ImGuiCol_ResizeGripActive);
-	LUA_ENUM_ENTRY("Tab", ImGuiCol_::ImGuiCol_Tab);
+	LUA_ENUM_ENTRY("InputTextCursor", ImGuiCol_::ImGuiCol_InputTextCursor);
 	LUA_ENUM_ENTRY("TabHovered", ImGuiCol_::ImGuiCol_TabHovered);
+	LUA_ENUM_ENTRY("Tab", ImGuiCol_::ImGuiCol_Tab);
+	LUA_ENUM_ENTRY("TabSelected", ImGuiCol_::ImGuiCol_TabSelected);
+	LUA_ENUM_ENTRY("TabSelectedOverline", ImGuiCol_::ImGuiCol_TabSelectedOverline);
+	LUA_ENUM_ENTRY("TabDimmed", ImGuiCol_::ImGuiCol_TabDimmed);
+	LUA_ENUM_ENTRY("TabDimmedSelected", ImGuiCol_::ImGuiCol_TabDimmedSelected);
+	LUA_ENUM_ENTRY("TabDimmedSelectedOverline", ImGuiCol_::ImGuiCol_TabDimmedSelectedOverline);
 	LUA_ENUM_ENTRY("DockingPreview", ImGuiCol_::ImGuiCol_DockingPreview);
 	LUA_ENUM_ENTRY("DockingEmptyBg", ImGuiCol_::ImGuiCol_DockingEmptyBg);
 	LUA_ENUM_ENTRY("PlotLines", ImGuiCol_::ImGuiCol_PlotLines);
@@ -695,18 +713,15 @@ int luaReg_imgui_imguiImGuiCol(lua_State* lua_S)
 	LUA_ENUM_ENTRY("TableBorderLight", ImGuiCol_::ImGuiCol_TableBorderLight);
 	LUA_ENUM_ENTRY("TableRowBg", ImGuiCol_::ImGuiCol_TableRowBg);
 	LUA_ENUM_ENTRY("TableRowBgAlt", ImGuiCol_::ImGuiCol_TableRowBgAlt);
+	LUA_ENUM_ENTRY("TextLink", ImGuiCol_::ImGuiCol_TextLink);
 	LUA_ENUM_ENTRY("TextSelectedBg", ImGuiCol_::ImGuiCol_TextSelectedBg);
+	LUA_ENUM_ENTRY("TreeLines", ImGuiCol_::ImGuiCol_TreeLines);
 	LUA_ENUM_ENTRY("DragDropTarget", ImGuiCol_::ImGuiCol_DragDropTarget);
+	LUA_ENUM_ENTRY("NavCursor", ImGuiCol_::ImGuiCol_NavCursor);
 	LUA_ENUM_ENTRY("NavWindowingHighlight", ImGuiCol_::ImGuiCol_NavWindowingHighlight);
 	LUA_ENUM_ENTRY("NavWindowingDimBg", ImGuiCol_::ImGuiCol_NavWindowingDimBg);
 	LUA_ENUM_ENTRY("ModalWindowDimBg", ImGuiCol_::ImGuiCol_ModalWindowDimBg);
 	LUA_ENUM_ENTRY("COUNT", ImGuiCol_::ImGuiCol_COUNT);
-#ifndef IMGUI_DISABLE_OBSOLETE_FUNCTIONS
-    LUA_ENUM_ENTRY("TabActive", ImGuiCol_::ImGuiCol_TabActive);
-    LUA_ENUM_ENTRY("TabUnfocused", ImGuiCol_::ImGuiCol_TabUnfocused);
-    LUA_ENUM_ENTRY("TabUnfocusedActive", ImGuiCol_::ImGuiCol_TabUnfocusedActive);
-    LUA_ENUM_ENTRY("NavHighlight", ImGuiCol_::ImGuiCol_NavHighlight);
-#endif
 	LUA_ENUM_END();
 	LUA_ENTRY_END(1);
 	return 0;
@@ -737,12 +752,21 @@ int luaReg_imgui_imguiImGuiStyleVar(lua_State* lua_S)
 	LUA_ENUM_ENTRY("ScrollbarRounding", ImGuiStyleVar_::ImGuiStyleVar_ScrollbarRounding);
 	LUA_ENUM_ENTRY("GrabMinSize", ImGuiStyleVar_::ImGuiStyleVar_GrabMinSize);
 	LUA_ENUM_ENTRY("GrabRounding", ImGuiStyleVar_::ImGuiStyleVar_GrabRounding);
+	LUA_ENUM_ENTRY("ImageBorderSize", ImGuiStyleVar_::ImGuiStyleVar_ImageBorderSize);
 	LUA_ENUM_ENTRY("TabRounding", ImGuiStyleVar_::ImGuiStyleVar_TabRounding);
+	LUA_ENUM_ENTRY("TabBorderSize", ImGuiStyleVar_::ImGuiStyleVar_TabBorderSize);
+	LUA_ENUM_ENTRY("TabBarBorderSize", ImGuiStyleVar_::ImGuiStyleVar_TabBarBorderSize);
+	LUA_ENUM_ENTRY("TabBarOverlineSize", ImGuiStyleVar_::ImGuiStyleVar_TabBarOverlineSize);
+	LUA_ENUM_ENTRY("TableAngledHeadersAngle", ImGuiStyleVar_::ImGuiStyleVar_TableAngledHeadersAngle);
+	LUA_ENUM_ENTRY("TableAngledHeadersTextAlign", ImGuiStyleVar_::ImGuiStyleVar_TableAngledHeadersTextAlign);
+	LUA_ENUM_ENTRY("TreeLinesSize", ImGuiStyleVar_::ImGuiStyleVar_TreeLinesSize);
+	LUA_ENUM_ENTRY("TreeLinesRounding", ImGuiStyleVar_::ImGuiStyleVar_TreeLinesRounding);
 	LUA_ENUM_ENTRY("ButtonTextAlign", ImGuiStyleVar_::ImGuiStyleVar_ButtonTextAlign);
 	LUA_ENUM_ENTRY("SelectableTextAlign", ImGuiStyleVar_::ImGuiStyleVar_SelectableTextAlign);
 	LUA_ENUM_ENTRY("SeparatorTextBorderSize", ImGuiStyleVar_::ImGuiStyleVar_SeparatorTextBorderSize);
 	LUA_ENUM_ENTRY("SeparatorTextAlign", ImGuiStyleVar_::ImGuiStyleVar_SeparatorTextAlign);
 	LUA_ENUM_ENTRY("SeparatorTextPadding", ImGuiStyleVar_::ImGuiStyleVar_SeparatorTextPadding);
+	LUA_ENUM_ENTRY("DockingSeparatorSize", ImGuiStyleVar_::ImGuiStyleVar_DockingSeparatorSize);
 	LUA_ENUM_ENTRY("COUNT", ImGuiStyleVar_::ImGuiStyleVar_COUNT);
 	LUA_ENUM_END();
 	LUA_ENTRY_END(1);
@@ -751,12 +775,12 @@ int luaReg_imgui_imguiImGuiStyleVar(lua_State* lua_S)
 int luaReg_imgui_imguiImGuiButtonFlags(lua_State* lua_S)
 {
 	LUA_ENTRY("imgui");
-	LUA_ENUM_DEF("ImGuiButtonFlags");
-	LUA_ENUM_ENTRY("None", ImGuiButtonFlags_::ImGuiButtonFlags_None);
-	LUA_ENUM_ENTRY("MouseButtonLeft", ImGuiButtonFlags_::ImGuiButtonFlags_MouseButtonLeft);
-	LUA_ENUM_ENTRY("MouseButtonRight", ImGuiButtonFlags_::ImGuiButtonFlags_MouseButtonRight);
-	LUA_ENUM_ENTRY("MouseButtonMiddle", ImGuiButtonFlags_::ImGuiButtonFlags_MouseButtonMiddle);
-	LUA_ENUM_ENTRY("MouseButtonMask_", ImGuiButtonFlags_::ImGuiButtonFlags_MouseButtonMask_);
+    LUA_ENUM_DEF("ImGuiButtonFlags");
+    LUA_ENUM_ENTRY("None", ImGuiButtonFlags_::ImGuiButtonFlags_None);
+    LUA_ENUM_ENTRY("MouseButtonLeft", ImGuiButtonFlags_::ImGuiButtonFlags_MouseButtonLeft);
+    LUA_ENUM_ENTRY("MouseButtonRight", ImGuiButtonFlags_::ImGuiButtonFlags_MouseButtonRight);
+    LUA_ENUM_ENTRY("MouseButtonMiddle", ImGuiButtonFlags_::ImGuiButtonFlags_MouseButtonMiddle);
+    LUA_ENUM_ENTRY("MouseButtonMask_", ImGuiButtonFlags_::ImGuiButtonFlags_MouseButtonMask_);
     LUA_ENUM_ENTRY("EnableNav", ImGuiButtonFlags_::ImGuiButtonFlags_EnableNav);
 	LUA_ENUM_END();
 	LUA_ENTRY_END(1);
@@ -777,11 +801,10 @@ int luaReg_imgui_imguiImGuiColorEditFlags(lua_State* lua_S)
 	LUA_ENUM_ENTRY("NoSidePreview", ImGuiColorEditFlags_::ImGuiColorEditFlags_NoSidePreview);
 	LUA_ENUM_ENTRY("NoDragDrop", ImGuiColorEditFlags_::ImGuiColorEditFlags_NoDragDrop);
 	LUA_ENUM_ENTRY("NoBorder", ImGuiColorEditFlags_::ImGuiColorEditFlags_NoBorder);
-	LUA_ENUM_ENTRY("AlphaBar", ImGuiColorEditFlags_::ImGuiColorEditFlags_AlphaBar);
-#ifndef IMGUI_DISABLE_OBSOLETE_FUNCTIONS
-	LUA_ENUM_ENTRY("AlphaPreview", ImGuiColorEditFlags_::ImGuiColorEditFlags_AlphaPreview);
-#endif
+	LUA_ENUM_ENTRY("AlphaOpaque", ImGuiColorEditFlags_::ImGuiColorEditFlags_AlphaOpaque);
+	LUA_ENUM_ENTRY("AlphaNoBg", ImGuiColorEditFlags_::ImGuiColorEditFlags_AlphaNoBg);
 	LUA_ENUM_ENTRY("AlphaPreviewHalf", ImGuiColorEditFlags_::ImGuiColorEditFlags_AlphaPreviewHalf);
+	LUA_ENUM_ENTRY("AlphaBar", ImGuiColorEditFlags_::ImGuiColorEditFlags_AlphaBar);
 	LUA_ENUM_ENTRY("HDR", ImGuiColorEditFlags_::ImGuiColorEditFlags_HDR);
 	LUA_ENUM_ENTRY("DisplayRGB", ImGuiColorEditFlags_::ImGuiColorEditFlags_DisplayRGB);
 	LUA_ENUM_ENTRY("DisplayHSV", ImGuiColorEditFlags_::ImGuiColorEditFlags_DisplayHSV);
@@ -793,6 +816,7 @@ int luaReg_imgui_imguiImGuiColorEditFlags(lua_State* lua_S)
 	LUA_ENUM_ENTRY("InputRGB", ImGuiColorEditFlags_::ImGuiColorEditFlags_InputRGB);
 	LUA_ENUM_ENTRY("InputHSV", ImGuiColorEditFlags_::ImGuiColorEditFlags_InputHSV);
 	LUA_ENUM_ENTRY("DefaultOptions_", ImGuiColorEditFlags_::ImGuiColorEditFlags_DefaultOptions_);
+	LUA_ENUM_ENTRY("AlphaMask_", ImGuiColorEditFlags_::ImGuiColorEditFlags_AlphaMask_);
 	LUA_ENUM_ENTRY("DisplayMask_", ImGuiColorEditFlags_::ImGuiColorEditFlags_DisplayMask_);
 	LUA_ENUM_ENTRY("DataTypeMask_", ImGuiColorEditFlags_::ImGuiColorEditFlags_DataTypeMask_);
 	LUA_ENUM_ENTRY("PickerMask_", ImGuiColorEditFlags_::ImGuiColorEditFlags_PickerMask_);
@@ -804,14 +828,17 @@ int luaReg_imgui_imguiImGuiColorEditFlags(lua_State* lua_S)
 int luaReg_imgui_imguiImGuiSliderFlags(lua_State* lua_S)
 {
 	LUA_ENTRY("imgui");
-	LUA_ENUM_DEF("ImGuiSliderFlags");
-	LUA_ENUM_ENTRY("None", ImGuiSliderFlags_::ImGuiSliderFlags_None);
-	LUA_ENUM_ENTRY("AlwaysClamp", ImGuiSliderFlags_::ImGuiSliderFlags_AlwaysClamp);
-	LUA_ENUM_ENTRY("Logarithmic", ImGuiSliderFlags_::ImGuiSliderFlags_Logarithmic);
-	LUA_ENUM_ENTRY("NoRoundToFormat", ImGuiSliderFlags_::ImGuiSliderFlags_NoRoundToFormat);
-	LUA_ENUM_ENTRY("NoInput", ImGuiSliderFlags_::ImGuiSliderFlags_NoInput);
-	LUA_ENUM_ENTRY("InvalidMask_", ImGuiSliderFlags_::ImGuiSliderFlags_InvalidMask_);
-	LUA_ENUM_ENTRY("ClampOnInput", ImGuiSliderFlags_::ImGuiSliderFlags_ClampOnInput);
+    LUA_ENUM_DEF("ImGuiSliderFlags");
+    LUA_ENUM_ENTRY("None", ImGuiSliderFlags_::ImGuiSliderFlags_None);
+    LUA_ENUM_ENTRY("Logarithmic", ImGuiSliderFlags_::ImGuiSliderFlags_Logarithmic);
+    LUA_ENUM_ENTRY("NoRoundToFormat", ImGuiSliderFlags_::ImGuiSliderFlags_NoRoundToFormat);
+    LUA_ENUM_ENTRY("NoInput", ImGuiSliderFlags_::ImGuiSliderFlags_NoInput);
+    LUA_ENUM_ENTRY("WrapAround", ImGuiSliderFlags_::ImGuiSliderFlags_WrapAround);
+    LUA_ENUM_ENTRY("ClampOnInput", ImGuiSliderFlags_::ImGuiSliderFlags_ClampOnInput);
+    LUA_ENUM_ENTRY("ClampZeroRange", ImGuiSliderFlags_::ImGuiSliderFlags_ClampZeroRange);
+    LUA_ENUM_ENTRY("NoSpeedTweaks", ImGuiSliderFlags_::ImGuiSliderFlags_NoSpeedTweaks);
+    LUA_ENUM_ENTRY("AlwaysClamp", ImGuiSliderFlags_::ImGuiSliderFlags_AlwaysClamp);
+    LUA_ENUM_ENTRY("InvalidMask_", ImGuiSliderFlags_::ImGuiSliderFlags_InvalidMask_);
 	LUA_ENUM_END();
 	LUA_ENTRY_END(1);
 	return 0;
@@ -841,6 +868,8 @@ int luaReg_imgui_imguiImGuiMouseCursor(lua_State* lua_S)
 	LUA_ENUM_ENTRY("ResizeNESW", ImGuiMouseCursor_::ImGuiMouseCursor_ResizeNESW);
 	LUA_ENUM_ENTRY("ResizeNWSE", ImGuiMouseCursor_::ImGuiMouseCursor_ResizeNWSE);
 	LUA_ENUM_ENTRY("Hand", ImGuiMouseCursor_::ImGuiMouseCursor_Hand);
+	LUA_ENUM_ENTRY("Wait", ImGuiMouseCursor_::ImGuiMouseCursor_Wait);
+	LUA_ENUM_ENTRY("Progress", ImGuiMouseCursor_::ImGuiMouseCursor_Progress);
 	LUA_ENUM_ENTRY("NotAllowed", ImGuiMouseCursor_::ImGuiMouseCursor_NotAllowed);
 	LUA_ENUM_ENTRY("COUNT", ImGuiMouseCursor_::ImGuiMouseCursor_COUNT);
 	LUA_ENUM_END();
