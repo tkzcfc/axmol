@@ -87,9 +87,9 @@ public:
      */
     virtual void applicationWillEnterForeground() = 0;
 
-    virtual void onRestartBegin() = 0;
-    virtual void onRestartEnd() = 0;
-    virtual void onUpdate()  = 0;
+    virtual void onRestartBegin() {}
+    virtual void onRestartEnd() {}
+    virtual void onUpdate() {}
 
     /**
      * @brief    Callback by Director for limit FPS.
