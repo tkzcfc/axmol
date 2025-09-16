@@ -689,23 +689,15 @@ int LuaStack::luaLoadChunksFromZIP(lua_State* L)
 
     do
     {
-        #if 1
+        #if 0
         auto zip = ZipFile::createFromFile(zipFilePath);
         #else
         ZipFile* zip = nullptr;
         #endif
 
-        Data zipFileData;
         if (zip == nullptr)
         {
-            zipFileData          = std::move(utils->getDataFromFile(zipFilePath));
-            unsigned char* bytes = zipFileData.getBytes();
-            ssize_t size         = zipFileData.getSize();
-
-            if (size > 0)
-            {
-                zip = ZipFile::createWithBuffer(bytes, (unsigned long)size);
-            }
+            zip = ZipFile::createWithData(utils->getDataFromFile(zipFilePath));
         }
         if (zip)
         {
