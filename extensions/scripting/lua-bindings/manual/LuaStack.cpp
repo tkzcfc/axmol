@@ -666,7 +666,7 @@ int LuaStack::luaLoadChunksFromZIP(lua_State* L)
 {
     if (lua_gettop(L) < 1)
     {
-        AXLOGD("luaLoadChunksFromZIP() - invalid arguments");
+        AXLOGE("luaLoadChunksFromZIP() - invalid arguments");
         return 0;
     }
 
@@ -678,12 +678,35 @@ int LuaStack::luaLoadChunksFromZIP(lua_State* L)
     lua_settop(L, 0);
     FileUtils* utils        = FileUtils::getInstance();
     std::string zipFilePath = utils->fullPathForFilename(zipFilename);
+    if (zipFilePath.empty())
+    {
+        AXLOGE("lua_loadChunksFromZIP() - not found zip file: {}", zipFilename);
+        lua_pushboolean(L, 0);
+        return 1;
+    }
 
     LuaStack* stack = this;
 
     do
     {
+        #if 1
         auto zip = ZipFile::createFromFile(zipFilePath);
+        #else
+        ZipFile* zip = nullptr;
+        #endif
+
+        Data zipFileData;
+        if (zip == nullptr)
+        {
+            zipFileData          = std::move(utils->getDataFromFile(zipFilePath));
+            unsigned char* bytes = zipFileData.getBytes();
+            ssize_t size         = zipFileData.getSize();
+
+            if (size > 0)
+            {
+                zip = ZipFile::createWithBuffer(bytes, (unsigned long)size);
+            }
+        }
         if (zip)
         {
             AXLOGD("lua_loadChunksFromZIP() - load zip file: {}", zipFilePath);
@@ -734,7 +757,7 @@ int LuaStack::luaLoadChunksFromZIP(lua_State* L)
         }
         else
         {
-            AXLOGD("lua_loadChunksFromZIP() - not found or invalid zip file: {}", zipFilePath);
+            AXLOGE("lua_loadChunksFromZIP() - not found or invalid zip file: {}", zipFilePath);
             lua_pushboolean(L, 0);
         }
 

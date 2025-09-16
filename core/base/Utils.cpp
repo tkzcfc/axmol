@@ -462,7 +462,10 @@ std::string computeFileDigest(std::string_view filename,
     auto fs = FileUtils::getInstance()->openFileStream(filename, FileStream::Mode::READ);
 
     if (!fs || !fs->isOpen())
+    {
+        AXLOGE("Failed to open file:{}", filename);
         return std::string{};
+    }
 
     std::unique_ptr<uint8_t[]> buffer(new uint8_t[bufferSize]);
     unsigned char mdValue[EVP_MAX_MD_SIZE] = {0};
@@ -471,12 +474,16 @@ std::string computeFileDigest(std::string_view filename,
     OpenSSL_add_all_digests();
     const EVP_MD* md = EVP_get_digestbyname(algorithm.data());
     if (!md)
+    {
+        AXLOGE("Unknown message digest {}", algorithm);
         return std::string{};
+    }
 
     EVP_MD_CTX* mdctx = EVP_MD_CTX_create();
     auto ok           = EVP_DigestInit(mdctx, md);
     if (!ok)
     {
+        AXLOGE("Failed to init digest {}", algorithm);
         EVP_MD_CTX_destroy(mdctx);
         return std::string{};
     }
