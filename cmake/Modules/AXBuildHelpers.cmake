@@ -234,6 +234,10 @@ function(ax_sync_target_dlls ax_target)
       ${_AX_ROOT}/${_AX_THIRDPARTY_NAME}/angle/_x/lib/${PLATFORM_NAME}/${ARCH_ALIAS}/libGLESv2.dll
       ${_AX_ROOT}/${_AX_THIRDPARTY_NAME}/angle/_x/lib/${PLATFORM_NAME}/${ARCH_ALIAS}/libEGL.dll
       ${_AX_ROOT}/${_AX_THIRDPARTY_NAME}/angle/_x/lib/${PLATFORM_NAME}/${ARCH_ALIAS}/d3dcompiler_47.dll
+      ${_AX_ROOT}/${_AX_THIRDPARTY_NAME}/FancyTextRender/prebuilt/${PLATFORM_NAME}/${ARCH_ALIAS}/System.Drawing.Common.dll
+      ${_AX_ROOT}/${_AX_THIRDPARTY_NAME}/FancyTextRender/prebuilt/${PLATFORM_NAME}/${ARCH_ALIAS}/Ijwhost.dll
+      ${_AX_ROOT}/${_AX_THIRDPARTY_NAME}/FancyTextRender/prebuilt/${PLATFORM_NAME}/${ARCH_ALIAS}/FancyText.dll
+      ${_AX_ROOT}/${_AX_THIRDPARTY_NAME}/FancyTextRender/prebuilt/${PLATFORM_NAME}/${ARCH_ALIAS}/FancyTextToCppBridge.runtimeconfig.json
       $<TARGET_FILE_DIR:${ax_target}>
     )
   endif()
@@ -667,7 +671,11 @@ macro(ax_setup_winrt_sources)
       ${_AX_ROOT}/${_AX_THIRDPARTY_NAME}/curl/_x/lib/${PLATFORM_NAME}/${ARCH_ALIAS}/libcurl.dll
       ${_AX_ROOT}/${_AX_THIRDPARTY_NAME}/angle/_x/lib/${PLATFORM_NAME}/${ARCH_ALIAS}/libGLESv2.dll
       ${_AX_ROOT}/${_AX_THIRDPARTY_NAME}/angle/_x/lib/${PLATFORM_NAME}/${ARCH_ALIAS}/libEGL.dll
-      ${_AX_ROOT}/${_AX_THIRDPARTY_NAME}/angle/_x/lib/${PLATFORM_NAME}/${ARCH_ALIAS}/d3dcompiler_47.dll)
+      ${_AX_ROOT}/${_AX_THIRDPARTY_NAME}/angle/_x/lib/${PLATFORM_NAME}/${ARCH_ALIAS}/d3dcompiler_47.dll
+      ${_AX_ROOT}/${_AX_THIRDPARTY_NAME}/FancyTextRender/prebuilt/${PLATFORM_NAME}/${ARCH_ALIAS}/System.Drawing.Common.dll
+      ${_AX_ROOT}/${_AX_THIRDPARTY_NAME}/FancyTextRender/prebuilt/${PLATFORM_NAME}/${ARCH_ALIAS}/Ijwhost.dll
+      ${_AX_ROOT}/${_AX_THIRDPARTY_NAME}/FancyTextRender/prebuilt/${PLATFORM_NAME}/${ARCH_ALIAS}/FancyText.dll
+      ${_AX_ROOT}/${_AX_THIRDPARTY_NAME}/FancyTextRender/prebuilt/${PLATFORM_NAME}/${ARCH_ALIAS}/FancyTextToCppBridge.runtimeconfig.json)
   endif()
 
   ax_mark_multi_resources(prebuilt_dlls RES_TO "." FILES ${prebuilt_dlls})
