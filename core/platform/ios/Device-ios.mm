@@ -762,4 +762,85 @@ void Device::selectionChanged()
 #endif
 }
 
+static Device::Orientation _preferredOrientation = Device::Orientation::Sensor;
+
+void Device::setPreferredOrientation(Device::Orientation orientation)
+{
+#if !defined(AX_TARGET_OS_TVOS)
+    _preferredOrientation = orientation;
+    
+    auto renderView = Director::getInstance()->getRenderView();
+    if (!renderView)
+        return; // will take affect when creating renderView
+
+    // Always perform UI work on main thread and obtain window/VC there.
+    dispatch_async(dispatch_get_main_queue(), ^{
+        auto mainWindow = (__bridge UIWindow*) renderView->getEAWindow();
+        UIViewController* vc = mainWindow.rootViewController;
+        
+        if (@available(iOS 16.0, *)) {
+            // Modern API: mark for update then attempt rotation
+            [vc setNeedsUpdateOfSupportedInterfaceOrientations];
+        }
+        else {
+            // Fallback: present/dismiss minimal full-screen controller to force re-evaluation.
+            // Present from the top-most VC to avoid container interception.
+            UIViewController *dummy = [[UIViewController alloc] init];
+            dummy.view.backgroundColor = [UIColor clearColor];
+            dummy.modalPresentationStyle = UIModalPresentationFullScreen;
+
+            [vc presentViewController:dummy animated:NO completion:^{
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [dummy dismissViewControllerAnimated:NO completion:^{
+                        [UIViewController attemptRotationToDeviceOrientation];
+                    }];
+                });
+            }];
+        }
+    });
+#endif
+}
+
+
+Device::Orientation Device::getPreferredOrientation()
+{
+    return _preferredOrientation;
+}
+
+Device::OrientationMask Device::getSupportedOrientations()
+{
+    NSArray *plistOrientations = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"UISupportedInterfaceOrientations"];
+    OrientationMask mask = static_cast<OrientationMask>(0);
+    for (NSString *entry in plistOrientations) {
+        if ([entry isEqualToString:@"UIInterfaceOrientationPortrait"]) {
+            mask = static_cast<OrientationMask>(mask | OrientationMask::Portrait);
+        } else if ([entry isEqualToString:@"UIInterfaceOrientationPortraitUpsideDown"]) {
+            mask = static_cast<OrientationMask>(mask | OrientationMask::ReversePortrait);
+        } else if ([entry isEqualToString:@"UIInterfaceOrientationLandscapeLeft"]) {
+            mask = static_cast<OrientationMask>(mask | OrientationMask::Landscape);
+        } else if ([entry isEqualToString:@"UIInterfaceOrientationLandscapeRight"]) {
+            mask = static_cast<OrientationMask>(mask | OrientationMask::ReverseLandscape);
+        }
+    }
+
+    return mask;
+}
+
+Device::Orientation Device::getCurrentOrientation()
+{
+#if !defined(AX_TARGET_OS_TVOS)
+    UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
+
+    switch (deviceOrientation) {
+        case UIDeviceOrientationPortrait: return Orientation::Portrait;
+        case UIDeviceOrientationPortraitUpsideDown: return Orientation::ReversePortrait;
+        case UIDeviceOrientationLandscapeLeft: return Orientation::Landscape;
+        case UIDeviceOrientationLandscapeRight: return Orientation::ReverseLandscape;
+        default: return Orientation::Unknown;
+    }
+#else
+    return Orientation::Landscape;
+#endif
+}
+
 }

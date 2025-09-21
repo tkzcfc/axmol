@@ -1,7 +1,5 @@
 /****************************************************************************
- Copyright (c) 2013      cocos2d-x.org
- Copyright (c) 2013-2016 Chukong Technologies Inc.
- Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
+ Copyright (c) 2019-present Axmol Engine contributors (see AUTHORS.md).
 
  https://axmol.dev/
 
@@ -23,10 +21,13 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
  ****************************************************************************/
+#pragma once
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UIViewController {
+@interface AxmolAppController : NSObject <UIApplicationDelegate> {
 }
-- (BOOL)prefersStatusBarHidden;
+
+@property(nonatomic, readonly) UIViewController* viewController;
+
 @end

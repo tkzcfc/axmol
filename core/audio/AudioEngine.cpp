@@ -721,4 +721,14 @@ float AudioEngine::getDistanceScale()
 {
     return AudioPlayerSettings::distanceScale;
 }
+
+void AudioEngine::setReverbProperties(int audioId, const ReverbProperties* reverbProperties)
+{
+    if (!_audioEngineImpl)
+    {
+        return;
+    }
+
+    return _audioEngineImpl->setReverbProperties(audioId, reverbProperties);
+}
 }

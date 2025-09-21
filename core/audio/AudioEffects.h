@@ -1,8 +1,7 @@
 /****************************************************************************
- Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
  Copyright (c) 2019-present Axmol Engine contributors (see AUTHORS.md).
 
-https://axmol.dev/
+ https://axmol.dev/
 
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
@@ -22,24 +21,47 @@ https://axmol.dev/
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
  ****************************************************************************/
+#pragma once
 
-#include <memory>
+#include "audio/oal_port.h"
 
-#include <android/log.h>
-#include <jni.h>
-
-#include "AppDelegate.h"
-
-#define LOG_TAG "main"
-#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
-
-namespace
+namespace ax
 {
-std::unique_ptr<AppDelegate> appDelegate;
-}
 
-void axmol_android_app_init(JNIEnv* env)
+#if AX_USE_ALSOFT
+
+typedef EFXEAXREVERBPROPERTIES ReverbProperties;
+
+#else
+
+struct ReverbProperties
 {
-    LOGD("axmol_android_app_init");
-    appDelegate.reset(new AppDelegate());
-}
+    float flDensity;
+    float flDiffusion;
+    float flGain;
+    float flGainHF;
+    float flGainLF;
+    float flDecayTime;
+    float flDecayHFRatio;
+    float flDecayLFRatio;
+    float flReflectionsGain;
+    float flReflectionsDelay;
+    float flReflectionsPan[3];
+    float flLateReverbGain;
+    float flLateReverbDelay;
+    float flLateReverbPan[3];
+    float flEchoTime;
+    float flEchoDepth;
+    float flModulationTime;
+    float flModulationDepth;
+    float flAirAbsorptionGainHF;
+    float flHFReference;
+    float flLFReference;
+    float flRoomRolloffFactor;
+    int iDecayHFLimit;
+};
+
+#endif
+
+}  // namespace ax
+
