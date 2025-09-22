@@ -545,9 +545,13 @@ void FileUtils::purgeCachedEntries()
 
 std::string FileUtils::getStringFromFile(std::string_view filename) const
 {
-    std::string s;
-    getContents(filename, &s);
-    return s;
+    Data d;
+    getContents(filename, &d);
+    if (dataDecoder)
+    {
+        dataDecoder(d);
+    }
+    return std::string((char*)d.getBytes(), d.getSize());
 }
 #ifndef AX_CORE_PROFILE
 void FileUtils::getStringFromFile(std::string_view path, std::function<void(std::string)> callback) const
