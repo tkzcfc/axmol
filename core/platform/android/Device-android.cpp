@@ -237,6 +237,12 @@ Device::Orientation Device::getCurrentOrientation()
     return static_cast<Device::Orientation>(orientation);
 }
 
+Device::Orientation Device::getPhysicalOrientation()
+{
+    jint orientation = JniHelper::callStaticIntMethod(deviceHelperClassName, "getPhysicalOrientation");
+    return static_cast<Device::Orientation>(orientation);
+}
+
 }
 
 // this method is called by BitmapHelper

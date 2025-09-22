@@ -768,7 +768,7 @@ void Device::setPreferredOrientation(Device::Orientation orientation)
 {
 #if !defined(AX_TARGET_OS_TVOS)
     _preferredOrientation = orientation;
-    
+
     auto renderView = Director::getInstance()->getRenderView();
     if (!renderView)
         return; // will take affect when creating renderView
@@ -777,7 +777,7 @@ void Device::setPreferredOrientation(Device::Orientation orientation)
     dispatch_async(dispatch_get_main_queue(), ^{
         auto mainWindow = (__bridge UIWindow*) renderView->getEAWindow();
         UIViewController* vc = mainWindow.rootViewController;
-        
+
         if (@available(iOS 16.0, *)) {
             // Modern API: mark for update then attempt rotation
             [vc setNeedsUpdateOfSupportedInterfaceOrientations];
@@ -829,6 +829,37 @@ Device::OrientationMask Device::getSupportedOrientations()
 Device::Orientation Device::getCurrentOrientation()
 {
 #if !defined(AX_TARGET_OS_TVOS)
+    auto renderView = Director::getInstance()->getRenderView();
+    if (!renderView)
+        return Orientation::Unknown;
+    auto window = (__bridge UIWindow*) renderView->getEAWindow();
+    UIInterfaceOrientation uiOrientation;
+    if (@available(iOS 13.0, *)) {
+        uiOrientation = window.windowScene.interfaceOrientation;
+    } else {
+        // Fallback on earlier versions
+        uiOrientation = UIApplication.sharedApplication.statusBarOrientation;
+    }
+    switch(uiOrientation)
+    {
+        case UIInterfaceOrientationPortrait:
+            return Orientation::Portrait;
+        case UIInterfaceOrientationLandscapeLeft:
+            return Orientation::Landscape;
+        case UIInterfaceOrientationLandscapeRight:
+            return Orientation::ReverseLandscape;
+        case UIInterfaceOrientationPortraitUpsideDown:
+            return Orientation::ReversePortrait;
+        default:;
+    }
+#else
+    return Orientation::Unknown;
+#endif
+}
+
+Device::Orientation Device::getPhysicalOrientation()
+{
+#if !defined(AX_TARGET_OS_TVOS)
     UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
 
     switch (deviceOrientation) {
@@ -839,7 +870,7 @@ Device::Orientation Device::getCurrentOrientation()
         default: return Orientation::Unknown;
     }
 #else
-    return Orientation::Landscape;
+    return Orientation::Unknown;
 #endif
 }
 
