@@ -177,7 +177,7 @@ void RenderView::updateDesignResolutionSize()
 
 void RenderView::setDesignResolutionSize(float width, float height, ResolutionPolicy resolutionPolicy)
 {
-//    AXASSERT(resolutionPolicy != ResolutionPolicy::UNKNOWN, "should set resolutionPolicy");
+    AXASSERT(resolutionPolicy != ResolutionPolicy::UNKNOWN, "should set resolutionPolicy");
 
     if (width == 0.0f || height == 0.0f)
     {
