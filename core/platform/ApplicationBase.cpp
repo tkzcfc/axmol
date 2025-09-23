@@ -36,4 +36,11 @@ ApplicationBase::~ApplicationBase()
     Director::destroyInstance();
 }
 
+
+void ApplicationBase::applicationRestartStart()
+{}
+
+void ApplicationBase::applicationRestartFinish()
+{}
+
 }

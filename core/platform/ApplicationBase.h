@@ -86,10 +86,10 @@ public:
      * @lua NA
      */
     virtual void applicationWillEnterForeground() = 0;
+    
+    virtual void applicationRestartStart();
 
-    virtual void onRestartBegin() {}
-    virtual void onRestartEnd() {}
-    virtual void onUpdate() {}
+    virtual void applicationRestartFinish();
 
     /**
      * @brief    Callback by Director for limit FPS.

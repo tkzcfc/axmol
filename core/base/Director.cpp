@@ -1096,7 +1096,7 @@ void Director::cleanupDirector()
 
 void Director::restartDirector()
 {
-    Application::getInstance()->onRestartBegin();
+    Application::getInstance()->applicationRestartStart();
     reset();
 
     // Texture cache need to be reinitialized
@@ -1127,7 +1127,7 @@ void Director::restartDirector()
 
     _eventDispatcher->addEventListenerWithFixedPriority(_rendererRecreatedListener, -1);
 #endif
-    Application::getInstance()->onRestartEnd();
+    Application::getInstance()->applicationRestartFinish();
 }
 
 void Director::setNextScene()
@@ -1556,8 +1556,6 @@ void Director::mainLoop()
     }
     else if (!_invalid)
     {
-        Application::getInstance()->onUpdate();
-
         drawScene();
 
         // release the objects
