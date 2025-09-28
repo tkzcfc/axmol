@@ -48,9 +48,25 @@
 #include "lua_cjson.h"
 #include "yasio/bindings/yasio_axlua.hpp"
 
+#ifdef AX_PLATFORM_PC
+#if __cplusplus
 extern "C" {
+#endif
+#include "luasocket/luasocket.h"
+#include "luasocket/mime.h"
+#include "luasocket/luasocket_scripts.h"
+#if __cplusplus
+}  // extern "C"
+#endif
+#endif
+
+#if __cplusplus
+extern "C" {
+#endif
 int luaopen_pb(lua_State* L);
-}
+#if __cplusplus
+}  // extern "C"
+#endif
 
 static void lua_register_extensions(lua_State* L)
 {
@@ -58,6 +74,10 @@ static void lua_register_extensions(lua_State* L)
         {"yasio", luaopen_yasio_axlua},
         {"cjson", luaopen_cjson},
         {"luapb", luaopen_pb},
+#ifdef AX_PLATFORM_PC
+        {"socket.core", luaopen_socket_core},
+        {"mime.core", luaopen_mime_core},
+#endif
         {NULL, NULL}
     };
 

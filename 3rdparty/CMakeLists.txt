@@ -242,8 +242,9 @@ if(AX_ENABLE_EXT_LUA)
   add_subdirectory(lua/tolua)
   add_subdirectory(lua/lua-cjson)
   add_subdirectory(lua/lua-protobuf)
+  add_subdirectory(lua/luasocket)
   set_property(TARGET 3rdparty APPEND PROPERTY
-    AX_LUA_DEPEND ${AX_LUA_ENGINE} tolua lua-cjson lua-protobuf
+    AX_LUA_DEPEND ${AX_LUA_ENGINE} tolua lua-cjson lua-protobuf luasocket
   )
 
   if(AX_USE_LUAJIT)
