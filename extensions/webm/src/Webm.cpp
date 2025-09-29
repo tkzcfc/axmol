@@ -210,7 +210,8 @@ bool Webm::initWithWebm(const std::string& webm, int skipFramesPerTimes)
     {
         if (index < frames.size()) 
         {
-            if (i == frames[index].index) {
+            if (i == frames[index].index)
+            {
                 auto key = webmFrameKey(m_loadTask->webm.c_str(), frames[index].index);
                 lastTexture = textureCache->getTextureForKey(key);
                 if (!lastTexture && frames[index].image) 
@@ -507,15 +508,38 @@ void* Webm::preloadAsync(const std::string& webm, const std::function<void(bool)
     asyncTaskMutex.unlock();
 
     task->retain();
-    ax::AsyncTaskPool::getInstance()->enqueue(getAsyncTaskType(),
-        [](void* data) {
-        auto task = (WebmLoadTask*)data;
-        if (task->status != LoadStatus::Cancel) {
-            if (task->status == LoadStatus::Success) {
+    Director::getInstance()->getJobSystem()->enqueue([task, webm, skipFramesPerTimes]()
+    {
+        asyncTaskMutex.lock();
+        if (task->status == LoadStatus::Cancel)
+        {
+            asyncTaskMutex.unlock();
+            return;
+        }
+        task->status = LoadStatus::Loading;
+        asyncTaskMutex.unlock();
+
+        auto ok = loadWebm(&task->result, webm, skipFramesPerTimes);
+
+        asyncTaskMutex.lock();
+        if (task->status == LoadStatus::Cancel)
+        {
+            asyncTaskMutex.unlock();
+            return;
+        }
+        task->status = ok ? LoadStatus::Success : LoadStatus::Failed;
+        asyncTaskMutex.unlock();
+    }, [task]()
+    {
+        if (task->status != LoadStatus::Cancel)
+        {
+            if (task->status == LoadStatus::Success)
+            {
                 auto textureCache = ax::Director::getInstance()->getTextureCache();
                 auto popupNotify = ax::FileUtils::getInstance()->isPopupNotify();
                 ax::FileUtils::getInstance()->setPopupNotify(false);
-                for (auto i = 0; i < task->result.frames.size(); ++i) {
+                for (auto i = 0; i < task->result.frames.size(); ++i)
+                {
                     auto& frame = task->result.frames[i];
                     auto key = webmFrameKey(task->webm.c_str(), frame.index);
                     if (frame.image && !textureCache->getTextureForKey(key))
@@ -527,32 +551,13 @@ void* Webm::preloadAsync(const std::string& webm, const std::function<void(bool)
                 }
                 ax::FileUtils::getInstance()->setPopupNotify(popupNotify);
             }
-            if (task->callback) {
+            if (task->callback)
+            {
                 task->callback(task->status == LoadStatus::Success);
                 task->callback = nullptr;
             }
         }
         task->release();
-    }, task, [task, webm, skipFramesPerTimes]() {
-        asyncTaskMutex.lock();
-        if (task->status == LoadStatus::Cancel)
-        {
-            asyncTaskMutex.unlock();
-            return;
-        }
-        task->status = LoadStatus::Loading;
-        asyncTaskMutex.unlock();
-    
-        auto ok = loadWebm(&task->result, webm, skipFramesPerTimes);
-    
-        asyncTaskMutex.lock();
-        if (task->status == LoadStatus::Cancel)
-        {
-            asyncTaskMutex.unlock();
-            return;
-        }
-        task->status = ok ? LoadStatus::Success : LoadStatus::Failed;
-        asyncTaskMutex.unlock();
     });
 
     return task;
@@ -597,29 +602,6 @@ void Webm::removeAllWebmTexture()
 void Webm::setDecodeThreadCount(int value)
 {
     g_decodeThreadCount = value;
-}
-
-ax::AsyncTaskPool::TaskType Webm::getAsyncTaskType()
-{
-    if (g_decodeThreadCount <= 1)
-    {
-        return ax::AsyncTaskPool::TaskType::TASK_IO;
-    }
-    if (g_decodeThreadCount == 2)
-    {
-        ax::AsyncTaskPool::TaskType taskTypes[] = {
-            ax::AsyncTaskPool::TaskType::TASK_IO,
-            ax::AsyncTaskPool::TaskType::TASK_NETWORK,
-        };
-        return taskTypes[std::rand() % 2];
-    }
-
-    ax::AsyncTaskPool::TaskType taskTypes[] = {
-        ax::AsyncTaskPool::TaskType::TASK_IO,
-        ax::AsyncTaskPool::TaskType::TASK_NETWORK,
-        ax::AsyncTaskPool::TaskType::TASK_OTHER,
-    };
-    return taskTypes[std::rand() % 3];
 }
 
 }  // namespace ax
