@@ -479,7 +479,7 @@ void FileUtils::setDelegate(FileUtils* delegate)
 std::string FileUtils::s_exeDir;
 #endif
 
-FileUtils::FileUtils() : _writablePath() {}
+FileUtils::FileUtils() : _writablePath(), dataDecoder(nullptr) {}
 
 FileUtils::~FileUtils() {}
 
