@@ -336,7 +336,7 @@ end
 			const auto type = lua_type(L, lo);\
 			if (!(type == LUA_TTABLE || type == LUA_TUSERDATA || type == LUA_TCDATA))\
 				return false;\
-			const size_t len = lua_objlen(L, lo);\
+			const size_t len = (size_t)lua_objlen(L, lo);\
 			T value;\
 			bool ok = true;\
 			for (size_t i = 0; i < len; i++) {\
@@ -390,6 +390,7 @@ end
 	TO_NATIVE_UNSIGNED(uint16_t);
 	TO_NATIVE_UNSIGNED(uint32_t);
 	TO_NATIVE_UNSIGNED(uint64_t);
+    TO_NATIVE_UNSIGNED(unsigned long);
 
 #undef TO_NATIVE_SIGNED
 #undef TO_NATIVE_UNSIGNED
@@ -482,7 +483,7 @@ end
 			const auto type = lua_type(L, lo);
 			if (!(type == LUA_TTABLE || type == LUA_TUSERDATA || type == LUA_TCDATA))
 				return false;
-			const size_t len = std::min(lua_objlen(L, lo), Size);
+			const size_t len = std::min((size_t)lua_objlen(L, lo), Size);
 			T value;
 			bool ok = true;
 			for (size_t i = 0; i < len; i++) {
@@ -566,7 +567,7 @@ end
 			const auto type = lua_type(L, lo);
 			if (!(type == LUA_TTABLE || type == LUA_TUSERDATA || type == LUA_TCDATA))
 				return false;
-			const size_t len = std::min(lua_objlen(L, lo), Size);
+			const size_t len = std::min((size_t)lua_objlen(L, lo), Size);
 			bool value;
 			bool ok = true;
 			for (size_t i = 0; i < len; i++) {
@@ -648,7 +649,7 @@ end
 	bool luaval_to_native_array_inplace(lua_State* L, int lo, T* outValue, size_t size, const char* fName = "") {
 		LUA_CHECK_TO_NATIVE;
 		if (!is_indexable(L, lo)) return false;
-		const size_t len = lua_objlen(L, lo);
+		const size_t len = (size_t)lua_objlen(L, lo);
 		if (len != size) return false;
 		bool ok = true;
 		for (int i = 0; i < size; ++i)

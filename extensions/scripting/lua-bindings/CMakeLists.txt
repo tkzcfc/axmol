@@ -107,7 +107,7 @@ set(lua_bindings_auto_files
   auto/axlua_webm_auto.cpp
 )
 
-if(WINDOWS)
+if(WINDOWS OR MACOSX)
 set(lua_bindings_manual_headers
     ${lua_bindings_manual_headers}
     manual/imgui/imgui_lua.hpp
