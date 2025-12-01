@@ -15489,7 +15489,7 @@ int lua_register_ax_studio_SceneReader(lua_State* tolua_S)
 int lua_ax_studio_ActionTimelineCache_purge(lua_State* tolua_S)
 {
     int argc = 0;
-    cocostudio::timeline::ActionTimelineCache* cobj = nullptr;
+    cocostudio::timeline::ActionTimelineCache* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -15501,25 +15501,25 @@ int lua_ax_studio_ActionTimelineCache_purge(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ccs.ActionTimelineCache",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (cocostudio::timeline::ActionTimelineCache*)tolua_tousertype(tolua_S,1,0);
+    obj = (cocostudio::timeline::ActionTimelineCache*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_studio_ActionTimelineCache_purge'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_studio_ActionTimelineCache_purge'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_studio_ActionTimelineCache_purge'", nullptr);
             return 0;
         }
-        cobj->purge();
+        obj->purge();
         lua_settop(tolua_S, 1);
         return 1;
     }

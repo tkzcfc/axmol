@@ -11694,7 +11694,7 @@ int lua_ax_base_Node_initLayer(lua_State* tolua_S)
 int lua_ax_base_Node_setMultipleTouchEnabled(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Node* cobj = nullptr;
+    ax::Node* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -11706,18 +11706,18 @@ int lua_ax_base_Node_setMultipleTouchEnabled(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Node",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Node*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Node*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_base_Node_setMultipleTouchEnabled'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_base_Node_setMultipleTouchEnabled'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -11727,7 +11727,7 @@ int lua_ax_base_Node_setMultipleTouchEnabled(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_Node_setMultipleTouchEnabled'", nullptr);
             return 0;
         }
-        cobj->setMultipleTouchEnabled(arg0);
+        obj->setMultipleTouchEnabled(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -11744,7 +11744,7 @@ int lua_ax_base_Node_setMultipleTouchEnabled(lua_State* tolua_S)
 int lua_ax_base_Node_isMultipleTouchEnabled(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Node* cobj = nullptr;
+    ax::Node* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -11756,25 +11756,25 @@ int lua_ax_base_Node_isMultipleTouchEnabled(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Node",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Node*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Node*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_base_Node_isMultipleTouchEnabled'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_base_Node_isMultipleTouchEnabled'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_Node_isMultipleTouchEnabled'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isMultipleTouchEnabled();
+        auto&& ret = obj->isMultipleTouchEnabled();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -35400,7 +35400,7 @@ int lua_ax_base_EventDispatcher_hasEventListener(lua_State* tolua_S)
 int lua_ax_base_EventDispatcher_setGlobalMultiTouchEnabled(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::EventDispatcher* cobj = nullptr;
+    ax::EventDispatcher* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -35412,18 +35412,18 @@ int lua_ax_base_EventDispatcher_setGlobalMultiTouchEnabled(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.EventDispatcher",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::EventDispatcher*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::EventDispatcher*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_base_EventDispatcher_setGlobalMultiTouchEnabled'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_base_EventDispatcher_setGlobalMultiTouchEnabled'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -35433,7 +35433,7 @@ int lua_ax_base_EventDispatcher_setGlobalMultiTouchEnabled(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_EventDispatcher_setGlobalMultiTouchEnabled'", nullptr);
             return 0;
         }
-        cobj->setGlobalMultiTouchEnabled(arg0);
+        obj->setGlobalMultiTouchEnabled(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -35450,7 +35450,7 @@ int lua_ax_base_EventDispatcher_setGlobalMultiTouchEnabled(lua_State* tolua_S)
 int lua_ax_base_EventDispatcher_isGlobalMultiTouchEnabled(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::EventDispatcher* cobj = nullptr;
+    ax::EventDispatcher* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -35462,25 +35462,25 @@ int lua_ax_base_EventDispatcher_isGlobalMultiTouchEnabled(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.EventDispatcher",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::EventDispatcher*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::EventDispatcher*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_base_EventDispatcher_isGlobalMultiTouchEnabled'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_base_EventDispatcher_isGlobalMultiTouchEnabled'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_EventDispatcher_isGlobalMultiTouchEnabled'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isGlobalMultiTouchEnabled();
+        auto&& ret = obj->isGlobalMultiTouchEnabled();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -55256,7 +55256,7 @@ int lua_ax_base_Label_getTextColor(lua_State* tolua_S)
 int lua_ax_base_Label_setGradientColor(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Label* cobj = nullptr;
+    ax::Label* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -55268,18 +55268,18 @@ int lua_ax_base_Label_setGradientColor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Label",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Label*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Label*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_base_Label_setGradientColor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_base_Label_setGradientColor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         ax::Color4B arg0;
         int arg1;
@@ -55292,7 +55292,7 @@ int lua_ax_base_Label_setGradientColor(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_Label_setGradientColor'", nullptr);
             return 0;
         }
-        cobj->setGradientColor(arg0, arg1);
+        obj->setGradientColor(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -55309,7 +55309,7 @@ int lua_ax_base_Label_setGradientColor(lua_State* tolua_S)
 int lua_ax_base_Label_enableGradientColor(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Label* cobj = nullptr;
+    ax::Label* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -55321,18 +55321,18 @@ int lua_ax_base_Label_enableGradientColor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Label",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Label*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Label*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_base_Label_enableGradientColor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_base_Label_enableGradientColor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -55342,7 +55342,7 @@ int lua_ax_base_Label_enableGradientColor(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_Label_enableGradientColor'", nullptr);
             return 0;
         }
-        cobj->enableGradientColor(arg0);
+        obj->enableGradientColor(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -55359,7 +55359,7 @@ int lua_ax_base_Label_enableGradientColor(lua_State* tolua_S)
 int lua_ax_base_Label_getGradientColor(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Label* cobj = nullptr;
+    ax::Label* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -55371,18 +55371,18 @@ int lua_ax_base_Label_getGradientColor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Label",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Label*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Label*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_base_Label_getGradientColor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_base_Label_getGradientColor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -55392,7 +55392,7 @@ int lua_ax_base_Label_getGradientColor(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_Label_getGradientColor'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getGradientColor(arg0);
+        auto&& ret = obj->getGradientColor(arg0);
         color4b_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -55409,7 +55409,7 @@ int lua_ax_base_Label_getGradientColor(lua_State* tolua_S)
 int lua_ax_base_Label_isEnableGradientColor(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Label* cobj = nullptr;
+    ax::Label* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -55421,25 +55421,25 @@ int lua_ax_base_Label_isEnableGradientColor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Label",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Label*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Label*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_base_Label_isEnableGradientColor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_base_Label_isEnableGradientColor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_Label_isEnableGradientColor'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isEnableGradientColor();
+        auto&& ret = obj->isEnableGradientColor();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -60860,7 +60860,7 @@ int lua_ax_base_Sprite_getResourceName(lua_State* tolua_S)
 int lua_ax_base_Sprite_setGradientColor(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Sprite* cobj = nullptr;
+    ax::Sprite* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -60872,18 +60872,18 @@ int lua_ax_base_Sprite_setGradientColor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Sprite",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Sprite*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Sprite*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_base_Sprite_setGradientColor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_base_Sprite_setGradientColor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         ax::Color4B arg0;
         int arg1;
@@ -60896,7 +60896,7 @@ int lua_ax_base_Sprite_setGradientColor(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_Sprite_setGradientColor'", nullptr);
             return 0;
         }
-        cobj->setGradientColor(arg0, arg1);
+        obj->setGradientColor(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -60913,7 +60913,7 @@ int lua_ax_base_Sprite_setGradientColor(lua_State* tolua_S)
 int lua_ax_base_Sprite_enableGradientColor(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Sprite* cobj = nullptr;
+    ax::Sprite* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -60925,18 +60925,18 @@ int lua_ax_base_Sprite_enableGradientColor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Sprite",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Sprite*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Sprite*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_base_Sprite_enableGradientColor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_base_Sprite_enableGradientColor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -60946,7 +60946,7 @@ int lua_ax_base_Sprite_enableGradientColor(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_Sprite_enableGradientColor'", nullptr);
             return 0;
         }
-        cobj->enableGradientColor(arg0);
+        obj->enableGradientColor(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -103261,7 +103261,7 @@ int lua_ax_base_TextureCache_renameTextureWithKey(lua_State* tolua_S)
 int lua_ax_base_TextureCache_getTextures(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::TextureCache* cobj = nullptr;
+    ax::TextureCache* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -103273,25 +103273,25 @@ int lua_ax_base_TextureCache_getTextures(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.TextureCache",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::TextureCache*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::TextureCache*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_base_TextureCache_getTextures'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_base_TextureCache_getTextures'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_TextureCache_getTextures'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTextures();
+        auto&& ret = obj->getTextures();
         ccvector_std_string_to_luaval(tolua_S, ret);
         return 1;
     }

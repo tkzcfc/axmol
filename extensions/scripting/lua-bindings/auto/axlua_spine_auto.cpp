@@ -894,7 +894,7 @@ int lua_ax_spine_SkeletonRenderer_isTwoColorTint(lua_State* tolua_S)
 int lua_ax_spine_SkeletonRenderer_setVertexEffect(lua_State* tolua_S)
 {
     int argc = 0;
-    spine::SkeletonRenderer* cobj = nullptr;
+    spine::SkeletonRenderer* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -906,18 +906,18 @@ int lua_ax_spine_SkeletonRenderer_setVertexEffect(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"sp.SkeletonRenderer",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (spine::SkeletonRenderer*)tolua_tousertype(tolua_S,1,0);
+    obj = (spine::SkeletonRenderer*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_spine_SkeletonRenderer_setVertexEffect'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_spine_SkeletonRenderer_setVertexEffect'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         spine::VertexEffect* arg0;
 
@@ -927,7 +927,7 @@ int lua_ax_spine_SkeletonRenderer_setVertexEffect(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_spine_SkeletonRenderer_setVertexEffect'", nullptr);
             return 0;
         }
-        cobj->setVertexEffect(arg0);
+        obj->setVertexEffect(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }

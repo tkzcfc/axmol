@@ -6,7 +6,7 @@
 int lua_ax_webm_Webm_initWithWebm(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Webm* cobj = nullptr;
+    ax::Webm* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -18,18 +18,18 @@ int lua_ax_webm_Webm_initWithWebm(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Webm",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_webm_Webm_initWithWebm'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_webm_Webm_initWithWebm'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -39,11 +39,11 @@ int lua_ax_webm_Webm_initWithWebm(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_initWithWebm'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->initWithWebm(arg0);
+        auto&& ret = obj->initWithWebm(arg0);
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         std::string arg0;
         int arg1;
@@ -56,7 +56,7 @@ int lua_ax_webm_Webm_initWithWebm(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_initWithWebm'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->initWithWebm(arg0, arg1);
+        auto&& ret = obj->initWithWebm(arg0, arg1);
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -73,7 +73,7 @@ int lua_ax_webm_Webm_initWithWebm(lua_State* tolua_S)
 int lua_ax_webm_Webm_initWithWebmAsync(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Webm* cobj = nullptr;
+    ax::Webm* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -85,18 +85,18 @@ int lua_ax_webm_Webm_initWithWebmAsync(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Webm",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_webm_Webm_initWithWebmAsync'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_webm_Webm_initWithWebmAsync'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -106,11 +106,11 @@ int lua_ax_webm_Webm_initWithWebmAsync(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_initWithWebmAsync'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->initWithWebmAsync(arg0);
+        auto&& ret = obj->initWithWebmAsync(arg0);
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         std::string arg0;
         int arg1;
@@ -123,7 +123,7 @@ int lua_ax_webm_Webm_initWithWebmAsync(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_initWithWebmAsync'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->initWithWebmAsync(arg0, arg1);
+        auto&& ret = obj->initWithWebmAsync(arg0, arg1);
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -140,7 +140,7 @@ int lua_ax_webm_Webm_initWithWebmAsync(lua_State* tolua_S)
 int lua_ax_webm_Webm_play(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Webm* cobj = nullptr;
+    ax::Webm* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -152,29 +152,29 @@ int lua_ax_webm_Webm_play(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Webm",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_webm_Webm_play'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_webm_Webm_play'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_play'", nullptr);
             return 0;
         }
-        cobj->play();
+        obj->play();
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -184,7 +184,7 @@ int lua_ax_webm_Webm_play(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_play'", nullptr);
             return 0;
         }
-        cobj->play(arg0);
+        obj->play(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -201,7 +201,7 @@ int lua_ax_webm_Webm_play(lua_State* tolua_S)
 int lua_ax_webm_Webm_rePlay(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Webm* cobj = nullptr;
+    ax::Webm* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -213,29 +213,29 @@ int lua_ax_webm_Webm_rePlay(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Webm",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_webm_Webm_rePlay'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_webm_Webm_rePlay'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_rePlay'", nullptr);
             return 0;
         }
-        cobj->rePlay();
+        obj->rePlay();
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -245,7 +245,7 @@ int lua_ax_webm_Webm_rePlay(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_rePlay'", nullptr);
             return 0;
         }
-        cobj->rePlay(arg0);
+        obj->rePlay(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -262,7 +262,7 @@ int lua_ax_webm_Webm_rePlay(lua_State* tolua_S)
 int lua_ax_webm_Webm_setLoop(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Webm* cobj = nullptr;
+    ax::Webm* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -274,18 +274,18 @@ int lua_ax_webm_Webm_setLoop(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Webm",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_webm_Webm_setLoop'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_webm_Webm_setLoop'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -295,7 +295,7 @@ int lua_ax_webm_Webm_setLoop(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_setLoop'", nullptr);
             return 0;
         }
-        cobj->setLoop(arg0);
+        obj->setLoop(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -312,7 +312,7 @@ int lua_ax_webm_Webm_setLoop(lua_State* tolua_S)
 int lua_ax_webm_Webm_getLoop(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Webm* cobj = nullptr;
+    ax::Webm* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -324,25 +324,25 @@ int lua_ax_webm_Webm_getLoop(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Webm",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_webm_Webm_getLoop'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_webm_Webm_getLoop'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_getLoop'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getLoop();
+        auto&& ret = obj->getLoop();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -359,7 +359,7 @@ int lua_ax_webm_Webm_getLoop(lua_State* tolua_S)
 int lua_ax_webm_Webm_isPlay(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Webm* cobj = nullptr;
+    ax::Webm* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -371,25 +371,25 @@ int lua_ax_webm_Webm_isPlay(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Webm",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_webm_Webm_isPlay'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_webm_Webm_isPlay'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_isPlay'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isPlay();
+        auto&& ret = obj->isPlay();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -406,7 +406,7 @@ int lua_ax_webm_Webm_isPlay(lua_State* tolua_S)
 int lua_ax_webm_Webm_stop(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Webm* cobj = nullptr;
+    ax::Webm* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -418,25 +418,25 @@ int lua_ax_webm_Webm_stop(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Webm",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_webm_Webm_stop'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_webm_Webm_stop'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_stop'", nullptr);
             return 0;
         }
-        cobj->stop();
+        obj->stop();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -453,7 +453,7 @@ int lua_ax_webm_Webm_stop(lua_State* tolua_S)
 int lua_ax_webm_Webm_suspend(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Webm* cobj = nullptr;
+    ax::Webm* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -465,25 +465,25 @@ int lua_ax_webm_Webm_suspend(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Webm",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_webm_Webm_suspend'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_webm_Webm_suspend'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_suspend'", nullptr);
             return 0;
         }
-        cobj->suspend();
+        obj->suspend();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -500,7 +500,7 @@ int lua_ax_webm_Webm_suspend(lua_State* tolua_S)
 int lua_ax_webm_Webm_setFrame(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Webm* cobj = nullptr;
+    ax::Webm* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -512,18 +512,18 @@ int lua_ax_webm_Webm_setFrame(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Webm",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_webm_Webm_setFrame'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_webm_Webm_setFrame'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -533,7 +533,7 @@ int lua_ax_webm_Webm_setFrame(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_setFrame'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->setFrame(arg0);
+        auto&& ret = obj->setFrame(arg0);
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -550,7 +550,7 @@ int lua_ax_webm_Webm_setFrame(lua_State* tolua_S)
 int lua_ax_webm_Webm_nextFrame(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Webm* cobj = nullptr;
+    ax::Webm* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -562,25 +562,25 @@ int lua_ax_webm_Webm_nextFrame(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Webm",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_webm_Webm_nextFrame'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_webm_Webm_nextFrame'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_nextFrame'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->nextFrame();
+        auto&& ret = obj->nextFrame();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -597,7 +597,7 @@ int lua_ax_webm_Webm_nextFrame(lua_State* tolua_S)
 int lua_ax_webm_Webm_preFrame(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Webm* cobj = nullptr;
+    ax::Webm* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -609,25 +609,25 @@ int lua_ax_webm_Webm_preFrame(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Webm",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_webm_Webm_preFrame'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_webm_Webm_preFrame'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_preFrame'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->preFrame();
+        auto&& ret = obj->preFrame();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -644,7 +644,7 @@ int lua_ax_webm_Webm_preFrame(lua_State* tolua_S)
 int lua_ax_webm_Webm_setPlayScale(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Webm* cobj = nullptr;
+    ax::Webm* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -656,18 +656,18 @@ int lua_ax_webm_Webm_setPlayScale(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Webm",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_webm_Webm_setPlayScale'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_webm_Webm_setPlayScale'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -677,7 +677,7 @@ int lua_ax_webm_Webm_setPlayScale(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_setPlayScale'", nullptr);
             return 0;
         }
-        cobj->setPlayScale(arg0);
+        obj->setPlayScale(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -694,7 +694,7 @@ int lua_ax_webm_Webm_setPlayScale(lua_State* tolua_S)
 int lua_ax_webm_Webm_getPlayScale(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Webm* cobj = nullptr;
+    ax::Webm* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -706,25 +706,25 @@ int lua_ax_webm_Webm_getPlayScale(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Webm",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_webm_Webm_getPlayScale'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_webm_Webm_getPlayScale'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_getPlayScale'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getPlayScale();
+        auto&& ret = obj->getPlayScale();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -741,7 +741,7 @@ int lua_ax_webm_Webm_getPlayScale(lua_State* tolua_S)
 int lua_ax_webm_Webm_setReverse(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Webm* cobj = nullptr;
+    ax::Webm* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -753,18 +753,18 @@ int lua_ax_webm_Webm_setReverse(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Webm",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_webm_Webm_setReverse'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_webm_Webm_setReverse'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -774,7 +774,7 @@ int lua_ax_webm_Webm_setReverse(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_setReverse'", nullptr);
             return 0;
         }
-        cobj->setReverse(arg0);
+        obj->setReverse(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -791,7 +791,7 @@ int lua_ax_webm_Webm_setReverse(lua_State* tolua_S)
 int lua_ax_webm_Webm_setFps(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Webm* cobj = nullptr;
+    ax::Webm* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -803,18 +803,18 @@ int lua_ax_webm_Webm_setFps(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Webm",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_webm_Webm_setFps'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_webm_Webm_setFps'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -824,7 +824,7 @@ int lua_ax_webm_Webm_setFps(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_setFps'", nullptr);
             return 0;
         }
-        cobj->setFps(arg0);
+        obj->setFps(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -841,7 +841,7 @@ int lua_ax_webm_Webm_setFps(lua_State* tolua_S)
 int lua_ax_webm_Webm_getFrameCount(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Webm* cobj = nullptr;
+    ax::Webm* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -853,25 +853,25 @@ int lua_ax_webm_Webm_getFrameCount(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Webm",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_webm_Webm_getFrameCount'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_webm_Webm_getFrameCount'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_getFrameCount'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getFrameCount();
+        auto&& ret = obj->getFrameCount();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -888,7 +888,7 @@ int lua_ax_webm_Webm_getFrameCount(lua_State* tolua_S)
 int lua_ax_webm_Webm_isLoadFinish(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Webm* cobj = nullptr;
+    ax::Webm* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -900,25 +900,25 @@ int lua_ax_webm_Webm_isLoadFinish(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Webm",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_webm_Webm_isLoadFinish'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_webm_Webm_isLoadFinish'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_isLoadFinish'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isLoadFinish();
+        auto&& ret = obj->isLoadFinish();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -935,7 +935,7 @@ int lua_ax_webm_Webm_isLoadFinish(lua_State* tolua_S)
 int lua_ax_webm_Webm_setKeepContentSize(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Webm* cobj = nullptr;
+    ax::Webm* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -947,18 +947,18 @@ int lua_ax_webm_Webm_setKeepContentSize(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Webm",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_webm_Webm_setKeepContentSize'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_webm_Webm_setKeepContentSize'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -968,7 +968,7 @@ int lua_ax_webm_Webm_setKeepContentSize(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_setKeepContentSize'", nullptr);
             return 0;
         }
-        cobj->setKeepContentSize(arg0);
+        obj->setKeepContentSize(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -985,7 +985,7 @@ int lua_ax_webm_Webm_setKeepContentSize(lua_State* tolua_S)
 int lua_ax_webm_Webm_getWebmPath(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Webm* cobj = nullptr;
+    ax::Webm* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -997,25 +997,25 @@ int lua_ax_webm_Webm_getWebmPath(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"ax.Webm",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
+    obj = (ax::Webm*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_webm_Webm_getWebmPath'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_webm_Webm_getWebmPath'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_getWebmPath'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getWebmPath();
+        auto&& ret = obj->getWebmPath();
         lua_pushlstring(tolua_S,ret.c_str(),ret.length());
         return 1;
     }
@@ -1310,7 +1310,7 @@ int lua_ax_webm_Webm_setDecodeThreadCount(lua_State* tolua_S)
 int lua_ax_webm_Webm_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    ax::Webm* cobj = nullptr;
+    ax::Webm* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -1320,18 +1320,18 @@ int lua_ax_webm_Webm_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_webm_Webm_constructor'", nullptr);
             return 0;
         }
-        cobj = new ax::Webm();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"ax.Webm");
+        obj = new ax::Webm();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"ax.Webm");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "ax.Webm:Webm",argc, 0);
@@ -1392,14 +1392,14 @@ int lua_register_ax_webm_Webm(lua_State* tolua_S)
 }
 TOLUA_API int register_all_ax_webm(lua_State* tolua_S)
 {
-	tolua_open(tolua_S);
-	
-	tolua_module(tolua_S,"ax",0);
-	tolua_beginmodule(tolua_S,"ax");
+    tolua_open(tolua_S);
 
-	lua_register_ax_webm_Webm(tolua_S);
+    tolua_module(tolua_S,"ax",0);
+    tolua_beginmodule(tolua_S,"ax");
 
-	tolua_endmodule(tolua_S);
-	return 1;
+    lua_register_ax_webm_Webm(tolua_S);
+
+    tolua_endmodule(tolua_S);
+    return 1;
 }
 

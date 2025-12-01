@@ -11917,6 +11917,103 @@ int lua_ax_ui_Text_getString(lua_State* tolua_S)
 
     return 0;
 }
+int lua_ax_ui_Text_setRawString(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::ui::Text* obj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"axui.Text",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    obj = (ax::ui::Text*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!obj)
+    {
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_ui_Text_setRawString'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1)
+    {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "axui.Text:setRawString");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_ui_Text_setRawString'", nullptr);
+            return 0;
+        }
+        obj->setRawString(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "axui.Text:setRawString",argc, 1);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_ui_Text_setRawString'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_ax_ui_Text_getRawString(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::ui::Text* obj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"axui.Text",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    obj = (ax::ui::Text*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!obj)
+    {
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_ui_Text_getRawString'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_ui_Text_getRawString'", nullptr);
+            return 0;
+        }
+        auto&& ret = obj->getRawString();
+        lua_pushlstring(tolua_S,ret.c_str(),ret.length());
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "axui.Text:getRawString",argc, 0);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_ui_Text_getRawString'.",&tolua_err);
+#endif
+
+    return 0;
+}
 int lua_ax_ui_Text_getStringLength(lua_State* tolua_S)
 {
     int argc = 0;
@@ -13332,6 +13429,206 @@ int lua_ax_ui_Text_getEffectColor(lua_State* tolua_S)
 
     return 0;
 }
+int lua_ax_ui_Text_setGradientColor(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::ui::Text* obj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"axui.Text",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    obj = (ax::ui::Text*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!obj)
+    {
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_ui_Text_setGradientColor'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 2)
+    {
+        ax::Color4B arg0;
+        int arg1;
+
+        ok &=luaval_to_color4b(tolua_S, 2, &arg0, "axui.Text:setGradientColor");
+
+        ok &= luaval_to_int32(tolua_S, 3,(int *)&arg1, "axui.Text:setGradientColor");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_ui_Text_setGradientColor'", nullptr);
+            return 0;
+        }
+        obj->setGradientColor(arg0, arg1);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "axui.Text:setGradientColor",argc, 2);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_ui_Text_setGradientColor'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_ax_ui_Text_enableGradientColor(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::ui::Text* obj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"axui.Text",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    obj = (ax::ui::Text*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!obj)
+    {
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_ui_Text_enableGradientColor'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1)
+    {
+        bool arg0;
+
+        ok &= luaval_to_boolean(tolua_S, 2,&arg0, "axui.Text:enableGradientColor");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_ui_Text_enableGradientColor'", nullptr);
+            return 0;
+        }
+        obj->enableGradientColor(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "axui.Text:enableGradientColor",argc, 1);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_ui_Text_enableGradientColor'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_ax_ui_Text_getGradientColor(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::ui::Text* obj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"axui.Text",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    obj = (ax::ui::Text*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!obj)
+    {
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_ui_Text_getGradientColor'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1)
+    {
+        int arg0;
+
+        ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0, "axui.Text:getGradientColor");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_ui_Text_getGradientColor'", nullptr);
+            return 0;
+        }
+        auto&& ret = obj->getGradientColor(arg0);
+        color4b_to_luaval(tolua_S, ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "axui.Text:getGradientColor",argc, 1);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_ui_Text_getGradientColor'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_ax_ui_Text_isEnableGradientColor(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::ui::Text* obj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"axui.Text",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    obj = (ax::ui::Text*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!obj)
+    {
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_ui_Text_isEnableGradientColor'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_ui_Text_isEnableGradientColor'", nullptr);
+            return 0;
+        }
+        auto&& ret = obj->isEnableGradientColor();
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "axui.Text:isEnableGradientColor",argc, 0);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_ui_Text_isEnableGradientColor'.",&tolua_err);
+#endif
+
+    return 0;
+}
 int lua_ax_ui_Text_getLetter(lua_State* tolua_S)
 {
     int argc = 0;
@@ -13618,6 +13915,216 @@ int lua_ax_ui_Text_create(lua_State* tolua_S)
 #endif
     return 0;
 }
+int lua_ax_ui_Text_isAutoSetOverflowShrink(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"axui.Text",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_ui_Text_isAutoSetOverflowShrink'", nullptr);
+            return 0;
+        }
+        auto&& ret = ax::ui::Text::isAutoSetOverflowShrink();
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "axui.Text:isAutoSetOverflowShrink",argc, 0);
+    return 0;
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_ui_Text_isAutoSetOverflowShrink'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_ax_ui_Text_setAutoSetOverflowShrink(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"axui.Text",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 1)
+    {
+        bool arg0;
+        ok &= luaval_to_boolean(tolua_S, 2,&arg0, "axui.Text:setAutoSetOverflowShrink");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_ui_Text_setAutoSetOverflowShrink'", nullptr);
+            return 0;
+        }
+        ax::ui::Text::setAutoSetOverflowShrink(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "axui.Text:setAutoSetOverflowShrink",argc, 1);
+    return 0;
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_ui_Text_setAutoSetOverflowShrink'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_ax_ui_Text_customLocalizationEnabled(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"axui.Text",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_ui_Text_customLocalizationEnabled'", nullptr);
+            return 0;
+        }
+        auto&& ret = ax::ui::Text::customLocalizationEnabled();
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "axui.Text:customLocalizationEnabled",argc, 0);
+    return 0;
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_ui_Text_customLocalizationEnabled'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_ax_ui_Text_setCustomLocalizationEnabled(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"axui.Text",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 1)
+    {
+        bool arg0;
+        ok &= luaval_to_boolean(tolua_S, 2,&arg0, "axui.Text:setCustomLocalizationEnabled");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_ui_Text_setCustomLocalizationEnabled'", nullptr);
+            return 0;
+        }
+        ax::ui::Text::setCustomLocalizationEnabled(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "axui.Text:setCustomLocalizationEnabled",argc, 1);
+    return 0;
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_ui_Text_setCustomLocalizationEnabled'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_ax_ui_Text_setDefaultFontName(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"axui.Text",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 1)
+    {
+        std::string arg0;
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "axui.Text:setDefaultFontName");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_ui_Text_setDefaultFontName'", nullptr);
+            return 0;
+        }
+        ax::ui::Text::setDefaultFontName(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "axui.Text:setDefaultFontName",argc, 1);
+    return 0;
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_ui_Text_setDefaultFontName'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_ax_ui_Text_getDefaultFontName(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"axui.Text",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_ui_Text_getDefaultFontName'", nullptr);
+            return 0;
+        }
+        auto&& ret = ax::ui::Text::getDefaultFontName();
+        lua_pushlstring(tolua_S,ret.c_str(),ret.length());
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "axui.Text:getDefaultFontName",argc, 0);
+    return 0;
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_ui_Text_getDefaultFontName'.",&tolua_err);
+#endif
+    return 0;
+}
 int lua_ax_ui_Text_constructor(lua_State* tolua_S)
 {
     int argc = 0;
@@ -13670,6 +14177,8 @@ int lua_register_ax_ui_Text(lua_State* tolua_S)
         tolua_function(tolua_S,"new",lua_ax_ui_Text_constructor);
         tolua_function(tolua_S,"setString",lua_ax_ui_Text_setString);
         tolua_function(tolua_S,"getString",lua_ax_ui_Text_getString);
+        tolua_function(tolua_S,"setRawString",lua_ax_ui_Text_setRawString);
+        tolua_function(tolua_S,"getRawString",lua_ax_ui_Text_getRawString);
         tolua_function(tolua_S,"getStringLength",lua_ax_ui_Text_getStringLength);
         tolua_function(tolua_S,"setFontSize",lua_ax_ui_Text_setFontSize);
         tolua_function(tolua_S,"getFontSize",lua_ax_ui_Text_getFontSize);
@@ -13698,12 +14207,22 @@ int lua_register_ax_ui_Text(lua_State* tolua_S)
         tolua_function(tolua_S,"getOutlineSize",lua_ax_ui_Text_getOutlineSize);
         tolua_function(tolua_S,"getLabelEffectType",lua_ax_ui_Text_getLabelEffectType);
         tolua_function(tolua_S,"getEffectColor",lua_ax_ui_Text_getEffectColor);
+        tolua_function(tolua_S,"setGradientColor",lua_ax_ui_Text_setGradientColor);
+        tolua_function(tolua_S,"enableGradientColor",lua_ax_ui_Text_enableGradientColor);
+        tolua_function(tolua_S,"getGradientColor",lua_ax_ui_Text_getGradientColor);
+        tolua_function(tolua_S,"isEnableGradientColor",lua_ax_ui_Text_isEnableGradientColor);
         tolua_function(tolua_S,"getLetter",lua_ax_ui_Text_getLetter);
         tolua_function(tolua_S,"setBlendFunc",lua_ax_ui_Text_setBlendFunc);
         tolua_function(tolua_S,"getBlendFunc",lua_ax_ui_Text_getBlendFunc);
         tolua_function(tolua_S,"init",lua_ax_ui_Text_init);
         tolua_function(tolua_S,"createInstance", lua_ax_ui_Text_createInstance);
         tolua_function(tolua_S,"create", lua_ax_ui_Text_create);
+        tolua_function(tolua_S,"isAutoSetOverflowShrink", lua_ax_ui_Text_isAutoSetOverflowShrink);
+        tolua_function(tolua_S,"setAutoSetOverflowShrink", lua_ax_ui_Text_setAutoSetOverflowShrink);
+        tolua_function(tolua_S,"customLocalizationEnabled", lua_ax_ui_Text_customLocalizationEnabled);
+        tolua_function(tolua_S,"setCustomLocalizationEnabled", lua_ax_ui_Text_setCustomLocalizationEnabled);
+        tolua_function(tolua_S,"setDefaultFontName", lua_ax_ui_Text_setDefaultFontName);
+        tolua_function(tolua_S,"getDefaultFontName", lua_ax_ui_Text_getDefaultFontName);
     tolua_endmodule(tolua_S);
     auto typeName = typeid(ax::ui::Text).name(); // rtti is literal storage
     g_luaType[reinterpret_cast<uintptr_t>(typeName)] = "axui.Text";
@@ -18036,6 +18555,106 @@ int lua_ax_ui_ScrollView_scrollToItem(lua_State* tolua_S)
 
     return 0;
 }
+int lua_ax_ui_ScrollView_setInertiaMovementFactor(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::ui::ScrollView* obj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"axui.ScrollView",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    obj = (ax::ui::ScrollView*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!obj)
+    {
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_ui_ScrollView_setInertiaMovementFactor'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1)
+    {
+        double arg0;
+
+        ok &= luaval_to_number(tolua_S, 2,&arg0, "axui.ScrollView:setInertiaMovementFactor");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_ui_ScrollView_setInertiaMovementFactor'", nullptr);
+            return 0;
+        }
+        obj->setInertiaMovementFactor(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "axui.ScrollView:setInertiaMovementFactor",argc, 1);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_ui_ScrollView_setInertiaMovementFactor'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_ax_ui_ScrollView_setInertiaTimeFactor(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::ui::ScrollView* obj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"axui.ScrollView",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    obj = (ax::ui::ScrollView*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!obj)
+    {
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_ui_ScrollView_setInertiaTimeFactor'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1)
+    {
+        double arg0;
+
+        ok &= luaval_to_number(tolua_S, 2,&arg0, "axui.ScrollView:setInertiaTimeFactor");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_ui_ScrollView_setInertiaTimeFactor'", nullptr);
+            return 0;
+        }
+        obj->setInertiaTimeFactor(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "axui.ScrollView:setInertiaTimeFactor",argc, 1);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_ui_ScrollView_setInertiaTimeFactor'.",&tolua_err);
+#endif
+
+    return 0;
+}
 int lua_ax_ui_ScrollView_createInstance(lua_State* tolua_S)
 {
     int argc = 0;
@@ -18256,6 +18875,8 @@ int lua_register_ax_ui_ScrollView(lua_State* tolua_S)
         tolua_function(tolua_S,"isScrolling",lua_ax_ui_ScrollView_isScrolling);
         tolua_function(tolua_S,"isAutoScrolling",lua_ax_ui_ScrollView_isAutoScrolling);
         tolua_function(tolua_S,"scrollToItem",lua_ax_ui_ScrollView_scrollToItem);
+        tolua_function(tolua_S,"setInertiaMovementFactor",lua_ax_ui_ScrollView_setInertiaMovementFactor);
+        tolua_function(tolua_S,"setInertiaTimeFactor",lua_ax_ui_ScrollView_setInertiaTimeFactor);
         tolua_function(tolua_S,"createInstance", lua_ax_ui_ScrollView_createInstance);
         tolua_function(tolua_S,"create", lua_ax_ui_ScrollView_create);
         tolua_function(tolua_S,"calculateItemPositionWithAnchor", lua_ax_ui_ScrollView_calculateItemPositionWithAnchor);
@@ -41212,6 +41833,248 @@ int lua_register_ax_ui_TabControl(lua_State* tolua_S)
     g_typeCast[typeName] = "axui.TabControl";
     return 1;
 }
+
+int lua_ax_ui_QrCode_loadCodeByString(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::ui::QrCode* obj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"axui.QrCode",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    obj = (ax::ui::QrCode*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!obj)
+    {
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_ui_QrCode_loadCodeByString'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1)
+    {
+        std::string arg0;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "axui.QrCode:loadCodeByString");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_ui_QrCode_loadCodeByString'", nullptr);
+            return 0;
+        }
+        auto&& ret = obj->loadCodeByString(arg0);
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    if (argc == 2)
+    {
+        std::string arg0;
+        int arg1;
+
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "axui.QrCode:loadCodeByString");
+
+        ok &= luaval_to_int32(tolua_S, 3,(int *)&arg1, "axui.QrCode:loadCodeByString");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_ui_QrCode_loadCodeByString'", nullptr);
+            return 0;
+        }
+        auto&& ret = obj->loadCodeByString(arg0, arg1);
+        tolua_pushboolean(tolua_S,(bool)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "axui.QrCode:loadCodeByString",argc, 1);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_ui_QrCode_loadCodeByString'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_ax_ui_QrCode_setOriginSize(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::ui::QrCode* obj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"axui.QrCode",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    obj = (ax::ui::QrCode*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!obj)
+    {
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_ui_QrCode_setOriginSize'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_ui_QrCode_setOriginSize'", nullptr);
+            return 0;
+        }
+        obj->setOriginSize();
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "axui.QrCode:setOriginSize",argc, 0);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_ui_QrCode_setOriginSize'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_ax_ui_QrCode_getOriginSize(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::ui::QrCode* obj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"axui.QrCode",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    obj = (ax::ui::QrCode*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!obj)
+    {
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_ui_QrCode_getOriginSize'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_ui_QrCode_getOriginSize'", nullptr);
+            return 0;
+        }
+        auto&& ret = obj->getOriginSize();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "axui.QrCode:getOriginSize",argc, 0);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_ui_QrCode_getOriginSize'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_ax_ui_QrCode_create(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"axui.QrCode",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+
+    do {
+        if (argc == 0)
+        {
+            ax::ui::QrCode* ret = ax::ui::QrCode::create();
+            object_to_luaval<ax::ui::QrCode>(tolua_S, "axui.QrCode",(ax::ui::QrCode*)ret);
+            return 1;
+        }
+    } while (0);
+    ok  = true;
+    do {
+        if (argc == 1)
+        {
+            std::string arg0;
+            ok &= luaval_to_std_string(tolua_S, 2,&arg0, "axui.QrCode:create");
+            if (!ok) { break; }
+            ax::ui::QrCode* ret = ax::ui::QrCode::create(arg0);
+            object_to_luaval<ax::ui::QrCode>(tolua_S, "axui.QrCode",(ax::ui::QrCode*)ret);
+            return 1;
+        }
+    } while (0);
+    ok  = true;
+    do {
+        if (argc == 2)
+        {
+            std::string arg0;
+            ok &= luaval_to_std_string(tolua_S, 2,&arg0, "axui.QrCode:create");
+            if (!ok) { break; }
+            int arg1;
+            ok &= luaval_to_int32(tolua_S, 3,(int *)&arg1, "axui.QrCode:create");
+            if (!ok) { break; }
+            ax::ui::QrCode* ret = ax::ui::QrCode::create(arg0, arg1);
+            object_to_luaval<ax::ui::QrCode>(tolua_S, "axui.QrCode",(ax::ui::QrCode*)ret);
+            return 1;
+        }
+    } while (0);
+    ok  = true;
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d", "axui.QrCode:create",argc, 1);
+    return 0;
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_ui_QrCode_create'.",&tolua_err);
+#endif
+    return 0;
+}
+static int lua_ax_ui_QrCode_finalize(lua_State* tolua_S)
+{
+    AXLOGV("luabindings: finalizing LUA object (QrCode)");
+    return 0;
+}
+
+int lua_register_ax_ui_QrCode(lua_State* tolua_S)
+{
+    tolua_usertype(tolua_S,"axui.QrCode");
+    tolua_cclass(tolua_S,"QrCode","axui.QrCode","axui.ImageView",nullptr);
+
+    tolua_beginmodule(tolua_S,"QrCode");
+        tolua_function(tolua_S,"loadCodeByString",lua_ax_ui_QrCode_loadCodeByString);
+        tolua_function(tolua_S,"setOriginSize",lua_ax_ui_QrCode_setOriginSize);
+        tolua_function(tolua_S,"getOriginSize",lua_ax_ui_QrCode_getOriginSize);
+        tolua_function(tolua_S,"create", lua_ax_ui_QrCode_create);
+    tolua_endmodule(tolua_S);
+    auto typeName = typeid(ax::ui::QrCode).name(); // rtti is literal storage
+    g_luaType[reinterpret_cast<uintptr_t>(typeName)] = "axui.QrCode";
+    g_typeCast[typeName] = "axui.QrCode";
+    return 1;
+}
 TOLUA_API int register_all_ax_ui(lua_State* tolua_S)
 {
     tolua_open(tolua_S);
@@ -41254,6 +42117,7 @@ TOLUA_API int register_all_ax_ui(lua_State* tolua_S)
     lua_register_ax_ui_LayoutComponent(tolua_S);
     lua_register_ax_ui_TabHeader(tolua_S);
     lua_register_ax_ui_TabControl(tolua_S);
+    lua_register_ax_ui_QrCode(tolua_S);
 
     tolua_endmodule(tolua_S);
     return 1;
