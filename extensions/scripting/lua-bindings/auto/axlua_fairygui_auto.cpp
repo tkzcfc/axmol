@@ -10,7 +10,7 @@
 int lua_ax_fairygui_InputEvent_getTarget(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::InputEvent* cobj = nullptr;
+    fairygui::InputEvent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -22,25 +22,25 @@ int lua_ax_fairygui_InputEvent_getTarget(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.InputEvent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_InputEvent_getTarget'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_InputEvent_getTarget'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_InputEvent_getTarget'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTarget();
+        auto&& ret = obj->getTarget();
         object_to_luaval<fairygui::GObject>(tolua_S, "fgui.GObject",(fairygui::GObject*)ret);
         return 1;
     }
@@ -57,7 +57,7 @@ int lua_ax_fairygui_InputEvent_getTarget(lua_State* tolua_S)
 int lua_ax_fairygui_InputEvent_getX(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::InputEvent* cobj = nullptr;
+    fairygui::InputEvent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -69,25 +69,25 @@ int lua_ax_fairygui_InputEvent_getX(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.InputEvent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_InputEvent_getX'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_InputEvent_getX'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_InputEvent_getX'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getX();
+        auto&& ret = obj->getX();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -104,7 +104,7 @@ int lua_ax_fairygui_InputEvent_getX(lua_State* tolua_S)
 int lua_ax_fairygui_InputEvent_getY(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::InputEvent* cobj = nullptr;
+    fairygui::InputEvent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -116,25 +116,25 @@ int lua_ax_fairygui_InputEvent_getY(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.InputEvent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_InputEvent_getY'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_InputEvent_getY'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_InputEvent_getY'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getY();
+        auto&& ret = obj->getY();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -151,7 +151,7 @@ int lua_ax_fairygui_InputEvent_getY(lua_State* tolua_S)
 int lua_ax_fairygui_InputEvent_getPosition(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::InputEvent* cobj = nullptr;
+    fairygui::InputEvent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -163,25 +163,25 @@ int lua_ax_fairygui_InputEvent_getPosition(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.InputEvent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_InputEvent_getPosition'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_InputEvent_getPosition'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_InputEvent_getPosition'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getPosition();
+        auto&& ret = obj->getPosition();
         vec2_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -198,7 +198,7 @@ int lua_ax_fairygui_InputEvent_getPosition(lua_State* tolua_S)
 int lua_ax_fairygui_InputEvent_getTouch(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::InputEvent* cobj = nullptr;
+    fairygui::InputEvent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -210,25 +210,25 @@ int lua_ax_fairygui_InputEvent_getTouch(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.InputEvent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_InputEvent_getTouch'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_InputEvent_getTouch'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_InputEvent_getTouch'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTouch();
+        auto&& ret = obj->getTouch();
         object_to_luaval<ax::Touch>(tolua_S, "ax.Touch",(ax::Touch*)ret);
         return 1;
     }
@@ -245,7 +245,7 @@ int lua_ax_fairygui_InputEvent_getTouch(lua_State* tolua_S)
 int lua_ax_fairygui_InputEvent_getTouchId(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::InputEvent* cobj = nullptr;
+    fairygui::InputEvent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -257,25 +257,25 @@ int lua_ax_fairygui_InputEvent_getTouchId(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.InputEvent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_InputEvent_getTouchId'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_InputEvent_getTouchId'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_InputEvent_getTouchId'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTouchId();
+        auto&& ret = obj->getTouchId();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -292,7 +292,7 @@ int lua_ax_fairygui_InputEvent_getTouchId(lua_State* tolua_S)
 int lua_ax_fairygui_InputEvent_isDoubleClick(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::InputEvent* cobj = nullptr;
+    fairygui::InputEvent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -304,25 +304,25 @@ int lua_ax_fairygui_InputEvent_isDoubleClick(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.InputEvent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_InputEvent_isDoubleClick'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_InputEvent_isDoubleClick'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_InputEvent_isDoubleClick'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isDoubleClick();
+        auto&& ret = obj->isDoubleClick();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -339,7 +339,7 @@ int lua_ax_fairygui_InputEvent_isDoubleClick(lua_State* tolua_S)
 int lua_ax_fairygui_InputEvent_getButton(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::InputEvent* cobj = nullptr;
+    fairygui::InputEvent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -351,25 +351,25 @@ int lua_ax_fairygui_InputEvent_getButton(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.InputEvent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_InputEvent_getButton'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_InputEvent_getButton'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_InputEvent_getButton'", nullptr);
             return 0;
         }
-        int ret = (int)cobj->getButton();
+        int ret = (int)obj->getButton();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -386,7 +386,7 @@ int lua_ax_fairygui_InputEvent_getButton(lua_State* tolua_S)
 int lua_ax_fairygui_InputEvent_getKeyCode(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::InputEvent* cobj = nullptr;
+    fairygui::InputEvent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -398,25 +398,25 @@ int lua_ax_fairygui_InputEvent_getKeyCode(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.InputEvent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_InputEvent_getKeyCode'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_InputEvent_getKeyCode'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_InputEvent_getKeyCode'", nullptr);
             return 0;
         }
-        int ret = (int)cobj->getKeyCode();
+        int ret = (int)obj->getKeyCode();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -433,7 +433,7 @@ int lua_ax_fairygui_InputEvent_getKeyCode(lua_State* tolua_S)
 int lua_ax_fairygui_InputEvent_isCtrlDown(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::InputEvent* cobj = nullptr;
+    fairygui::InputEvent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -445,25 +445,25 @@ int lua_ax_fairygui_InputEvent_isCtrlDown(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.InputEvent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_InputEvent_isCtrlDown'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_InputEvent_isCtrlDown'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_InputEvent_isCtrlDown'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isCtrlDown();
+        auto&& ret = obj->isCtrlDown();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -480,7 +480,7 @@ int lua_ax_fairygui_InputEvent_isCtrlDown(lua_State* tolua_S)
 int lua_ax_fairygui_InputEvent_isAltDown(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::InputEvent* cobj = nullptr;
+    fairygui::InputEvent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -492,25 +492,25 @@ int lua_ax_fairygui_InputEvent_isAltDown(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.InputEvent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_InputEvent_isAltDown'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_InputEvent_isAltDown'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_InputEvent_isAltDown'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isAltDown();
+        auto&& ret = obj->isAltDown();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -527,7 +527,7 @@ int lua_ax_fairygui_InputEvent_isAltDown(lua_State* tolua_S)
 int lua_ax_fairygui_InputEvent_isShiftDown(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::InputEvent* cobj = nullptr;
+    fairygui::InputEvent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -539,25 +539,25 @@ int lua_ax_fairygui_InputEvent_isShiftDown(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.InputEvent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_InputEvent_isShiftDown'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_InputEvent_isShiftDown'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_InputEvent_isShiftDown'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isShiftDown();
+        auto&& ret = obj->isShiftDown();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -574,7 +574,7 @@ int lua_ax_fairygui_InputEvent_isShiftDown(lua_State* tolua_S)
 int lua_ax_fairygui_InputEvent_getMouseWheelDelta(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::InputEvent* cobj = nullptr;
+    fairygui::InputEvent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -586,25 +586,25 @@ int lua_ax_fairygui_InputEvent_getMouseWheelDelta(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.InputEvent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_InputEvent_getMouseWheelDelta'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_InputEvent_getMouseWheelDelta'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_InputEvent_getMouseWheelDelta'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getMouseWheelDelta();
+        auto&& ret = obj->getMouseWheelDelta();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -621,7 +621,7 @@ int lua_ax_fairygui_InputEvent_getMouseWheelDelta(lua_State* tolua_S)
 int lua_ax_fairygui_InputEvent_getProcessor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::InputEvent* cobj = nullptr;
+    fairygui::InputEvent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -633,25 +633,25 @@ int lua_ax_fairygui_InputEvent_getProcessor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.InputEvent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::InputEvent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_InputEvent_getProcessor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_InputEvent_getProcessor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_InputEvent_getProcessor'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getProcessor();
+        auto&& ret = obj->getProcessor();
         object_to_luaval<fairygui::InputProcessor>(tolua_S, "fgui.InputProcessor",(fairygui::InputProcessor*)ret);
         return 1;
     }
@@ -668,7 +668,7 @@ int lua_ax_fairygui_InputEvent_getProcessor(lua_State* tolua_S)
 int lua_ax_fairygui_InputEvent_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::InputEvent* cobj = nullptr;
+    fairygui::InputEvent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -678,15 +678,15 @@ int lua_ax_fairygui_InputEvent_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_InputEvent_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::InputEvent();
-        tolua_pushusertype(tolua_S,(void*)cobj,"fgui.InputEvent");
+        obj = new fairygui::InputEvent();
+        tolua_pushusertype(tolua_S,(void*)obj,"fgui.InputEvent");
         tolua_register_gc(tolua_S,lua_gettop(tolua_S));
         return 1;
     }
@@ -737,7 +737,7 @@ int lua_register_ax_fairygui_InputEvent(lua_State* tolua_S)
 int lua_ax_fairygui_EventContext_getType(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::EventContext* cobj = nullptr;
+    fairygui::EventContext* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -749,25 +749,25 @@ int lua_ax_fairygui_EventContext_getType(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.EventContext",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::EventContext*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::EventContext*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_EventContext_getType'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_EventContext_getType'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_EventContext_getType'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getType();
+        auto&& ret = obj->getType();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -784,7 +784,7 @@ int lua_ax_fairygui_EventContext_getType(lua_State* tolua_S)
 int lua_ax_fairygui_EventContext_getSender(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::EventContext* cobj = nullptr;
+    fairygui::EventContext* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -796,25 +796,25 @@ int lua_ax_fairygui_EventContext_getSender(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.EventContext",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::EventContext*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::EventContext*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_EventContext_getSender'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_EventContext_getSender'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_EventContext_getSender'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getSender();
+        auto&& ret = obj->getSender();
         object_to_luaval<ax::Object>(tolua_S, "ax.Object",(ax::Object*)ret);
         return 1;
     }
@@ -831,7 +831,7 @@ int lua_ax_fairygui_EventContext_getSender(lua_State* tolua_S)
 int lua_ax_fairygui_EventContext_getInput(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::EventContext* cobj = nullptr;
+    fairygui::EventContext* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -843,25 +843,25 @@ int lua_ax_fairygui_EventContext_getInput(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.EventContext",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::EventContext*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::EventContext*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_EventContext_getInput'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_EventContext_getInput'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_EventContext_getInput'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getInput();
+        auto&& ret = obj->getInput();
         object_to_luaval<fairygui::InputEvent>(tolua_S, "fgui.InputEvent",(fairygui::InputEvent*)ret);
         return 1;
     }
@@ -878,7 +878,7 @@ int lua_ax_fairygui_EventContext_getInput(lua_State* tolua_S)
 int lua_ax_fairygui_EventContext_stopPropagation(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::EventContext* cobj = nullptr;
+    fairygui::EventContext* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -890,25 +890,25 @@ int lua_ax_fairygui_EventContext_stopPropagation(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.EventContext",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::EventContext*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::EventContext*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_EventContext_stopPropagation'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_EventContext_stopPropagation'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_EventContext_stopPropagation'", nullptr);
             return 0;
         }
-        cobj->stopPropagation();
+        obj->stopPropagation();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -925,7 +925,7 @@ int lua_ax_fairygui_EventContext_stopPropagation(lua_State* tolua_S)
 int lua_ax_fairygui_EventContext_preventDefault(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::EventContext* cobj = nullptr;
+    fairygui::EventContext* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -937,25 +937,25 @@ int lua_ax_fairygui_EventContext_preventDefault(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.EventContext",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::EventContext*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::EventContext*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_EventContext_preventDefault'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_EventContext_preventDefault'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_EventContext_preventDefault'", nullptr);
             return 0;
         }
-        cobj->preventDefault();
+        obj->preventDefault();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -972,7 +972,7 @@ int lua_ax_fairygui_EventContext_preventDefault(lua_State* tolua_S)
 int lua_ax_fairygui_EventContext_isDefaultPrevented(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::EventContext* cobj = nullptr;
+    fairygui::EventContext* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -984,25 +984,25 @@ int lua_ax_fairygui_EventContext_isDefaultPrevented(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.EventContext",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::EventContext*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::EventContext*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_EventContext_isDefaultPrevented'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_EventContext_isDefaultPrevented'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_EventContext_isDefaultPrevented'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isDefaultPrevented();
+        auto&& ret = obj->isDefaultPrevented();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -1019,7 +1019,7 @@ int lua_ax_fairygui_EventContext_isDefaultPrevented(lua_State* tolua_S)
 int lua_ax_fairygui_EventContext_captureTouch(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::EventContext* cobj = nullptr;
+    fairygui::EventContext* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -1031,25 +1031,25 @@ int lua_ax_fairygui_EventContext_captureTouch(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.EventContext",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::EventContext*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::EventContext*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_EventContext_captureTouch'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_EventContext_captureTouch'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_EventContext_captureTouch'", nullptr);
             return 0;
         }
-        cobj->captureTouch();
+        obj->captureTouch();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -1066,7 +1066,7 @@ int lua_ax_fairygui_EventContext_captureTouch(lua_State* tolua_S)
 int lua_ax_fairygui_EventContext_uncaptureTouch(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::EventContext* cobj = nullptr;
+    fairygui::EventContext* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -1078,25 +1078,25 @@ int lua_ax_fairygui_EventContext_uncaptureTouch(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.EventContext",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::EventContext*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::EventContext*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_EventContext_uncaptureTouch'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_EventContext_uncaptureTouch'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_EventContext_uncaptureTouch'", nullptr);
             return 0;
         }
-        cobj->uncaptureTouch();
+        obj->uncaptureTouch();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -1113,7 +1113,7 @@ int lua_ax_fairygui_EventContext_uncaptureTouch(lua_State* tolua_S)
 int lua_ax_fairygui_EventContext_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::EventContext* cobj = nullptr;
+    fairygui::EventContext* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -1123,15 +1123,15 @@ int lua_ax_fairygui_EventContext_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_EventContext_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::EventContext();
-        tolua_pushusertype(tolua_S,(void*)cobj,"fgui.EventContext");
+        obj = new fairygui::EventContext();
+        tolua_pushusertype(tolua_S,(void*)obj,"fgui.EventContext");
         tolua_register_gc(tolua_S,lua_gettop(tolua_S));
         return 1;
     }
@@ -1176,7 +1176,7 @@ int lua_register_ax_fairygui_EventContext(lua_State* tolua_S)
 int lua_ax_fairygui_UIEventDispatcher_removeEventListeners(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::UIEventDispatcher* cobj = nullptr;
+    fairygui::UIEventDispatcher* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -1188,25 +1188,25 @@ int lua_ax_fairygui_UIEventDispatcher_removeEventListeners(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.UIEventDispatcher",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::UIEventDispatcher*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::UIEventDispatcher*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_UIEventDispatcher_removeEventListeners'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_UIEventDispatcher_removeEventListeners'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_UIEventDispatcher_removeEventListeners'", nullptr);
             return 0;
         }
-        cobj->removeEventListeners();
+        obj->removeEventListeners();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -1223,7 +1223,7 @@ int lua_ax_fairygui_UIEventDispatcher_removeEventListeners(lua_State* tolua_S)
 int lua_ax_fairygui_UIEventDispatcher_dispatchEvent(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::UIEventDispatcher* cobj = nullptr;
+    fairygui::UIEventDispatcher* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -1235,18 +1235,18 @@ int lua_ax_fairygui_UIEventDispatcher_dispatchEvent(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.UIEventDispatcher",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::UIEventDispatcher*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::UIEventDispatcher*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_UIEventDispatcher_dispatchEvent'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_UIEventDispatcher_dispatchEvent'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -1256,11 +1256,11 @@ int lua_ax_fairygui_UIEventDispatcher_dispatchEvent(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_UIEventDispatcher_dispatchEvent'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->dispatchEvent(arg0);
+        auto&& ret = obj->dispatchEvent(arg0);
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         int arg0;
         void* arg1;
@@ -1274,11 +1274,11 @@ int lua_ax_fairygui_UIEventDispatcher_dispatchEvent(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_UIEventDispatcher_dispatchEvent'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->dispatchEvent(arg0, arg1);
+        auto&& ret = obj->dispatchEvent(arg0, arg1);
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
-    if (argc == 3) 
+    if (argc == 3)
     {
         int arg0;
         void* arg1;
@@ -1295,7 +1295,7 @@ int lua_ax_fairygui_UIEventDispatcher_dispatchEvent(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_UIEventDispatcher_dispatchEvent'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->dispatchEvent(arg0, arg1, arg2);
+        auto&& ret = obj->dispatchEvent(arg0, arg1, arg2);
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -1312,7 +1312,7 @@ int lua_ax_fairygui_UIEventDispatcher_dispatchEvent(lua_State* tolua_S)
 int lua_ax_fairygui_UIEventDispatcher_bubbleEvent(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::UIEventDispatcher* cobj = nullptr;
+    fairygui::UIEventDispatcher* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -1324,18 +1324,18 @@ int lua_ax_fairygui_UIEventDispatcher_bubbleEvent(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.UIEventDispatcher",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::UIEventDispatcher*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::UIEventDispatcher*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_UIEventDispatcher_bubbleEvent'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_UIEventDispatcher_bubbleEvent'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -1345,11 +1345,11 @@ int lua_ax_fairygui_UIEventDispatcher_bubbleEvent(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_UIEventDispatcher_bubbleEvent'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->bubbleEvent(arg0);
+        auto&& ret = obj->bubbleEvent(arg0);
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         int arg0;
         void* arg1;
@@ -1363,11 +1363,11 @@ int lua_ax_fairygui_UIEventDispatcher_bubbleEvent(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_UIEventDispatcher_bubbleEvent'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->bubbleEvent(arg0, arg1);
+        auto&& ret = obj->bubbleEvent(arg0, arg1);
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
-    if (argc == 3) 
+    if (argc == 3)
     {
         int arg0;
         void* arg1;
@@ -1384,7 +1384,7 @@ int lua_ax_fairygui_UIEventDispatcher_bubbleEvent(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_UIEventDispatcher_bubbleEvent'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->bubbleEvent(arg0, arg1, arg2);
+        auto&& ret = obj->bubbleEvent(arg0, arg1, arg2);
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -1401,7 +1401,7 @@ int lua_ax_fairygui_UIEventDispatcher_bubbleEvent(lua_State* tolua_S)
 int lua_ax_fairygui_UIEventDispatcher_isDispatchingEvent(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::UIEventDispatcher* cobj = nullptr;
+    fairygui::UIEventDispatcher* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -1413,18 +1413,18 @@ int lua_ax_fairygui_UIEventDispatcher_isDispatchingEvent(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.UIEventDispatcher",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::UIEventDispatcher*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::UIEventDispatcher*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_UIEventDispatcher_isDispatchingEvent'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_UIEventDispatcher_isDispatchingEvent'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -1434,7 +1434,7 @@ int lua_ax_fairygui_UIEventDispatcher_isDispatchingEvent(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_UIEventDispatcher_isDispatchingEvent'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isDispatchingEvent(arg0);
+        auto&& ret = obj->isDispatchingEvent(arg0);
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -1451,7 +1451,7 @@ int lua_ax_fairygui_UIEventDispatcher_isDispatchingEvent(lua_State* tolua_S)
 int lua_ax_fairygui_UIEventDispatcher_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::UIEventDispatcher* cobj = nullptr;
+    fairygui::UIEventDispatcher* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -1461,18 +1461,18 @@ int lua_ax_fairygui_UIEventDispatcher_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_UIEventDispatcher_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::UIEventDispatcher();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.UIEventDispatcher");
+        obj = new fairygui::UIEventDispatcher();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.UIEventDispatcher");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.UIEventDispatcher:UIEventDispatcher",argc, 0);
@@ -1512,7 +1512,7 @@ int lua_register_ax_fairygui_UIEventDispatcher(lua_State* tolua_S)
 int lua_ax_fairygui_GController_getParent(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GController* cobj = nullptr;
+    fairygui::GController* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -1524,25 +1524,25 @@ int lua_ax_fairygui_GController_getParent(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GController",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GController_getParent'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GController_getParent'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GController_getParent'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getParent();
+        auto&& ret = obj->getParent();
         object_to_luaval<fairygui::GComponent>(tolua_S, "fgui.GComponent",(fairygui::GComponent*)ret);
         return 1;
     }
@@ -1559,7 +1559,7 @@ int lua_ax_fairygui_GController_getParent(lua_State* tolua_S)
 int lua_ax_fairygui_GController_setParent(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GController* cobj = nullptr;
+    fairygui::GController* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -1571,18 +1571,18 @@ int lua_ax_fairygui_GController_setParent(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GController",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GController_setParent'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GController_setParent'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GComponent* arg0;
 
@@ -1592,7 +1592,7 @@ int lua_ax_fairygui_GController_setParent(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GController_setParent'", nullptr);
             return 0;
         }
-        cobj->setParent(arg0);
+        obj->setParent(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -1609,7 +1609,7 @@ int lua_ax_fairygui_GController_setParent(lua_State* tolua_S)
 int lua_ax_fairygui_GController_getSelectedIndex(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GController* cobj = nullptr;
+    fairygui::GController* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -1621,25 +1621,25 @@ int lua_ax_fairygui_GController_getSelectedIndex(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GController",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GController_getSelectedIndex'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GController_getSelectedIndex'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GController_getSelectedIndex'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getSelectedIndex();
+        auto&& ret = obj->getSelectedIndex();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -1656,7 +1656,7 @@ int lua_ax_fairygui_GController_getSelectedIndex(lua_State* tolua_S)
 int lua_ax_fairygui_GController_setSelectedIndex(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GController* cobj = nullptr;
+    fairygui::GController* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -1668,18 +1668,18 @@ int lua_ax_fairygui_GController_setSelectedIndex(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GController",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GController_setSelectedIndex'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GController_setSelectedIndex'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -1689,11 +1689,11 @@ int lua_ax_fairygui_GController_setSelectedIndex(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GController_setSelectedIndex'", nullptr);
             return 0;
         }
-        cobj->setSelectedIndex(arg0);
+        obj->setSelectedIndex(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         int arg0;
         bool arg1;
@@ -1706,7 +1706,7 @@ int lua_ax_fairygui_GController_setSelectedIndex(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GController_setSelectedIndex'", nullptr);
             return 0;
         }
-        cobj->setSelectedIndex(arg0, arg1);
+        obj->setSelectedIndex(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -1723,7 +1723,7 @@ int lua_ax_fairygui_GController_setSelectedIndex(lua_State* tolua_S)
 int lua_ax_fairygui_GController_getSelectedPage(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GController* cobj = nullptr;
+    fairygui::GController* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -1735,25 +1735,25 @@ int lua_ax_fairygui_GController_getSelectedPage(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GController",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GController_getSelectedPage'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GController_getSelectedPage'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GController_getSelectedPage'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getSelectedPage();
+        auto&& ret = obj->getSelectedPage();
         lua_pushlstring(tolua_S,ret.c_str(),ret.length());
         return 1;
     }
@@ -1770,7 +1770,7 @@ int lua_ax_fairygui_GController_getSelectedPage(lua_State* tolua_S)
 int lua_ax_fairygui_GController_setSelectedPage(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GController* cobj = nullptr;
+    fairygui::GController* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -1782,18 +1782,18 @@ int lua_ax_fairygui_GController_setSelectedPage(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GController",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GController_setSelectedPage'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GController_setSelectedPage'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -1803,11 +1803,11 @@ int lua_ax_fairygui_GController_setSelectedPage(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GController_setSelectedPage'", nullptr);
             return 0;
         }
-        cobj->setSelectedPage(arg0);
+        obj->setSelectedPage(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         std::string arg0;
         bool arg1;
@@ -1820,7 +1820,7 @@ int lua_ax_fairygui_GController_setSelectedPage(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GController_setSelectedPage'", nullptr);
             return 0;
         }
-        cobj->setSelectedPage(arg0, arg1);
+        obj->setSelectedPage(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -1837,7 +1837,7 @@ int lua_ax_fairygui_GController_setSelectedPage(lua_State* tolua_S)
 int lua_ax_fairygui_GController_getSelectedPageId(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GController* cobj = nullptr;
+    fairygui::GController* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -1849,25 +1849,25 @@ int lua_ax_fairygui_GController_getSelectedPageId(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GController",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GController_getSelectedPageId'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GController_getSelectedPageId'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GController_getSelectedPageId'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getSelectedPageId();
+        auto&& ret = obj->getSelectedPageId();
         lua_pushlstring(tolua_S,ret.c_str(),ret.length());
         return 1;
     }
@@ -1884,7 +1884,7 @@ int lua_ax_fairygui_GController_getSelectedPageId(lua_State* tolua_S)
 int lua_ax_fairygui_GController_setSelectedPageId(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GController* cobj = nullptr;
+    fairygui::GController* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -1896,18 +1896,18 @@ int lua_ax_fairygui_GController_setSelectedPageId(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GController",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GController_setSelectedPageId'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GController_setSelectedPageId'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -1917,11 +1917,11 @@ int lua_ax_fairygui_GController_setSelectedPageId(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GController_setSelectedPageId'", nullptr);
             return 0;
         }
-        cobj->setSelectedPageId(arg0);
+        obj->setSelectedPageId(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         std::string arg0;
         bool arg1;
@@ -1934,7 +1934,7 @@ int lua_ax_fairygui_GController_setSelectedPageId(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GController_setSelectedPageId'", nullptr);
             return 0;
         }
-        cobj->setSelectedPageId(arg0, arg1);
+        obj->setSelectedPageId(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -1951,7 +1951,7 @@ int lua_ax_fairygui_GController_setSelectedPageId(lua_State* tolua_S)
 int lua_ax_fairygui_GController_getPrevisousIndex(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GController* cobj = nullptr;
+    fairygui::GController* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -1963,25 +1963,25 @@ int lua_ax_fairygui_GController_getPrevisousIndex(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GController",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GController_getPrevisousIndex'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GController_getPrevisousIndex'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GController_getPrevisousIndex'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getPrevisousIndex();
+        auto&& ret = obj->getPrevisousIndex();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -1998,7 +1998,7 @@ int lua_ax_fairygui_GController_getPrevisousIndex(lua_State* tolua_S)
 int lua_ax_fairygui_GController_getPreviousPage(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GController* cobj = nullptr;
+    fairygui::GController* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -2010,25 +2010,25 @@ int lua_ax_fairygui_GController_getPreviousPage(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GController",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GController_getPreviousPage'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GController_getPreviousPage'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GController_getPreviousPage'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getPreviousPage();
+        auto&& ret = obj->getPreviousPage();
         lua_pushlstring(tolua_S,ret.c_str(),ret.length());
         return 1;
     }
@@ -2045,7 +2045,7 @@ int lua_ax_fairygui_GController_getPreviousPage(lua_State* tolua_S)
 int lua_ax_fairygui_GController_getPreviousPageId(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GController* cobj = nullptr;
+    fairygui::GController* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -2057,25 +2057,25 @@ int lua_ax_fairygui_GController_getPreviousPageId(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GController",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GController_getPreviousPageId'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GController_getPreviousPageId'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GController_getPreviousPageId'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getPreviousPageId();
+        auto&& ret = obj->getPreviousPageId();
         lua_pushlstring(tolua_S,ret.c_str(),ret.length());
         return 1;
     }
@@ -2092,7 +2092,7 @@ int lua_ax_fairygui_GController_getPreviousPageId(lua_State* tolua_S)
 int lua_ax_fairygui_GController_getPageCount(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GController* cobj = nullptr;
+    fairygui::GController* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -2104,25 +2104,25 @@ int lua_ax_fairygui_GController_getPageCount(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GController",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GController_getPageCount'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GController_getPageCount'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GController_getPageCount'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getPageCount();
+        auto&& ret = obj->getPageCount();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -2139,7 +2139,7 @@ int lua_ax_fairygui_GController_getPageCount(lua_State* tolua_S)
 int lua_ax_fairygui_GController_hasPage(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GController* cobj = nullptr;
+    fairygui::GController* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -2151,18 +2151,18 @@ int lua_ax_fairygui_GController_hasPage(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GController",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GController_hasPage'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GController_hasPage'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -2172,7 +2172,7 @@ int lua_ax_fairygui_GController_hasPage(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GController_hasPage'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->hasPage(arg0);
+        auto&& ret = obj->hasPage(arg0);
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -2189,7 +2189,7 @@ int lua_ax_fairygui_GController_hasPage(lua_State* tolua_S)
 int lua_ax_fairygui_GController_getPageIndexById(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GController* cobj = nullptr;
+    fairygui::GController* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -2201,18 +2201,18 @@ int lua_ax_fairygui_GController_getPageIndexById(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GController",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GController_getPageIndexById'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GController_getPageIndexById'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -2222,7 +2222,7 @@ int lua_ax_fairygui_GController_getPageIndexById(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GController_getPageIndexById'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getPageIndexById(arg0);
+        auto&& ret = obj->getPageIndexById(arg0);
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -2239,7 +2239,7 @@ int lua_ax_fairygui_GController_getPageIndexById(lua_State* tolua_S)
 int lua_ax_fairygui_GController_getPageNameById(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GController* cobj = nullptr;
+    fairygui::GController* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -2251,18 +2251,18 @@ int lua_ax_fairygui_GController_getPageNameById(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GController",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GController_getPageNameById'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GController_getPageNameById'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -2272,7 +2272,7 @@ int lua_ax_fairygui_GController_getPageNameById(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GController_getPageNameById'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getPageNameById(arg0);
+        auto&& ret = obj->getPageNameById(arg0);
         lua_pushlstring(tolua_S,ret.c_str(),ret.length());
         return 1;
     }
@@ -2289,7 +2289,7 @@ int lua_ax_fairygui_GController_getPageNameById(lua_State* tolua_S)
 int lua_ax_fairygui_GController_getPageId(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GController* cobj = nullptr;
+    fairygui::GController* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -2301,18 +2301,18 @@ int lua_ax_fairygui_GController_getPageId(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GController",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GController_getPageId'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GController_getPageId'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -2322,7 +2322,7 @@ int lua_ax_fairygui_GController_getPageId(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GController_getPageId'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getPageId(arg0);
+        auto&& ret = obj->getPageId(arg0);
         lua_pushlstring(tolua_S,ret.c_str(),ret.length());
         return 1;
     }
@@ -2339,7 +2339,7 @@ int lua_ax_fairygui_GController_getPageId(lua_State* tolua_S)
 int lua_ax_fairygui_GController_setOppositePageId(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GController* cobj = nullptr;
+    fairygui::GController* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -2351,18 +2351,18 @@ int lua_ax_fairygui_GController_setOppositePageId(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GController",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GController_setOppositePageId'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GController_setOppositePageId'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -2372,7 +2372,7 @@ int lua_ax_fairygui_GController_setOppositePageId(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GController_setOppositePageId'", nullptr);
             return 0;
         }
-        cobj->setOppositePageId(arg0);
+        obj->setOppositePageId(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -2389,7 +2389,7 @@ int lua_ax_fairygui_GController_setOppositePageId(lua_State* tolua_S)
 int lua_ax_fairygui_GController_runActions(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GController* cobj = nullptr;
+    fairygui::GController* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -2401,25 +2401,25 @@ int lua_ax_fairygui_GController_runActions(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GController",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GController*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GController_runActions'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GController_runActions'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GController_runActions'", nullptr);
             return 0;
         }
-        cobj->runActions();
+        obj->runActions();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -2436,7 +2436,7 @@ int lua_ax_fairygui_GController_runActions(lua_State* tolua_S)
 int lua_ax_fairygui_GController_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GController* cobj = nullptr;
+    fairygui::GController* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -2446,18 +2446,18 @@ int lua_ax_fairygui_GController_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GController_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::GController();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.GController");
+        obj = new fairygui::GController();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.GController");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.GController:GController",argc, 0);
@@ -2511,7 +2511,7 @@ int lua_register_ax_fairygui_GController(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getX(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -2523,25 +2523,25 @@ int lua_ax_fairygui_GObject_getX(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getX'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getX'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getX'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getX();
+        auto&& ret = obj->getX();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -2558,7 +2558,7 @@ int lua_ax_fairygui_GObject_getX(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setX(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -2570,18 +2570,18 @@ int lua_ax_fairygui_GObject_setX(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setX'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setX'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -2591,7 +2591,7 @@ int lua_ax_fairygui_GObject_setX(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setX'", nullptr);
             return 0;
         }
-        cobj->setX(arg0);
+        obj->setX(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -2608,7 +2608,7 @@ int lua_ax_fairygui_GObject_setX(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getY(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -2620,25 +2620,25 @@ int lua_ax_fairygui_GObject_getY(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getY'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getY'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getY'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getY();
+        auto&& ret = obj->getY();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -2655,7 +2655,7 @@ int lua_ax_fairygui_GObject_getY(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setY(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -2667,18 +2667,18 @@ int lua_ax_fairygui_GObject_setY(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setY'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setY'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -2688,7 +2688,7 @@ int lua_ax_fairygui_GObject_setY(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setY'", nullptr);
             return 0;
         }
-        cobj->setY(arg0);
+        obj->setY(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -2705,7 +2705,7 @@ int lua_ax_fairygui_GObject_setY(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getPosition(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -2717,25 +2717,25 @@ int lua_ax_fairygui_GObject_getPosition(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getPosition'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getPosition'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getPosition'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getPosition();
+        auto&& ret = obj->getPosition();
         vec2_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -2752,7 +2752,7 @@ int lua_ax_fairygui_GObject_getPosition(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setPosition(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -2764,18 +2764,18 @@ int lua_ax_fairygui_GObject_setPosition(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setPosition'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setPosition'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         double arg0;
         double arg1;
@@ -2788,7 +2788,7 @@ int lua_ax_fairygui_GObject_setPosition(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setPosition'", nullptr);
             return 0;
         }
-        cobj->setPosition(arg0, arg1);
+        obj->setPosition(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -2805,7 +2805,7 @@ int lua_ax_fairygui_GObject_setPosition(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getXMin(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -2817,25 +2817,25 @@ int lua_ax_fairygui_GObject_getXMin(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getXMin'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getXMin'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getXMin'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getXMin();
+        auto&& ret = obj->getXMin();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -2852,7 +2852,7 @@ int lua_ax_fairygui_GObject_getXMin(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setXMin(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -2864,18 +2864,18 @@ int lua_ax_fairygui_GObject_setXMin(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setXMin'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setXMin'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -2885,7 +2885,7 @@ int lua_ax_fairygui_GObject_setXMin(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setXMin'", nullptr);
             return 0;
         }
-        cobj->setXMin(arg0);
+        obj->setXMin(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -2902,7 +2902,7 @@ int lua_ax_fairygui_GObject_setXMin(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getYMin(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -2914,25 +2914,25 @@ int lua_ax_fairygui_GObject_getYMin(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getYMin'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getYMin'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getYMin'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getYMin();
+        auto&& ret = obj->getYMin();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -2949,7 +2949,7 @@ int lua_ax_fairygui_GObject_getYMin(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setYMin(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -2961,18 +2961,18 @@ int lua_ax_fairygui_GObject_setYMin(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setYMin'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setYMin'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -2982,7 +2982,7 @@ int lua_ax_fairygui_GObject_setYMin(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setYMin'", nullptr);
             return 0;
         }
-        cobj->setYMin(arg0);
+        obj->setYMin(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -2999,7 +2999,7 @@ int lua_ax_fairygui_GObject_setYMin(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_isPixelSnapping(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -3011,25 +3011,25 @@ int lua_ax_fairygui_GObject_isPixelSnapping(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_isPixelSnapping'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_isPixelSnapping'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_isPixelSnapping'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isPixelSnapping();
+        auto&& ret = obj->isPixelSnapping();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -3046,7 +3046,7 @@ int lua_ax_fairygui_GObject_isPixelSnapping(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setPixelSnapping(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -3058,18 +3058,18 @@ int lua_ax_fairygui_GObject_setPixelSnapping(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setPixelSnapping'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setPixelSnapping'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -3079,7 +3079,7 @@ int lua_ax_fairygui_GObject_setPixelSnapping(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setPixelSnapping'", nullptr);
             return 0;
         }
-        cobj->setPixelSnapping(arg0);
+        obj->setPixelSnapping(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -3096,7 +3096,7 @@ int lua_ax_fairygui_GObject_setPixelSnapping(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getWidth(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -3108,25 +3108,25 @@ int lua_ax_fairygui_GObject_getWidth(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getWidth'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getWidth'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getWidth'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getWidth();
+        auto&& ret = obj->getWidth();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -3143,7 +3143,7 @@ int lua_ax_fairygui_GObject_getWidth(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setWidth(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -3155,18 +3155,18 @@ int lua_ax_fairygui_GObject_setWidth(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setWidth'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setWidth'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -3176,7 +3176,7 @@ int lua_ax_fairygui_GObject_setWidth(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setWidth'", nullptr);
             return 0;
         }
-        cobj->setWidth(arg0);
+        obj->setWidth(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -3193,7 +3193,7 @@ int lua_ax_fairygui_GObject_setWidth(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getHeight(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -3205,25 +3205,25 @@ int lua_ax_fairygui_GObject_getHeight(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getHeight'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getHeight'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getHeight'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getHeight();
+        auto&& ret = obj->getHeight();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -3240,7 +3240,7 @@ int lua_ax_fairygui_GObject_getHeight(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setHeight(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -3252,18 +3252,18 @@ int lua_ax_fairygui_GObject_setHeight(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setHeight'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setHeight'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -3273,7 +3273,7 @@ int lua_ax_fairygui_GObject_setHeight(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setHeight'", nullptr);
             return 0;
         }
-        cobj->setHeight(arg0);
+        obj->setHeight(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -3290,7 +3290,7 @@ int lua_ax_fairygui_GObject_setHeight(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getSize(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -3302,25 +3302,25 @@ int lua_ax_fairygui_GObject_getSize(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getSize'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getSize'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getSize'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getSize();
+        auto&& ret = obj->getSize();
         size_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -3337,7 +3337,7 @@ int lua_ax_fairygui_GObject_getSize(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setSize(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -3349,18 +3349,18 @@ int lua_ax_fairygui_GObject_setSize(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setSize'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setSize'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         double arg0;
         double arg1;
@@ -3373,11 +3373,11 @@ int lua_ax_fairygui_GObject_setSize(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setSize'", nullptr);
             return 0;
         }
-        cobj->setSize(arg0, arg1);
+        obj->setSize(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 3) 
+    if (argc == 3)
     {
         double arg0;
         double arg1;
@@ -3393,7 +3393,7 @@ int lua_ax_fairygui_GObject_setSize(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setSize'", nullptr);
             return 0;
         }
-        cobj->setSize(arg0, arg1, arg2);
+        obj->setSize(arg0, arg1, arg2);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -3410,7 +3410,7 @@ int lua_ax_fairygui_GObject_setSize(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_center(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -3422,29 +3422,29 @@ int lua_ax_fairygui_GObject_center(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_center'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_center'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_center'", nullptr);
             return 0;
         }
-        cobj->center();
+        obj->center();
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -3454,7 +3454,7 @@ int lua_ax_fairygui_GObject_center(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_center'", nullptr);
             return 0;
         }
-        cobj->center(arg0);
+        obj->center(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -3471,7 +3471,7 @@ int lua_ax_fairygui_GObject_center(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_makeFullScreen(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -3483,25 +3483,25 @@ int lua_ax_fairygui_GObject_makeFullScreen(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_makeFullScreen'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_makeFullScreen'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_makeFullScreen'", nullptr);
             return 0;
         }
-        cobj->makeFullScreen();
+        obj->makeFullScreen();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -3518,7 +3518,7 @@ int lua_ax_fairygui_GObject_makeFullScreen(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getPivot(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -3530,25 +3530,25 @@ int lua_ax_fairygui_GObject_getPivot(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getPivot'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getPivot'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getPivot'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getPivot();
+        auto&& ret = obj->getPivot();
         vec2_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -3565,7 +3565,7 @@ int lua_ax_fairygui_GObject_getPivot(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setPivot(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -3577,18 +3577,18 @@ int lua_ax_fairygui_GObject_setPivot(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setPivot'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setPivot'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         double arg0;
         double arg1;
@@ -3601,11 +3601,11 @@ int lua_ax_fairygui_GObject_setPivot(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setPivot'", nullptr);
             return 0;
         }
-        cobj->setPivot(arg0, arg1);
+        obj->setPivot(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 3) 
+    if (argc == 3)
     {
         double arg0;
         double arg1;
@@ -3621,7 +3621,7 @@ int lua_ax_fairygui_GObject_setPivot(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setPivot'", nullptr);
             return 0;
         }
-        cobj->setPivot(arg0, arg1, arg2);
+        obj->setPivot(arg0, arg1, arg2);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -3638,7 +3638,7 @@ int lua_ax_fairygui_GObject_setPivot(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_isPivotAsAnchor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -3650,25 +3650,25 @@ int lua_ax_fairygui_GObject_isPivotAsAnchor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_isPivotAsAnchor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_isPivotAsAnchor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_isPivotAsAnchor'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isPivotAsAnchor();
+        auto&& ret = obj->isPivotAsAnchor();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -3685,7 +3685,7 @@ int lua_ax_fairygui_GObject_isPivotAsAnchor(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getScaleX(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -3697,25 +3697,25 @@ int lua_ax_fairygui_GObject_getScaleX(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getScaleX'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getScaleX'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getScaleX'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getScaleX();
+        auto&& ret = obj->getScaleX();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -3732,7 +3732,7 @@ int lua_ax_fairygui_GObject_getScaleX(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setScaleX(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -3744,18 +3744,18 @@ int lua_ax_fairygui_GObject_setScaleX(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setScaleX'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setScaleX'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -3765,7 +3765,7 @@ int lua_ax_fairygui_GObject_setScaleX(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setScaleX'", nullptr);
             return 0;
         }
-        cobj->setScaleX(arg0);
+        obj->setScaleX(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -3782,7 +3782,7 @@ int lua_ax_fairygui_GObject_setScaleX(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getScaleY(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -3794,25 +3794,25 @@ int lua_ax_fairygui_GObject_getScaleY(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getScaleY'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getScaleY'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getScaleY'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getScaleY();
+        auto&& ret = obj->getScaleY();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -3829,7 +3829,7 @@ int lua_ax_fairygui_GObject_getScaleY(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setScaleY(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -3841,18 +3841,18 @@ int lua_ax_fairygui_GObject_setScaleY(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setScaleY'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setScaleY'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -3862,7 +3862,7 @@ int lua_ax_fairygui_GObject_setScaleY(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setScaleY'", nullptr);
             return 0;
         }
-        cobj->setScaleY(arg0);
+        obj->setScaleY(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -3879,7 +3879,7 @@ int lua_ax_fairygui_GObject_setScaleY(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getScale(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -3891,25 +3891,25 @@ int lua_ax_fairygui_GObject_getScale(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getScale'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getScale'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getScale'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getScale();
+        auto&& ret = obj->getScale();
         vec2_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -3926,7 +3926,7 @@ int lua_ax_fairygui_GObject_getScale(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setScale(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -3938,18 +3938,18 @@ int lua_ax_fairygui_GObject_setScale(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setScale'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setScale'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         double arg0;
         double arg1;
@@ -3962,7 +3962,7 @@ int lua_ax_fairygui_GObject_setScale(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setScale'", nullptr);
             return 0;
         }
-        cobj->setScale(arg0, arg1);
+        obj->setScale(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -3979,7 +3979,7 @@ int lua_ax_fairygui_GObject_setScale(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getSkewX(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -3991,25 +3991,25 @@ int lua_ax_fairygui_GObject_getSkewX(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getSkewX'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getSkewX'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getSkewX'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getSkewX();
+        auto&& ret = obj->getSkewX();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -4026,7 +4026,7 @@ int lua_ax_fairygui_GObject_getSkewX(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setSkewX(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -4038,18 +4038,18 @@ int lua_ax_fairygui_GObject_setSkewX(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setSkewX'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setSkewX'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -4059,7 +4059,7 @@ int lua_ax_fairygui_GObject_setSkewX(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setSkewX'", nullptr);
             return 0;
         }
-        cobj->setSkewX(arg0);
+        obj->setSkewX(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -4076,7 +4076,7 @@ int lua_ax_fairygui_GObject_setSkewX(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getSkewY(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -4088,25 +4088,25 @@ int lua_ax_fairygui_GObject_getSkewY(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getSkewY'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getSkewY'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getSkewY'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getSkewY();
+        auto&& ret = obj->getSkewY();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -4123,7 +4123,7 @@ int lua_ax_fairygui_GObject_getSkewY(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setSkewY(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -4135,18 +4135,18 @@ int lua_ax_fairygui_GObject_setSkewY(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setSkewY'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setSkewY'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -4156,7 +4156,7 @@ int lua_ax_fairygui_GObject_setSkewY(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setSkewY'", nullptr);
             return 0;
         }
-        cobj->setSkewY(arg0);
+        obj->setSkewY(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -4173,7 +4173,7 @@ int lua_ax_fairygui_GObject_setSkewY(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getRotation(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -4185,25 +4185,25 @@ int lua_ax_fairygui_GObject_getRotation(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getRotation'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getRotation'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getRotation'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getRotation();
+        auto&& ret = obj->getRotation();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -4220,7 +4220,7 @@ int lua_ax_fairygui_GObject_getRotation(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setRotation(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -4232,18 +4232,18 @@ int lua_ax_fairygui_GObject_setRotation(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setRotation'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setRotation'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -4253,7 +4253,7 @@ int lua_ax_fairygui_GObject_setRotation(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setRotation'", nullptr);
             return 0;
         }
-        cobj->setRotation(arg0);
+        obj->setRotation(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -4270,7 +4270,7 @@ int lua_ax_fairygui_GObject_setRotation(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getAlpha(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -4282,25 +4282,25 @@ int lua_ax_fairygui_GObject_getAlpha(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getAlpha'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getAlpha'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getAlpha'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getAlpha();
+        auto&& ret = obj->getAlpha();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -4317,7 +4317,7 @@ int lua_ax_fairygui_GObject_getAlpha(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setAlpha(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -4329,18 +4329,18 @@ int lua_ax_fairygui_GObject_setAlpha(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setAlpha'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setAlpha'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -4350,7 +4350,7 @@ int lua_ax_fairygui_GObject_setAlpha(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setAlpha'", nullptr);
             return 0;
         }
-        cobj->setAlpha(arg0);
+        obj->setAlpha(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -4367,7 +4367,7 @@ int lua_ax_fairygui_GObject_setAlpha(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_isGrayed(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -4379,25 +4379,25 @@ int lua_ax_fairygui_GObject_isGrayed(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_isGrayed'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_isGrayed'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_isGrayed'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isGrayed();
+        auto&& ret = obj->isGrayed();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -4414,7 +4414,7 @@ int lua_ax_fairygui_GObject_isGrayed(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setGrayed(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -4426,18 +4426,18 @@ int lua_ax_fairygui_GObject_setGrayed(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setGrayed'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setGrayed'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -4447,7 +4447,7 @@ int lua_ax_fairygui_GObject_setGrayed(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setGrayed'", nullptr);
             return 0;
         }
-        cobj->setGrayed(arg0);
+        obj->setGrayed(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -4464,7 +4464,7 @@ int lua_ax_fairygui_GObject_setGrayed(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_isVisible(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -4476,25 +4476,25 @@ int lua_ax_fairygui_GObject_isVisible(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_isVisible'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_isVisible'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_isVisible'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isVisible();
+        auto&& ret = obj->isVisible();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -4511,7 +4511,7 @@ int lua_ax_fairygui_GObject_isVisible(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setVisible(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -4523,18 +4523,18 @@ int lua_ax_fairygui_GObject_setVisible(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setVisible'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setVisible'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -4544,7 +4544,7 @@ int lua_ax_fairygui_GObject_setVisible(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setVisible'", nullptr);
             return 0;
         }
-        cobj->setVisible(arg0);
+        obj->setVisible(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -4561,7 +4561,7 @@ int lua_ax_fairygui_GObject_setVisible(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_isTouchable(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -4573,25 +4573,25 @@ int lua_ax_fairygui_GObject_isTouchable(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_isTouchable'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_isTouchable'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_isTouchable'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isTouchable();
+        auto&& ret = obj->isTouchable();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -4608,7 +4608,7 @@ int lua_ax_fairygui_GObject_isTouchable(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setTouchable(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -4620,18 +4620,18 @@ int lua_ax_fairygui_GObject_setTouchable(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setTouchable'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setTouchable'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -4641,7 +4641,7 @@ int lua_ax_fairygui_GObject_setTouchable(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setTouchable'", nullptr);
             return 0;
         }
-        cobj->setTouchable(arg0);
+        obj->setTouchable(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -4658,7 +4658,7 @@ int lua_ax_fairygui_GObject_setTouchable(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getSortingOrder(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -4670,25 +4670,25 @@ int lua_ax_fairygui_GObject_getSortingOrder(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getSortingOrder'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getSortingOrder'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getSortingOrder'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getSortingOrder();
+        auto&& ret = obj->getSortingOrder();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -4705,7 +4705,7 @@ int lua_ax_fairygui_GObject_getSortingOrder(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setSortingOrder(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -4717,18 +4717,18 @@ int lua_ax_fairygui_GObject_setSortingOrder(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setSortingOrder'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setSortingOrder'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -4738,7 +4738,7 @@ int lua_ax_fairygui_GObject_setSortingOrder(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setSortingOrder'", nullptr);
             return 0;
         }
-        cobj->setSortingOrder(arg0);
+        obj->setSortingOrder(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -4755,7 +4755,7 @@ int lua_ax_fairygui_GObject_setSortingOrder(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getGroup(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -4767,25 +4767,25 @@ int lua_ax_fairygui_GObject_getGroup(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getGroup'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getGroup'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getGroup'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getGroup();
+        auto&& ret = obj->getGroup();
         object_to_luaval<fairygui::GGroup>(tolua_S, "fgui.GGroup",(fairygui::GGroup*)ret);
         return 1;
     }
@@ -4802,7 +4802,7 @@ int lua_ax_fairygui_GObject_getGroup(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setGroup(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -4814,18 +4814,18 @@ int lua_ax_fairygui_GObject_setGroup(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setGroup'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setGroup'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GGroup* arg0;
 
@@ -4835,7 +4835,7 @@ int lua_ax_fairygui_GObject_setGroup(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setGroup'", nullptr);
             return 0;
         }
-        cobj->setGroup(arg0);
+        obj->setGroup(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -4852,7 +4852,7 @@ int lua_ax_fairygui_GObject_setGroup(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getText(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -4864,25 +4864,25 @@ int lua_ax_fairygui_GObject_getText(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getText'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getText'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getText'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getText();
+        auto&& ret = obj->getText();
         lua_pushlstring(tolua_S,ret.c_str(),ret.length());
         return 1;
     }
@@ -4899,7 +4899,7 @@ int lua_ax_fairygui_GObject_getText(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setText(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -4911,18 +4911,18 @@ int lua_ax_fairygui_GObject_setText(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setText'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setText'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -4932,7 +4932,7 @@ int lua_ax_fairygui_GObject_setText(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setText'", nullptr);
             return 0;
         }
-        cobj->setText(arg0);
+        obj->setText(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -4949,7 +4949,7 @@ int lua_ax_fairygui_GObject_setText(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getIcon(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -4961,25 +4961,25 @@ int lua_ax_fairygui_GObject_getIcon(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getIcon'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getIcon'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getIcon'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getIcon();
+        auto&& ret = obj->getIcon();
         lua_pushlstring(tolua_S,ret.c_str(),ret.length());
         return 1;
     }
@@ -4996,7 +4996,7 @@ int lua_ax_fairygui_GObject_getIcon(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setIcon(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -5008,18 +5008,18 @@ int lua_ax_fairygui_GObject_setIcon(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setIcon'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setIcon'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -5029,7 +5029,7 @@ int lua_ax_fairygui_GObject_setIcon(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setIcon'", nullptr);
             return 0;
         }
-        cobj->setIcon(arg0);
+        obj->setIcon(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -5046,7 +5046,7 @@ int lua_ax_fairygui_GObject_setIcon(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getTooltips(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -5058,25 +5058,25 @@ int lua_ax_fairygui_GObject_getTooltips(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getTooltips'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getTooltips'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getTooltips'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTooltips();
+        auto&& ret = obj->getTooltips();
         lua_pushlstring(tolua_S,ret.c_str(),ret.length());
         return 1;
     }
@@ -5093,7 +5093,7 @@ int lua_ax_fairygui_GObject_getTooltips(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setTooltips(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -5105,18 +5105,18 @@ int lua_ax_fairygui_GObject_setTooltips(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setTooltips'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setTooltips'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -5126,7 +5126,7 @@ int lua_ax_fairygui_GObject_setTooltips(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setTooltips'", nullptr);
             return 0;
         }
-        cobj->setTooltips(arg0);
+        obj->setTooltips(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -5143,7 +5143,7 @@ int lua_ax_fairygui_GObject_setTooltips(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getBlendMode(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -5155,25 +5155,25 @@ int lua_ax_fairygui_GObject_getBlendMode(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getBlendMode'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getBlendMode'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getBlendMode'", nullptr);
             return 0;
         }
-        int ret = (int)cobj->getBlendMode();
+        int ret = (int)obj->getBlendMode();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -5190,7 +5190,7 @@ int lua_ax_fairygui_GObject_getBlendMode(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setBlendMode(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -5202,18 +5202,18 @@ int lua_ax_fairygui_GObject_setBlendMode(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setBlendMode'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setBlendMode'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::BlendMode arg0;
 
@@ -5223,7 +5223,7 @@ int lua_ax_fairygui_GObject_setBlendMode(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setBlendMode'", nullptr);
             return 0;
         }
-        cobj->setBlendMode(arg0);
+        obj->setBlendMode(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -5240,7 +5240,7 @@ int lua_ax_fairygui_GObject_setBlendMode(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setData(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -5252,18 +5252,18 @@ int lua_ax_fairygui_GObject_setData(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setData'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setData'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         void* arg0;
 
@@ -5274,7 +5274,7 @@ int lua_ax_fairygui_GObject_setData(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setData'", nullptr);
             return 0;
         }
-        cobj->setData(arg0);
+        obj->setData(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -5291,7 +5291,7 @@ int lua_ax_fairygui_GObject_setData(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getCustomData(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -5303,25 +5303,25 @@ int lua_ax_fairygui_GObject_getCustomData(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getCustomData'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getCustomData'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getCustomData'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getCustomData();
+        auto&& ret = obj->getCustomData();
         ccvalue_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -5338,7 +5338,7 @@ int lua_ax_fairygui_GObject_getCustomData(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setCustomData(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -5350,18 +5350,18 @@ int lua_ax_fairygui_GObject_setCustomData(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setCustomData'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setCustomData'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         ax::Value arg0;
 
@@ -5371,7 +5371,7 @@ int lua_ax_fairygui_GObject_setCustomData(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setCustomData'", nullptr);
             return 0;
         }
-        cobj->setCustomData(arg0);
+        obj->setCustomData(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -5388,7 +5388,7 @@ int lua_ax_fairygui_GObject_setCustomData(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_isDraggable(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -5400,25 +5400,25 @@ int lua_ax_fairygui_GObject_isDraggable(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_isDraggable'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_isDraggable'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_isDraggable'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isDraggable();
+        auto&& ret = obj->isDraggable();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -5435,7 +5435,7 @@ int lua_ax_fairygui_GObject_isDraggable(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setDraggable(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -5447,18 +5447,18 @@ int lua_ax_fairygui_GObject_setDraggable(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setDraggable'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setDraggable'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -5468,7 +5468,7 @@ int lua_ax_fairygui_GObject_setDraggable(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setDraggable'", nullptr);
             return 0;
         }
-        cobj->setDraggable(arg0);
+        obj->setDraggable(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -5485,7 +5485,7 @@ int lua_ax_fairygui_GObject_setDraggable(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getDragBounds(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -5497,25 +5497,25 @@ int lua_ax_fairygui_GObject_getDragBounds(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getDragBounds'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getDragBounds'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getDragBounds'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getDragBounds();
+        auto&& ret = obj->getDragBounds();
         object_to_luaval<ax::Rect>(tolua_S, "ax.Rect",(ax::Rect*)ret);
         return 1;
     }
@@ -5532,7 +5532,7 @@ int lua_ax_fairygui_GObject_getDragBounds(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setDragBounds(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -5544,18 +5544,18 @@ int lua_ax_fairygui_GObject_setDragBounds(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setDragBounds'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setDragBounds'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         ax::Rect arg0;
 
@@ -5565,7 +5565,7 @@ int lua_ax_fairygui_GObject_setDragBounds(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setDragBounds'", nullptr);
             return 0;
         }
-        cobj->setDragBounds(arg0);
+        obj->setDragBounds(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -5582,7 +5582,7 @@ int lua_ax_fairygui_GObject_setDragBounds(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_startDrag(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -5594,29 +5594,29 @@ int lua_ax_fairygui_GObject_startDrag(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_startDrag'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_startDrag'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_startDrag'", nullptr);
             return 0;
         }
-        cobj->startDrag();
+        obj->startDrag();
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -5626,7 +5626,7 @@ int lua_ax_fairygui_GObject_startDrag(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_startDrag'", nullptr);
             return 0;
         }
-        cobj->startDrag(arg0);
+        obj->startDrag(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -5643,7 +5643,7 @@ int lua_ax_fairygui_GObject_startDrag(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_stopDrag(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -5655,25 +5655,25 @@ int lua_ax_fairygui_GObject_stopDrag(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_stopDrag'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_stopDrag'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_stopDrag'", nullptr);
             return 0;
         }
-        cobj->stopDrag();
+        obj->stopDrag();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -5690,7 +5690,7 @@ int lua_ax_fairygui_GObject_stopDrag(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getResourceURL(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -5702,25 +5702,25 @@ int lua_ax_fairygui_GObject_getResourceURL(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getResourceURL'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getResourceURL'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getResourceURL'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getResourceURL();
+        auto&& ret = obj->getResourceURL();
         lua_pushlstring(tolua_S,ret.c_str(),ret.length());
         return 1;
     }
@@ -5737,7 +5737,7 @@ int lua_ax_fairygui_GObject_getResourceURL(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getPackageItem(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -5749,25 +5749,25 @@ int lua_ax_fairygui_GObject_getPackageItem(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getPackageItem'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getPackageItem'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getPackageItem'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getPackageItem();
+        auto&& ret = obj->getPackageItem();
         object_to_luaval<fairygui::PackageItem>(tolua_S, "fgui.PackageItem",(fairygui::PackageItem*)ret);
         return 1;
     }
@@ -5784,7 +5784,7 @@ int lua_ax_fairygui_GObject_getPackageItem(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_globalToLocal(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 #if _AX_DEBUG >= 1
     tolua_Error tolua_err;
@@ -5793,34 +5793,34 @@ int lua_ax_fairygui_GObject_globalToLocal(lua_State* tolua_S)
 #if _AX_DEBUG >= 1
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_globalToLocal'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_globalToLocal'", nullptr);
         return 0;
     }
 #endif
     argc = lua_gettop(tolua_S)-1;
-    do{
+    do {
         if (argc == 1) {
             ax::Rect arg0;
             ok &= luaval_to_rect(tolua_S, 2, &arg0, "fgui.GObject:globalToLocal");
 
             if (!ok) { break; }
-            ax::Rect ret = cobj->globalToLocal(arg0);
+            ax::Rect ret = obj->globalToLocal(arg0);
             rect_to_luaval(tolua_S, ret);
             return 1;
         }
     }while(0);
     ok  = true;
-    do{
+    do {
         if (argc == 1) {
             ax::Vec2 arg0;
             ok &= luaval_to_vec2(tolua_S, 2, &arg0, "fgui.GObject:globalToLocal");
 
             if (!ok) { break; }
-            ax::Vec2 ret = cobj->globalToLocal(arg0);
+            ax::Vec2 ret = obj->globalToLocal(arg0);
             vec2_to_luaval(tolua_S, ret);
             return 1;
         }
@@ -5839,7 +5839,7 @@ int lua_ax_fairygui_GObject_globalToLocal(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_localToGlobal(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 #if _AX_DEBUG >= 1
     tolua_Error tolua_err;
@@ -5848,34 +5848,34 @@ int lua_ax_fairygui_GObject_localToGlobal(lua_State* tolua_S)
 #if _AX_DEBUG >= 1
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_localToGlobal'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_localToGlobal'", nullptr);
         return 0;
     }
 #endif
     argc = lua_gettop(tolua_S)-1;
-    do{
+    do {
         if (argc == 1) {
             ax::Rect arg0;
             ok &= luaval_to_rect(tolua_S, 2, &arg0, "fgui.GObject:localToGlobal");
 
             if (!ok) { break; }
-            ax::Rect ret = cobj->localToGlobal(arg0);
+            ax::Rect ret = obj->localToGlobal(arg0);
             rect_to_luaval(tolua_S, ret);
             return 1;
         }
     }while(0);
     ok  = true;
-    do{
+    do {
         if (argc == 1) {
             ax::Vec2 arg0;
             ok &= luaval_to_vec2(tolua_S, 2, &arg0, "fgui.GObject:localToGlobal");
 
             if (!ok) { break; }
-            ax::Vec2 ret = cobj->localToGlobal(arg0);
+            ax::Vec2 ret = obj->localToGlobal(arg0);
             vec2_to_luaval(tolua_S, ret);
             return 1;
         }
@@ -5894,7 +5894,7 @@ int lua_ax_fairygui_GObject_localToGlobal(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_transformRect(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -5906,18 +5906,18 @@ int lua_ax_fairygui_GObject_transformRect(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_transformRect'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_transformRect'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         ax::Rect arg0;
         fairygui::GObject* arg1;
@@ -5930,7 +5930,7 @@ int lua_ax_fairygui_GObject_transformRect(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_transformRect'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->transformRect(arg0, arg1);
+        auto&& ret = obj->transformRect(arg0, arg1);
         rect_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -5947,7 +5947,7 @@ int lua_ax_fairygui_GObject_transformRect(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_relations(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -5959,25 +5959,25 @@ int lua_ax_fairygui_GObject_relations(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_relations'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_relations'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_relations'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->relations();
+        auto&& ret = obj->relations();
         object_to_luaval<fairygui::Relations>(tolua_S, "fgui.Relations",(fairygui::Relations*)ret);
         return 1;
     }
@@ -5994,7 +5994,7 @@ int lua_ax_fairygui_GObject_relations(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_addRelation(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -6006,18 +6006,18 @@ int lua_ax_fairygui_GObject_addRelation(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_addRelation'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_addRelation'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         fairygui::GObject* arg0;
         fairygui::RelationType arg1;
@@ -6030,11 +6030,11 @@ int lua_ax_fairygui_GObject_addRelation(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_addRelation'", nullptr);
             return 0;
         }
-        cobj->addRelation(arg0, arg1);
+        obj->addRelation(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 3) 
+    if (argc == 3)
     {
         fairygui::GObject* arg0;
         fairygui::RelationType arg1;
@@ -6050,7 +6050,7 @@ int lua_ax_fairygui_GObject_addRelation(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_addRelation'", nullptr);
             return 0;
         }
-        cobj->addRelation(arg0, arg1, arg2);
+        obj->addRelation(arg0, arg1, arg2);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -6067,7 +6067,7 @@ int lua_ax_fairygui_GObject_addRelation(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_removeRelation(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -6079,18 +6079,18 @@ int lua_ax_fairygui_GObject_removeRelation(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_removeRelation'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_removeRelation'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         fairygui::GObject* arg0;
         fairygui::RelationType arg1;
@@ -6103,7 +6103,7 @@ int lua_ax_fairygui_GObject_removeRelation(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_removeRelation'", nullptr);
             return 0;
         }
-        cobj->removeRelation(arg0, arg1);
+        obj->removeRelation(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -6120,7 +6120,7 @@ int lua_ax_fairygui_GObject_removeRelation(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getGear(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -6132,18 +6132,18 @@ int lua_ax_fairygui_GObject_getGear(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getGear'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getGear'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -6153,7 +6153,7 @@ int lua_ax_fairygui_GObject_getGear(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getGear'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getGear(arg0);
+        auto&& ret = obj->getGear(arg0);
         object_to_luaval<fairygui::GearBase>(tolua_S, "fgui.GearBase",(fairygui::GearBase*)ret);
         return 1;
     }
@@ -6170,7 +6170,7 @@ int lua_ax_fairygui_GObject_getGear(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_checkGearController(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -6182,18 +6182,18 @@ int lua_ax_fairygui_GObject_checkGearController(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_checkGearController'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_checkGearController'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         int arg0;
         fairygui::GController* arg1;
@@ -6206,7 +6206,7 @@ int lua_ax_fairygui_GObject_checkGearController(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_checkGearController'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->checkGearController(arg0, arg1);
+        auto&& ret = obj->checkGearController(arg0, arg1);
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -6223,7 +6223,7 @@ int lua_ax_fairygui_GObject_checkGearController(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_addDisplayLock(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -6235,25 +6235,25 @@ int lua_ax_fairygui_GObject_addDisplayLock(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_addDisplayLock'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_addDisplayLock'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_addDisplayLock'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->addDisplayLock();
+        auto&& ret = obj->addDisplayLock();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -6270,7 +6270,7 @@ int lua_ax_fairygui_GObject_addDisplayLock(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_releaseDisplayLock(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -6282,18 +6282,18 @@ int lua_ax_fairygui_GObject_releaseDisplayLock(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_releaseDisplayLock'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_releaseDisplayLock'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         unsigned int arg0;
 
@@ -6303,7 +6303,7 @@ int lua_ax_fairygui_GObject_releaseDisplayLock(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_releaseDisplayLock'", nullptr);
             return 0;
         }
-        cobj->releaseDisplayLock(arg0);
+        obj->releaseDisplayLock(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -6320,7 +6320,7 @@ int lua_ax_fairygui_GObject_releaseDisplayLock(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getParent(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -6332,25 +6332,25 @@ int lua_ax_fairygui_GObject_getParent(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getParent'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getParent'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getParent'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getParent();
+        auto&& ret = obj->getParent();
         object_to_luaval<fairygui::GComponent>(tolua_S, "fgui.GComponent",(fairygui::GComponent*)ret);
         return 1;
     }
@@ -6367,7 +6367,7 @@ int lua_ax_fairygui_GObject_getParent(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_findParent(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -6379,25 +6379,25 @@ int lua_ax_fairygui_GObject_findParent(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_findParent'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_findParent'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_findParent'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->findParent();
+        auto&& ret = obj->findParent();
         object_to_luaval<fairygui::GObject>(tolua_S, "fgui.GObject",(fairygui::GObject*)ret);
         return 1;
     }
@@ -6414,7 +6414,7 @@ int lua_ax_fairygui_GObject_findParent(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_displayObject(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -6426,25 +6426,25 @@ int lua_ax_fairygui_GObject_displayObject(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_displayObject'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_displayObject'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_displayObject'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->displayObject();
+        auto&& ret = obj->displayObject();
         object_to_luaval<ax::Node>(tolua_S, "ax.Node",(ax::Node*)ret);
         return 1;
     }
@@ -6461,7 +6461,7 @@ int lua_ax_fairygui_GObject_displayObject(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getRoot(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -6473,25 +6473,25 @@ int lua_ax_fairygui_GObject_getRoot(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getRoot'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getRoot'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getRoot'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getRoot();
+        auto&& ret = obj->getRoot();
         object_to_luaval<fairygui::GRoot>(tolua_S, "fgui.GRoot",(fairygui::GRoot*)ret);
         return 1;
     }
@@ -6508,7 +6508,7 @@ int lua_ax_fairygui_GObject_getRoot(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_onStage(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -6520,25 +6520,25 @@ int lua_ax_fairygui_GObject_onStage(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_onStage'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_onStage'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_onStage'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->onStage();
+        auto&& ret = obj->onStage();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -6555,7 +6555,7 @@ int lua_ax_fairygui_GObject_onStage(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_removeFromParent(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -6567,25 +6567,25 @@ int lua_ax_fairygui_GObject_removeFromParent(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_removeFromParent'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_removeFromParent'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_removeFromParent'", nullptr);
             return 0;
         }
-        cobj->removeFromParent();
+        obj->removeFromParent();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -6602,7 +6602,7 @@ int lua_ax_fairygui_GObject_removeFromParent(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_getProp(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -6614,18 +6614,18 @@ int lua_ax_fairygui_GObject_getProp(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_getProp'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_getProp'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::ObjectPropID arg0;
 
@@ -6635,7 +6635,7 @@ int lua_ax_fairygui_GObject_getProp(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_getProp'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getProp(arg0);
+        auto&& ret = obj->getProp(arg0);
         ccvalue_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -6652,7 +6652,7 @@ int lua_ax_fairygui_GObject_getProp(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_setProp(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -6664,18 +6664,18 @@ int lua_ax_fairygui_GObject_setProp(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_setProp'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_setProp'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         fairygui::ObjectPropID arg0;
         ax::Value arg1;
@@ -6688,7 +6688,7 @@ int lua_ax_fairygui_GObject_setProp(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_setProp'", nullptr);
             return 0;
         }
-        cobj->setProp(arg0, arg1);
+        obj->setProp(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -6705,7 +6705,7 @@ int lua_ax_fairygui_GObject_setProp(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_constructFromResource(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -6717,25 +6717,25 @@ int lua_ax_fairygui_GObject_constructFromResource(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_constructFromResource'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_constructFromResource'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_constructFromResource'", nullptr);
             return 0;
         }
-        cobj->constructFromResource();
+        obj->constructFromResource();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -6752,7 +6752,7 @@ int lua_ax_fairygui_GObject_constructFromResource(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_hitTest(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -6764,18 +6764,18 @@ int lua_ax_fairygui_GObject_hitTest(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_hitTest'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_hitTest'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         ax::Vec2 arg0;
         const ax::Camera* arg1;
@@ -6788,7 +6788,7 @@ int lua_ax_fairygui_GObject_hitTest(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_hitTest'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->hitTest(arg0, arg1);
+        auto&& ret = obj->hitTest(arg0, arg1);
         object_to_luaval<fairygui::GObject>(tolua_S, "fgui.GObject",(fairygui::GObject*)ret);
         return 1;
     }
@@ -6805,7 +6805,7 @@ int lua_ax_fairygui_GObject_hitTest(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_treeNode(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -6817,25 +6817,25 @@ int lua_ax_fairygui_GObject_treeNode(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObject",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObject*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObject_treeNode'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObject_treeNode'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_treeNode'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->treeNode();
+        auto&& ret = obj->treeNode();
         object_to_luaval<fairygui::GTreeNode>(tolua_S, "fgui.GTreeNode",(fairygui::GTreeNode*)ret);
         return 1;
     }
@@ -6920,7 +6920,7 @@ int lua_ax_fairygui_GObject_create(lua_State* tolua_S)
 int lua_ax_fairygui_GObject_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObject* cobj = nullptr;
+    fairygui::GObject* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -6930,18 +6930,18 @@ int lua_ax_fairygui_GObject_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObject_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::GObject();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.GObject");
+        obj = new fairygui::GObject();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.GObject");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.GObject:GObject",argc, 0);
@@ -7066,7 +7066,7 @@ int lua_register_ax_fairygui_GObject(lua_State* tolua_S)
 int lua_ax_fairygui_UIPackage_getId(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::UIPackage* cobj = nullptr;
+    fairygui::UIPackage* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -7078,25 +7078,25 @@ int lua_ax_fairygui_UIPackage_getId(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.UIPackage",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::UIPackage*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::UIPackage*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_UIPackage_getId'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_UIPackage_getId'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_UIPackage_getId'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getId();
+        auto&& ret = obj->getId();
         lua_pushlstring(tolua_S,ret.c_str(),ret.length());
         return 1;
     }
@@ -7113,7 +7113,7 @@ int lua_ax_fairygui_UIPackage_getId(lua_State* tolua_S)
 int lua_ax_fairygui_UIPackage_getName(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::UIPackage* cobj = nullptr;
+    fairygui::UIPackage* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -7125,25 +7125,25 @@ int lua_ax_fairygui_UIPackage_getName(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.UIPackage",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::UIPackage*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::UIPackage*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_UIPackage_getName'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_UIPackage_getName'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_UIPackage_getName'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getName();
+        auto&& ret = obj->getName();
         lua_pushlstring(tolua_S,ret.c_str(),ret.length());
         return 1;
     }
@@ -7160,7 +7160,7 @@ int lua_ax_fairygui_UIPackage_getName(lua_State* tolua_S)
 int lua_ax_fairygui_UIPackage_getItem(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::UIPackage* cobj = nullptr;
+    fairygui::UIPackage* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -7172,18 +7172,18 @@ int lua_ax_fairygui_UIPackage_getItem(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.UIPackage",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::UIPackage*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::UIPackage*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_UIPackage_getItem'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_UIPackage_getItem'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -7193,7 +7193,7 @@ int lua_ax_fairygui_UIPackage_getItem(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_UIPackage_getItem'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getItem(arg0);
+        auto&& ret = obj->getItem(arg0);
         object_to_luaval<fairygui::PackageItem>(tolua_S, "fgui.PackageItem",(fairygui::PackageItem*)ret);
         return 1;
     }
@@ -7210,7 +7210,7 @@ int lua_ax_fairygui_UIPackage_getItem(lua_State* tolua_S)
 int lua_ax_fairygui_UIPackage_getItemByName(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::UIPackage* cobj = nullptr;
+    fairygui::UIPackage* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -7222,18 +7222,18 @@ int lua_ax_fairygui_UIPackage_getItemByName(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.UIPackage",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::UIPackage*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::UIPackage*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_UIPackage_getItemByName'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_UIPackage_getItemByName'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -7243,7 +7243,7 @@ int lua_ax_fairygui_UIPackage_getItemByName(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_UIPackage_getItemByName'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getItemByName(arg0);
+        auto&& ret = obj->getItemByName(arg0);
         object_to_luaval<fairygui::PackageItem>(tolua_S, "fgui.PackageItem",(fairygui::PackageItem*)ret);
         return 1;
     }
@@ -7834,7 +7834,7 @@ int lua_ax_fairygui_UIPackage_clearVar(lua_State* tolua_S)
 int lua_ax_fairygui_UIPackage_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::UIPackage* cobj = nullptr;
+    fairygui::UIPackage* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -7844,18 +7844,18 @@ int lua_ax_fairygui_UIPackage_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_UIPackage_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::UIPackage();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.UIPackage");
+        obj = new fairygui::UIPackage();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.UIPackage");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.UIPackage:UIPackage",argc, 0);
@@ -7911,7 +7911,7 @@ int lua_register_ax_fairygui_UIPackage(lua_State* tolua_S)
 int lua_ax_fairygui_GImage_getFlip(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GImage* cobj = nullptr;
+    fairygui::GImage* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -7923,25 +7923,25 @@ int lua_ax_fairygui_GImage_getFlip(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GImage",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GImage_getFlip'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GImage_getFlip'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GImage_getFlip'", nullptr);
             return 0;
         }
-        int ret = (int)cobj->getFlip();
+        int ret = (int)obj->getFlip();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -7958,7 +7958,7 @@ int lua_ax_fairygui_GImage_getFlip(lua_State* tolua_S)
 int lua_ax_fairygui_GImage_setFlip(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GImage* cobj = nullptr;
+    fairygui::GImage* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -7970,18 +7970,18 @@ int lua_ax_fairygui_GImage_setFlip(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GImage",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GImage_setFlip'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GImage_setFlip'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::FlipType arg0;
 
@@ -7991,7 +7991,7 @@ int lua_ax_fairygui_GImage_setFlip(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GImage_setFlip'", nullptr);
             return 0;
         }
-        cobj->setFlip(arg0);
+        obj->setFlip(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -8008,7 +8008,7 @@ int lua_ax_fairygui_GImage_setFlip(lua_State* tolua_S)
 int lua_ax_fairygui_GImage_getColor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GImage* cobj = nullptr;
+    fairygui::GImage* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -8020,25 +8020,25 @@ int lua_ax_fairygui_GImage_getColor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GImage",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GImage_getColor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GImage_getColor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GImage_getColor'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getColor();
+        auto&& ret = obj->getColor();
         color3b_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -8055,7 +8055,7 @@ int lua_ax_fairygui_GImage_getColor(lua_State* tolua_S)
 int lua_ax_fairygui_GImage_setColor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GImage* cobj = nullptr;
+    fairygui::GImage* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -8067,18 +8067,18 @@ int lua_ax_fairygui_GImage_setColor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GImage",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GImage_setColor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GImage_setColor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         ax::Color3B arg0;
 
@@ -8088,7 +8088,7 @@ int lua_ax_fairygui_GImage_setColor(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GImage_setColor'", nullptr);
             return 0;
         }
-        cobj->setColor(arg0);
+        obj->setColor(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -8105,7 +8105,7 @@ int lua_ax_fairygui_GImage_setColor(lua_State* tolua_S)
 int lua_ax_fairygui_GImage_getFillMethod(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GImage* cobj = nullptr;
+    fairygui::GImage* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -8117,25 +8117,25 @@ int lua_ax_fairygui_GImage_getFillMethod(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GImage",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GImage_getFillMethod'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GImage_getFillMethod'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GImage_getFillMethod'", nullptr);
             return 0;
         }
-        int ret = (int)cobj->getFillMethod();
+        int ret = (int)obj->getFillMethod();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -8152,7 +8152,7 @@ int lua_ax_fairygui_GImage_getFillMethod(lua_State* tolua_S)
 int lua_ax_fairygui_GImage_setFillMethod(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GImage* cobj = nullptr;
+    fairygui::GImage* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -8164,18 +8164,18 @@ int lua_ax_fairygui_GImage_setFillMethod(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GImage",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GImage_setFillMethod'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GImage_setFillMethod'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::FillMethod arg0;
 
@@ -8185,7 +8185,7 @@ int lua_ax_fairygui_GImage_setFillMethod(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GImage_setFillMethod'", nullptr);
             return 0;
         }
-        cobj->setFillMethod(arg0);
+        obj->setFillMethod(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -8202,7 +8202,7 @@ int lua_ax_fairygui_GImage_setFillMethod(lua_State* tolua_S)
 int lua_ax_fairygui_GImage_getFillOrigin(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GImage* cobj = nullptr;
+    fairygui::GImage* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -8214,25 +8214,25 @@ int lua_ax_fairygui_GImage_getFillOrigin(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GImage",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GImage_getFillOrigin'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GImage_getFillOrigin'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GImage_getFillOrigin'", nullptr);
             return 0;
         }
-        int ret = (int)cobj->getFillOrigin();
+        int ret = (int)obj->getFillOrigin();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -8249,7 +8249,7 @@ int lua_ax_fairygui_GImage_getFillOrigin(lua_State* tolua_S)
 int lua_ax_fairygui_GImage_setFillOrigin(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GImage* cobj = nullptr;
+    fairygui::GImage* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -8261,18 +8261,18 @@ int lua_ax_fairygui_GImage_setFillOrigin(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GImage",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GImage_setFillOrigin'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GImage_setFillOrigin'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::FillOrigin arg0;
 
@@ -8282,7 +8282,7 @@ int lua_ax_fairygui_GImage_setFillOrigin(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GImage_setFillOrigin'", nullptr);
             return 0;
         }
-        cobj->setFillOrigin(arg0);
+        obj->setFillOrigin(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -8299,7 +8299,7 @@ int lua_ax_fairygui_GImage_setFillOrigin(lua_State* tolua_S)
 int lua_ax_fairygui_GImage_isFillClockwise(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GImage* cobj = nullptr;
+    fairygui::GImage* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -8311,25 +8311,25 @@ int lua_ax_fairygui_GImage_isFillClockwise(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GImage",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GImage_isFillClockwise'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GImage_isFillClockwise'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GImage_isFillClockwise'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isFillClockwise();
+        auto&& ret = obj->isFillClockwise();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -8346,7 +8346,7 @@ int lua_ax_fairygui_GImage_isFillClockwise(lua_State* tolua_S)
 int lua_ax_fairygui_GImage_setFillClockwise(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GImage* cobj = nullptr;
+    fairygui::GImage* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -8358,18 +8358,18 @@ int lua_ax_fairygui_GImage_setFillClockwise(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GImage",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GImage_setFillClockwise'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GImage_setFillClockwise'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -8379,7 +8379,7 @@ int lua_ax_fairygui_GImage_setFillClockwise(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GImage_setFillClockwise'", nullptr);
             return 0;
         }
-        cobj->setFillClockwise(arg0);
+        obj->setFillClockwise(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -8396,7 +8396,7 @@ int lua_ax_fairygui_GImage_setFillClockwise(lua_State* tolua_S)
 int lua_ax_fairygui_GImage_getFillAmount(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GImage* cobj = nullptr;
+    fairygui::GImage* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -8408,25 +8408,25 @@ int lua_ax_fairygui_GImage_getFillAmount(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GImage",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GImage_getFillAmount'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GImage_getFillAmount'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GImage_getFillAmount'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getFillAmount();
+        auto&& ret = obj->getFillAmount();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -8443,7 +8443,7 @@ int lua_ax_fairygui_GImage_getFillAmount(lua_State* tolua_S)
 int lua_ax_fairygui_GImage_setFillAmount(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GImage* cobj = nullptr;
+    fairygui::GImage* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -8455,18 +8455,18 @@ int lua_ax_fairygui_GImage_setFillAmount(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GImage",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GImage*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GImage_setFillAmount'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GImage_setFillAmount'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -8476,7 +8476,7 @@ int lua_ax_fairygui_GImage_setFillAmount(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GImage_setFillAmount'", nullptr);
             return 0;
         }
-        cobj->setFillAmount(arg0);
+        obj->setFillAmount(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -8527,7 +8527,7 @@ int lua_ax_fairygui_GImage_create(lua_State* tolua_S)
 int lua_ax_fairygui_GImage_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GImage* cobj = nullptr;
+    fairygui::GImage* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -8537,18 +8537,18 @@ int lua_ax_fairygui_GImage_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GImage_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::GImage();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.GImage");
+        obj = new fairygui::GImage();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.GImage");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.GImage:GImage",argc, 0);
@@ -8597,7 +8597,7 @@ int lua_register_ax_fairygui_GImage(lua_State* tolua_S)
 int lua_ax_fairygui_GMovieClip_isPlaying(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GMovieClip* cobj = nullptr;
+    fairygui::GMovieClip* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -8609,25 +8609,25 @@ int lua_ax_fairygui_GMovieClip_isPlaying(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GMovieClip",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GMovieClip*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GMovieClip*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GMovieClip_isPlaying'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GMovieClip_isPlaying'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GMovieClip_isPlaying'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isPlaying();
+        auto&& ret = obj->isPlaying();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -8644,7 +8644,7 @@ int lua_ax_fairygui_GMovieClip_isPlaying(lua_State* tolua_S)
 int lua_ax_fairygui_GMovieClip_setPlaying(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GMovieClip* cobj = nullptr;
+    fairygui::GMovieClip* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -8656,18 +8656,18 @@ int lua_ax_fairygui_GMovieClip_setPlaying(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GMovieClip",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GMovieClip*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GMovieClip*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GMovieClip_setPlaying'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GMovieClip_setPlaying'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -8677,7 +8677,7 @@ int lua_ax_fairygui_GMovieClip_setPlaying(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GMovieClip_setPlaying'", nullptr);
             return 0;
         }
-        cobj->setPlaying(arg0);
+        obj->setPlaying(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -8694,7 +8694,7 @@ int lua_ax_fairygui_GMovieClip_setPlaying(lua_State* tolua_S)
 int lua_ax_fairygui_GMovieClip_getFrame(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GMovieClip* cobj = nullptr;
+    fairygui::GMovieClip* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -8706,25 +8706,25 @@ int lua_ax_fairygui_GMovieClip_getFrame(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GMovieClip",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GMovieClip*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GMovieClip*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GMovieClip_getFrame'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GMovieClip_getFrame'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GMovieClip_getFrame'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getFrame();
+        auto&& ret = obj->getFrame();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -8741,7 +8741,7 @@ int lua_ax_fairygui_GMovieClip_getFrame(lua_State* tolua_S)
 int lua_ax_fairygui_GMovieClip_setFrame(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GMovieClip* cobj = nullptr;
+    fairygui::GMovieClip* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -8753,18 +8753,18 @@ int lua_ax_fairygui_GMovieClip_setFrame(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GMovieClip",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GMovieClip*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GMovieClip*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GMovieClip_setFrame'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GMovieClip_setFrame'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -8774,7 +8774,7 @@ int lua_ax_fairygui_GMovieClip_setFrame(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GMovieClip_setFrame'", nullptr);
             return 0;
         }
-        cobj->setFrame(arg0);
+        obj->setFrame(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -8791,7 +8791,7 @@ int lua_ax_fairygui_GMovieClip_setFrame(lua_State* tolua_S)
 int lua_ax_fairygui_GMovieClip_getTimeScale(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GMovieClip* cobj = nullptr;
+    fairygui::GMovieClip* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -8803,25 +8803,25 @@ int lua_ax_fairygui_GMovieClip_getTimeScale(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GMovieClip",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GMovieClip*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GMovieClip*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GMovieClip_getTimeScale'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GMovieClip_getTimeScale'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GMovieClip_getTimeScale'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTimeScale();
+        auto&& ret = obj->getTimeScale();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -8838,7 +8838,7 @@ int lua_ax_fairygui_GMovieClip_getTimeScale(lua_State* tolua_S)
 int lua_ax_fairygui_GMovieClip_setTimeScale(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GMovieClip* cobj = nullptr;
+    fairygui::GMovieClip* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -8850,18 +8850,18 @@ int lua_ax_fairygui_GMovieClip_setTimeScale(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GMovieClip",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GMovieClip*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GMovieClip*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GMovieClip_setTimeScale'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GMovieClip_setTimeScale'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -8871,7 +8871,7 @@ int lua_ax_fairygui_GMovieClip_setTimeScale(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GMovieClip_setTimeScale'", nullptr);
             return 0;
         }
-        cobj->setTimeScale(arg0);
+        obj->setTimeScale(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -8888,7 +8888,7 @@ int lua_ax_fairygui_GMovieClip_setTimeScale(lua_State* tolua_S)
 int lua_ax_fairygui_GMovieClip_advance(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GMovieClip* cobj = nullptr;
+    fairygui::GMovieClip* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -8900,18 +8900,18 @@ int lua_ax_fairygui_GMovieClip_advance(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GMovieClip",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GMovieClip*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GMovieClip*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GMovieClip_advance'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GMovieClip_advance'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -8921,7 +8921,7 @@ int lua_ax_fairygui_GMovieClip_advance(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GMovieClip_advance'", nullptr);
             return 0;
         }
-        cobj->advance(arg0);
+        obj->advance(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -8985,7 +8985,7 @@ int lua_ax_fairygui_GMovieClip_reverse(lua_State* tolua_S)
 int lua_ax_fairygui_GMovieClip_getFlip(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GMovieClip* cobj = nullptr;
+    fairygui::GMovieClip* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -8997,25 +8997,25 @@ int lua_ax_fairygui_GMovieClip_getFlip(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GMovieClip",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GMovieClip*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GMovieClip*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GMovieClip_getFlip'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GMovieClip_getFlip'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GMovieClip_getFlip'", nullptr);
             return 0;
         }
-        int ret = (int)cobj->getFlip();
+        int ret = (int)obj->getFlip();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -9032,7 +9032,7 @@ int lua_ax_fairygui_GMovieClip_getFlip(lua_State* tolua_S)
 int lua_ax_fairygui_GMovieClip_setFlip(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GMovieClip* cobj = nullptr;
+    fairygui::GMovieClip* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -9044,18 +9044,18 @@ int lua_ax_fairygui_GMovieClip_setFlip(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GMovieClip",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GMovieClip*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GMovieClip*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GMovieClip_setFlip'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GMovieClip_setFlip'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::FlipType arg0;
 
@@ -9065,7 +9065,7 @@ int lua_ax_fairygui_GMovieClip_setFlip(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GMovieClip_setFlip'", nullptr);
             return 0;
         }
-        cobj->setFlip(arg0);
+        obj->setFlip(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -9082,7 +9082,7 @@ int lua_ax_fairygui_GMovieClip_setFlip(lua_State* tolua_S)
 int lua_ax_fairygui_GMovieClip_getColor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GMovieClip* cobj = nullptr;
+    fairygui::GMovieClip* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -9094,25 +9094,25 @@ int lua_ax_fairygui_GMovieClip_getColor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GMovieClip",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GMovieClip*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GMovieClip*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GMovieClip_getColor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GMovieClip_getColor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GMovieClip_getColor'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getColor();
+        auto&& ret = obj->getColor();
         color3b_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -9129,7 +9129,7 @@ int lua_ax_fairygui_GMovieClip_getColor(lua_State* tolua_S)
 int lua_ax_fairygui_GMovieClip_setColor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GMovieClip* cobj = nullptr;
+    fairygui::GMovieClip* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -9141,18 +9141,18 @@ int lua_ax_fairygui_GMovieClip_setColor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GMovieClip",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GMovieClip*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GMovieClip*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GMovieClip_setColor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GMovieClip_setColor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         ax::Color3B arg0;
 
@@ -9162,7 +9162,7 @@ int lua_ax_fairygui_GMovieClip_setColor(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GMovieClip_setColor'", nullptr);
             return 0;
         }
-        cobj->setColor(arg0);
+        obj->setColor(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -9310,7 +9310,7 @@ int lua_ax_fairygui_GMovieClip_create(lua_State* tolua_S)
 int lua_ax_fairygui_GMovieClip_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GMovieClip* cobj = nullptr;
+    fairygui::GMovieClip* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -9320,18 +9320,18 @@ int lua_ax_fairygui_GMovieClip_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GMovieClip_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::GMovieClip();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.GMovieClip");
+        obj = new fairygui::GMovieClip();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.GMovieClip");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.GMovieClip:GMovieClip",argc, 0);
@@ -9382,7 +9382,7 @@ int lua_register_ax_fairygui_GMovieClip(lua_State* tolua_S)
 int lua_ax_fairygui_GTextField_isUBBEnabled(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextField* cobj = nullptr;
+    fairygui::GTextField* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -9394,25 +9394,25 @@ int lua_ax_fairygui_GTextField_isUBBEnabled(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextField",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextField_isUBBEnabled'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextField_isUBBEnabled'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextField_isUBBEnabled'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isUBBEnabled();
+        auto&& ret = obj->isUBBEnabled();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -9429,7 +9429,7 @@ int lua_ax_fairygui_GTextField_isUBBEnabled(lua_State* tolua_S)
 int lua_ax_fairygui_GTextField_setUBBEnabled(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextField* cobj = nullptr;
+    fairygui::GTextField* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -9441,18 +9441,18 @@ int lua_ax_fairygui_GTextField_setUBBEnabled(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextField",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextField_setUBBEnabled'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextField_setUBBEnabled'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -9462,7 +9462,7 @@ int lua_ax_fairygui_GTextField_setUBBEnabled(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextField_setUBBEnabled'", nullptr);
             return 0;
         }
-        cobj->setUBBEnabled(arg0);
+        obj->setUBBEnabled(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -9479,7 +9479,7 @@ int lua_ax_fairygui_GTextField_setUBBEnabled(lua_State* tolua_S)
 int lua_ax_fairygui_GTextField_getAutoSize(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextField* cobj = nullptr;
+    fairygui::GTextField* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -9491,25 +9491,25 @@ int lua_ax_fairygui_GTextField_getAutoSize(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextField",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextField_getAutoSize'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextField_getAutoSize'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextField_getAutoSize'", nullptr);
             return 0;
         }
-        int ret = (int)cobj->getAutoSize();
+        int ret = (int)obj->getAutoSize();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -9526,7 +9526,7 @@ int lua_ax_fairygui_GTextField_getAutoSize(lua_State* tolua_S)
 int lua_ax_fairygui_GTextField_setAutoSize(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextField* cobj = nullptr;
+    fairygui::GTextField* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -9538,18 +9538,18 @@ int lua_ax_fairygui_GTextField_setAutoSize(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextField",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextField_setAutoSize'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextField_setAutoSize'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::AutoSizeType arg0;
 
@@ -9559,7 +9559,7 @@ int lua_ax_fairygui_GTextField_setAutoSize(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextField_setAutoSize'", nullptr);
             return 0;
         }
-        cobj->setAutoSize(arg0);
+        obj->setAutoSize(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -9576,7 +9576,7 @@ int lua_ax_fairygui_GTextField_setAutoSize(lua_State* tolua_S)
 int lua_ax_fairygui_GTextField_isSingleLine(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextField* cobj = nullptr;
+    fairygui::GTextField* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -9588,25 +9588,25 @@ int lua_ax_fairygui_GTextField_isSingleLine(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextField",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextField_isSingleLine'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextField_isSingleLine'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextField_isSingleLine'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isSingleLine();
+        auto&& ret = obj->isSingleLine();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -9623,7 +9623,7 @@ int lua_ax_fairygui_GTextField_isSingleLine(lua_State* tolua_S)
 int lua_ax_fairygui_GTextField_setSingleLine(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextField* cobj = nullptr;
+    fairygui::GTextField* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -9635,18 +9635,18 @@ int lua_ax_fairygui_GTextField_setSingleLine(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextField",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextField_setSingleLine'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextField_setSingleLine'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -9656,7 +9656,7 @@ int lua_ax_fairygui_GTextField_setSingleLine(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextField_setSingleLine'", nullptr);
             return 0;
         }
-        cobj->setSingleLine(arg0);
+        obj->setSingleLine(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -9673,7 +9673,7 @@ int lua_ax_fairygui_GTextField_setSingleLine(lua_State* tolua_S)
 int lua_ax_fairygui_GTextField_getTextFormat(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextField* cobj = nullptr;
+    fairygui::GTextField* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -9685,25 +9685,25 @@ int lua_ax_fairygui_GTextField_getTextFormat(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextField",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextField_getTextFormat'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextField_getTextFormat'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextField_getTextFormat'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTextFormat();
+        auto&& ret = obj->getTextFormat();
         object_to_luaval<fairygui::TextFormat>(tolua_S, "fgui.TextFormat",(fairygui::TextFormat*)ret);
         return 1;
     }
@@ -9720,7 +9720,7 @@ int lua_ax_fairygui_GTextField_getTextFormat(lua_State* tolua_S)
 int lua_ax_fairygui_GTextField_applyTextFormat(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextField* cobj = nullptr;
+    fairygui::GTextField* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -9732,25 +9732,25 @@ int lua_ax_fairygui_GTextField_applyTextFormat(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextField",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextField_applyTextFormat'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextField_applyTextFormat'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextField_applyTextFormat'", nullptr);
             return 0;
         }
-        cobj->applyTextFormat();
+        obj->applyTextFormat();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -9767,7 +9767,7 @@ int lua_ax_fairygui_GTextField_applyTextFormat(lua_State* tolua_S)
 int lua_ax_fairygui_GTextField_getTextSize(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextField* cobj = nullptr;
+    fairygui::GTextField* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -9779,25 +9779,25 @@ int lua_ax_fairygui_GTextField_getTextSize(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextField",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextField_getTextSize'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextField_getTextSize'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextField_getTextSize'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTextSize();
+        auto&& ret = obj->getTextSize();
         size_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -9814,7 +9814,7 @@ int lua_ax_fairygui_GTextField_getTextSize(lua_State* tolua_S)
 int lua_ax_fairygui_GTextField_getColor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextField* cobj = nullptr;
+    fairygui::GTextField* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -9826,25 +9826,25 @@ int lua_ax_fairygui_GTextField_getColor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextField",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextField_getColor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextField_getColor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextField_getColor'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getColor();
+        auto&& ret = obj->getColor();
         color3b_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -9861,7 +9861,7 @@ int lua_ax_fairygui_GTextField_getColor(lua_State* tolua_S)
 int lua_ax_fairygui_GTextField_setColor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextField* cobj = nullptr;
+    fairygui::GTextField* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -9873,18 +9873,18 @@ int lua_ax_fairygui_GTextField_setColor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextField",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextField_setColor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextField_setColor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         ax::Color3B arg0;
 
@@ -9894,7 +9894,7 @@ int lua_ax_fairygui_GTextField_setColor(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextField_setColor'", nullptr);
             return 0;
         }
-        cobj->setColor(arg0);
+        obj->setColor(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -9911,7 +9911,7 @@ int lua_ax_fairygui_GTextField_setColor(lua_State* tolua_S)
 int lua_ax_fairygui_GTextField_getFontSize(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextField* cobj = nullptr;
+    fairygui::GTextField* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -9923,25 +9923,25 @@ int lua_ax_fairygui_GTextField_getFontSize(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextField",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextField_getFontSize'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextField_getFontSize'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextField_getFontSize'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getFontSize();
+        auto&& ret = obj->getFontSize();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -9958,7 +9958,7 @@ int lua_ax_fairygui_GTextField_getFontSize(lua_State* tolua_S)
 int lua_ax_fairygui_GTextField_setFontSize(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextField* cobj = nullptr;
+    fairygui::GTextField* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -9970,18 +9970,18 @@ int lua_ax_fairygui_GTextField_setFontSize(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextField",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextField_setFontSize'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextField_setFontSize'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -9991,7 +9991,7 @@ int lua_ax_fairygui_GTextField_setFontSize(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextField_setFontSize'", nullptr);
             return 0;
         }
-        cobj->setFontSize(arg0);
+        obj->setFontSize(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -10008,7 +10008,7 @@ int lua_ax_fairygui_GTextField_setFontSize(lua_State* tolua_S)
 int lua_ax_fairygui_GTextField_getOutlineColor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextField* cobj = nullptr;
+    fairygui::GTextField* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -10020,25 +10020,25 @@ int lua_ax_fairygui_GTextField_getOutlineColor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextField",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextField_getOutlineColor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextField_getOutlineColor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextField_getOutlineColor'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getOutlineColor();
+        auto&& ret = obj->getOutlineColor();
         color3b_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -10055,7 +10055,7 @@ int lua_ax_fairygui_GTextField_getOutlineColor(lua_State* tolua_S)
 int lua_ax_fairygui_GTextField_setOutlineColor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextField* cobj = nullptr;
+    fairygui::GTextField* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -10067,18 +10067,18 @@ int lua_ax_fairygui_GTextField_setOutlineColor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextField",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextField_setOutlineColor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextField_setOutlineColor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         ax::Color3B arg0;
 
@@ -10088,7 +10088,7 @@ int lua_ax_fairygui_GTextField_setOutlineColor(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextField_setOutlineColor'", nullptr);
             return 0;
         }
-        cobj->setOutlineColor(arg0);
+        obj->setOutlineColor(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -10105,7 +10105,7 @@ int lua_ax_fairygui_GTextField_setOutlineColor(lua_State* tolua_S)
 int lua_ax_fairygui_GTextField_getTemplateVars(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextField* cobj = nullptr;
+    fairygui::GTextField* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -10117,25 +10117,25 @@ int lua_ax_fairygui_GTextField_getTemplateVars(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextField",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextField_getTemplateVars'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextField_getTemplateVars'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextField_getTemplateVars'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTemplateVars();
+        auto&& ret = obj->getTemplateVars();
         ccvaluemap_to_luaval(tolua_S, *ret);
         return 1;
     }
@@ -10152,7 +10152,7 @@ int lua_ax_fairygui_GTextField_getTemplateVars(lua_State* tolua_S)
 int lua_ax_fairygui_GTextField_setTemplateVars(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextField* cobj = nullptr;
+    fairygui::GTextField* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -10164,18 +10164,18 @@ int lua_ax_fairygui_GTextField_setTemplateVars(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextField",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextField_setTemplateVars'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextField_setTemplateVars'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         ax::ValueMap* arg0;
 
@@ -10185,7 +10185,7 @@ int lua_ax_fairygui_GTextField_setTemplateVars(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextField_setTemplateVars'", nullptr);
             return 0;
         }
-        cobj->setTemplateVars(arg0);
+        obj->setTemplateVars(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -10202,7 +10202,7 @@ int lua_ax_fairygui_GTextField_setTemplateVars(lua_State* tolua_S)
 int lua_ax_fairygui_GTextField_setVar(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextField* cobj = nullptr;
+    fairygui::GTextField* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -10214,18 +10214,18 @@ int lua_ax_fairygui_GTextField_setVar(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextField",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextField_setVar'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextField_setVar'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         std::string arg0;
         ax::Value arg1;
@@ -10238,7 +10238,7 @@ int lua_ax_fairygui_GTextField_setVar(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextField_setVar'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->setVar(arg0, arg1);
+        auto&& ret = obj->setVar(arg0, arg1);
         object_to_luaval<fairygui::GTextField>(tolua_S, "fgui.GTextField",(fairygui::GTextField*)ret);
         return 1;
     }
@@ -10255,7 +10255,7 @@ int lua_ax_fairygui_GTextField_setVar(lua_State* tolua_S)
 int lua_ax_fairygui_GTextField_flushVars(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextField* cobj = nullptr;
+    fairygui::GTextField* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -10267,25 +10267,25 @@ int lua_ax_fairygui_GTextField_flushVars(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextField",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextField*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextField_flushVars'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextField_flushVars'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextField_flushVars'", nullptr);
             return 0;
         }
-        cobj->flushVars();
+        obj->flushVars();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -10424,7 +10424,7 @@ int lua_ax_fairygui_GBasicTextField_create(lua_State* tolua_S)
 int lua_ax_fairygui_GBasicTextField_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GBasicTextField* cobj = nullptr;
+    fairygui::GBasicTextField* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -10434,18 +10434,18 @@ int lua_ax_fairygui_GBasicTextField_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GBasicTextField_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::GBasicTextField();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.GBasicTextField");
+        obj = new fairygui::GBasicTextField();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.GBasicTextField");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.GBasicTextField:GBasicTextField",argc, 0);
@@ -10483,7 +10483,7 @@ int lua_register_ax_fairygui_GBasicTextField(lua_State* tolua_S)
 int lua_ax_fairygui_GRichTextField_getControl(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRichTextField* cobj = nullptr;
+    fairygui::GRichTextField* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -10495,18 +10495,18 @@ int lua_ax_fairygui_GRichTextField_getControl(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRichTextField",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRichTextField*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRichTextField*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRichTextField_getControl'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRichTextField_getControl'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -10516,7 +10516,7 @@ int lua_ax_fairygui_GRichTextField_getControl(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRichTextField_getControl'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getControl(arg0);
+        auto&& ret = obj->getControl(arg0);
         object_to_luaval<fairygui::HtmlObject>(tolua_S, "fgui.HtmlObject",(fairygui::HtmlObject*)ret);
         return 1;
     }
@@ -10567,7 +10567,7 @@ int lua_ax_fairygui_GRichTextField_create(lua_State* tolua_S)
 int lua_ax_fairygui_GRichTextField_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRichTextField* cobj = nullptr;
+    fairygui::GRichTextField* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -10577,18 +10577,18 @@ int lua_ax_fairygui_GRichTextField_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRichTextField_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::GRichTextField();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.GRichTextField");
+        obj = new fairygui::GRichTextField();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.GRichTextField");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.GRichTextField:GRichTextField",argc, 0);
@@ -10626,7 +10626,7 @@ int lua_register_ax_fairygui_GRichTextField(lua_State* tolua_S)
 int lua_ax_fairygui_GTextInput_setPrompt(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextInput* cobj = nullptr;
+    fairygui::GTextInput* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -10638,18 +10638,18 @@ int lua_ax_fairygui_GTextInput_setPrompt(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextInput",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextInput*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextInput*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextInput_setPrompt'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextInput_setPrompt'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -10659,7 +10659,7 @@ int lua_ax_fairygui_GTextInput_setPrompt(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextInput_setPrompt'", nullptr);
             return 0;
         }
-        cobj->setPrompt(arg0);
+        obj->setPrompt(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -10676,7 +10676,7 @@ int lua_ax_fairygui_GTextInput_setPrompt(lua_State* tolua_S)
 int lua_ax_fairygui_GTextInput_setPassword(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextInput* cobj = nullptr;
+    fairygui::GTextInput* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -10688,18 +10688,18 @@ int lua_ax_fairygui_GTextInput_setPassword(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextInput",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextInput*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextInput*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextInput_setPassword'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextInput_setPassword'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -10709,7 +10709,7 @@ int lua_ax_fairygui_GTextInput_setPassword(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextInput_setPassword'", nullptr);
             return 0;
         }
-        cobj->setPassword(arg0);
+        obj->setPassword(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -10726,7 +10726,7 @@ int lua_ax_fairygui_GTextInput_setPassword(lua_State* tolua_S)
 int lua_ax_fairygui_GTextInput_setKeyboardType(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextInput* cobj = nullptr;
+    fairygui::GTextInput* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -10738,18 +10738,18 @@ int lua_ax_fairygui_GTextInput_setKeyboardType(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextInput",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextInput*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextInput*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextInput_setKeyboardType'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextInput_setKeyboardType'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -10759,7 +10759,7 @@ int lua_ax_fairygui_GTextInput_setKeyboardType(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextInput_setKeyboardType'", nullptr);
             return 0;
         }
-        cobj->setKeyboardType(arg0);
+        obj->setKeyboardType(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -10776,7 +10776,7 @@ int lua_ax_fairygui_GTextInput_setKeyboardType(lua_State* tolua_S)
 int lua_ax_fairygui_GTextInput_setMaxLength(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextInput* cobj = nullptr;
+    fairygui::GTextInput* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -10788,18 +10788,18 @@ int lua_ax_fairygui_GTextInput_setMaxLength(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextInput",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextInput*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextInput*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextInput_setMaxLength'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextInput_setMaxLength'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -10809,7 +10809,7 @@ int lua_ax_fairygui_GTextInput_setMaxLength(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextInput_setMaxLength'", nullptr);
             return 0;
         }
-        cobj->setMaxLength(arg0);
+        obj->setMaxLength(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -10826,7 +10826,7 @@ int lua_ax_fairygui_GTextInput_setMaxLength(lua_State* tolua_S)
 int lua_ax_fairygui_GTextInput_setRestrict(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextInput* cobj = nullptr;
+    fairygui::GTextInput* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -10838,18 +10838,18 @@ int lua_ax_fairygui_GTextInput_setRestrict(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTextInput",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTextInput*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTextInput*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTextInput_setRestrict'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTextInput_setRestrict'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -10859,7 +10859,7 @@ int lua_ax_fairygui_GTextInput_setRestrict(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextInput_setRestrict'", nullptr);
             return 0;
         }
-        cobj->setRestrict(arg0);
+        obj->setRestrict(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -10910,7 +10910,7 @@ int lua_ax_fairygui_GTextInput_create(lua_State* tolua_S)
 int lua_ax_fairygui_GTextInput_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTextInput* cobj = nullptr;
+    fairygui::GTextInput* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -10920,18 +10920,18 @@ int lua_ax_fairygui_GTextInput_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTextInput_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::GTextInput();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.GTextInput");
+        obj = new fairygui::GTextInput();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.GTextInput");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.GTextInput:GTextInput",argc, 0);
@@ -10973,7 +10973,7 @@ int lua_register_ax_fairygui_GTextInput(lua_State* tolua_S)
 int lua_ax_fairygui_GGraph_drawRect(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGraph* cobj = nullptr;
+    fairygui::GGraph* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -10985,18 +10985,18 @@ int lua_ax_fairygui_GGraph_drawRect(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGraph",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGraph*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGraph*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGraph_drawRect'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGraph_drawRect'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 5) 
+    if (argc == 5)
     {
         double arg0;
         double arg1;
@@ -11018,7 +11018,7 @@ int lua_ax_fairygui_GGraph_drawRect(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGraph_drawRect'", nullptr);
             return 0;
         }
-        cobj->drawRect(arg0, arg1, arg2, arg3, arg4);
+        obj->drawRect(arg0, arg1, arg2, arg3, arg4);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -11035,7 +11035,7 @@ int lua_ax_fairygui_GGraph_drawRect(lua_State* tolua_S)
 int lua_ax_fairygui_GGraph_drawEllipse(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGraph* cobj = nullptr;
+    fairygui::GGraph* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -11047,18 +11047,18 @@ int lua_ax_fairygui_GGraph_drawEllipse(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGraph",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGraph*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGraph*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGraph_drawEllipse'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGraph_drawEllipse'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 5) 
+    if (argc == 5)
     {
         double arg0;
         double arg1;
@@ -11080,7 +11080,7 @@ int lua_ax_fairygui_GGraph_drawEllipse(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGraph_drawEllipse'", nullptr);
             return 0;
         }
-        cobj->drawEllipse(arg0, arg1, arg2, arg3, arg4);
+        obj->drawEllipse(arg0, arg1, arg2, arg3, arg4);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -11097,7 +11097,7 @@ int lua_ax_fairygui_GGraph_drawEllipse(lua_State* tolua_S)
 int lua_ax_fairygui_GGraph_drawPolygon(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGraph* cobj = nullptr;
+    fairygui::GGraph* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -11109,18 +11109,18 @@ int lua_ax_fairygui_GGraph_drawPolygon(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGraph",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGraph*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGraph*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGraph_drawPolygon'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGraph_drawPolygon'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 5) 
+    if (argc == 5)
     {
         int arg0;
         ax::Color4F arg1;
@@ -11142,7 +11142,7 @@ int lua_ax_fairygui_GGraph_drawPolygon(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGraph_drawPolygon'", nullptr);
             return 0;
         }
-        cobj->drawPolygon(arg0, arg1, arg2, arg3, arg4);
+        obj->drawPolygon(arg0, arg1, arg2, arg3, arg4);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -11159,7 +11159,7 @@ int lua_ax_fairygui_GGraph_drawPolygon(lua_State* tolua_S)
 int lua_ax_fairygui_GGraph_drawRegularPolygon(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGraph* cobj = nullptr;
+    fairygui::GGraph* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -11171,18 +11171,18 @@ int lua_ax_fairygui_GGraph_drawRegularPolygon(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGraph",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGraph*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGraph*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGraph_drawRegularPolygon'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGraph_drawRegularPolygon'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 4) 
+    if (argc == 4)
     {
         int arg0;
         ax::Color4F arg1;
@@ -11201,11 +11201,11 @@ int lua_ax_fairygui_GGraph_drawRegularPolygon(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGraph_drawRegularPolygon'", nullptr);
             return 0;
         }
-        cobj->drawRegularPolygon(arg0, arg1, arg2, arg3);
+        obj->drawRegularPolygon(arg0, arg1, arg2, arg3);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 5) 
+    if (argc == 5)
     {
         int arg0;
         ax::Color4F arg1;
@@ -11227,11 +11227,11 @@ int lua_ax_fairygui_GGraph_drawRegularPolygon(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGraph_drawRegularPolygon'", nullptr);
             return 0;
         }
-        cobj->drawRegularPolygon(arg0, arg1, arg2, arg3, arg4);
+        obj->drawRegularPolygon(arg0, arg1, arg2, arg3, arg4);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 6) 
+    if (argc == 6)
     {
         int arg0;
         ax::Color4F arg1;
@@ -11257,11 +11257,11 @@ int lua_ax_fairygui_GGraph_drawRegularPolygon(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGraph_drawRegularPolygon'", nullptr);
             return 0;
         }
-        cobj->drawRegularPolygon(arg0, arg1, arg2, arg3, arg4, arg5);
+        obj->drawRegularPolygon(arg0, arg1, arg2, arg3, arg4, arg5);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 7) 
+    if (argc == 7)
     {
         int arg0;
         ax::Color4F arg1;
@@ -11290,7 +11290,7 @@ int lua_ax_fairygui_GGraph_drawRegularPolygon(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGraph_drawRegularPolygon'", nullptr);
             return 0;
         }
-        cobj->drawRegularPolygon(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+        obj->drawRegularPolygon(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -11307,7 +11307,7 @@ int lua_ax_fairygui_GGraph_drawRegularPolygon(lua_State* tolua_S)
 int lua_ax_fairygui_GGraph_isEmpty(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGraph* cobj = nullptr;
+    fairygui::GGraph* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -11319,25 +11319,25 @@ int lua_ax_fairygui_GGraph_isEmpty(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGraph",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGraph*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGraph*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGraph_isEmpty'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGraph_isEmpty'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGraph_isEmpty'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isEmpty();
+        auto&& ret = obj->isEmpty();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -11354,7 +11354,7 @@ int lua_ax_fairygui_GGraph_isEmpty(lua_State* tolua_S)
 int lua_ax_fairygui_GGraph_getColor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGraph* cobj = nullptr;
+    fairygui::GGraph* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -11366,25 +11366,25 @@ int lua_ax_fairygui_GGraph_getColor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGraph",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGraph*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGraph*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGraph_getColor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGraph_getColor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGraph_getColor'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getColor();
+        auto&& ret = obj->getColor();
         color3b_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -11401,7 +11401,7 @@ int lua_ax_fairygui_GGraph_getColor(lua_State* tolua_S)
 int lua_ax_fairygui_GGraph_setColor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGraph* cobj = nullptr;
+    fairygui::GGraph* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -11413,18 +11413,18 @@ int lua_ax_fairygui_GGraph_setColor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGraph",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGraph*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGraph*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGraph_setColor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGraph_setColor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         ax::Color3B arg0;
 
@@ -11434,7 +11434,7 @@ int lua_ax_fairygui_GGraph_setColor(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGraph_setColor'", nullptr);
             return 0;
         }
-        cobj->setColor(arg0);
+        obj->setColor(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -11538,7 +11538,7 @@ int lua_ax_fairygui_GGraph_create(lua_State* tolua_S)
 int lua_ax_fairygui_GGraph_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGraph* cobj = nullptr;
+    fairygui::GGraph* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -11548,18 +11548,18 @@ int lua_ax_fairygui_GGraph_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGraph_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::GGraph();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.GGraph");
+        obj = new fairygui::GGraph();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.GGraph");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.GGraph:GGraph",argc, 0);
@@ -11604,7 +11604,7 @@ int lua_register_ax_fairygui_GGraph(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_getURL(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -11616,25 +11616,25 @@ int lua_ax_fairygui_GLoader_getURL(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_getURL'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_getURL'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_getURL'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getURL();
+        auto&& ret = obj->getURL();
         lua_pushlstring(tolua_S,ret.c_str(),ret.length());
         return 1;
     }
@@ -11651,7 +11651,7 @@ int lua_ax_fairygui_GLoader_getURL(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_setURL(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -11663,18 +11663,18 @@ int lua_ax_fairygui_GLoader_setURL(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_setURL'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_setURL'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -11684,7 +11684,7 @@ int lua_ax_fairygui_GLoader_setURL(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_setURL'", nullptr);
             return 0;
         }
-        cobj->setURL(arg0);
+        obj->setURL(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -11701,7 +11701,7 @@ int lua_ax_fairygui_GLoader_setURL(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_getAlign(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -11713,25 +11713,25 @@ int lua_ax_fairygui_GLoader_getAlign(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_getAlign'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_getAlign'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_getAlign'", nullptr);
             return 0;
         }
-        int ret = (int)cobj->getAlign();
+        int ret = (int)obj->getAlign();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -11748,7 +11748,7 @@ int lua_ax_fairygui_GLoader_getAlign(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_setAlign(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -11760,18 +11760,18 @@ int lua_ax_fairygui_GLoader_setAlign(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_setAlign'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_setAlign'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         ax::TextHAlignment arg0;
 
@@ -11781,7 +11781,7 @@ int lua_ax_fairygui_GLoader_setAlign(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_setAlign'", nullptr);
             return 0;
         }
-        cobj->setAlign(arg0);
+        obj->setAlign(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -11798,7 +11798,7 @@ int lua_ax_fairygui_GLoader_setAlign(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_getVerticalAlign(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -11810,25 +11810,25 @@ int lua_ax_fairygui_GLoader_getVerticalAlign(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_getVerticalAlign'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_getVerticalAlign'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_getVerticalAlign'", nullptr);
             return 0;
         }
-        int ret = (int)cobj->getVerticalAlign();
+        int ret = (int)obj->getVerticalAlign();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -11845,7 +11845,7 @@ int lua_ax_fairygui_GLoader_getVerticalAlign(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_setVerticalAlign(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -11857,18 +11857,18 @@ int lua_ax_fairygui_GLoader_setVerticalAlign(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_setVerticalAlign'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_setVerticalAlign'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         ax::TextVAlignment arg0;
 
@@ -11878,7 +11878,7 @@ int lua_ax_fairygui_GLoader_setVerticalAlign(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_setVerticalAlign'", nullptr);
             return 0;
         }
-        cobj->setVerticalAlign(arg0);
+        obj->setVerticalAlign(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -11895,7 +11895,7 @@ int lua_ax_fairygui_GLoader_setVerticalAlign(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_getAutoSize(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -11907,25 +11907,25 @@ int lua_ax_fairygui_GLoader_getAutoSize(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_getAutoSize'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_getAutoSize'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_getAutoSize'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getAutoSize();
+        auto&& ret = obj->getAutoSize();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -11942,7 +11942,7 @@ int lua_ax_fairygui_GLoader_getAutoSize(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_setAutoSize(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -11954,18 +11954,18 @@ int lua_ax_fairygui_GLoader_setAutoSize(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_setAutoSize'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_setAutoSize'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -11975,7 +11975,7 @@ int lua_ax_fairygui_GLoader_setAutoSize(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_setAutoSize'", nullptr);
             return 0;
         }
-        cobj->setAutoSize(arg0);
+        obj->setAutoSize(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -11992,7 +11992,7 @@ int lua_ax_fairygui_GLoader_setAutoSize(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_getFill(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -12004,25 +12004,25 @@ int lua_ax_fairygui_GLoader_getFill(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_getFill'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_getFill'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_getFill'", nullptr);
             return 0;
         }
-        int ret = (int)cobj->getFill();
+        int ret = (int)obj->getFill();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -12039,7 +12039,7 @@ int lua_ax_fairygui_GLoader_getFill(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_setFill(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -12051,18 +12051,18 @@ int lua_ax_fairygui_GLoader_setFill(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_setFill'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_setFill'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::LoaderFillType arg0;
 
@@ -12072,7 +12072,7 @@ int lua_ax_fairygui_GLoader_setFill(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_setFill'", nullptr);
             return 0;
         }
-        cobj->setFill(arg0);
+        obj->setFill(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -12089,7 +12089,7 @@ int lua_ax_fairygui_GLoader_setFill(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_isShrinkOnly(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -12101,25 +12101,25 @@ int lua_ax_fairygui_GLoader_isShrinkOnly(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_isShrinkOnly'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_isShrinkOnly'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_isShrinkOnly'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isShrinkOnly();
+        auto&& ret = obj->isShrinkOnly();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -12136,7 +12136,7 @@ int lua_ax_fairygui_GLoader_isShrinkOnly(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_setShrinkOnly(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -12148,18 +12148,18 @@ int lua_ax_fairygui_GLoader_setShrinkOnly(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_setShrinkOnly'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_setShrinkOnly'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -12169,7 +12169,7 @@ int lua_ax_fairygui_GLoader_setShrinkOnly(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_setShrinkOnly'", nullptr);
             return 0;
         }
-        cobj->setShrinkOnly(arg0);
+        obj->setShrinkOnly(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -12186,7 +12186,7 @@ int lua_ax_fairygui_GLoader_setShrinkOnly(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_getContentSize(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -12198,25 +12198,25 @@ int lua_ax_fairygui_GLoader_getContentSize(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_getContentSize'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_getContentSize'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_getContentSize'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getContentSize();
+        auto&& ret = obj->getContentSize();
         size_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -12233,7 +12233,7 @@ int lua_ax_fairygui_GLoader_getContentSize(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_getColor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -12245,25 +12245,25 @@ int lua_ax_fairygui_GLoader_getColor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_getColor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_getColor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_getColor'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getColor();
+        auto&& ret = obj->getColor();
         color3b_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -12280,7 +12280,7 @@ int lua_ax_fairygui_GLoader_getColor(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_setColor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -12292,18 +12292,18 @@ int lua_ax_fairygui_GLoader_setColor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_setColor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_setColor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         ax::Color3B arg0;
 
@@ -12313,7 +12313,7 @@ int lua_ax_fairygui_GLoader_setColor(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_setColor'", nullptr);
             return 0;
         }
-        cobj->setColor(arg0);
+        obj->setColor(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -12330,7 +12330,7 @@ int lua_ax_fairygui_GLoader_setColor(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_isPlaying(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -12342,25 +12342,25 @@ int lua_ax_fairygui_GLoader_isPlaying(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_isPlaying'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_isPlaying'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_isPlaying'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isPlaying();
+        auto&& ret = obj->isPlaying();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -12377,7 +12377,7 @@ int lua_ax_fairygui_GLoader_isPlaying(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_setPlaying(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -12389,18 +12389,18 @@ int lua_ax_fairygui_GLoader_setPlaying(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_setPlaying'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_setPlaying'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -12410,7 +12410,7 @@ int lua_ax_fairygui_GLoader_setPlaying(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_setPlaying'", nullptr);
             return 0;
         }
-        cobj->setPlaying(arg0);
+        obj->setPlaying(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -12427,7 +12427,7 @@ int lua_ax_fairygui_GLoader_setPlaying(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_getFrame(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -12439,25 +12439,25 @@ int lua_ax_fairygui_GLoader_getFrame(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_getFrame'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_getFrame'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_getFrame'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getFrame();
+        auto&& ret = obj->getFrame();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -12474,7 +12474,7 @@ int lua_ax_fairygui_GLoader_getFrame(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_setFrame(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -12486,18 +12486,18 @@ int lua_ax_fairygui_GLoader_setFrame(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_setFrame'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_setFrame'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -12507,7 +12507,7 @@ int lua_ax_fairygui_GLoader_setFrame(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_setFrame'", nullptr);
             return 0;
         }
-        cobj->setFrame(arg0);
+        obj->setFrame(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -12524,7 +12524,7 @@ int lua_ax_fairygui_GLoader_setFrame(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_getFillMethod(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -12536,25 +12536,25 @@ int lua_ax_fairygui_GLoader_getFillMethod(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_getFillMethod'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_getFillMethod'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_getFillMethod'", nullptr);
             return 0;
         }
-        int ret = (int)cobj->getFillMethod();
+        int ret = (int)obj->getFillMethod();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -12571,7 +12571,7 @@ int lua_ax_fairygui_GLoader_getFillMethod(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_setFillMethod(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -12583,18 +12583,18 @@ int lua_ax_fairygui_GLoader_setFillMethod(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_setFillMethod'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_setFillMethod'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::FillMethod arg0;
 
@@ -12604,7 +12604,7 @@ int lua_ax_fairygui_GLoader_setFillMethod(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_setFillMethod'", nullptr);
             return 0;
         }
-        cobj->setFillMethod(arg0);
+        obj->setFillMethod(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -12621,7 +12621,7 @@ int lua_ax_fairygui_GLoader_setFillMethod(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_getFillOrigin(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -12633,25 +12633,25 @@ int lua_ax_fairygui_GLoader_getFillOrigin(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_getFillOrigin'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_getFillOrigin'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_getFillOrigin'", nullptr);
             return 0;
         }
-        int ret = (int)cobj->getFillOrigin();
+        int ret = (int)obj->getFillOrigin();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -12668,7 +12668,7 @@ int lua_ax_fairygui_GLoader_getFillOrigin(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_setFillOrigin(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -12680,18 +12680,18 @@ int lua_ax_fairygui_GLoader_setFillOrigin(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_setFillOrigin'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_setFillOrigin'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::FillOrigin arg0;
 
@@ -12701,7 +12701,7 @@ int lua_ax_fairygui_GLoader_setFillOrigin(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_setFillOrigin'", nullptr);
             return 0;
         }
-        cobj->setFillOrigin(arg0);
+        obj->setFillOrigin(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -12718,7 +12718,7 @@ int lua_ax_fairygui_GLoader_setFillOrigin(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_isFillClockwise(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -12730,25 +12730,25 @@ int lua_ax_fairygui_GLoader_isFillClockwise(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_isFillClockwise'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_isFillClockwise'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_isFillClockwise'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isFillClockwise();
+        auto&& ret = obj->isFillClockwise();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -12765,7 +12765,7 @@ int lua_ax_fairygui_GLoader_isFillClockwise(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_setFillClockwise(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -12777,18 +12777,18 @@ int lua_ax_fairygui_GLoader_setFillClockwise(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_setFillClockwise'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_setFillClockwise'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -12798,7 +12798,7 @@ int lua_ax_fairygui_GLoader_setFillClockwise(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_setFillClockwise'", nullptr);
             return 0;
         }
-        cobj->setFillClockwise(arg0);
+        obj->setFillClockwise(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -12815,7 +12815,7 @@ int lua_ax_fairygui_GLoader_setFillClockwise(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_getFillAmount(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -12827,25 +12827,25 @@ int lua_ax_fairygui_GLoader_getFillAmount(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_getFillAmount'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_getFillAmount'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_getFillAmount'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getFillAmount();
+        auto&& ret = obj->getFillAmount();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -12862,7 +12862,7 @@ int lua_ax_fairygui_GLoader_getFillAmount(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_setFillAmount(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -12874,18 +12874,18 @@ int lua_ax_fairygui_GLoader_setFillAmount(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_setFillAmount'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_setFillAmount'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -12895,7 +12895,7 @@ int lua_ax_fairygui_GLoader_setFillAmount(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_setFillAmount'", nullptr);
             return 0;
         }
-        cobj->setFillAmount(arg0);
+        obj->setFillAmount(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -12959,7 +12959,7 @@ int lua_ax_fairygui_GLoader_getSprite(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_getComponent(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -12971,25 +12971,25 @@ int lua_ax_fairygui_GLoader_getComponent(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GLoader",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GLoader*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GLoader_getComponent'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GLoader_getComponent'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_getComponent'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getComponent();
+        auto&& ret = obj->getComponent();
         object_to_luaval<fairygui::GComponent>(tolua_S, "fgui.GComponent",(fairygui::GComponent*)ret);
         return 1;
     }
@@ -13087,7 +13087,7 @@ int lua_ax_fairygui_GLoader_create(lua_State* tolua_S)
 int lua_ax_fairygui_GLoader_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GLoader* cobj = nullptr;
+    fairygui::GLoader* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -13097,18 +13097,18 @@ int lua_ax_fairygui_GLoader_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GLoader_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::GLoader();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.GLoader");
+        obj = new fairygui::GLoader();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.GLoader");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.GLoader:GLoader",argc, 0);
@@ -13175,7 +13175,7 @@ int lua_register_ax_fairygui_GLoader(lua_State* tolua_S)
 int lua_ax_fairygui_GGroup_getLayout(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGroup* cobj = nullptr;
+    fairygui::GGroup* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -13187,25 +13187,25 @@ int lua_ax_fairygui_GGroup_getLayout(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGroup",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGroup_getLayout'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGroup_getLayout'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGroup_getLayout'", nullptr);
             return 0;
         }
-        int ret = (int)cobj->getLayout();
+        int ret = (int)obj->getLayout();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -13222,7 +13222,7 @@ int lua_ax_fairygui_GGroup_getLayout(lua_State* tolua_S)
 int lua_ax_fairygui_GGroup_setLayout(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGroup* cobj = nullptr;
+    fairygui::GGroup* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -13234,18 +13234,18 @@ int lua_ax_fairygui_GGroup_setLayout(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGroup",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGroup_setLayout'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGroup_setLayout'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GroupLayoutType arg0;
 
@@ -13255,7 +13255,7 @@ int lua_ax_fairygui_GGroup_setLayout(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGroup_setLayout'", nullptr);
             return 0;
         }
-        cobj->setLayout(arg0);
+        obj->setLayout(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -13272,7 +13272,7 @@ int lua_ax_fairygui_GGroup_setLayout(lua_State* tolua_S)
 int lua_ax_fairygui_GGroup_getColumnGap(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGroup* cobj = nullptr;
+    fairygui::GGroup* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -13284,25 +13284,25 @@ int lua_ax_fairygui_GGroup_getColumnGap(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGroup",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGroup_getColumnGap'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGroup_getColumnGap'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGroup_getColumnGap'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getColumnGap();
+        auto&& ret = obj->getColumnGap();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -13319,7 +13319,7 @@ int lua_ax_fairygui_GGroup_getColumnGap(lua_State* tolua_S)
 int lua_ax_fairygui_GGroup_setColumnGap(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGroup* cobj = nullptr;
+    fairygui::GGroup* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -13331,18 +13331,18 @@ int lua_ax_fairygui_GGroup_setColumnGap(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGroup",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGroup_setColumnGap'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGroup_setColumnGap'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -13352,7 +13352,7 @@ int lua_ax_fairygui_GGroup_setColumnGap(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGroup_setColumnGap'", nullptr);
             return 0;
         }
-        cobj->setColumnGap(arg0);
+        obj->setColumnGap(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -13369,7 +13369,7 @@ int lua_ax_fairygui_GGroup_setColumnGap(lua_State* tolua_S)
 int lua_ax_fairygui_GGroup_getLineGap(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGroup* cobj = nullptr;
+    fairygui::GGroup* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -13381,25 +13381,25 @@ int lua_ax_fairygui_GGroup_getLineGap(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGroup",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGroup_getLineGap'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGroup_getLineGap'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGroup_getLineGap'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getLineGap();
+        auto&& ret = obj->getLineGap();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -13416,7 +13416,7 @@ int lua_ax_fairygui_GGroup_getLineGap(lua_State* tolua_S)
 int lua_ax_fairygui_GGroup_setLineGap(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGroup* cobj = nullptr;
+    fairygui::GGroup* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -13428,18 +13428,18 @@ int lua_ax_fairygui_GGroup_setLineGap(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGroup",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGroup_setLineGap'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGroup_setLineGap'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -13449,7 +13449,7 @@ int lua_ax_fairygui_GGroup_setLineGap(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGroup_setLineGap'", nullptr);
             return 0;
         }
-        cobj->setLineGap(arg0);
+        obj->setLineGap(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -13466,7 +13466,7 @@ int lua_ax_fairygui_GGroup_setLineGap(lua_State* tolua_S)
 int lua_ax_fairygui_GGroup_isExcludeInvisibles(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGroup* cobj = nullptr;
+    fairygui::GGroup* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -13478,25 +13478,25 @@ int lua_ax_fairygui_GGroup_isExcludeInvisibles(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGroup",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGroup_isExcludeInvisibles'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGroup_isExcludeInvisibles'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGroup_isExcludeInvisibles'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isExcludeInvisibles();
+        auto&& ret = obj->isExcludeInvisibles();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -13513,7 +13513,7 @@ int lua_ax_fairygui_GGroup_isExcludeInvisibles(lua_State* tolua_S)
 int lua_ax_fairygui_GGroup_setExcludeInvisibles(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGroup* cobj = nullptr;
+    fairygui::GGroup* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -13525,18 +13525,18 @@ int lua_ax_fairygui_GGroup_setExcludeInvisibles(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGroup",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGroup_setExcludeInvisibles'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGroup_setExcludeInvisibles'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -13546,7 +13546,7 @@ int lua_ax_fairygui_GGroup_setExcludeInvisibles(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGroup_setExcludeInvisibles'", nullptr);
             return 0;
         }
-        cobj->setExcludeInvisibles(arg0);
+        obj->setExcludeInvisibles(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -13563,7 +13563,7 @@ int lua_ax_fairygui_GGroup_setExcludeInvisibles(lua_State* tolua_S)
 int lua_ax_fairygui_GGroup_isAutoSizeDisabled(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGroup* cobj = nullptr;
+    fairygui::GGroup* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -13575,25 +13575,25 @@ int lua_ax_fairygui_GGroup_isAutoSizeDisabled(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGroup",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGroup_isAutoSizeDisabled'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGroup_isAutoSizeDisabled'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGroup_isAutoSizeDisabled'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isAutoSizeDisabled();
+        auto&& ret = obj->isAutoSizeDisabled();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -13610,7 +13610,7 @@ int lua_ax_fairygui_GGroup_isAutoSizeDisabled(lua_State* tolua_S)
 int lua_ax_fairygui_GGroup_setAutoSizeDisabled(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGroup* cobj = nullptr;
+    fairygui::GGroup* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -13622,18 +13622,18 @@ int lua_ax_fairygui_GGroup_setAutoSizeDisabled(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGroup",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGroup_setAutoSizeDisabled'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGroup_setAutoSizeDisabled'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -13643,7 +13643,7 @@ int lua_ax_fairygui_GGroup_setAutoSizeDisabled(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGroup_setAutoSizeDisabled'", nullptr);
             return 0;
         }
-        cobj->setAutoSizeDisabled(arg0);
+        obj->setAutoSizeDisabled(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -13660,7 +13660,7 @@ int lua_ax_fairygui_GGroup_setAutoSizeDisabled(lua_State* tolua_S)
 int lua_ax_fairygui_GGroup_getMainGridIndex(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGroup* cobj = nullptr;
+    fairygui::GGroup* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -13672,25 +13672,25 @@ int lua_ax_fairygui_GGroup_getMainGridIndex(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGroup",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGroup_getMainGridIndex'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGroup_getMainGridIndex'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGroup_getMainGridIndex'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getMainGridIndex();
+        auto&& ret = obj->getMainGridIndex();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -13707,7 +13707,7 @@ int lua_ax_fairygui_GGroup_getMainGridIndex(lua_State* tolua_S)
 int lua_ax_fairygui_GGroup_setMainGridIndex(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGroup* cobj = nullptr;
+    fairygui::GGroup* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -13719,18 +13719,18 @@ int lua_ax_fairygui_GGroup_setMainGridIndex(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGroup",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGroup_setMainGridIndex'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGroup_setMainGridIndex'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -13740,7 +13740,7 @@ int lua_ax_fairygui_GGroup_setMainGridIndex(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGroup_setMainGridIndex'", nullptr);
             return 0;
         }
-        cobj->setMainGridIndex(arg0);
+        obj->setMainGridIndex(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -13757,7 +13757,7 @@ int lua_ax_fairygui_GGroup_setMainGridIndex(lua_State* tolua_S)
 int lua_ax_fairygui_GGroup_getMainGridMinSize(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGroup* cobj = nullptr;
+    fairygui::GGroup* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -13769,25 +13769,25 @@ int lua_ax_fairygui_GGroup_getMainGridMinSize(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGroup",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGroup_getMainGridMinSize'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGroup_getMainGridMinSize'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGroup_getMainGridMinSize'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getMainGridMinSize();
+        auto&& ret = obj->getMainGridMinSize();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -13804,7 +13804,7 @@ int lua_ax_fairygui_GGroup_getMainGridMinSize(lua_State* tolua_S)
 int lua_ax_fairygui_GGroup_setMainGridMinSize(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGroup* cobj = nullptr;
+    fairygui::GGroup* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -13816,18 +13816,18 @@ int lua_ax_fairygui_GGroup_setMainGridMinSize(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGroup",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGroup_setMainGridMinSize'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGroup_setMainGridMinSize'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -13837,7 +13837,7 @@ int lua_ax_fairygui_GGroup_setMainGridMinSize(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGroup_setMainGridMinSize'", nullptr);
             return 0;
         }
-        cobj->setMainGridMinSize(arg0);
+        obj->setMainGridMinSize(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -13854,7 +13854,7 @@ int lua_ax_fairygui_GGroup_setMainGridMinSize(lua_State* tolua_S)
 int lua_ax_fairygui_GGroup_setBoundsChangedFlag(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGroup* cobj = nullptr;
+    fairygui::GGroup* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -13866,29 +13866,29 @@ int lua_ax_fairygui_GGroup_setBoundsChangedFlag(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGroup",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGroup_setBoundsChangedFlag'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGroup_setBoundsChangedFlag'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGroup_setBoundsChangedFlag'", nullptr);
             return 0;
         }
-        cobj->setBoundsChangedFlag();
+        obj->setBoundsChangedFlag();
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -13898,7 +13898,7 @@ int lua_ax_fairygui_GGroup_setBoundsChangedFlag(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGroup_setBoundsChangedFlag'", nullptr);
             return 0;
         }
-        cobj->setBoundsChangedFlag(arg0);
+        obj->setBoundsChangedFlag(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -13915,7 +13915,7 @@ int lua_ax_fairygui_GGroup_setBoundsChangedFlag(lua_State* tolua_S)
 int lua_ax_fairygui_GGroup_moveChildren(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGroup* cobj = nullptr;
+    fairygui::GGroup* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -13927,18 +13927,18 @@ int lua_ax_fairygui_GGroup_moveChildren(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGroup",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGroup_moveChildren'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGroup_moveChildren'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         double arg0;
         double arg1;
@@ -13951,7 +13951,7 @@ int lua_ax_fairygui_GGroup_moveChildren(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGroup_moveChildren'", nullptr);
             return 0;
         }
-        cobj->moveChildren(arg0, arg1);
+        obj->moveChildren(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -13968,7 +13968,7 @@ int lua_ax_fairygui_GGroup_moveChildren(lua_State* tolua_S)
 int lua_ax_fairygui_GGroup_resizeChildren(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGroup* cobj = nullptr;
+    fairygui::GGroup* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -13980,18 +13980,18 @@ int lua_ax_fairygui_GGroup_resizeChildren(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GGroup",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GGroup*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GGroup_resizeChildren'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GGroup_resizeChildren'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         double arg0;
         double arg1;
@@ -14004,7 +14004,7 @@ int lua_ax_fairygui_GGroup_resizeChildren(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGroup_resizeChildren'", nullptr);
             return 0;
         }
-        cobj->resizeChildren(arg0, arg1);
+        obj->resizeChildren(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -14055,7 +14055,7 @@ int lua_ax_fairygui_GGroup_create(lua_State* tolua_S)
 int lua_ax_fairygui_GGroup_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GGroup* cobj = nullptr;
+    fairygui::GGroup* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -14065,18 +14065,18 @@ int lua_ax_fairygui_GGroup_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GGroup_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::GGroup();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.GGroup");
+        obj = new fairygui::GGroup();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.GGroup");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.GGroup:GGroup",argc, 0);
@@ -14130,7 +14130,7 @@ int lua_register_ax_fairygui_GGroup(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_setup(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -14142,18 +14142,18 @@ int lua_ax_fairygui_ScrollPane_setup(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_setup'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_setup'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::ByteBuffer* arg0;
 
@@ -14163,7 +14163,7 @@ int lua_ax_fairygui_ScrollPane_setup(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_setup'", nullptr);
             return 0;
         }
-        cobj->setup(arg0);
+        obj->setup(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -14180,7 +14180,7 @@ int lua_ax_fairygui_ScrollPane_setup(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_getOwner(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -14192,25 +14192,25 @@ int lua_ax_fairygui_ScrollPane_getOwner(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_getOwner'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_getOwner'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_getOwner'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getOwner();
+        auto&& ret = obj->getOwner();
         object_to_luaval<fairygui::GComponent>(tolua_S, "fgui.GComponent",(fairygui::GComponent*)ret);
         return 1;
     }
@@ -14227,7 +14227,7 @@ int lua_ax_fairygui_ScrollPane_getOwner(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_getHeader(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -14239,25 +14239,25 @@ int lua_ax_fairygui_ScrollPane_getHeader(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_getHeader'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_getHeader'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_getHeader'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getHeader();
+        auto&& ret = obj->getHeader();
         object_to_luaval<fairygui::GComponent>(tolua_S, "fgui.GComponent",(fairygui::GComponent*)ret);
         return 1;
     }
@@ -14274,7 +14274,7 @@ int lua_ax_fairygui_ScrollPane_getHeader(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_getFooter(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -14286,25 +14286,25 @@ int lua_ax_fairygui_ScrollPane_getFooter(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_getFooter'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_getFooter'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_getFooter'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getFooter();
+        auto&& ret = obj->getFooter();
         object_to_luaval<fairygui::GComponent>(tolua_S, "fgui.GComponent",(fairygui::GComponent*)ret);
         return 1;
     }
@@ -14321,7 +14321,7 @@ int lua_ax_fairygui_ScrollPane_getFooter(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_getVtScrollBar(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -14333,25 +14333,25 @@ int lua_ax_fairygui_ScrollPane_getVtScrollBar(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_getVtScrollBar'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_getVtScrollBar'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_getVtScrollBar'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getVtScrollBar();
+        auto&& ret = obj->getVtScrollBar();
         object_to_luaval<fairygui::GScrollBar>(tolua_S, "fgui.GScrollBar",(fairygui::GScrollBar*)ret);
         return 1;
     }
@@ -14368,7 +14368,7 @@ int lua_ax_fairygui_ScrollPane_getVtScrollBar(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_getHzScrollBar(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -14380,25 +14380,25 @@ int lua_ax_fairygui_ScrollPane_getHzScrollBar(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_getHzScrollBar'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_getHzScrollBar'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_getHzScrollBar'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getHzScrollBar();
+        auto&& ret = obj->getHzScrollBar();
         object_to_luaval<fairygui::GScrollBar>(tolua_S, "fgui.GScrollBar",(fairygui::GScrollBar*)ret);
         return 1;
     }
@@ -14415,7 +14415,7 @@ int lua_ax_fairygui_ScrollPane_getHzScrollBar(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_isBouncebackEffect(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -14427,25 +14427,25 @@ int lua_ax_fairygui_ScrollPane_isBouncebackEffect(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_isBouncebackEffect'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_isBouncebackEffect'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_isBouncebackEffect'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isBouncebackEffect();
+        auto&& ret = obj->isBouncebackEffect();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -14462,7 +14462,7 @@ int lua_ax_fairygui_ScrollPane_isBouncebackEffect(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_setBouncebackEffect(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -14474,18 +14474,18 @@ int lua_ax_fairygui_ScrollPane_setBouncebackEffect(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_setBouncebackEffect'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_setBouncebackEffect'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -14495,7 +14495,7 @@ int lua_ax_fairygui_ScrollPane_setBouncebackEffect(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_setBouncebackEffect'", nullptr);
             return 0;
         }
-        cobj->setBouncebackEffect(arg0);
+        obj->setBouncebackEffect(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -14512,7 +14512,7 @@ int lua_ax_fairygui_ScrollPane_setBouncebackEffect(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_isTouchEffect(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -14524,25 +14524,25 @@ int lua_ax_fairygui_ScrollPane_isTouchEffect(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_isTouchEffect'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_isTouchEffect'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_isTouchEffect'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isTouchEffect();
+        auto&& ret = obj->isTouchEffect();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -14559,7 +14559,7 @@ int lua_ax_fairygui_ScrollPane_isTouchEffect(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_setTouchEffect(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -14571,18 +14571,18 @@ int lua_ax_fairygui_ScrollPane_setTouchEffect(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_setTouchEffect'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_setTouchEffect'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -14592,7 +14592,7 @@ int lua_ax_fairygui_ScrollPane_setTouchEffect(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_setTouchEffect'", nullptr);
             return 0;
         }
-        cobj->setTouchEffect(arg0);
+        obj->setTouchEffect(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -14609,7 +14609,7 @@ int lua_ax_fairygui_ScrollPane_setTouchEffect(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_isInertiaDisabled(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -14621,25 +14621,25 @@ int lua_ax_fairygui_ScrollPane_isInertiaDisabled(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_isInertiaDisabled'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_isInertiaDisabled'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_isInertiaDisabled'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isInertiaDisabled();
+        auto&& ret = obj->isInertiaDisabled();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -14656,7 +14656,7 @@ int lua_ax_fairygui_ScrollPane_isInertiaDisabled(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_setInertiaDisabled(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -14668,18 +14668,18 @@ int lua_ax_fairygui_ScrollPane_setInertiaDisabled(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_setInertiaDisabled'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_setInertiaDisabled'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -14689,7 +14689,7 @@ int lua_ax_fairygui_ScrollPane_setInertiaDisabled(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_setInertiaDisabled'", nullptr);
             return 0;
         }
-        cobj->setInertiaDisabled(arg0);
+        obj->setInertiaDisabled(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -14706,7 +14706,7 @@ int lua_ax_fairygui_ScrollPane_setInertiaDisabled(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_getScrollStep(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -14718,25 +14718,25 @@ int lua_ax_fairygui_ScrollPane_getScrollStep(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_getScrollStep'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_getScrollStep'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_getScrollStep'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getScrollStep();
+        auto&& ret = obj->getScrollStep();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -14753,7 +14753,7 @@ int lua_ax_fairygui_ScrollPane_getScrollStep(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_setScrollStep(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -14765,18 +14765,18 @@ int lua_ax_fairygui_ScrollPane_setScrollStep(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_setScrollStep'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_setScrollStep'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -14786,7 +14786,7 @@ int lua_ax_fairygui_ScrollPane_setScrollStep(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_setScrollStep'", nullptr);
             return 0;
         }
-        cobj->setScrollStep(arg0);
+        obj->setScrollStep(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -14803,7 +14803,7 @@ int lua_ax_fairygui_ScrollPane_setScrollStep(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_isSnapToItem(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -14815,25 +14815,25 @@ int lua_ax_fairygui_ScrollPane_isSnapToItem(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_isSnapToItem'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_isSnapToItem'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_isSnapToItem'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isSnapToItem();
+        auto&& ret = obj->isSnapToItem();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -14850,7 +14850,7 @@ int lua_ax_fairygui_ScrollPane_isSnapToItem(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_setSnapToItem(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -14862,18 +14862,18 @@ int lua_ax_fairygui_ScrollPane_setSnapToItem(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_setSnapToItem'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_setSnapToItem'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -14883,7 +14883,7 @@ int lua_ax_fairygui_ScrollPane_setSnapToItem(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_setSnapToItem'", nullptr);
             return 0;
         }
-        cobj->setSnapToItem(arg0);
+        obj->setSnapToItem(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -14900,7 +14900,7 @@ int lua_ax_fairygui_ScrollPane_setSnapToItem(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_isPageMode(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -14912,25 +14912,25 @@ int lua_ax_fairygui_ScrollPane_isPageMode(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_isPageMode'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_isPageMode'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_isPageMode'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isPageMode();
+        auto&& ret = obj->isPageMode();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -14947,7 +14947,7 @@ int lua_ax_fairygui_ScrollPane_isPageMode(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_setPageMode(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -14959,18 +14959,18 @@ int lua_ax_fairygui_ScrollPane_setPageMode(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_setPageMode'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_setPageMode'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -14980,7 +14980,7 @@ int lua_ax_fairygui_ScrollPane_setPageMode(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_setPageMode'", nullptr);
             return 0;
         }
-        cobj->setPageMode(arg0);
+        obj->setPageMode(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -14997,7 +14997,7 @@ int lua_ax_fairygui_ScrollPane_setPageMode(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_getPageController(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -15009,25 +15009,25 @@ int lua_ax_fairygui_ScrollPane_getPageController(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_getPageController'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_getPageController'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_getPageController'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getPageController();
+        auto&& ret = obj->getPageController();
         object_to_luaval<fairygui::GController>(tolua_S, "fgui.GController",(fairygui::GController*)ret);
         return 1;
     }
@@ -15044,7 +15044,7 @@ int lua_ax_fairygui_ScrollPane_getPageController(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_setPageController(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -15056,18 +15056,18 @@ int lua_ax_fairygui_ScrollPane_setPageController(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_setPageController'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_setPageController'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GController* arg0;
 
@@ -15077,7 +15077,7 @@ int lua_ax_fairygui_ScrollPane_setPageController(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_setPageController'", nullptr);
             return 0;
         }
-        cobj->setPageController(arg0);
+        obj->setPageController(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -15094,7 +15094,7 @@ int lua_ax_fairygui_ScrollPane_setPageController(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_isMouseWheelEnabled(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -15106,25 +15106,25 @@ int lua_ax_fairygui_ScrollPane_isMouseWheelEnabled(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_isMouseWheelEnabled'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_isMouseWheelEnabled'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_isMouseWheelEnabled'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isMouseWheelEnabled();
+        auto&& ret = obj->isMouseWheelEnabled();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -15141,7 +15141,7 @@ int lua_ax_fairygui_ScrollPane_isMouseWheelEnabled(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_setMouseWheelEnabled(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -15153,18 +15153,18 @@ int lua_ax_fairygui_ScrollPane_setMouseWheelEnabled(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_setMouseWheelEnabled'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_setMouseWheelEnabled'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -15174,7 +15174,7 @@ int lua_ax_fairygui_ScrollPane_setMouseWheelEnabled(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_setMouseWheelEnabled'", nullptr);
             return 0;
         }
-        cobj->setMouseWheelEnabled(arg0);
+        obj->setMouseWheelEnabled(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -15191,7 +15191,7 @@ int lua_ax_fairygui_ScrollPane_setMouseWheelEnabled(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_getDecelerationRate(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -15203,25 +15203,25 @@ int lua_ax_fairygui_ScrollPane_getDecelerationRate(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_getDecelerationRate'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_getDecelerationRate'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_getDecelerationRate'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getDecelerationRate();
+        auto&& ret = obj->getDecelerationRate();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -15238,7 +15238,7 @@ int lua_ax_fairygui_ScrollPane_getDecelerationRate(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_setDecelerationRate(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -15250,18 +15250,18 @@ int lua_ax_fairygui_ScrollPane_setDecelerationRate(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_setDecelerationRate'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_setDecelerationRate'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -15271,7 +15271,7 @@ int lua_ax_fairygui_ScrollPane_setDecelerationRate(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_setDecelerationRate'", nullptr);
             return 0;
         }
-        cobj->setDecelerationRate(arg0);
+        obj->setDecelerationRate(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -15288,7 +15288,7 @@ int lua_ax_fairygui_ScrollPane_setDecelerationRate(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_getPosX(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -15300,25 +15300,25 @@ int lua_ax_fairygui_ScrollPane_getPosX(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_getPosX'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_getPosX'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_getPosX'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getPosX();
+        auto&& ret = obj->getPosX();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -15335,7 +15335,7 @@ int lua_ax_fairygui_ScrollPane_getPosX(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_setPosX(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -15347,18 +15347,18 @@ int lua_ax_fairygui_ScrollPane_setPosX(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_setPosX'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_setPosX'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -15368,11 +15368,11 @@ int lua_ax_fairygui_ScrollPane_setPosX(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_setPosX'", nullptr);
             return 0;
         }
-        cobj->setPosX(arg0);
+        obj->setPosX(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         double arg0;
         bool arg1;
@@ -15385,7 +15385,7 @@ int lua_ax_fairygui_ScrollPane_setPosX(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_setPosX'", nullptr);
             return 0;
         }
-        cobj->setPosX(arg0, arg1);
+        obj->setPosX(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -15402,7 +15402,7 @@ int lua_ax_fairygui_ScrollPane_setPosX(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_getPosY(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -15414,25 +15414,25 @@ int lua_ax_fairygui_ScrollPane_getPosY(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_getPosY'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_getPosY'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_getPosY'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getPosY();
+        auto&& ret = obj->getPosY();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -15449,7 +15449,7 @@ int lua_ax_fairygui_ScrollPane_getPosY(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_setPosY(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -15461,18 +15461,18 @@ int lua_ax_fairygui_ScrollPane_setPosY(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_setPosY'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_setPosY'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -15482,11 +15482,11 @@ int lua_ax_fairygui_ScrollPane_setPosY(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_setPosY'", nullptr);
             return 0;
         }
-        cobj->setPosY(arg0);
+        obj->setPosY(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         double arg0;
         bool arg1;
@@ -15499,7 +15499,7 @@ int lua_ax_fairygui_ScrollPane_setPosY(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_setPosY'", nullptr);
             return 0;
         }
-        cobj->setPosY(arg0, arg1);
+        obj->setPosY(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -15516,7 +15516,7 @@ int lua_ax_fairygui_ScrollPane_setPosY(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_getPercX(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -15528,25 +15528,25 @@ int lua_ax_fairygui_ScrollPane_getPercX(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_getPercX'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_getPercX'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_getPercX'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getPercX();
+        auto&& ret = obj->getPercX();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -15563,7 +15563,7 @@ int lua_ax_fairygui_ScrollPane_getPercX(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_setPercX(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -15575,18 +15575,18 @@ int lua_ax_fairygui_ScrollPane_setPercX(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_setPercX'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_setPercX'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -15596,11 +15596,11 @@ int lua_ax_fairygui_ScrollPane_setPercX(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_setPercX'", nullptr);
             return 0;
         }
-        cobj->setPercX(arg0);
+        obj->setPercX(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         double arg0;
         bool arg1;
@@ -15613,7 +15613,7 @@ int lua_ax_fairygui_ScrollPane_setPercX(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_setPercX'", nullptr);
             return 0;
         }
-        cobj->setPercX(arg0, arg1);
+        obj->setPercX(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -15630,7 +15630,7 @@ int lua_ax_fairygui_ScrollPane_setPercX(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_getPercY(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -15642,25 +15642,25 @@ int lua_ax_fairygui_ScrollPane_getPercY(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_getPercY'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_getPercY'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_getPercY'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getPercY();
+        auto&& ret = obj->getPercY();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -15677,7 +15677,7 @@ int lua_ax_fairygui_ScrollPane_getPercY(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_setPercY(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -15689,18 +15689,18 @@ int lua_ax_fairygui_ScrollPane_setPercY(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_setPercY'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_setPercY'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -15710,11 +15710,11 @@ int lua_ax_fairygui_ScrollPane_setPercY(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_setPercY'", nullptr);
             return 0;
         }
-        cobj->setPercY(arg0);
+        obj->setPercY(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         double arg0;
         bool arg1;
@@ -15727,7 +15727,7 @@ int lua_ax_fairygui_ScrollPane_setPercY(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_setPercY'", nullptr);
             return 0;
         }
-        cobj->setPercY(arg0, arg1);
+        obj->setPercY(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -15744,7 +15744,7 @@ int lua_ax_fairygui_ScrollPane_setPercY(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_isBottomMost(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -15756,25 +15756,25 @@ int lua_ax_fairygui_ScrollPane_isBottomMost(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_isBottomMost'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_isBottomMost'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_isBottomMost'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isBottomMost();
+        auto&& ret = obj->isBottomMost();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -15791,7 +15791,7 @@ int lua_ax_fairygui_ScrollPane_isBottomMost(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_isRightMost(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -15803,25 +15803,25 @@ int lua_ax_fairygui_ScrollPane_isRightMost(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_isRightMost'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_isRightMost'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_isRightMost'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isRightMost();
+        auto&& ret = obj->isRightMost();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -15838,7 +15838,7 @@ int lua_ax_fairygui_ScrollPane_isRightMost(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_scrollLeft(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -15850,29 +15850,29 @@ int lua_ax_fairygui_ScrollPane_scrollLeft(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_scrollLeft'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_scrollLeft'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_scrollLeft'", nullptr);
             return 0;
         }
-        cobj->scrollLeft();
+        obj->scrollLeft();
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -15882,11 +15882,11 @@ int lua_ax_fairygui_ScrollPane_scrollLeft(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_scrollLeft'", nullptr);
             return 0;
         }
-        cobj->scrollLeft(arg0);
+        obj->scrollLeft(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         double arg0;
         bool arg1;
@@ -15899,7 +15899,7 @@ int lua_ax_fairygui_ScrollPane_scrollLeft(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_scrollLeft'", nullptr);
             return 0;
         }
-        cobj->scrollLeft(arg0, arg1);
+        obj->scrollLeft(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -15916,7 +15916,7 @@ int lua_ax_fairygui_ScrollPane_scrollLeft(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_scrollRight(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -15928,29 +15928,29 @@ int lua_ax_fairygui_ScrollPane_scrollRight(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_scrollRight'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_scrollRight'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_scrollRight'", nullptr);
             return 0;
         }
-        cobj->scrollRight();
+        obj->scrollRight();
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -15960,11 +15960,11 @@ int lua_ax_fairygui_ScrollPane_scrollRight(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_scrollRight'", nullptr);
             return 0;
         }
-        cobj->scrollRight(arg0);
+        obj->scrollRight(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         double arg0;
         bool arg1;
@@ -15977,7 +15977,7 @@ int lua_ax_fairygui_ScrollPane_scrollRight(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_scrollRight'", nullptr);
             return 0;
         }
-        cobj->scrollRight(arg0, arg1);
+        obj->scrollRight(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -15994,7 +15994,7 @@ int lua_ax_fairygui_ScrollPane_scrollRight(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_scrollUp(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -16006,29 +16006,29 @@ int lua_ax_fairygui_ScrollPane_scrollUp(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_scrollUp'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_scrollUp'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_scrollUp'", nullptr);
             return 0;
         }
-        cobj->scrollUp();
+        obj->scrollUp();
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -16038,11 +16038,11 @@ int lua_ax_fairygui_ScrollPane_scrollUp(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_scrollUp'", nullptr);
             return 0;
         }
-        cobj->scrollUp(arg0);
+        obj->scrollUp(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         double arg0;
         bool arg1;
@@ -16055,7 +16055,7 @@ int lua_ax_fairygui_ScrollPane_scrollUp(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_scrollUp'", nullptr);
             return 0;
         }
-        cobj->scrollUp(arg0, arg1);
+        obj->scrollUp(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -16072,7 +16072,7 @@ int lua_ax_fairygui_ScrollPane_scrollUp(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_scrollDown(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -16084,29 +16084,29 @@ int lua_ax_fairygui_ScrollPane_scrollDown(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_scrollDown'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_scrollDown'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_scrollDown'", nullptr);
             return 0;
         }
-        cobj->scrollDown();
+        obj->scrollDown();
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -16116,11 +16116,11 @@ int lua_ax_fairygui_ScrollPane_scrollDown(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_scrollDown'", nullptr);
             return 0;
         }
-        cobj->scrollDown(arg0);
+        obj->scrollDown(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         double arg0;
         bool arg1;
@@ -16133,7 +16133,7 @@ int lua_ax_fairygui_ScrollPane_scrollDown(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_scrollDown'", nullptr);
             return 0;
         }
-        cobj->scrollDown(arg0, arg1);
+        obj->scrollDown(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -16150,7 +16150,7 @@ int lua_ax_fairygui_ScrollPane_scrollDown(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_scrollTop(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -16162,29 +16162,29 @@ int lua_ax_fairygui_ScrollPane_scrollTop(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_scrollTop'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_scrollTop'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_scrollTop'", nullptr);
             return 0;
         }
-        cobj->scrollTop();
+        obj->scrollTop();
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -16194,7 +16194,7 @@ int lua_ax_fairygui_ScrollPane_scrollTop(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_scrollTop'", nullptr);
             return 0;
         }
-        cobj->scrollTop(arg0);
+        obj->scrollTop(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -16211,7 +16211,7 @@ int lua_ax_fairygui_ScrollPane_scrollTop(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_scrollBottom(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -16223,29 +16223,29 @@ int lua_ax_fairygui_ScrollPane_scrollBottom(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_scrollBottom'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_scrollBottom'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_scrollBottom'", nullptr);
             return 0;
         }
-        cobj->scrollBottom();
+        obj->scrollBottom();
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -16255,7 +16255,7 @@ int lua_ax_fairygui_ScrollPane_scrollBottom(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_scrollBottom'", nullptr);
             return 0;
         }
-        cobj->scrollBottom(arg0);
+        obj->scrollBottom(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -16272,7 +16272,7 @@ int lua_ax_fairygui_ScrollPane_scrollBottom(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_scrollToView(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 #if _AX_DEBUG >= 1
     tolua_Error tolua_err;
@@ -16281,28 +16281,28 @@ int lua_ax_fairygui_ScrollPane_scrollToView(lua_State* tolua_S)
 #if _AX_DEBUG >= 1
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_scrollToView'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_scrollToView'", nullptr);
         return 0;
     }
 #endif
     argc = lua_gettop(tolua_S)-1;
-    do{
+    do {
         if (argc == 1) {
             ax::Rect arg0;
             ok &= luaval_to_rect(tolua_S, 2, &arg0, "fgui.ScrollPane:scrollToView");
 
             if (!ok) { break; }
-            cobj->scrollToView(arg0);
+            obj->scrollToView(arg0);
             lua_settop(tolua_S, 1);
             return 1;
         }
     }while(0);
     ok  = true;
-    do{
+    do {
         if (argc == 2) {
             ax::Rect arg0;
             ok &= luaval_to_rect(tolua_S, 2, &arg0, "fgui.ScrollPane:scrollToView");
@@ -16312,13 +16312,13 @@ int lua_ax_fairygui_ScrollPane_scrollToView(lua_State* tolua_S)
             ok &= luaval_to_boolean(tolua_S, 3,&arg1, "fgui.ScrollPane:scrollToView");
 
             if (!ok) { break; }
-            cobj->scrollToView(arg0, arg1);
+            obj->scrollToView(arg0, arg1);
             lua_settop(tolua_S, 1);
             return 1;
         }
     }while(0);
     ok  = true;
-    do{
+    do {
         if (argc == 3) {
             ax::Rect arg0;
             ok &= luaval_to_rect(tolua_S, 2, &arg0, "fgui.ScrollPane:scrollToView");
@@ -16332,25 +16332,25 @@ int lua_ax_fairygui_ScrollPane_scrollToView(lua_State* tolua_S)
             ok &= luaval_to_boolean(tolua_S, 4,&arg2, "fgui.ScrollPane:scrollToView");
 
             if (!ok) { break; }
-            cobj->scrollToView(arg0, arg1, arg2);
+            obj->scrollToView(arg0, arg1, arg2);
             lua_settop(tolua_S, 1);
             return 1;
         }
     }while(0);
     ok  = true;
-    do{
+    do {
         if (argc == 1) {
             fairygui::GObject* arg0;
             ok &= luaval_to_object<fairygui::GObject>(tolua_S, 2, "fgui.GObject",&arg0, "fgui.ScrollPane:scrollToView");
 
             if (!ok) { break; }
-            cobj->scrollToView(arg0);
+            obj->scrollToView(arg0);
             lua_settop(tolua_S, 1);
             return 1;
         }
     }while(0);
     ok  = true;
-    do{
+    do {
         if (argc == 2) {
             fairygui::GObject* arg0;
             ok &= luaval_to_object<fairygui::GObject>(tolua_S, 2, "fgui.GObject",&arg0, "fgui.ScrollPane:scrollToView");
@@ -16360,13 +16360,13 @@ int lua_ax_fairygui_ScrollPane_scrollToView(lua_State* tolua_S)
             ok &= luaval_to_boolean(tolua_S, 3,&arg1, "fgui.ScrollPane:scrollToView");
 
             if (!ok) { break; }
-            cobj->scrollToView(arg0, arg1);
+            obj->scrollToView(arg0, arg1);
             lua_settop(tolua_S, 1);
             return 1;
         }
     }while(0);
     ok  = true;
-    do{
+    do {
         if (argc == 3) {
             fairygui::GObject* arg0;
             ok &= luaval_to_object<fairygui::GObject>(tolua_S, 2, "fgui.GObject",&arg0, "fgui.ScrollPane:scrollToView");
@@ -16380,7 +16380,7 @@ int lua_ax_fairygui_ScrollPane_scrollToView(lua_State* tolua_S)
             ok &= luaval_to_boolean(tolua_S, 4,&arg2, "fgui.ScrollPane:scrollToView");
 
             if (!ok) { break; }
-            cobj->scrollToView(arg0, arg1, arg2);
+            obj->scrollToView(arg0, arg1, arg2);
             lua_settop(tolua_S, 1);
             return 1;
         }
@@ -16399,7 +16399,7 @@ int lua_ax_fairygui_ScrollPane_scrollToView(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_isChildInView(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -16411,18 +16411,18 @@ int lua_ax_fairygui_ScrollPane_isChildInView(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_isChildInView'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_isChildInView'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GObject* arg0;
 
@@ -16432,7 +16432,7 @@ int lua_ax_fairygui_ScrollPane_isChildInView(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_isChildInView'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isChildInView(arg0);
+        auto&& ret = obj->isChildInView(arg0);
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -16449,7 +16449,7 @@ int lua_ax_fairygui_ScrollPane_isChildInView(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_getPageX(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -16461,25 +16461,25 @@ int lua_ax_fairygui_ScrollPane_getPageX(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_getPageX'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_getPageX'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_getPageX'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getPageX();
+        auto&& ret = obj->getPageX();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -16496,7 +16496,7 @@ int lua_ax_fairygui_ScrollPane_getPageX(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_setPageX(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -16508,18 +16508,18 @@ int lua_ax_fairygui_ScrollPane_setPageX(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_setPageX'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_setPageX'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -16529,11 +16529,11 @@ int lua_ax_fairygui_ScrollPane_setPageX(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_setPageX'", nullptr);
             return 0;
         }
-        cobj->setPageX(arg0);
+        obj->setPageX(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         int arg0;
         bool arg1;
@@ -16546,7 +16546,7 @@ int lua_ax_fairygui_ScrollPane_setPageX(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_setPageX'", nullptr);
             return 0;
         }
-        cobj->setPageX(arg0, arg1);
+        obj->setPageX(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -16563,7 +16563,7 @@ int lua_ax_fairygui_ScrollPane_setPageX(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_getPageY(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -16575,25 +16575,25 @@ int lua_ax_fairygui_ScrollPane_getPageY(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_getPageY'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_getPageY'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_getPageY'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getPageY();
+        auto&& ret = obj->getPageY();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -16610,7 +16610,7 @@ int lua_ax_fairygui_ScrollPane_getPageY(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_setPageY(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -16622,18 +16622,18 @@ int lua_ax_fairygui_ScrollPane_setPageY(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_setPageY'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_setPageY'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -16643,11 +16643,11 @@ int lua_ax_fairygui_ScrollPane_setPageY(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_setPageY'", nullptr);
             return 0;
         }
-        cobj->setPageY(arg0);
+        obj->setPageY(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         int arg0;
         bool arg1;
@@ -16660,7 +16660,7 @@ int lua_ax_fairygui_ScrollPane_setPageY(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_setPageY'", nullptr);
             return 0;
         }
-        cobj->setPageY(arg0, arg1);
+        obj->setPageY(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -16677,7 +16677,7 @@ int lua_ax_fairygui_ScrollPane_setPageY(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_getScrollingPosX(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -16689,25 +16689,25 @@ int lua_ax_fairygui_ScrollPane_getScrollingPosX(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_getScrollingPosX'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_getScrollingPosX'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_getScrollingPosX'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getScrollingPosX();
+        auto&& ret = obj->getScrollingPosX();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -16724,7 +16724,7 @@ int lua_ax_fairygui_ScrollPane_getScrollingPosX(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_getScrollingPosY(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -16736,25 +16736,25 @@ int lua_ax_fairygui_ScrollPane_getScrollingPosY(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_getScrollingPosY'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_getScrollingPosY'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_getScrollingPosY'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getScrollingPosY();
+        auto&& ret = obj->getScrollingPosY();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -16771,7 +16771,7 @@ int lua_ax_fairygui_ScrollPane_getScrollingPosY(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_getContentSize(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -16783,25 +16783,25 @@ int lua_ax_fairygui_ScrollPane_getContentSize(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_getContentSize'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_getContentSize'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_getContentSize'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getContentSize();
+        auto&& ret = obj->getContentSize();
         size_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -16818,7 +16818,7 @@ int lua_ax_fairygui_ScrollPane_getContentSize(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_getViewSize(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -16830,25 +16830,25 @@ int lua_ax_fairygui_ScrollPane_getViewSize(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_getViewSize'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_getViewSize'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_getViewSize'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getViewSize();
+        auto&& ret = obj->getViewSize();
         size_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -16865,7 +16865,7 @@ int lua_ax_fairygui_ScrollPane_getViewSize(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_lockHeader(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -16877,18 +16877,18 @@ int lua_ax_fairygui_ScrollPane_lockHeader(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_lockHeader'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_lockHeader'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -16898,7 +16898,7 @@ int lua_ax_fairygui_ScrollPane_lockHeader(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_lockHeader'", nullptr);
             return 0;
         }
-        cobj->lockHeader(arg0);
+        obj->lockHeader(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -16915,7 +16915,7 @@ int lua_ax_fairygui_ScrollPane_lockHeader(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_lockFooter(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -16927,18 +16927,18 @@ int lua_ax_fairygui_ScrollPane_lockFooter(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_lockFooter'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_lockFooter'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -16948,7 +16948,7 @@ int lua_ax_fairygui_ScrollPane_lockFooter(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_lockFooter'", nullptr);
             return 0;
         }
-        cobj->lockFooter(arg0);
+        obj->lockFooter(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -16965,7 +16965,7 @@ int lua_ax_fairygui_ScrollPane_lockFooter(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_cancelDragging(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -16977,25 +16977,25 @@ int lua_ax_fairygui_ScrollPane_cancelDragging(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.ScrollPane",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::ScrollPane*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_ScrollPane_cancelDragging'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_ScrollPane_cancelDragging'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_cancelDragging'", nullptr);
             return 0;
         }
-        cobj->cancelDragging();
+        obj->cancelDragging();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -17046,7 +17046,7 @@ int lua_ax_fairygui_ScrollPane_getDraggingPane(lua_State* tolua_S)
 int lua_ax_fairygui_ScrollPane_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::ScrollPane* cobj = nullptr;
+    fairygui::ScrollPane* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -17056,7 +17056,7 @@ int lua_ax_fairygui_ScrollPane_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GComponent* arg0;
 
@@ -17066,11 +17066,11 @@ int lua_ax_fairygui_ScrollPane_constructor(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_ScrollPane_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::ScrollPane(arg0);
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.ScrollPane");
+        obj = new fairygui::ScrollPane(arg0);
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.ScrollPane");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.ScrollPane:ScrollPane",argc, 1);
@@ -17160,7 +17160,7 @@ int lua_register_ax_fairygui_ScrollPane(lua_State* tolua_S)
 int lua_ax_fairygui_Transition_getOwner(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Transition* cobj = nullptr;
+    fairygui::Transition* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -17172,25 +17172,25 @@ int lua_ax_fairygui_Transition_getOwner(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Transition",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Transition_getOwner'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Transition_getOwner'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Transition_getOwner'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getOwner();
+        auto&& ret = obj->getOwner();
         object_to_luaval<fairygui::GComponent>(tolua_S, "fgui.GComponent",(fairygui::GComponent*)ret);
         return 1;
     }
@@ -17207,7 +17207,7 @@ int lua_ax_fairygui_Transition_getOwner(lua_State* tolua_S)
 int lua_ax_fairygui_Transition_isPlaying(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Transition* cobj = nullptr;
+    fairygui::Transition* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -17219,25 +17219,25 @@ int lua_ax_fairygui_Transition_isPlaying(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Transition",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Transition_isPlaying'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Transition_isPlaying'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Transition_isPlaying'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isPlaying();
+        auto&& ret = obj->isPlaying();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -17254,7 +17254,7 @@ int lua_ax_fairygui_Transition_isPlaying(lua_State* tolua_S)
 int lua_ax_fairygui_Transition_playReverse(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Transition* cobj = nullptr;
+    fairygui::Transition* obj = nullptr;
     bool ok  = true;
 #if _AX_DEBUG >= 1
     tolua_Error tolua_err;
@@ -17263,16 +17263,16 @@ int lua_ax_fairygui_Transition_playReverse(lua_State* tolua_S)
 #if _AX_DEBUG >= 1
     if (!tolua_isusertype(tolua_S,1,"fgui.Transition",0,&tolua_err)) goto tolua_lerror;
 #endif
-    cobj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Transition_playReverse'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Transition_playReverse'", nullptr);
         return 0;
     }
 #endif
     argc = lua_gettop(tolua_S)-1;
-    do{
+    do {
         if (argc == 2) {
             int arg0;
             ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0, "fgui.Transition:playReverse");
@@ -17282,13 +17282,13 @@ int lua_ax_fairygui_Transition_playReverse(lua_State* tolua_S)
             ok &= luaval_to_number(tolua_S, 3,&arg1, "fgui.Transition:playReverse");
 
             if (!ok) { break; }
-            cobj->playReverse(arg0, arg1);
+            obj->playReverse(arg0, arg1);
             lua_settop(tolua_S, 1);
             return 1;
         }
     }while(0);
     ok  = true;
-    do{
+    do {
         if (argc == 3) {
             int arg0;
             ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0, "fgui.Transition:playReverse");
@@ -17301,36 +17301,36 @@ int lua_ax_fairygui_Transition_playReverse(lua_State* tolua_S)
             std::function<void ()> arg2;
             do {
 			// Lambda binding for lua is not supported.
-			assert(false);
+		    assert(false);
 		} while(0)
 		;
 
             if (!ok) { break; }
-            cobj->playReverse(arg0, arg1, arg2);
+            obj->playReverse(arg0, arg1, arg2);
             lua_settop(tolua_S, 1);
             return 1;
         }
     }while(0);
     ok  = true;
-    do{
+    do {
         if (argc == 0) {
-            cobj->playReverse();
+            obj->playReverse();
             lua_settop(tolua_S, 1);
             return 1;
         }
     }while(0);
     ok  = true;
-    do{
+    do {
         if (argc == 1) {
             std::function<void ()> arg0;
             do {
 			// Lambda binding for lua is not supported.
-			assert(false);
+		    assert(false);
 		} while(0)
 		;
 
             if (!ok) { break; }
-            cobj->playReverse(arg0);
+            obj->playReverse(arg0);
             lua_settop(tolua_S, 1);
             return 1;
         }
@@ -17349,7 +17349,7 @@ int lua_ax_fairygui_Transition_playReverse(lua_State* tolua_S)
 int lua_ax_fairygui_Transition_changePlayTimes(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Transition* cobj = nullptr;
+    fairygui::Transition* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -17361,18 +17361,18 @@ int lua_ax_fairygui_Transition_changePlayTimes(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Transition",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Transition_changePlayTimes'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Transition_changePlayTimes'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -17382,7 +17382,7 @@ int lua_ax_fairygui_Transition_changePlayTimes(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Transition_changePlayTimes'", nullptr);
             return 0;
         }
-        cobj->changePlayTimes(arg0);
+        obj->changePlayTimes(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -17399,7 +17399,7 @@ int lua_ax_fairygui_Transition_changePlayTimes(lua_State* tolua_S)
 int lua_ax_fairygui_Transition_stop(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Transition* cobj = nullptr;
+    fairygui::Transition* obj = nullptr;
     bool ok  = true;
 #if _AX_DEBUG >= 1
     tolua_Error tolua_err;
@@ -17408,16 +17408,16 @@ int lua_ax_fairygui_Transition_stop(lua_State* tolua_S)
 #if _AX_DEBUG >= 1
     if (!tolua_isusertype(tolua_S,1,"fgui.Transition",0,&tolua_err)) goto tolua_lerror;
 #endif
-    cobj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Transition_stop'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Transition_stop'", nullptr);
         return 0;
     }
 #endif
     argc = lua_gettop(tolua_S)-1;
-    do{
+    do {
         if (argc == 2) {
             bool arg0;
             ok &= luaval_to_boolean(tolua_S, 2,&arg0, "fgui.Transition:stop");
@@ -17427,15 +17427,15 @@ int lua_ax_fairygui_Transition_stop(lua_State* tolua_S)
             ok &= luaval_to_boolean(tolua_S, 3,&arg1, "fgui.Transition:stop");
 
             if (!ok) { break; }
-            cobj->stop(arg0, arg1);
+            obj->stop(arg0, arg1);
             lua_settop(tolua_S, 1);
             return 1;
         }
     }while(0);
     ok  = true;
-    do{
+    do {
         if (argc == 0) {
-            cobj->stop();
+            obj->stop();
             lua_settop(tolua_S, 1);
             return 1;
         }
@@ -17454,7 +17454,7 @@ int lua_ax_fairygui_Transition_stop(lua_State* tolua_S)
 int lua_ax_fairygui_Transition_setAutoPlay(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Transition* cobj = nullptr;
+    fairygui::Transition* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -17466,18 +17466,18 @@ int lua_ax_fairygui_Transition_setAutoPlay(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Transition",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Transition_setAutoPlay'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Transition_setAutoPlay'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 3) 
+    if (argc == 3)
     {
         bool arg0;
         int arg1;
@@ -17493,7 +17493,7 @@ int lua_ax_fairygui_Transition_setAutoPlay(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Transition_setAutoPlay'", nullptr);
             return 0;
         }
-        cobj->setAutoPlay(arg0, arg1, arg2);
+        obj->setAutoPlay(arg0, arg1, arg2);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -17510,7 +17510,7 @@ int lua_ax_fairygui_Transition_setAutoPlay(lua_State* tolua_S)
 int lua_ax_fairygui_Transition_setPaused(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Transition* cobj = nullptr;
+    fairygui::Transition* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -17522,18 +17522,18 @@ int lua_ax_fairygui_Transition_setPaused(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Transition",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Transition_setPaused'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Transition_setPaused'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -17543,7 +17543,7 @@ int lua_ax_fairygui_Transition_setPaused(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Transition_setPaused'", nullptr);
             return 0;
         }
-        cobj->setPaused(arg0);
+        obj->setPaused(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -17560,7 +17560,7 @@ int lua_ax_fairygui_Transition_setPaused(lua_State* tolua_S)
 int lua_ax_fairygui_Transition_setValue(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Transition* cobj = nullptr;
+    fairygui::Transition* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -17572,18 +17572,18 @@ int lua_ax_fairygui_Transition_setValue(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Transition",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Transition_setValue'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Transition_setValue'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         std::string arg0;
         ax::ValueVector arg1;
@@ -17596,7 +17596,7 @@ int lua_ax_fairygui_Transition_setValue(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Transition_setValue'", nullptr);
             return 0;
         }
-        cobj->setValue(arg0, arg1);
+        obj->setValue(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -17613,7 +17613,7 @@ int lua_ax_fairygui_Transition_setValue(lua_State* tolua_S)
 int lua_ax_fairygui_Transition_setHook(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Transition* cobj = nullptr;
+    fairygui::Transition* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -17625,18 +17625,18 @@ int lua_ax_fairygui_Transition_setHook(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Transition",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Transition_setHook'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Transition_setHook'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         std::string arg0;
         std::function<void ()> arg1;
@@ -17645,7 +17645,7 @@ int lua_ax_fairygui_Transition_setHook(lua_State* tolua_S)
 
         do {
 			// Lambda binding for lua is not supported.
-			assert(false);
+		    assert(false);
 		} while(0)
 		;
         if(!ok)
@@ -17653,7 +17653,7 @@ int lua_ax_fairygui_Transition_setHook(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Transition_setHook'", nullptr);
             return 0;
         }
-        cobj->setHook(arg0, arg1);
+        obj->setHook(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -17670,7 +17670,7 @@ int lua_ax_fairygui_Transition_setHook(lua_State* tolua_S)
 int lua_ax_fairygui_Transition_clearHooks(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Transition* cobj = nullptr;
+    fairygui::Transition* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -17682,25 +17682,25 @@ int lua_ax_fairygui_Transition_clearHooks(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Transition",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Transition_clearHooks'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Transition_clearHooks'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Transition_clearHooks'", nullptr);
             return 0;
         }
-        cobj->clearHooks();
+        obj->clearHooks();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -17717,7 +17717,7 @@ int lua_ax_fairygui_Transition_clearHooks(lua_State* tolua_S)
 int lua_ax_fairygui_Transition_setTarget(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Transition* cobj = nullptr;
+    fairygui::Transition* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -17729,18 +17729,18 @@ int lua_ax_fairygui_Transition_setTarget(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Transition",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Transition_setTarget'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Transition_setTarget'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         std::string arg0;
         fairygui::GObject* arg1;
@@ -17753,7 +17753,7 @@ int lua_ax_fairygui_Transition_setTarget(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Transition_setTarget'", nullptr);
             return 0;
         }
-        cobj->setTarget(arg0, arg1);
+        obj->setTarget(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -17770,7 +17770,7 @@ int lua_ax_fairygui_Transition_setTarget(lua_State* tolua_S)
 int lua_ax_fairygui_Transition_setDuration(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Transition* cobj = nullptr;
+    fairygui::Transition* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -17782,18 +17782,18 @@ int lua_ax_fairygui_Transition_setDuration(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Transition",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Transition_setDuration'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Transition_setDuration'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         std::string arg0;
         double arg1;
@@ -17806,7 +17806,7 @@ int lua_ax_fairygui_Transition_setDuration(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Transition_setDuration'", nullptr);
             return 0;
         }
-        cobj->setDuration(arg0, arg1);
+        obj->setDuration(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -17823,7 +17823,7 @@ int lua_ax_fairygui_Transition_setDuration(lua_State* tolua_S)
 int lua_ax_fairygui_Transition_getLabelTime(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Transition* cobj = nullptr;
+    fairygui::Transition* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -17835,18 +17835,18 @@ int lua_ax_fairygui_Transition_getLabelTime(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Transition",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Transition_getLabelTime'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Transition_getLabelTime'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -17856,7 +17856,7 @@ int lua_ax_fairygui_Transition_getLabelTime(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Transition_getLabelTime'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getLabelTime(arg0);
+        auto&& ret = obj->getLabelTime(arg0);
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -17873,7 +17873,7 @@ int lua_ax_fairygui_Transition_getLabelTime(lua_State* tolua_S)
 int lua_ax_fairygui_Transition_getTimeScale(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Transition* cobj = nullptr;
+    fairygui::Transition* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -17885,25 +17885,25 @@ int lua_ax_fairygui_Transition_getTimeScale(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Transition",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Transition_getTimeScale'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Transition_getTimeScale'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Transition_getTimeScale'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTimeScale();
+        auto&& ret = obj->getTimeScale();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -17920,7 +17920,7 @@ int lua_ax_fairygui_Transition_getTimeScale(lua_State* tolua_S)
 int lua_ax_fairygui_Transition_setTimeScale(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Transition* cobj = nullptr;
+    fairygui::Transition* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -17932,18 +17932,18 @@ int lua_ax_fairygui_Transition_setTimeScale(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Transition",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Transition_setTimeScale'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Transition_setTimeScale'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -17953,7 +17953,7 @@ int lua_ax_fairygui_Transition_setTimeScale(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Transition_setTimeScale'", nullptr);
             return 0;
         }
-        cobj->setTimeScale(arg0);
+        obj->setTimeScale(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -17970,7 +17970,7 @@ int lua_ax_fairygui_Transition_setTimeScale(lua_State* tolua_S)
 int lua_ax_fairygui_Transition_updateFromRelations(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Transition* cobj = nullptr;
+    fairygui::Transition* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -17982,18 +17982,18 @@ int lua_ax_fairygui_Transition_updateFromRelations(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Transition",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Transition_updateFromRelations'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Transition_updateFromRelations'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 3) 
+    if (argc == 3)
     {
         std::string arg0;
         double arg1;
@@ -18009,7 +18009,7 @@ int lua_ax_fairygui_Transition_updateFromRelations(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Transition_updateFromRelations'", nullptr);
             return 0;
         }
-        cobj->updateFromRelations(arg0, arg1, arg2);
+        obj->updateFromRelations(arg0, arg1, arg2);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -18026,7 +18026,7 @@ int lua_ax_fairygui_Transition_updateFromRelations(lua_State* tolua_S)
 int lua_ax_fairygui_Transition_onOwnerAddedToStage(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Transition* cobj = nullptr;
+    fairygui::Transition* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -18038,25 +18038,25 @@ int lua_ax_fairygui_Transition_onOwnerAddedToStage(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Transition",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Transition_onOwnerAddedToStage'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Transition_onOwnerAddedToStage'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Transition_onOwnerAddedToStage'", nullptr);
             return 0;
         }
-        cobj->onOwnerAddedToStage();
+        obj->onOwnerAddedToStage();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -18073,7 +18073,7 @@ int lua_ax_fairygui_Transition_onOwnerAddedToStage(lua_State* tolua_S)
 int lua_ax_fairygui_Transition_onOwnerRemovedFromStage(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Transition* cobj = nullptr;
+    fairygui::Transition* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -18085,25 +18085,25 @@ int lua_ax_fairygui_Transition_onOwnerRemovedFromStage(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Transition",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Transition*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Transition_onOwnerRemovedFromStage'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Transition_onOwnerRemovedFromStage'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Transition_onOwnerRemovedFromStage'", nullptr);
             return 0;
         }
-        cobj->onOwnerRemovedFromStage();
+        obj->onOwnerRemovedFromStage();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -18217,7 +18217,7 @@ int lua_ax_fairygui_Transition_setScriptHandlerPlay(lua_State* tolua_S)
 int lua_ax_fairygui_Transition_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Transition* cobj = nullptr;
+    fairygui::Transition* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -18227,7 +18227,7 @@ int lua_ax_fairygui_Transition_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GComponent* arg0;
 
@@ -18237,11 +18237,11 @@ int lua_ax_fairygui_Transition_constructor(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Transition_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::Transition(arg0);
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.Transition");
+        obj = new fairygui::Transition(arg0);
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.Transition");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.Transition:Transition",argc, 1);
@@ -18297,7 +18297,7 @@ int lua_register_ax_fairygui_Transition(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_addChild(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -18309,18 +18309,18 @@ int lua_ax_fairygui_GComponent_addChild(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_addChild'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_addChild'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GObject* arg0;
 
@@ -18330,7 +18330,7 @@ int lua_ax_fairygui_GComponent_addChild(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_addChild'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->addChild(arg0);
+        auto&& ret = obj->addChild(arg0);
         object_to_luaval<fairygui::GObject>(tolua_S, "fgui.GObject",(fairygui::GObject*)ret);
         return 1;
     }
@@ -18347,7 +18347,7 @@ int lua_ax_fairygui_GComponent_addChild(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_addChildAt(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -18359,18 +18359,18 @@ int lua_ax_fairygui_GComponent_addChildAt(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_addChildAt'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_addChildAt'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         fairygui::GObject* arg0;
         int arg1;
@@ -18383,7 +18383,7 @@ int lua_ax_fairygui_GComponent_addChildAt(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_addChildAt'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->addChildAt(arg0, arg1);
+        auto&& ret = obj->addChildAt(arg0, arg1);
         object_to_luaval<fairygui::GObject>(tolua_S, "fgui.GObject",(fairygui::GObject*)ret);
         return 1;
     }
@@ -18400,7 +18400,7 @@ int lua_ax_fairygui_GComponent_addChildAt(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_removeChild(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -18412,18 +18412,18 @@ int lua_ax_fairygui_GComponent_removeChild(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_removeChild'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_removeChild'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GObject* arg0;
 
@@ -18433,7 +18433,7 @@ int lua_ax_fairygui_GComponent_removeChild(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_removeChild'", nullptr);
             return 0;
         }
-        cobj->removeChild(arg0);
+        obj->removeChild(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -18450,7 +18450,7 @@ int lua_ax_fairygui_GComponent_removeChild(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_removeChildAt(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -18462,18 +18462,18 @@ int lua_ax_fairygui_GComponent_removeChildAt(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_removeChildAt'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_removeChildAt'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -18483,7 +18483,7 @@ int lua_ax_fairygui_GComponent_removeChildAt(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_removeChildAt'", nullptr);
             return 0;
         }
-        cobj->removeChildAt(arg0);
+        obj->removeChildAt(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -18500,7 +18500,7 @@ int lua_ax_fairygui_GComponent_removeChildAt(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_removeChildren(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 #if _AX_DEBUG >= 1
     tolua_Error tolua_err;
@@ -18509,16 +18509,16 @@ int lua_ax_fairygui_GComponent_removeChildren(lua_State* tolua_S)
 #if _AX_DEBUG >= 1
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_removeChildren'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_removeChildren'", nullptr);
         return 0;
     }
 #endif
     argc = lua_gettop(tolua_S)-1;
-    do{
+    do {
         if (argc == 2) {
             int arg0;
             ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0, "fgui.GComponent:removeChildren");
@@ -18528,15 +18528,15 @@ int lua_ax_fairygui_GComponent_removeChildren(lua_State* tolua_S)
             ok &= luaval_to_int32(tolua_S, 3,(int *)&arg1, "fgui.GComponent:removeChildren");
 
             if (!ok) { break; }
-            cobj->removeChildren(arg0, arg1);
+            obj->removeChildren(arg0, arg1);
             lua_settop(tolua_S, 1);
             return 1;
         }
     }while(0);
     ok  = true;
-    do{
+    do {
         if (argc == 0) {
-            cobj->removeChildren();
+            obj->removeChildren();
             lua_settop(tolua_S, 1);
             return 1;
         }
@@ -18555,7 +18555,7 @@ int lua_ax_fairygui_GComponent_removeChildren(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getChildAt(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -18567,18 +18567,18 @@ int lua_ax_fairygui_GComponent_getChildAt(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getChildAt'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getChildAt'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -18588,7 +18588,7 @@ int lua_ax_fairygui_GComponent_getChildAt(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getChildAt'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getChildAt(arg0);
+        auto&& ret = obj->getChildAt(arg0);
         object_to_luaval<fairygui::GObject>(tolua_S, "fgui.GObject",(fairygui::GObject*)ret);
         return 1;
     }
@@ -18605,7 +18605,7 @@ int lua_ax_fairygui_GComponent_getChildAt(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getChild(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -18617,18 +18617,18 @@ int lua_ax_fairygui_GComponent_getChild(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getChild'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getChild'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -18638,7 +18638,7 @@ int lua_ax_fairygui_GComponent_getChild(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getChild'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getChild(arg0);
+        auto&& ret = obj->getChild(arg0);
         object_to_luaval<fairygui::GObject>(tolua_S, "fgui.GObject",(fairygui::GObject*)ret);
         return 1;
     }
@@ -18655,7 +18655,7 @@ int lua_ax_fairygui_GComponent_getChild(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getChildByPath(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -18667,18 +18667,18 @@ int lua_ax_fairygui_GComponent_getChildByPath(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getChildByPath'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getChildByPath'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -18688,7 +18688,7 @@ int lua_ax_fairygui_GComponent_getChildByPath(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getChildByPath'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getChildByPath(arg0);
+        auto&& ret = obj->getChildByPath(arg0);
         object_to_luaval<fairygui::GObject>(tolua_S, "fgui.GObject",(fairygui::GObject*)ret);
         return 1;
     }
@@ -18705,7 +18705,7 @@ int lua_ax_fairygui_GComponent_getChildByPath(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getChildInGroup(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -18717,18 +18717,18 @@ int lua_ax_fairygui_GComponent_getChildInGroup(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getChildInGroup'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getChildInGroup'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         const fairygui::GGroup* arg0;
         std::string arg1;
@@ -18741,7 +18741,7 @@ int lua_ax_fairygui_GComponent_getChildInGroup(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getChildInGroup'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getChildInGroup(arg0, arg1);
+        auto&& ret = obj->getChildInGroup(arg0, arg1);
         object_to_luaval<fairygui::GObject>(tolua_S, "fgui.GObject",(fairygui::GObject*)ret);
         return 1;
     }
@@ -18758,7 +18758,7 @@ int lua_ax_fairygui_GComponent_getChildInGroup(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getChildById(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -18770,18 +18770,18 @@ int lua_ax_fairygui_GComponent_getChildById(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getChildById'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getChildById'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -18791,7 +18791,7 @@ int lua_ax_fairygui_GComponent_getChildById(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getChildById'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getChildById(arg0);
+        auto&& ret = obj->getChildById(arg0);
         object_to_luaval<fairygui::GObject>(tolua_S, "fgui.GObject",(fairygui::GObject*)ret);
         return 1;
     }
@@ -18808,7 +18808,7 @@ int lua_ax_fairygui_GComponent_getChildById(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getChildren(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -18820,25 +18820,25 @@ int lua_ax_fairygui_GComponent_getChildren(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getChildren'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getChildren'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getChildren'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getChildren();
+        auto&& ret = obj->getChildren();
         ccvector_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -18855,7 +18855,7 @@ int lua_ax_fairygui_GComponent_getChildren(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getChildIndex(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -18867,18 +18867,18 @@ int lua_ax_fairygui_GComponent_getChildIndex(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getChildIndex'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getChildIndex'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         const fairygui::GObject* arg0;
 
@@ -18888,7 +18888,7 @@ int lua_ax_fairygui_GComponent_getChildIndex(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getChildIndex'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getChildIndex(arg0);
+        auto&& ret = obj->getChildIndex(arg0);
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -18905,7 +18905,7 @@ int lua_ax_fairygui_GComponent_getChildIndex(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_setChildIndex(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -18917,18 +18917,18 @@ int lua_ax_fairygui_GComponent_setChildIndex(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_setChildIndex'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_setChildIndex'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         fairygui::GObject* arg0;
         int arg1;
@@ -18941,7 +18941,7 @@ int lua_ax_fairygui_GComponent_setChildIndex(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_setChildIndex'", nullptr);
             return 0;
         }
-        cobj->setChildIndex(arg0, arg1);
+        obj->setChildIndex(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -18958,7 +18958,7 @@ int lua_ax_fairygui_GComponent_setChildIndex(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_setChildIndexBefore(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -18970,18 +18970,18 @@ int lua_ax_fairygui_GComponent_setChildIndexBefore(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_setChildIndexBefore'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_setChildIndexBefore'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         fairygui::GObject* arg0;
         int arg1;
@@ -18994,7 +18994,7 @@ int lua_ax_fairygui_GComponent_setChildIndexBefore(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_setChildIndexBefore'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->setChildIndexBefore(arg0, arg1);
+        auto&& ret = obj->setChildIndexBefore(arg0, arg1);
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -19011,7 +19011,7 @@ int lua_ax_fairygui_GComponent_setChildIndexBefore(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_swapChildren(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -19023,18 +19023,18 @@ int lua_ax_fairygui_GComponent_swapChildren(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_swapChildren'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_swapChildren'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         fairygui::GObject* arg0;
         fairygui::GObject* arg1;
@@ -19047,7 +19047,7 @@ int lua_ax_fairygui_GComponent_swapChildren(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_swapChildren'", nullptr);
             return 0;
         }
-        cobj->swapChildren(arg0, arg1);
+        obj->swapChildren(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -19064,7 +19064,7 @@ int lua_ax_fairygui_GComponent_swapChildren(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_swapChildrenAt(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -19076,18 +19076,18 @@ int lua_ax_fairygui_GComponent_swapChildrenAt(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_swapChildrenAt'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_swapChildrenAt'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         int arg0;
         int arg1;
@@ -19100,7 +19100,7 @@ int lua_ax_fairygui_GComponent_swapChildrenAt(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_swapChildrenAt'", nullptr);
             return 0;
         }
-        cobj->swapChildrenAt(arg0, arg1);
+        obj->swapChildrenAt(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -19117,7 +19117,7 @@ int lua_ax_fairygui_GComponent_swapChildrenAt(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_numChildren(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -19129,25 +19129,25 @@ int lua_ax_fairygui_GComponent_numChildren(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_numChildren'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_numChildren'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_numChildren'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->numChildren();
+        auto&& ret = obj->numChildren();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -19164,7 +19164,7 @@ int lua_ax_fairygui_GComponent_numChildren(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_isAncestorOf(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -19176,18 +19176,18 @@ int lua_ax_fairygui_GComponent_isAncestorOf(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_isAncestorOf'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_isAncestorOf'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         const fairygui::GObject* arg0;
 
@@ -19197,7 +19197,7 @@ int lua_ax_fairygui_GComponent_isAncestorOf(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_isAncestorOf'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isAncestorOf(arg0);
+        auto&& ret = obj->isAncestorOf(arg0);
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -19214,7 +19214,7 @@ int lua_ax_fairygui_GComponent_isAncestorOf(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_isChildInView(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -19226,18 +19226,18 @@ int lua_ax_fairygui_GComponent_isChildInView(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_isChildInView'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_isChildInView'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GObject* arg0;
 
@@ -19247,7 +19247,7 @@ int lua_ax_fairygui_GComponent_isChildInView(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_isChildInView'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isChildInView(arg0);
+        auto&& ret = obj->isChildInView(arg0);
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -19264,7 +19264,7 @@ int lua_ax_fairygui_GComponent_isChildInView(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getFirstChildInView(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -19276,25 +19276,25 @@ int lua_ax_fairygui_GComponent_getFirstChildInView(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getFirstChildInView'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getFirstChildInView'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getFirstChildInView'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getFirstChildInView();
+        auto&& ret = obj->getFirstChildInView();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -19311,7 +19311,7 @@ int lua_ax_fairygui_GComponent_getFirstChildInView(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_addController(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -19323,18 +19323,18 @@ int lua_ax_fairygui_GComponent_addController(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_addController'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_addController'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GController* arg0;
 
@@ -19344,7 +19344,7 @@ int lua_ax_fairygui_GComponent_addController(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_addController'", nullptr);
             return 0;
         }
-        cobj->addController(arg0);
+        obj->addController(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -19361,7 +19361,7 @@ int lua_ax_fairygui_GComponent_addController(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getControllerAt(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -19373,18 +19373,18 @@ int lua_ax_fairygui_GComponent_getControllerAt(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getControllerAt'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getControllerAt'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -19394,7 +19394,7 @@ int lua_ax_fairygui_GComponent_getControllerAt(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getControllerAt'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getControllerAt(arg0);
+        auto&& ret = obj->getControllerAt(arg0);
         object_to_luaval<fairygui::GController>(tolua_S, "fgui.GController",(fairygui::GController*)ret);
         return 1;
     }
@@ -19411,7 +19411,7 @@ int lua_ax_fairygui_GComponent_getControllerAt(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getController(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -19423,18 +19423,18 @@ int lua_ax_fairygui_GComponent_getController(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getController'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getController'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -19444,7 +19444,7 @@ int lua_ax_fairygui_GComponent_getController(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getController'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getController(arg0);
+        auto&& ret = obj->getController(arg0);
         object_to_luaval<fairygui::GController>(tolua_S, "fgui.GController",(fairygui::GController*)ret);
         return 1;
     }
@@ -19461,7 +19461,7 @@ int lua_ax_fairygui_GComponent_getController(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getControllers(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -19473,25 +19473,25 @@ int lua_ax_fairygui_GComponent_getControllers(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getControllers'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getControllers'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getControllers'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getControllers();
+        auto&& ret = obj->getControllers();
         ccvector_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -19508,7 +19508,7 @@ int lua_ax_fairygui_GComponent_getControllers(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_removeController(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -19520,18 +19520,18 @@ int lua_ax_fairygui_GComponent_removeController(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_removeController'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_removeController'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GController* arg0;
 
@@ -19541,7 +19541,7 @@ int lua_ax_fairygui_GComponent_removeController(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_removeController'", nullptr);
             return 0;
         }
-        cobj->removeController(arg0);
+        obj->removeController(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -19558,7 +19558,7 @@ int lua_ax_fairygui_GComponent_removeController(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_applyController(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -19570,18 +19570,18 @@ int lua_ax_fairygui_GComponent_applyController(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_applyController'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_applyController'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GController* arg0;
 
@@ -19591,7 +19591,7 @@ int lua_ax_fairygui_GComponent_applyController(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_applyController'", nullptr);
             return 0;
         }
-        cobj->applyController(arg0);
+        obj->applyController(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -19608,7 +19608,7 @@ int lua_ax_fairygui_GComponent_applyController(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_applyAllControllers(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -19620,25 +19620,25 @@ int lua_ax_fairygui_GComponent_applyAllControllers(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_applyAllControllers'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_applyAllControllers'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_applyAllControllers'", nullptr);
             return 0;
         }
-        cobj->applyAllControllers();
+        obj->applyAllControllers();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -19655,7 +19655,7 @@ int lua_ax_fairygui_GComponent_applyAllControllers(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getTransition(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -19667,18 +19667,18 @@ int lua_ax_fairygui_GComponent_getTransition(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getTransition'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getTransition'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -19688,7 +19688,7 @@ int lua_ax_fairygui_GComponent_getTransition(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getTransition'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTransition(arg0);
+        auto&& ret = obj->getTransition(arg0);
         object_to_luaval<fairygui::Transition>(tolua_S, "fgui.Transition",(fairygui::Transition*)ret);
         return 1;
     }
@@ -19705,7 +19705,7 @@ int lua_ax_fairygui_GComponent_getTransition(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getTransitionAt(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -19717,18 +19717,18 @@ int lua_ax_fairygui_GComponent_getTransitionAt(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getTransitionAt'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getTransitionAt'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -19738,7 +19738,7 @@ int lua_ax_fairygui_GComponent_getTransitionAt(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getTransitionAt'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTransitionAt(arg0);
+        auto&& ret = obj->getTransitionAt(arg0);
         object_to_luaval<fairygui::Transition>(tolua_S, "fgui.Transition",(fairygui::Transition*)ret);
         return 1;
     }
@@ -19755,7 +19755,7 @@ int lua_ax_fairygui_GComponent_getTransitionAt(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getTransitions(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -19767,25 +19767,25 @@ int lua_ax_fairygui_GComponent_getTransitions(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getTransitions'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getTransitions'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getTransitions'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTransitions();
+        auto&& ret = obj->getTransitions();
         ccvector_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -19802,7 +19802,7 @@ int lua_ax_fairygui_GComponent_getTransitions(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getOpaque(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -19814,25 +19814,25 @@ int lua_ax_fairygui_GComponent_getOpaque(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getOpaque'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getOpaque'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getOpaque'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getOpaque();
+        auto&& ret = obj->getOpaque();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -19849,7 +19849,7 @@ int lua_ax_fairygui_GComponent_getOpaque(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_setOpaque(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -19861,18 +19861,18 @@ int lua_ax_fairygui_GComponent_setOpaque(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_setOpaque'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_setOpaque'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -19882,7 +19882,7 @@ int lua_ax_fairygui_GComponent_setOpaque(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_setOpaque'", nullptr);
             return 0;
         }
-        cobj->setOpaque(arg0);
+        obj->setOpaque(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -19899,7 +19899,7 @@ int lua_ax_fairygui_GComponent_setOpaque(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getMargin(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -19911,25 +19911,25 @@ int lua_ax_fairygui_GComponent_getMargin(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getMargin'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getMargin'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getMargin'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getMargin();
+        auto&& ret = obj->getMargin();
         margin_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -19946,7 +19946,7 @@ int lua_ax_fairygui_GComponent_getMargin(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_setMargin(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -19958,18 +19958,18 @@ int lua_ax_fairygui_GComponent_setMargin(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_setMargin'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_setMargin'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::Margin arg0;
 
@@ -19979,7 +19979,7 @@ int lua_ax_fairygui_GComponent_setMargin(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_setMargin'", nullptr);
             return 0;
         }
-        cobj->setMargin(arg0);
+        obj->setMargin(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -19996,7 +19996,7 @@ int lua_ax_fairygui_GComponent_setMargin(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getChildrenRenderOrder(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -20008,25 +20008,25 @@ int lua_ax_fairygui_GComponent_getChildrenRenderOrder(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getChildrenRenderOrder'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getChildrenRenderOrder'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getChildrenRenderOrder'", nullptr);
             return 0;
         }
-        int ret = (int)cobj->getChildrenRenderOrder();
+        int ret = (int)obj->getChildrenRenderOrder();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -20043,7 +20043,7 @@ int lua_ax_fairygui_GComponent_getChildrenRenderOrder(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_setChildrenRenderOrder(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -20055,18 +20055,18 @@ int lua_ax_fairygui_GComponent_setChildrenRenderOrder(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_setChildrenRenderOrder'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_setChildrenRenderOrder'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::ChildrenRenderOrder arg0;
 
@@ -20076,7 +20076,7 @@ int lua_ax_fairygui_GComponent_setChildrenRenderOrder(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_setChildrenRenderOrder'", nullptr);
             return 0;
         }
-        cobj->setChildrenRenderOrder(arg0);
+        obj->setChildrenRenderOrder(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -20093,7 +20093,7 @@ int lua_ax_fairygui_GComponent_setChildrenRenderOrder(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getApexIndex(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -20105,25 +20105,25 @@ int lua_ax_fairygui_GComponent_getApexIndex(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getApexIndex'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getApexIndex'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getApexIndex'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getApexIndex();
+        auto&& ret = obj->getApexIndex();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -20140,7 +20140,7 @@ int lua_ax_fairygui_GComponent_getApexIndex(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_setApexIndex(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -20152,18 +20152,18 @@ int lua_ax_fairygui_GComponent_setApexIndex(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_setApexIndex'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_setApexIndex'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -20173,7 +20173,7 @@ int lua_ax_fairygui_GComponent_setApexIndex(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_setApexIndex'", nullptr);
             return 0;
         }
-        cobj->setApexIndex(arg0);
+        obj->setApexIndex(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -20190,7 +20190,7 @@ int lua_ax_fairygui_GComponent_setApexIndex(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getMask(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -20202,25 +20202,25 @@ int lua_ax_fairygui_GComponent_getMask(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getMask'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getMask'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getMask'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getMask();
+        auto&& ret = obj->getMask();
         object_to_luaval<ax::Node>(tolua_S, "ax.Node",(ax::Node*)ret);
         return 1;
     }
@@ -20237,7 +20237,7 @@ int lua_ax_fairygui_GComponent_getMask(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_setMask(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -20249,18 +20249,18 @@ int lua_ax_fairygui_GComponent_setMask(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_setMask'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_setMask'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         ax::Node* arg0;
 
@@ -20270,11 +20270,11 @@ int lua_ax_fairygui_GComponent_setMask(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_setMask'", nullptr);
             return 0;
         }
-        cobj->setMask(arg0);
+        obj->setMask(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         ax::Node* arg0;
         bool arg1;
@@ -20287,7 +20287,7 @@ int lua_ax_fairygui_GComponent_setMask(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_setMask'", nullptr);
             return 0;
         }
-        cobj->setMask(arg0, arg1);
+        obj->setMask(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -20304,7 +20304,7 @@ int lua_ax_fairygui_GComponent_setMask(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getHitArea(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -20316,25 +20316,25 @@ int lua_ax_fairygui_GComponent_getHitArea(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getHitArea'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getHitArea'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getHitArea'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getHitArea();
+        auto&& ret = obj->getHitArea();
         object_to_luaval<fairygui::IHitTest>(tolua_S, "fgui.IHitTest",(fairygui::IHitTest*)ret);
         return 1;
     }
@@ -20351,7 +20351,7 @@ int lua_ax_fairygui_GComponent_getHitArea(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_setHitArea(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -20363,18 +20363,18 @@ int lua_ax_fairygui_GComponent_setHitArea(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_setHitArea'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_setHitArea'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::IHitTest* arg0;
 
@@ -20384,7 +20384,7 @@ int lua_ax_fairygui_GComponent_setHitArea(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_setHitArea'", nullptr);
             return 0;
         }
-        cobj->setHitArea(arg0);
+        obj->setHitArea(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -20401,7 +20401,7 @@ int lua_ax_fairygui_GComponent_setHitArea(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getScrollPane(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -20413,25 +20413,25 @@ int lua_ax_fairygui_GComponent_getScrollPane(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getScrollPane'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getScrollPane'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getScrollPane'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getScrollPane();
+        auto&& ret = obj->getScrollPane();
         object_to_luaval<fairygui::ScrollPane>(tolua_S, "fgui.ScrollPane",(fairygui::ScrollPane*)ret);
         return 1;
     }
@@ -20448,7 +20448,7 @@ int lua_ax_fairygui_GComponent_getScrollPane(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getViewWidth(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -20460,25 +20460,25 @@ int lua_ax_fairygui_GComponent_getViewWidth(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getViewWidth'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getViewWidth'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getViewWidth'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getViewWidth();
+        auto&& ret = obj->getViewWidth();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -20495,7 +20495,7 @@ int lua_ax_fairygui_GComponent_getViewWidth(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_setViewWidth(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -20507,18 +20507,18 @@ int lua_ax_fairygui_GComponent_setViewWidth(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_setViewWidth'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_setViewWidth'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -20528,7 +20528,7 @@ int lua_ax_fairygui_GComponent_setViewWidth(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_setViewWidth'", nullptr);
             return 0;
         }
-        cobj->setViewWidth(arg0);
+        obj->setViewWidth(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -20545,7 +20545,7 @@ int lua_ax_fairygui_GComponent_setViewWidth(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getViewHeight(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -20557,25 +20557,25 @@ int lua_ax_fairygui_GComponent_getViewHeight(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getViewHeight'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getViewHeight'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getViewHeight'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getViewHeight();
+        auto&& ret = obj->getViewHeight();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -20592,7 +20592,7 @@ int lua_ax_fairygui_GComponent_getViewHeight(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_setViewHeight(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -20604,18 +20604,18 @@ int lua_ax_fairygui_GComponent_setViewHeight(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_setViewHeight'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_setViewHeight'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -20625,7 +20625,7 @@ int lua_ax_fairygui_GComponent_setViewHeight(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_setViewHeight'", nullptr);
             return 0;
         }
-        cobj->setViewHeight(arg0);
+        obj->setViewHeight(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -20642,7 +20642,7 @@ int lua_ax_fairygui_GComponent_setViewHeight(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_setBoundsChangedFlag(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -20654,25 +20654,25 @@ int lua_ax_fairygui_GComponent_setBoundsChangedFlag(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_setBoundsChangedFlag'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_setBoundsChangedFlag'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_setBoundsChangedFlag'", nullptr);
             return 0;
         }
-        cobj->setBoundsChangedFlag();
+        obj->setBoundsChangedFlag();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -20689,7 +20689,7 @@ int lua_ax_fairygui_GComponent_setBoundsChangedFlag(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_ensureBoundsCorrect(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -20701,25 +20701,25 @@ int lua_ax_fairygui_GComponent_ensureBoundsCorrect(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_ensureBoundsCorrect'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_ensureBoundsCorrect'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_ensureBoundsCorrect'", nullptr);
             return 0;
         }
-        cobj->ensureBoundsCorrect();
+        obj->ensureBoundsCorrect();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -20736,7 +20736,7 @@ int lua_ax_fairygui_GComponent_ensureBoundsCorrect(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_getSnappingPosition(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -20748,18 +20748,18 @@ int lua_ax_fairygui_GComponent_getSnappingPosition(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_getSnappingPosition'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_getSnappingPosition'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         ax::Vec2 arg0;
 
@@ -20769,7 +20769,7 @@ int lua_ax_fairygui_GComponent_getSnappingPosition(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_getSnappingPosition'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getSnappingPosition(arg0);
+        auto&& ret = obj->getSnappingPosition(arg0);
         vec2_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -20786,7 +20786,7 @@ int lua_ax_fairygui_GComponent_getSnappingPosition(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_childSortingOrderChanged(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -20798,18 +20798,18 @@ int lua_ax_fairygui_GComponent_childSortingOrderChanged(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_childSortingOrderChanged'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_childSortingOrderChanged'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 3) 
+    if (argc == 3)
     {
         fairygui::GObject* arg0;
         int arg1;
@@ -20825,7 +20825,7 @@ int lua_ax_fairygui_GComponent_childSortingOrderChanged(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_childSortingOrderChanged'", nullptr);
             return 0;
         }
-        cobj->childSortingOrderChanged(arg0, arg1, arg2);
+        obj->childSortingOrderChanged(arg0, arg1, arg2);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -20842,7 +20842,7 @@ int lua_ax_fairygui_GComponent_childSortingOrderChanged(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_childStateChanged(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -20854,18 +20854,18 @@ int lua_ax_fairygui_GComponent_childStateChanged(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_childStateChanged'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_childStateChanged'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GObject* arg0;
 
@@ -20875,7 +20875,7 @@ int lua_ax_fairygui_GComponent_childStateChanged(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_childStateChanged'", nullptr);
             return 0;
         }
-        cobj->childStateChanged(arg0);
+        obj->childStateChanged(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -20892,7 +20892,7 @@ int lua_ax_fairygui_GComponent_childStateChanged(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_adjustRadioGroupDepth(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -20904,18 +20904,18 @@ int lua_ax_fairygui_GComponent_adjustRadioGroupDepth(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComponent",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComponent*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComponent_adjustRadioGroupDepth'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComponent_adjustRadioGroupDepth'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         fairygui::GObject* arg0;
         fairygui::GController* arg1;
@@ -20928,7 +20928,7 @@ int lua_ax_fairygui_GComponent_adjustRadioGroupDepth(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_adjustRadioGroupDepth'", nullptr);
             return 0;
         }
-        cobj->adjustRadioGroupDepth(arg0, arg1);
+        obj->adjustRadioGroupDepth(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -21076,7 +21076,7 @@ int lua_ax_fairygui_GComponent_create(lua_State* tolua_S)
 int lua_ax_fairygui_GComponent_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComponent* cobj = nullptr;
+    fairygui::GComponent* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -21086,18 +21086,18 @@ int lua_ax_fairygui_GComponent_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComponent_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::GComponent();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.GComponent");
+        obj = new fairygui::GComponent();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.GComponent");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.GComponent:GComponent",argc, 0);
@@ -21189,7 +21189,7 @@ int lua_register_ax_fairygui_GComponent(lua_State* tolua_S)
 int lua_ax_fairygui_GButton_getTitle(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GButton* cobj = nullptr;
+    fairygui::GButton* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -21201,25 +21201,25 @@ int lua_ax_fairygui_GButton_getTitle(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GButton",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GButton_getTitle'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GButton_getTitle'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GButton_getTitle'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTitle();
+        auto&& ret = obj->getTitle();
         lua_pushlstring(tolua_S,ret.c_str(),ret.length());
         return 1;
     }
@@ -21236,7 +21236,7 @@ int lua_ax_fairygui_GButton_getTitle(lua_State* tolua_S)
 int lua_ax_fairygui_GButton_setTitle(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GButton* cobj = nullptr;
+    fairygui::GButton* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -21248,18 +21248,18 @@ int lua_ax_fairygui_GButton_setTitle(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GButton",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GButton_setTitle'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GButton_setTitle'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -21269,7 +21269,7 @@ int lua_ax_fairygui_GButton_setTitle(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GButton_setTitle'", nullptr);
             return 0;
         }
-        cobj->setTitle(arg0);
+        obj->setTitle(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -21286,7 +21286,7 @@ int lua_ax_fairygui_GButton_setTitle(lua_State* tolua_S)
 int lua_ax_fairygui_GButton_getSelectedTitle(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GButton* cobj = nullptr;
+    fairygui::GButton* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -21298,25 +21298,25 @@ int lua_ax_fairygui_GButton_getSelectedTitle(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GButton",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GButton_getSelectedTitle'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GButton_getSelectedTitle'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GButton_getSelectedTitle'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getSelectedTitle();
+        auto&& ret = obj->getSelectedTitle();
         lua_pushlstring(tolua_S,ret.c_str(),ret.length());
         return 1;
     }
@@ -21333,7 +21333,7 @@ int lua_ax_fairygui_GButton_getSelectedTitle(lua_State* tolua_S)
 int lua_ax_fairygui_GButton_setSelectedTitle(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GButton* cobj = nullptr;
+    fairygui::GButton* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -21345,18 +21345,18 @@ int lua_ax_fairygui_GButton_setSelectedTitle(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GButton",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GButton_setSelectedTitle'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GButton_setSelectedTitle'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -21366,7 +21366,7 @@ int lua_ax_fairygui_GButton_setSelectedTitle(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GButton_setSelectedTitle'", nullptr);
             return 0;
         }
-        cobj->setSelectedTitle(arg0);
+        obj->setSelectedTitle(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -21383,7 +21383,7 @@ int lua_ax_fairygui_GButton_setSelectedTitle(lua_State* tolua_S)
 int lua_ax_fairygui_GButton_getSelectedIcon(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GButton* cobj = nullptr;
+    fairygui::GButton* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -21395,25 +21395,25 @@ int lua_ax_fairygui_GButton_getSelectedIcon(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GButton",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GButton_getSelectedIcon'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GButton_getSelectedIcon'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GButton_getSelectedIcon'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getSelectedIcon();
+        auto&& ret = obj->getSelectedIcon();
         lua_pushlstring(tolua_S,ret.c_str(),ret.length());
         return 1;
     }
@@ -21430,7 +21430,7 @@ int lua_ax_fairygui_GButton_getSelectedIcon(lua_State* tolua_S)
 int lua_ax_fairygui_GButton_setSelectedIcon(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GButton* cobj = nullptr;
+    fairygui::GButton* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -21442,18 +21442,18 @@ int lua_ax_fairygui_GButton_setSelectedIcon(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GButton",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GButton_setSelectedIcon'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GButton_setSelectedIcon'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -21463,7 +21463,7 @@ int lua_ax_fairygui_GButton_setSelectedIcon(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GButton_setSelectedIcon'", nullptr);
             return 0;
         }
-        cobj->setSelectedIcon(arg0);
+        obj->setSelectedIcon(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -21480,7 +21480,7 @@ int lua_ax_fairygui_GButton_setSelectedIcon(lua_State* tolua_S)
 int lua_ax_fairygui_GButton_getTitleColor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GButton* cobj = nullptr;
+    fairygui::GButton* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -21492,25 +21492,25 @@ int lua_ax_fairygui_GButton_getTitleColor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GButton",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GButton_getTitleColor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GButton_getTitleColor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GButton_getTitleColor'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTitleColor();
+        auto&& ret = obj->getTitleColor();
         color3b_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -21527,7 +21527,7 @@ int lua_ax_fairygui_GButton_getTitleColor(lua_State* tolua_S)
 int lua_ax_fairygui_GButton_setTitleColor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GButton* cobj = nullptr;
+    fairygui::GButton* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -21539,18 +21539,18 @@ int lua_ax_fairygui_GButton_setTitleColor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GButton",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GButton_setTitleColor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GButton_setTitleColor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         ax::Color3B arg0;
 
@@ -21560,7 +21560,7 @@ int lua_ax_fairygui_GButton_setTitleColor(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GButton_setTitleColor'", nullptr);
             return 0;
         }
-        cobj->setTitleColor(arg0);
+        obj->setTitleColor(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -21577,7 +21577,7 @@ int lua_ax_fairygui_GButton_setTitleColor(lua_State* tolua_S)
 int lua_ax_fairygui_GButton_getTitleFontSize(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GButton* cobj = nullptr;
+    fairygui::GButton* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -21589,25 +21589,25 @@ int lua_ax_fairygui_GButton_getTitleFontSize(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GButton",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GButton_getTitleFontSize'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GButton_getTitleFontSize'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GButton_getTitleFontSize'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTitleFontSize();
+        auto&& ret = obj->getTitleFontSize();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -21624,7 +21624,7 @@ int lua_ax_fairygui_GButton_getTitleFontSize(lua_State* tolua_S)
 int lua_ax_fairygui_GButton_setTitleFontSize(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GButton* cobj = nullptr;
+    fairygui::GButton* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -21636,18 +21636,18 @@ int lua_ax_fairygui_GButton_setTitleFontSize(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GButton",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GButton_setTitleFontSize'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GButton_setTitleFontSize'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -21657,7 +21657,7 @@ int lua_ax_fairygui_GButton_setTitleFontSize(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GButton_setTitleFontSize'", nullptr);
             return 0;
         }
-        cobj->setTitleFontSize(arg0);
+        obj->setTitleFontSize(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -21674,7 +21674,7 @@ int lua_ax_fairygui_GButton_setTitleFontSize(lua_State* tolua_S)
 int lua_ax_fairygui_GButton_isSelected(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GButton* cobj = nullptr;
+    fairygui::GButton* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -21686,25 +21686,25 @@ int lua_ax_fairygui_GButton_isSelected(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GButton",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GButton_isSelected'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GButton_isSelected'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GButton_isSelected'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isSelected();
+        auto&& ret = obj->isSelected();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -21721,7 +21721,7 @@ int lua_ax_fairygui_GButton_isSelected(lua_State* tolua_S)
 int lua_ax_fairygui_GButton_setSelected(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GButton* cobj = nullptr;
+    fairygui::GButton* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -21733,18 +21733,18 @@ int lua_ax_fairygui_GButton_setSelected(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GButton",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GButton_setSelected'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GButton_setSelected'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -21754,7 +21754,7 @@ int lua_ax_fairygui_GButton_setSelected(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GButton_setSelected'", nullptr);
             return 0;
         }
-        cobj->setSelected(arg0);
+        obj->setSelected(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -21771,7 +21771,7 @@ int lua_ax_fairygui_GButton_setSelected(lua_State* tolua_S)
 int lua_ax_fairygui_GButton_getRelatedController(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GButton* cobj = nullptr;
+    fairygui::GButton* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -21783,25 +21783,25 @@ int lua_ax_fairygui_GButton_getRelatedController(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GButton",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GButton_getRelatedController'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GButton_getRelatedController'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GButton_getRelatedController'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getRelatedController();
+        auto&& ret = obj->getRelatedController();
         object_to_luaval<fairygui::GController>(tolua_S, "fgui.GController",(fairygui::GController*)ret);
         return 1;
     }
@@ -21818,7 +21818,7 @@ int lua_ax_fairygui_GButton_getRelatedController(lua_State* tolua_S)
 int lua_ax_fairygui_GButton_setRelatedController(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GButton* cobj = nullptr;
+    fairygui::GButton* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -21830,18 +21830,18 @@ int lua_ax_fairygui_GButton_setRelatedController(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GButton",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GButton_setRelatedController'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GButton_setRelatedController'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GController* arg0;
 
@@ -21851,7 +21851,7 @@ int lua_ax_fairygui_GButton_setRelatedController(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GButton_setRelatedController'", nullptr);
             return 0;
         }
-        cobj->setRelatedController(arg0);
+        obj->setRelatedController(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -21868,7 +21868,7 @@ int lua_ax_fairygui_GButton_setRelatedController(lua_State* tolua_S)
 int lua_ax_fairygui_GButton_isChangeStateOnClick(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GButton* cobj = nullptr;
+    fairygui::GButton* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -21880,25 +21880,25 @@ int lua_ax_fairygui_GButton_isChangeStateOnClick(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GButton",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GButton_isChangeStateOnClick'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GButton_isChangeStateOnClick'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GButton_isChangeStateOnClick'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isChangeStateOnClick();
+        auto&& ret = obj->isChangeStateOnClick();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -21915,7 +21915,7 @@ int lua_ax_fairygui_GButton_isChangeStateOnClick(lua_State* tolua_S)
 int lua_ax_fairygui_GButton_setChangeStateOnClick(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GButton* cobj = nullptr;
+    fairygui::GButton* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -21927,18 +21927,18 @@ int lua_ax_fairygui_GButton_setChangeStateOnClick(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GButton",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GButton_setChangeStateOnClick'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GButton_setChangeStateOnClick'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -21948,7 +21948,7 @@ int lua_ax_fairygui_GButton_setChangeStateOnClick(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GButton_setChangeStateOnClick'", nullptr);
             return 0;
         }
-        cobj->setChangeStateOnClick(arg0);
+        obj->setChangeStateOnClick(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -21965,7 +21965,7 @@ int lua_ax_fairygui_GButton_setChangeStateOnClick(lua_State* tolua_S)
 int lua_ax_fairygui_GButton_getTextField(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GButton* cobj = nullptr;
+    fairygui::GButton* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -21977,25 +21977,25 @@ int lua_ax_fairygui_GButton_getTextField(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GButton",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GButton*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GButton_getTextField'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GButton_getTextField'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GButton_getTextField'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTextField();
+        auto&& ret = obj->getTextField();
         object_to_luaval<fairygui::GTextField>(tolua_S, "fgui.GTextField",(fairygui::GTextField*)ret);
         return 1;
     }
@@ -22046,7 +22046,7 @@ int lua_ax_fairygui_GButton_create(lua_State* tolua_S)
 int lua_ax_fairygui_GButton_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GButton* cobj = nullptr;
+    fairygui::GButton* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -22056,18 +22056,18 @@ int lua_ax_fairygui_GButton_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GButton_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::GButton();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.GButton");
+        obj = new fairygui::GButton();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.GButton");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.GButton:GButton",argc, 0);
@@ -22121,7 +22121,7 @@ int lua_register_ax_fairygui_GButton(lua_State* tolua_S)
 int lua_ax_fairygui_GObjectPool_getObject(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObjectPool* cobj = nullptr;
+    fairygui::GObjectPool* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -22133,18 +22133,18 @@ int lua_ax_fairygui_GObjectPool_getObject(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObjectPool",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObjectPool*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObjectPool*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObjectPool_getObject'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObjectPool_getObject'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -22154,7 +22154,7 @@ int lua_ax_fairygui_GObjectPool_getObject(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObjectPool_getObject'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getObject(arg0);
+        auto&& ret = obj->getObject(arg0);
         object_to_luaval<fairygui::GObject>(tolua_S, "fgui.GObject",(fairygui::GObject*)ret);
         return 1;
     }
@@ -22171,7 +22171,7 @@ int lua_ax_fairygui_GObjectPool_getObject(lua_State* tolua_S)
 int lua_ax_fairygui_GObjectPool_returnObject(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObjectPool* cobj = nullptr;
+    fairygui::GObjectPool* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -22183,18 +22183,18 @@ int lua_ax_fairygui_GObjectPool_returnObject(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GObjectPool",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GObjectPool*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GObjectPool*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GObjectPool_returnObject'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GObjectPool_returnObject'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GObject* arg0;
 
@@ -22204,7 +22204,7 @@ int lua_ax_fairygui_GObjectPool_returnObject(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObjectPool_returnObject'", nullptr);
             return 0;
         }
-        cobj->returnObject(arg0);
+        obj->returnObject(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -22268,7 +22268,7 @@ int lua_ax_fairygui_GObjectPool_clear(lua_State* tolua_S)
 int lua_ax_fairygui_GObjectPool_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GObjectPool* cobj = nullptr;
+    fairygui::GObjectPool* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -22278,15 +22278,15 @@ int lua_ax_fairygui_GObjectPool_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GObjectPool_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::GObjectPool();
-        tolua_pushusertype(tolua_S,(void*)cobj,"fgui.GObjectPool");
+        obj = new fairygui::GObjectPool();
+        tolua_pushusertype(tolua_S,(void*)obj,"fgui.GObjectPool");
         tolua_register_gc(tolua_S,lua_gettop(tolua_S));
         return 1;
     }
@@ -22326,7 +22326,7 @@ int lua_register_ax_fairygui_GObjectPool(lua_State* tolua_S)
 int lua_ax_fairygui_GList_getDefaultItem(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -22338,25 +22338,25 @@ int lua_ax_fairygui_GList_getDefaultItem(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_getDefaultItem'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_getDefaultItem'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_getDefaultItem'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getDefaultItem();
+        auto&& ret = obj->getDefaultItem();
         lua_pushlstring(tolua_S,ret.c_str(),ret.length());
         return 1;
     }
@@ -22373,7 +22373,7 @@ int lua_ax_fairygui_GList_getDefaultItem(lua_State* tolua_S)
 int lua_ax_fairygui_GList_setDefaultItem(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -22385,18 +22385,18 @@ int lua_ax_fairygui_GList_setDefaultItem(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_setDefaultItem'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_setDefaultItem'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -22406,7 +22406,7 @@ int lua_ax_fairygui_GList_setDefaultItem(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_setDefaultItem'", nullptr);
             return 0;
         }
-        cobj->setDefaultItem(arg0);
+        obj->setDefaultItem(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -22423,7 +22423,7 @@ int lua_ax_fairygui_GList_setDefaultItem(lua_State* tolua_S)
 int lua_ax_fairygui_GList_getLayout(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -22435,25 +22435,25 @@ int lua_ax_fairygui_GList_getLayout(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_getLayout'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_getLayout'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_getLayout'", nullptr);
             return 0;
         }
-        int ret = (int)cobj->getLayout();
+        int ret = (int)obj->getLayout();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -22470,7 +22470,7 @@ int lua_ax_fairygui_GList_getLayout(lua_State* tolua_S)
 int lua_ax_fairygui_GList_setLayout(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -22482,18 +22482,18 @@ int lua_ax_fairygui_GList_setLayout(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_setLayout'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_setLayout'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::ListLayoutType arg0;
 
@@ -22503,7 +22503,7 @@ int lua_ax_fairygui_GList_setLayout(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_setLayout'", nullptr);
             return 0;
         }
-        cobj->setLayout(arg0);
+        obj->setLayout(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -22520,7 +22520,7 @@ int lua_ax_fairygui_GList_setLayout(lua_State* tolua_S)
 int lua_ax_fairygui_GList_getLineCount(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -22532,25 +22532,25 @@ int lua_ax_fairygui_GList_getLineCount(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_getLineCount'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_getLineCount'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_getLineCount'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getLineCount();
+        auto&& ret = obj->getLineCount();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -22567,7 +22567,7 @@ int lua_ax_fairygui_GList_getLineCount(lua_State* tolua_S)
 int lua_ax_fairygui_GList_setLineCount(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -22579,18 +22579,18 @@ int lua_ax_fairygui_GList_setLineCount(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_setLineCount'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_setLineCount'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -22600,7 +22600,7 @@ int lua_ax_fairygui_GList_setLineCount(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_setLineCount'", nullptr);
             return 0;
         }
-        cobj->setLineCount(arg0);
+        obj->setLineCount(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -22617,7 +22617,7 @@ int lua_ax_fairygui_GList_setLineCount(lua_State* tolua_S)
 int lua_ax_fairygui_GList_getColumnCount(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -22629,25 +22629,25 @@ int lua_ax_fairygui_GList_getColumnCount(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_getColumnCount'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_getColumnCount'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_getColumnCount'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getColumnCount();
+        auto&& ret = obj->getColumnCount();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -22664,7 +22664,7 @@ int lua_ax_fairygui_GList_getColumnCount(lua_State* tolua_S)
 int lua_ax_fairygui_GList_setColumnCount(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -22676,18 +22676,18 @@ int lua_ax_fairygui_GList_setColumnCount(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_setColumnCount'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_setColumnCount'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -22697,7 +22697,7 @@ int lua_ax_fairygui_GList_setColumnCount(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_setColumnCount'", nullptr);
             return 0;
         }
-        cobj->setColumnCount(arg0);
+        obj->setColumnCount(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -22714,7 +22714,7 @@ int lua_ax_fairygui_GList_setColumnCount(lua_State* tolua_S)
 int lua_ax_fairygui_GList_getColumnGap(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -22726,25 +22726,25 @@ int lua_ax_fairygui_GList_getColumnGap(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_getColumnGap'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_getColumnGap'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_getColumnGap'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getColumnGap();
+        auto&& ret = obj->getColumnGap();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -22761,7 +22761,7 @@ int lua_ax_fairygui_GList_getColumnGap(lua_State* tolua_S)
 int lua_ax_fairygui_GList_setColumnGap(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -22773,18 +22773,18 @@ int lua_ax_fairygui_GList_setColumnGap(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_setColumnGap'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_setColumnGap'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -22794,7 +22794,7 @@ int lua_ax_fairygui_GList_setColumnGap(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_setColumnGap'", nullptr);
             return 0;
         }
-        cobj->setColumnGap(arg0);
+        obj->setColumnGap(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -22811,7 +22811,7 @@ int lua_ax_fairygui_GList_setColumnGap(lua_State* tolua_S)
 int lua_ax_fairygui_GList_getLineGap(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -22823,25 +22823,25 @@ int lua_ax_fairygui_GList_getLineGap(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_getLineGap'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_getLineGap'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_getLineGap'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getLineGap();
+        auto&& ret = obj->getLineGap();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -22858,7 +22858,7 @@ int lua_ax_fairygui_GList_getLineGap(lua_State* tolua_S)
 int lua_ax_fairygui_GList_setLineGap(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -22870,18 +22870,18 @@ int lua_ax_fairygui_GList_setLineGap(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_setLineGap'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_setLineGap'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -22891,7 +22891,7 @@ int lua_ax_fairygui_GList_setLineGap(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_setLineGap'", nullptr);
             return 0;
         }
-        cobj->setLineGap(arg0);
+        obj->setLineGap(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -22908,7 +22908,7 @@ int lua_ax_fairygui_GList_setLineGap(lua_State* tolua_S)
 int lua_ax_fairygui_GList_getAlign(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -22920,25 +22920,25 @@ int lua_ax_fairygui_GList_getAlign(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_getAlign'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_getAlign'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_getAlign'", nullptr);
             return 0;
         }
-        int ret = (int)cobj->getAlign();
+        int ret = (int)obj->getAlign();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -22955,7 +22955,7 @@ int lua_ax_fairygui_GList_getAlign(lua_State* tolua_S)
 int lua_ax_fairygui_GList_setAlign(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -22967,18 +22967,18 @@ int lua_ax_fairygui_GList_setAlign(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_setAlign'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_setAlign'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         ax::TextHAlignment arg0;
 
@@ -22988,7 +22988,7 @@ int lua_ax_fairygui_GList_setAlign(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_setAlign'", nullptr);
             return 0;
         }
-        cobj->setAlign(arg0);
+        obj->setAlign(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -23005,7 +23005,7 @@ int lua_ax_fairygui_GList_setAlign(lua_State* tolua_S)
 int lua_ax_fairygui_GList_getVerticalAlign(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -23017,25 +23017,25 @@ int lua_ax_fairygui_GList_getVerticalAlign(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_getVerticalAlign'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_getVerticalAlign'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_getVerticalAlign'", nullptr);
             return 0;
         }
-        int ret = (int)cobj->getVerticalAlign();
+        int ret = (int)obj->getVerticalAlign();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -23052,7 +23052,7 @@ int lua_ax_fairygui_GList_getVerticalAlign(lua_State* tolua_S)
 int lua_ax_fairygui_GList_setVerticalAlign(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -23064,18 +23064,18 @@ int lua_ax_fairygui_GList_setVerticalAlign(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_setVerticalAlign'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_setVerticalAlign'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         ax::TextVAlignment arg0;
 
@@ -23085,7 +23085,7 @@ int lua_ax_fairygui_GList_setVerticalAlign(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_setVerticalAlign'", nullptr);
             return 0;
         }
-        cobj->setVerticalAlign(arg0);
+        obj->setVerticalAlign(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -23102,7 +23102,7 @@ int lua_ax_fairygui_GList_setVerticalAlign(lua_State* tolua_S)
 int lua_ax_fairygui_GList_getAutoResizeItem(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -23114,25 +23114,25 @@ int lua_ax_fairygui_GList_getAutoResizeItem(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_getAutoResizeItem'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_getAutoResizeItem'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_getAutoResizeItem'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getAutoResizeItem();
+        auto&& ret = obj->getAutoResizeItem();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -23149,7 +23149,7 @@ int lua_ax_fairygui_GList_getAutoResizeItem(lua_State* tolua_S)
 int lua_ax_fairygui_GList_setAutoResizeItem(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -23161,18 +23161,18 @@ int lua_ax_fairygui_GList_setAutoResizeItem(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_setAutoResizeItem'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_setAutoResizeItem'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -23182,7 +23182,7 @@ int lua_ax_fairygui_GList_setAutoResizeItem(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_setAutoResizeItem'", nullptr);
             return 0;
         }
-        cobj->setAutoResizeItem(arg0);
+        obj->setAutoResizeItem(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -23199,7 +23199,7 @@ int lua_ax_fairygui_GList_setAutoResizeItem(lua_State* tolua_S)
 int lua_ax_fairygui_GList_getSelectionMode(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -23211,25 +23211,25 @@ int lua_ax_fairygui_GList_getSelectionMode(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_getSelectionMode'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_getSelectionMode'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_getSelectionMode'", nullptr);
             return 0;
         }
-        int ret = (int)cobj->getSelectionMode();
+        int ret = (int)obj->getSelectionMode();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -23246,7 +23246,7 @@ int lua_ax_fairygui_GList_getSelectionMode(lua_State* tolua_S)
 int lua_ax_fairygui_GList_setSelectionMode(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -23258,18 +23258,18 @@ int lua_ax_fairygui_GList_setSelectionMode(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_setSelectionMode'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_setSelectionMode'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::ListSelectionMode arg0;
 
@@ -23279,7 +23279,7 @@ int lua_ax_fairygui_GList_setSelectionMode(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_setSelectionMode'", nullptr);
             return 0;
         }
-        cobj->setSelectionMode(arg0);
+        obj->setSelectionMode(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -23296,7 +23296,7 @@ int lua_ax_fairygui_GList_setSelectionMode(lua_State* tolua_S)
 int lua_ax_fairygui_GList_getItemPool(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -23308,25 +23308,25 @@ int lua_ax_fairygui_GList_getItemPool(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_getItemPool'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_getItemPool'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_getItemPool'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getItemPool();
+        auto&& ret = obj->getItemPool();
         object_to_luaval<fairygui::GObjectPool>(tolua_S, "fgui.GObjectPool",(fairygui::GObjectPool*)ret);
         return 1;
     }
@@ -23343,7 +23343,7 @@ int lua_ax_fairygui_GList_getItemPool(lua_State* tolua_S)
 int lua_ax_fairygui_GList_getFromPool(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 #if _AX_DEBUG >= 1
     tolua_Error tolua_err;
@@ -23352,30 +23352,30 @@ int lua_ax_fairygui_GList_getFromPool(lua_State* tolua_S)
 #if _AX_DEBUG >= 1
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_getFromPool'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_getFromPool'", nullptr);
         return 0;
     }
 #endif
     argc = lua_gettop(tolua_S)-1;
-    do{
+    do {
         if (argc == 1) {
             std::string arg0;
             ok &= luaval_to_std_string(tolua_S, 2,&arg0, "fgui.GList:getFromPool");
 
             if (!ok) { break; }
-            fairygui::GObject* ret = cobj->getFromPool(arg0);
+            fairygui::GObject* ret = obj->getFromPool(arg0);
             object_to_luaval<fairygui::GObject>(tolua_S, "fgui.GObject",(fairygui::GObject*)ret);
             return 1;
         }
     }while(0);
     ok  = true;
-    do{
+    do {
         if (argc == 0) {
-            fairygui::GObject* ret = cobj->getFromPool();
+            fairygui::GObject* ret = obj->getFromPool();
             object_to_luaval<fairygui::GObject>(tolua_S, "fgui.GObject",(fairygui::GObject*)ret);
             return 1;
         }
@@ -23394,7 +23394,7 @@ int lua_ax_fairygui_GList_getFromPool(lua_State* tolua_S)
 int lua_ax_fairygui_GList_returnToPool(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -23406,18 +23406,18 @@ int lua_ax_fairygui_GList_returnToPool(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_returnToPool'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_returnToPool'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GObject* arg0;
 
@@ -23427,7 +23427,7 @@ int lua_ax_fairygui_GList_returnToPool(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_returnToPool'", nullptr);
             return 0;
         }
-        cobj->returnToPool(arg0);
+        obj->returnToPool(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -23444,7 +23444,7 @@ int lua_ax_fairygui_GList_returnToPool(lua_State* tolua_S)
 int lua_ax_fairygui_GList_addItemFromPool(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 #if _AX_DEBUG >= 1
     tolua_Error tolua_err;
@@ -23453,30 +23453,30 @@ int lua_ax_fairygui_GList_addItemFromPool(lua_State* tolua_S)
 #if _AX_DEBUG >= 1
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_addItemFromPool'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_addItemFromPool'", nullptr);
         return 0;
     }
 #endif
     argc = lua_gettop(tolua_S)-1;
-    do{
+    do {
         if (argc == 1) {
             std::string arg0;
             ok &= luaval_to_std_string(tolua_S, 2,&arg0, "fgui.GList:addItemFromPool");
 
             if (!ok) { break; }
-            fairygui::GObject* ret = cobj->addItemFromPool(arg0);
+            fairygui::GObject* ret = obj->addItemFromPool(arg0);
             object_to_luaval<fairygui::GObject>(tolua_S, "fgui.GObject",(fairygui::GObject*)ret);
             return 1;
         }
     }while(0);
     ok  = true;
-    do{
+    do {
         if (argc == 0) {
-            fairygui::GObject* ret = cobj->addItemFromPool();
+            fairygui::GObject* ret = obj->addItemFromPool();
             object_to_luaval<fairygui::GObject>(tolua_S, "fgui.GObject",(fairygui::GObject*)ret);
             return 1;
         }
@@ -23495,7 +23495,7 @@ int lua_ax_fairygui_GList_addItemFromPool(lua_State* tolua_S)
 int lua_ax_fairygui_GList_removeChildToPoolAt(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -23507,18 +23507,18 @@ int lua_ax_fairygui_GList_removeChildToPoolAt(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_removeChildToPoolAt'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_removeChildToPoolAt'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -23528,7 +23528,7 @@ int lua_ax_fairygui_GList_removeChildToPoolAt(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_removeChildToPoolAt'", nullptr);
             return 0;
         }
-        cobj->removeChildToPoolAt(arg0);
+        obj->removeChildToPoolAt(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -23545,7 +23545,7 @@ int lua_ax_fairygui_GList_removeChildToPoolAt(lua_State* tolua_S)
 int lua_ax_fairygui_GList_removeChildToPool(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -23557,18 +23557,18 @@ int lua_ax_fairygui_GList_removeChildToPool(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_removeChildToPool'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_removeChildToPool'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GObject* arg0;
 
@@ -23578,7 +23578,7 @@ int lua_ax_fairygui_GList_removeChildToPool(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_removeChildToPool'", nullptr);
             return 0;
         }
-        cobj->removeChildToPool(arg0);
+        obj->removeChildToPool(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -23595,7 +23595,7 @@ int lua_ax_fairygui_GList_removeChildToPool(lua_State* tolua_S)
 int lua_ax_fairygui_GList_removeChildrenToPool(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 #if _AX_DEBUG >= 1
     tolua_Error tolua_err;
@@ -23604,16 +23604,16 @@ int lua_ax_fairygui_GList_removeChildrenToPool(lua_State* tolua_S)
 #if _AX_DEBUG >= 1
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_removeChildrenToPool'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_removeChildrenToPool'", nullptr);
         return 0;
     }
 #endif
     argc = lua_gettop(tolua_S)-1;
-    do{
+    do {
         if (argc == 2) {
             int arg0;
             ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0, "fgui.GList:removeChildrenToPool");
@@ -23623,15 +23623,15 @@ int lua_ax_fairygui_GList_removeChildrenToPool(lua_State* tolua_S)
             ok &= luaval_to_int32(tolua_S, 3,(int *)&arg1, "fgui.GList:removeChildrenToPool");
 
             if (!ok) { break; }
-            cobj->removeChildrenToPool(arg0, arg1);
+            obj->removeChildrenToPool(arg0, arg1);
             lua_settop(tolua_S, 1);
             return 1;
         }
     }while(0);
     ok  = true;
-    do{
+    do {
         if (argc == 0) {
-            cobj->removeChildrenToPool();
+            obj->removeChildrenToPool();
             lua_settop(tolua_S, 1);
             return 1;
         }
@@ -23650,7 +23650,7 @@ int lua_ax_fairygui_GList_removeChildrenToPool(lua_State* tolua_S)
 int lua_ax_fairygui_GList_getSelectedIndex(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -23662,25 +23662,25 @@ int lua_ax_fairygui_GList_getSelectedIndex(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_getSelectedIndex'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_getSelectedIndex'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_getSelectedIndex'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getSelectedIndex();
+        auto&& ret = obj->getSelectedIndex();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -23697,7 +23697,7 @@ int lua_ax_fairygui_GList_getSelectedIndex(lua_State* tolua_S)
 int lua_ax_fairygui_GList_setSelectedIndex(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -23709,18 +23709,18 @@ int lua_ax_fairygui_GList_setSelectedIndex(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_setSelectedIndex'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_setSelectedIndex'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -23730,7 +23730,7 @@ int lua_ax_fairygui_GList_setSelectedIndex(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_setSelectedIndex'", nullptr);
             return 0;
         }
-        cobj->setSelectedIndex(arg0);
+        obj->setSelectedIndex(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -23747,7 +23747,7 @@ int lua_ax_fairygui_GList_setSelectedIndex(lua_State* tolua_S)
 int lua_ax_fairygui_GList_getSelection(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -23759,18 +23759,18 @@ int lua_ax_fairygui_GList_getSelection(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_getSelection'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_getSelection'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::vector<int> arg0;
 
@@ -23780,7 +23780,7 @@ int lua_ax_fairygui_GList_getSelection(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_getSelection'", nullptr);
             return 0;
         }
-        cobj->getSelection(arg0);
+        obj->getSelection(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -23797,7 +23797,7 @@ int lua_ax_fairygui_GList_getSelection(lua_State* tolua_S)
 int lua_ax_fairygui_GList_addSelection(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -23809,18 +23809,18 @@ int lua_ax_fairygui_GList_addSelection(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_addSelection'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_addSelection'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         int arg0;
         bool arg1;
@@ -23833,7 +23833,7 @@ int lua_ax_fairygui_GList_addSelection(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_addSelection'", nullptr);
             return 0;
         }
-        cobj->addSelection(arg0, arg1);
+        obj->addSelection(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -23850,7 +23850,7 @@ int lua_ax_fairygui_GList_addSelection(lua_State* tolua_S)
 int lua_ax_fairygui_GList_removeSelection(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -23862,18 +23862,18 @@ int lua_ax_fairygui_GList_removeSelection(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_removeSelection'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_removeSelection'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -23883,7 +23883,7 @@ int lua_ax_fairygui_GList_removeSelection(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_removeSelection'", nullptr);
             return 0;
         }
-        cobj->removeSelection(arg0);
+        obj->removeSelection(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -23900,7 +23900,7 @@ int lua_ax_fairygui_GList_removeSelection(lua_State* tolua_S)
 int lua_ax_fairygui_GList_clearSelection(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -23912,25 +23912,25 @@ int lua_ax_fairygui_GList_clearSelection(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_clearSelection'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_clearSelection'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_clearSelection'", nullptr);
             return 0;
         }
-        cobj->clearSelection();
+        obj->clearSelection();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -23947,7 +23947,7 @@ int lua_ax_fairygui_GList_clearSelection(lua_State* tolua_S)
 int lua_ax_fairygui_GList_selectAll(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -23959,25 +23959,25 @@ int lua_ax_fairygui_GList_selectAll(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_selectAll'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_selectAll'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_selectAll'", nullptr);
             return 0;
         }
-        cobj->selectAll();
+        obj->selectAll();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -23994,7 +23994,7 @@ int lua_ax_fairygui_GList_selectAll(lua_State* tolua_S)
 int lua_ax_fairygui_GList_selectReverse(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -24006,25 +24006,25 @@ int lua_ax_fairygui_GList_selectReverse(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_selectReverse'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_selectReverse'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_selectReverse'", nullptr);
             return 0;
         }
-        cobj->selectReverse();
+        obj->selectReverse();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -24041,7 +24041,7 @@ int lua_ax_fairygui_GList_selectReverse(lua_State* tolua_S)
 int lua_ax_fairygui_GList_handleArrowKey(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -24053,18 +24053,18 @@ int lua_ax_fairygui_GList_handleArrowKey(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_handleArrowKey'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_handleArrowKey'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -24074,7 +24074,7 @@ int lua_ax_fairygui_GList_handleArrowKey(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_handleArrowKey'", nullptr);
             return 0;
         }
-        cobj->handleArrowKey(arg0);
+        obj->handleArrowKey(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -24091,7 +24091,7 @@ int lua_ax_fairygui_GList_handleArrowKey(lua_State* tolua_S)
 int lua_ax_fairygui_GList_resizeToFit(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 #if _AX_DEBUG >= 1
     tolua_Error tolua_err;
@@ -24100,16 +24100,16 @@ int lua_ax_fairygui_GList_resizeToFit(lua_State* tolua_S)
 #if _AX_DEBUG >= 1
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_resizeToFit'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_resizeToFit'", nullptr);
         return 0;
     }
 #endif
     argc = lua_gettop(tolua_S)-1;
-    do{
+    do {
         if (argc == 2) {
             int arg0;
             ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0, "fgui.GList:resizeToFit");
@@ -24119,19 +24119,19 @@ int lua_ax_fairygui_GList_resizeToFit(lua_State* tolua_S)
             ok &= luaval_to_int32(tolua_S, 3,(int *)&arg1, "fgui.GList:resizeToFit");
 
             if (!ok) { break; }
-            cobj->resizeToFit(arg0, arg1);
+            obj->resizeToFit(arg0, arg1);
             lua_settop(tolua_S, 1);
             return 1;
         }
     }while(0);
     ok  = true;
-    do{
+    do {
         if (argc == 1) {
             int arg0;
             ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0, "fgui.GList:resizeToFit");
 
             if (!ok) { break; }
-            cobj->resizeToFit(arg0);
+            obj->resizeToFit(arg0);
             lua_settop(tolua_S, 1);
             return 1;
         }
@@ -24150,7 +24150,7 @@ int lua_ax_fairygui_GList_resizeToFit(lua_State* tolua_S)
 int lua_ax_fairygui_GList_scrollToView(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -24162,18 +24162,18 @@ int lua_ax_fairygui_GList_scrollToView(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_scrollToView'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_scrollToView'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -24183,11 +24183,11 @@ int lua_ax_fairygui_GList_scrollToView(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_scrollToView'", nullptr);
             return 0;
         }
-        cobj->scrollToView(arg0);
+        obj->scrollToView(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         int arg0;
         bool arg1;
@@ -24200,11 +24200,11 @@ int lua_ax_fairygui_GList_scrollToView(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_scrollToView'", nullptr);
             return 0;
         }
-        cobj->scrollToView(arg0, arg1);
+        obj->scrollToView(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 3) 
+    if (argc == 3)
     {
         int arg0;
         bool arg1;
@@ -24220,7 +24220,7 @@ int lua_ax_fairygui_GList_scrollToView(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_scrollToView'", nullptr);
             return 0;
         }
-        cobj->scrollToView(arg0, arg1, arg2);
+        obj->scrollToView(arg0, arg1, arg2);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -24237,7 +24237,7 @@ int lua_ax_fairygui_GList_scrollToView(lua_State* tolua_S)
 int lua_ax_fairygui_GList_getSelectionController(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -24249,25 +24249,25 @@ int lua_ax_fairygui_GList_getSelectionController(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_getSelectionController'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_getSelectionController'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_getSelectionController'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getSelectionController();
+        auto&& ret = obj->getSelectionController();
         object_to_luaval<fairygui::GController>(tolua_S, "fgui.GController",(fairygui::GController*)ret);
         return 1;
     }
@@ -24284,7 +24284,7 @@ int lua_ax_fairygui_GList_getSelectionController(lua_State* tolua_S)
 int lua_ax_fairygui_GList_setSelectionController(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -24296,18 +24296,18 @@ int lua_ax_fairygui_GList_setSelectionController(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_setSelectionController'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_setSelectionController'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GController* arg0;
 
@@ -24317,7 +24317,7 @@ int lua_ax_fairygui_GList_setSelectionController(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_setSelectionController'", nullptr);
             return 0;
         }
-        cobj->setSelectionController(arg0);
+        obj->setSelectionController(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -24334,7 +24334,7 @@ int lua_ax_fairygui_GList_setSelectionController(lua_State* tolua_S)
 int lua_ax_fairygui_GList_setVirtual(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -24346,25 +24346,25 @@ int lua_ax_fairygui_GList_setVirtual(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_setVirtual'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_setVirtual'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_setVirtual'", nullptr);
             return 0;
         }
-        cobj->setVirtual();
+        obj->setVirtual();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -24381,7 +24381,7 @@ int lua_ax_fairygui_GList_setVirtual(lua_State* tolua_S)
 int lua_ax_fairygui_GList_setVirtualAndLoop(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -24393,25 +24393,25 @@ int lua_ax_fairygui_GList_setVirtualAndLoop(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_setVirtualAndLoop'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_setVirtualAndLoop'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_setVirtualAndLoop'", nullptr);
             return 0;
         }
-        cobj->setVirtualAndLoop();
+        obj->setVirtualAndLoop();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -24428,7 +24428,7 @@ int lua_ax_fairygui_GList_setVirtualAndLoop(lua_State* tolua_S)
 int lua_ax_fairygui_GList_isVirtual(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -24440,25 +24440,25 @@ int lua_ax_fairygui_GList_isVirtual(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_isVirtual'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_isVirtual'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_isVirtual'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isVirtual();
+        auto&& ret = obj->isVirtual();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -24475,7 +24475,7 @@ int lua_ax_fairygui_GList_isVirtual(lua_State* tolua_S)
 int lua_ax_fairygui_GList_refreshVirtualList(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -24487,25 +24487,25 @@ int lua_ax_fairygui_GList_refreshVirtualList(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_refreshVirtualList'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_refreshVirtualList'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_refreshVirtualList'", nullptr);
             return 0;
         }
-        cobj->refreshVirtualList();
+        obj->refreshVirtualList();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -24522,7 +24522,7 @@ int lua_ax_fairygui_GList_refreshVirtualList(lua_State* tolua_S)
 int lua_ax_fairygui_GList_getNumItems(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -24534,25 +24534,25 @@ int lua_ax_fairygui_GList_getNumItems(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_getNumItems'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_getNumItems'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_getNumItems'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getNumItems();
+        auto&& ret = obj->getNumItems();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -24569,7 +24569,7 @@ int lua_ax_fairygui_GList_getNumItems(lua_State* tolua_S)
 int lua_ax_fairygui_GList_setNumItems(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -24581,18 +24581,18 @@ int lua_ax_fairygui_GList_setNumItems(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_setNumItems'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_setNumItems'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -24602,7 +24602,7 @@ int lua_ax_fairygui_GList_setNumItems(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_setNumItems'", nullptr);
             return 0;
         }
-        cobj->setNumItems(arg0);
+        obj->setNumItems(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -24619,7 +24619,7 @@ int lua_ax_fairygui_GList_setNumItems(lua_State* tolua_S)
 int lua_ax_fairygui_GList_childIndexToItemIndex(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -24631,18 +24631,18 @@ int lua_ax_fairygui_GList_childIndexToItemIndex(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_childIndexToItemIndex'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_childIndexToItemIndex'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -24652,7 +24652,7 @@ int lua_ax_fairygui_GList_childIndexToItemIndex(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_childIndexToItemIndex'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->childIndexToItemIndex(arg0);
+        auto&& ret = obj->childIndexToItemIndex(arg0);
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -24669,7 +24669,7 @@ int lua_ax_fairygui_GList_childIndexToItemIndex(lua_State* tolua_S)
 int lua_ax_fairygui_GList_itemIndexToChildIndex(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -24681,18 +24681,18 @@ int lua_ax_fairygui_GList_itemIndexToChildIndex(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GList",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GList*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GList_itemIndexToChildIndex'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GList_itemIndexToChildIndex'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -24702,7 +24702,7 @@ int lua_ax_fairygui_GList_itemIndexToChildIndex(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_itemIndexToChildIndex'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->itemIndexToChildIndex(arg0);
+        auto&& ret = obj->itemIndexToChildIndex(arg0);
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -24753,7 +24753,7 @@ int lua_ax_fairygui_GList_create(lua_State* tolua_S)
 int lua_ax_fairygui_GList_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GList* cobj = nullptr;
+    fairygui::GList* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -24763,18 +24763,18 @@ int lua_ax_fairygui_GList_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GList_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::GList();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.GList");
+        obj = new fairygui::GList();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.GList");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.GList:GList",argc, 0);
@@ -24859,7 +24859,7 @@ int lua_register_ax_fairygui_GList(lua_State* tolua_S)
 int lua_ax_fairygui_GComboBox_getTitle(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComboBox* cobj = nullptr;
+    fairygui::GComboBox* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -24871,25 +24871,25 @@ int lua_ax_fairygui_GComboBox_getTitle(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComboBox",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComboBox_getTitle'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComboBox_getTitle'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComboBox_getTitle'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTitle();
+        auto&& ret = obj->getTitle();
         lua_pushlstring(tolua_S,ret.c_str(),ret.length());
         return 1;
     }
@@ -24906,7 +24906,7 @@ int lua_ax_fairygui_GComboBox_getTitle(lua_State* tolua_S)
 int lua_ax_fairygui_GComboBox_setTitle(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComboBox* cobj = nullptr;
+    fairygui::GComboBox* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -24918,18 +24918,18 @@ int lua_ax_fairygui_GComboBox_setTitle(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComboBox",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComboBox_setTitle'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComboBox_setTitle'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -24939,7 +24939,7 @@ int lua_ax_fairygui_GComboBox_setTitle(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComboBox_setTitle'", nullptr);
             return 0;
         }
-        cobj->setTitle(arg0);
+        obj->setTitle(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -24956,7 +24956,7 @@ int lua_ax_fairygui_GComboBox_setTitle(lua_State* tolua_S)
 int lua_ax_fairygui_GComboBox_getTitleColor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComboBox* cobj = nullptr;
+    fairygui::GComboBox* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -24968,25 +24968,25 @@ int lua_ax_fairygui_GComboBox_getTitleColor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComboBox",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComboBox_getTitleColor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComboBox_getTitleColor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComboBox_getTitleColor'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTitleColor();
+        auto&& ret = obj->getTitleColor();
         color3b_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -25003,7 +25003,7 @@ int lua_ax_fairygui_GComboBox_getTitleColor(lua_State* tolua_S)
 int lua_ax_fairygui_GComboBox_setTitleColor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComboBox* cobj = nullptr;
+    fairygui::GComboBox* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -25015,18 +25015,18 @@ int lua_ax_fairygui_GComboBox_setTitleColor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComboBox",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComboBox_setTitleColor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComboBox_setTitleColor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         ax::Color3B arg0;
 
@@ -25036,7 +25036,7 @@ int lua_ax_fairygui_GComboBox_setTitleColor(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComboBox_setTitleColor'", nullptr);
             return 0;
         }
-        cobj->setTitleColor(arg0);
+        obj->setTitleColor(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -25053,7 +25053,7 @@ int lua_ax_fairygui_GComboBox_setTitleColor(lua_State* tolua_S)
 int lua_ax_fairygui_GComboBox_getTitleFontSize(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComboBox* cobj = nullptr;
+    fairygui::GComboBox* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -25065,25 +25065,25 @@ int lua_ax_fairygui_GComboBox_getTitleFontSize(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComboBox",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComboBox_getTitleFontSize'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComboBox_getTitleFontSize'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComboBox_getTitleFontSize'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTitleFontSize();
+        auto&& ret = obj->getTitleFontSize();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -25100,7 +25100,7 @@ int lua_ax_fairygui_GComboBox_getTitleFontSize(lua_State* tolua_S)
 int lua_ax_fairygui_GComboBox_setTitleFontSize(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComboBox* cobj = nullptr;
+    fairygui::GComboBox* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -25112,18 +25112,18 @@ int lua_ax_fairygui_GComboBox_setTitleFontSize(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComboBox",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComboBox_setTitleFontSize'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComboBox_setTitleFontSize'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -25133,7 +25133,7 @@ int lua_ax_fairygui_GComboBox_setTitleFontSize(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComboBox_setTitleFontSize'", nullptr);
             return 0;
         }
-        cobj->setTitleFontSize(arg0);
+        obj->setTitleFontSize(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -25150,7 +25150,7 @@ int lua_ax_fairygui_GComboBox_setTitleFontSize(lua_State* tolua_S)
 int lua_ax_fairygui_GComboBox_getValue(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComboBox* cobj = nullptr;
+    fairygui::GComboBox* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -25162,25 +25162,25 @@ int lua_ax_fairygui_GComboBox_getValue(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComboBox",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComboBox_getValue'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComboBox_getValue'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComboBox_getValue'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getValue();
+        auto&& ret = obj->getValue();
         lua_pushlstring(tolua_S,ret.c_str(),ret.length());
         return 1;
     }
@@ -25197,7 +25197,7 @@ int lua_ax_fairygui_GComboBox_getValue(lua_State* tolua_S)
 int lua_ax_fairygui_GComboBox_setValue(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComboBox* cobj = nullptr;
+    fairygui::GComboBox* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -25209,18 +25209,18 @@ int lua_ax_fairygui_GComboBox_setValue(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComboBox",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComboBox_setValue'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComboBox_setValue'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -25230,7 +25230,7 @@ int lua_ax_fairygui_GComboBox_setValue(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComboBox_setValue'", nullptr);
             return 0;
         }
-        cobj->setValue(arg0);
+        obj->setValue(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -25247,7 +25247,7 @@ int lua_ax_fairygui_GComboBox_setValue(lua_State* tolua_S)
 int lua_ax_fairygui_GComboBox_getSelectedIndex(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComboBox* cobj = nullptr;
+    fairygui::GComboBox* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -25259,25 +25259,25 @@ int lua_ax_fairygui_GComboBox_getSelectedIndex(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComboBox",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComboBox_getSelectedIndex'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComboBox_getSelectedIndex'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComboBox_getSelectedIndex'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getSelectedIndex();
+        auto&& ret = obj->getSelectedIndex();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -25294,7 +25294,7 @@ int lua_ax_fairygui_GComboBox_getSelectedIndex(lua_State* tolua_S)
 int lua_ax_fairygui_GComboBox_setSelectedIndex(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComboBox* cobj = nullptr;
+    fairygui::GComboBox* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -25306,18 +25306,18 @@ int lua_ax_fairygui_GComboBox_setSelectedIndex(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComboBox",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComboBox_setSelectedIndex'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComboBox_setSelectedIndex'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -25327,7 +25327,7 @@ int lua_ax_fairygui_GComboBox_setSelectedIndex(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComboBox_setSelectedIndex'", nullptr);
             return 0;
         }
-        cobj->setSelectedIndex(arg0);
+        obj->setSelectedIndex(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -25344,7 +25344,7 @@ int lua_ax_fairygui_GComboBox_setSelectedIndex(lua_State* tolua_S)
 int lua_ax_fairygui_GComboBox_getSelectionController(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComboBox* cobj = nullptr;
+    fairygui::GComboBox* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -25356,25 +25356,25 @@ int lua_ax_fairygui_GComboBox_getSelectionController(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComboBox",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComboBox_getSelectionController'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComboBox_getSelectionController'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComboBox_getSelectionController'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getSelectionController();
+        auto&& ret = obj->getSelectionController();
         object_to_luaval<fairygui::GController>(tolua_S, "fgui.GController",(fairygui::GController*)ret);
         return 1;
     }
@@ -25391,7 +25391,7 @@ int lua_ax_fairygui_GComboBox_getSelectionController(lua_State* tolua_S)
 int lua_ax_fairygui_GComboBox_setSelectionController(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComboBox* cobj = nullptr;
+    fairygui::GComboBox* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -25403,18 +25403,18 @@ int lua_ax_fairygui_GComboBox_setSelectionController(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComboBox",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComboBox_setSelectionController'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComboBox_setSelectionController'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GController* arg0;
 
@@ -25424,7 +25424,7 @@ int lua_ax_fairygui_GComboBox_setSelectionController(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComboBox_setSelectionController'", nullptr);
             return 0;
         }
-        cobj->setSelectionController(arg0);
+        obj->setSelectionController(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -25441,7 +25441,7 @@ int lua_ax_fairygui_GComboBox_setSelectionController(lua_State* tolua_S)
 int lua_ax_fairygui_GComboBox_getItems(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComboBox* cobj = nullptr;
+    fairygui::GComboBox* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -25453,25 +25453,25 @@ int lua_ax_fairygui_GComboBox_getItems(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComboBox",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComboBox_getItems'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComboBox_getItems'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComboBox_getItems'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getItems();
+        auto&& ret = obj->getItems();
         ccvector_std_string_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -25488,7 +25488,7 @@ int lua_ax_fairygui_GComboBox_getItems(lua_State* tolua_S)
 int lua_ax_fairygui_GComboBox_getIcons(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComboBox* cobj = nullptr;
+    fairygui::GComboBox* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -25500,25 +25500,25 @@ int lua_ax_fairygui_GComboBox_getIcons(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComboBox",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComboBox_getIcons'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComboBox_getIcons'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComboBox_getIcons'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getIcons();
+        auto&& ret = obj->getIcons();
         ccvector_std_string_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -25535,7 +25535,7 @@ int lua_ax_fairygui_GComboBox_getIcons(lua_State* tolua_S)
 int lua_ax_fairygui_GComboBox_getValues(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComboBox* cobj = nullptr;
+    fairygui::GComboBox* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -25547,25 +25547,25 @@ int lua_ax_fairygui_GComboBox_getValues(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComboBox",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComboBox_getValues'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComboBox_getValues'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComboBox_getValues'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getValues();
+        auto&& ret = obj->getValues();
         ccvector_std_string_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -25582,7 +25582,7 @@ int lua_ax_fairygui_GComboBox_getValues(lua_State* tolua_S)
 int lua_ax_fairygui_GComboBox_getDropdown(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComboBox* cobj = nullptr;
+    fairygui::GComboBox* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -25594,25 +25594,25 @@ int lua_ax_fairygui_GComboBox_getDropdown(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComboBox",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComboBox_getDropdown'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComboBox_getDropdown'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComboBox_getDropdown'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getDropdown();
+        auto&& ret = obj->getDropdown();
         object_to_luaval<fairygui::GObject>(tolua_S, "fgui.GObject",(fairygui::GObject*)ret);
         return 1;
     }
@@ -25629,7 +25629,7 @@ int lua_ax_fairygui_GComboBox_getDropdown(lua_State* tolua_S)
 int lua_ax_fairygui_GComboBox_refresh(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComboBox* cobj = nullptr;
+    fairygui::GComboBox* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -25641,25 +25641,25 @@ int lua_ax_fairygui_GComboBox_refresh(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComboBox",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComboBox_refresh'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComboBox_refresh'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComboBox_refresh'", nullptr);
             return 0;
         }
-        cobj->refresh();
+        obj->refresh();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -25676,7 +25676,7 @@ int lua_ax_fairygui_GComboBox_refresh(lua_State* tolua_S)
 int lua_ax_fairygui_GComboBox_getTextField(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComboBox* cobj = nullptr;
+    fairygui::GComboBox* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -25688,25 +25688,25 @@ int lua_ax_fairygui_GComboBox_getTextField(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GComboBox",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GComboBox*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GComboBox_getTextField'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GComboBox_getTextField'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComboBox_getTextField'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTextField();
+        auto&& ret = obj->getTextField();
         object_to_luaval<fairygui::GTextField>(tolua_S, "fgui.GTextField",(fairygui::GTextField*)ret);
         return 1;
     }
@@ -25757,7 +25757,7 @@ int lua_ax_fairygui_GComboBox_create(lua_State* tolua_S)
 int lua_ax_fairygui_GComboBox_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GComboBox* cobj = nullptr;
+    fairygui::GComboBox* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -25767,18 +25767,18 @@ int lua_ax_fairygui_GComboBox_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GComboBox_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::GComboBox();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.GComboBox");
+        obj = new fairygui::GComboBox();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.GComboBox");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.GComboBox:GComboBox",argc, 0);
@@ -25833,7 +25833,7 @@ int lua_register_ax_fairygui_GComboBox(lua_State* tolua_S)
 int lua_ax_fairygui_GProgressBar_getTitleType(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GProgressBar* cobj = nullptr;
+    fairygui::GProgressBar* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -25845,25 +25845,25 @@ int lua_ax_fairygui_GProgressBar_getTitleType(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GProgressBar",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GProgressBar*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GProgressBar*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GProgressBar_getTitleType'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GProgressBar_getTitleType'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GProgressBar_getTitleType'", nullptr);
             return 0;
         }
-        int ret = (int)cobj->getTitleType();
+        int ret = (int)obj->getTitleType();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -25880,7 +25880,7 @@ int lua_ax_fairygui_GProgressBar_getTitleType(lua_State* tolua_S)
 int lua_ax_fairygui_GProgressBar_setTitleType(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GProgressBar* cobj = nullptr;
+    fairygui::GProgressBar* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -25892,18 +25892,18 @@ int lua_ax_fairygui_GProgressBar_setTitleType(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GProgressBar",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GProgressBar*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GProgressBar*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GProgressBar_setTitleType'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GProgressBar_setTitleType'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::ProgressTitleType arg0;
 
@@ -25913,7 +25913,7 @@ int lua_ax_fairygui_GProgressBar_setTitleType(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GProgressBar_setTitleType'", nullptr);
             return 0;
         }
-        cobj->setTitleType(arg0);
+        obj->setTitleType(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -25930,7 +25930,7 @@ int lua_ax_fairygui_GProgressBar_setTitleType(lua_State* tolua_S)
 int lua_ax_fairygui_GProgressBar_getMin(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GProgressBar* cobj = nullptr;
+    fairygui::GProgressBar* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -25942,25 +25942,25 @@ int lua_ax_fairygui_GProgressBar_getMin(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GProgressBar",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GProgressBar*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GProgressBar*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GProgressBar_getMin'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GProgressBar_getMin'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GProgressBar_getMin'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getMin();
+        auto&& ret = obj->getMin();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -25977,7 +25977,7 @@ int lua_ax_fairygui_GProgressBar_getMin(lua_State* tolua_S)
 int lua_ax_fairygui_GProgressBar_setMin(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GProgressBar* cobj = nullptr;
+    fairygui::GProgressBar* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -25989,18 +25989,18 @@ int lua_ax_fairygui_GProgressBar_setMin(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GProgressBar",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GProgressBar*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GProgressBar*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GProgressBar_setMin'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GProgressBar_setMin'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -26010,7 +26010,7 @@ int lua_ax_fairygui_GProgressBar_setMin(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GProgressBar_setMin'", nullptr);
             return 0;
         }
-        cobj->setMin(arg0);
+        obj->setMin(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -26027,7 +26027,7 @@ int lua_ax_fairygui_GProgressBar_setMin(lua_State* tolua_S)
 int lua_ax_fairygui_GProgressBar_getMax(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GProgressBar* cobj = nullptr;
+    fairygui::GProgressBar* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -26039,25 +26039,25 @@ int lua_ax_fairygui_GProgressBar_getMax(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GProgressBar",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GProgressBar*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GProgressBar*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GProgressBar_getMax'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GProgressBar_getMax'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GProgressBar_getMax'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getMax();
+        auto&& ret = obj->getMax();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -26074,7 +26074,7 @@ int lua_ax_fairygui_GProgressBar_getMax(lua_State* tolua_S)
 int lua_ax_fairygui_GProgressBar_setMax(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GProgressBar* cobj = nullptr;
+    fairygui::GProgressBar* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -26086,18 +26086,18 @@ int lua_ax_fairygui_GProgressBar_setMax(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GProgressBar",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GProgressBar*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GProgressBar*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GProgressBar_setMax'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GProgressBar_setMax'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -26107,7 +26107,7 @@ int lua_ax_fairygui_GProgressBar_setMax(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GProgressBar_setMax'", nullptr);
             return 0;
         }
-        cobj->setMax(arg0);
+        obj->setMax(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -26124,7 +26124,7 @@ int lua_ax_fairygui_GProgressBar_setMax(lua_State* tolua_S)
 int lua_ax_fairygui_GProgressBar_getValue(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GProgressBar* cobj = nullptr;
+    fairygui::GProgressBar* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -26136,25 +26136,25 @@ int lua_ax_fairygui_GProgressBar_getValue(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GProgressBar",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GProgressBar*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GProgressBar*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GProgressBar_getValue'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GProgressBar_getValue'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GProgressBar_getValue'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getValue();
+        auto&& ret = obj->getValue();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -26171,7 +26171,7 @@ int lua_ax_fairygui_GProgressBar_getValue(lua_State* tolua_S)
 int lua_ax_fairygui_GProgressBar_setValue(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GProgressBar* cobj = nullptr;
+    fairygui::GProgressBar* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -26183,18 +26183,18 @@ int lua_ax_fairygui_GProgressBar_setValue(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GProgressBar",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GProgressBar*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GProgressBar*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GProgressBar_setValue'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GProgressBar_setValue'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -26204,7 +26204,7 @@ int lua_ax_fairygui_GProgressBar_setValue(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GProgressBar_setValue'", nullptr);
             return 0;
         }
-        cobj->setValue(arg0);
+        obj->setValue(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -26221,7 +26221,7 @@ int lua_ax_fairygui_GProgressBar_setValue(lua_State* tolua_S)
 int lua_ax_fairygui_GProgressBar_tweenValue(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GProgressBar* cobj = nullptr;
+    fairygui::GProgressBar* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -26233,18 +26233,18 @@ int lua_ax_fairygui_GProgressBar_tweenValue(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GProgressBar",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GProgressBar*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GProgressBar*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GProgressBar_tweenValue'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GProgressBar_tweenValue'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         double arg0;
         double arg1;
@@ -26257,7 +26257,7 @@ int lua_ax_fairygui_GProgressBar_tweenValue(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GProgressBar_tweenValue'", nullptr);
             return 0;
         }
-        cobj->tweenValue(arg0, arg1);
+        obj->tweenValue(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -26274,7 +26274,7 @@ int lua_ax_fairygui_GProgressBar_tweenValue(lua_State* tolua_S)
 int lua_ax_fairygui_GProgressBar_update(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GProgressBar* cobj = nullptr;
+    fairygui::GProgressBar* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -26286,18 +26286,18 @@ int lua_ax_fairygui_GProgressBar_update(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GProgressBar",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GProgressBar*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GProgressBar*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GProgressBar_update'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GProgressBar_update'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -26307,7 +26307,7 @@ int lua_ax_fairygui_GProgressBar_update(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GProgressBar_update'", nullptr);
             return 0;
         }
-        cobj->update(arg0);
+        obj->update(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -26358,7 +26358,7 @@ int lua_ax_fairygui_GProgressBar_create(lua_State* tolua_S)
 int lua_ax_fairygui_GProgressBar_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GProgressBar* cobj = nullptr;
+    fairygui::GProgressBar* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -26368,18 +26368,18 @@ int lua_ax_fairygui_GProgressBar_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GProgressBar_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::GProgressBar();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.GProgressBar");
+        obj = new fairygui::GProgressBar();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.GProgressBar");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.GProgressBar:GProgressBar",argc, 0);
@@ -26426,7 +26426,7 @@ int lua_register_ax_fairygui_GProgressBar(lua_State* tolua_S)
 int lua_ax_fairygui_GSlider_getTitleType(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GSlider* cobj = nullptr;
+    fairygui::GSlider* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -26438,25 +26438,25 @@ int lua_ax_fairygui_GSlider_getTitleType(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GSlider",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GSlider*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GSlider*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GSlider_getTitleType'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GSlider_getTitleType'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GSlider_getTitleType'", nullptr);
             return 0;
         }
-        int ret = (int)cobj->getTitleType();
+        int ret = (int)obj->getTitleType();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -26473,7 +26473,7 @@ int lua_ax_fairygui_GSlider_getTitleType(lua_State* tolua_S)
 int lua_ax_fairygui_GSlider_setTitleType(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GSlider* cobj = nullptr;
+    fairygui::GSlider* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -26485,18 +26485,18 @@ int lua_ax_fairygui_GSlider_setTitleType(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GSlider",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GSlider*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GSlider*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GSlider_setTitleType'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GSlider_setTitleType'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::ProgressTitleType arg0;
 
@@ -26506,7 +26506,7 @@ int lua_ax_fairygui_GSlider_setTitleType(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GSlider_setTitleType'", nullptr);
             return 0;
         }
-        cobj->setTitleType(arg0);
+        obj->setTitleType(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -26523,7 +26523,7 @@ int lua_ax_fairygui_GSlider_setTitleType(lua_State* tolua_S)
 int lua_ax_fairygui_GSlider_getMin(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GSlider* cobj = nullptr;
+    fairygui::GSlider* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -26535,25 +26535,25 @@ int lua_ax_fairygui_GSlider_getMin(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GSlider",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GSlider*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GSlider*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GSlider_getMin'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GSlider_getMin'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GSlider_getMin'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getMin();
+        auto&& ret = obj->getMin();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -26570,7 +26570,7 @@ int lua_ax_fairygui_GSlider_getMin(lua_State* tolua_S)
 int lua_ax_fairygui_GSlider_setMin(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GSlider* cobj = nullptr;
+    fairygui::GSlider* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -26582,18 +26582,18 @@ int lua_ax_fairygui_GSlider_setMin(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GSlider",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GSlider*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GSlider*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GSlider_setMin'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GSlider_setMin'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -26603,7 +26603,7 @@ int lua_ax_fairygui_GSlider_setMin(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GSlider_setMin'", nullptr);
             return 0;
         }
-        cobj->setMin(arg0);
+        obj->setMin(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -26620,7 +26620,7 @@ int lua_ax_fairygui_GSlider_setMin(lua_State* tolua_S)
 int lua_ax_fairygui_GSlider_getMax(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GSlider* cobj = nullptr;
+    fairygui::GSlider* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -26632,25 +26632,25 @@ int lua_ax_fairygui_GSlider_getMax(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GSlider",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GSlider*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GSlider*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GSlider_getMax'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GSlider_getMax'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GSlider_getMax'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getMax();
+        auto&& ret = obj->getMax();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -26667,7 +26667,7 @@ int lua_ax_fairygui_GSlider_getMax(lua_State* tolua_S)
 int lua_ax_fairygui_GSlider_setMax(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GSlider* cobj = nullptr;
+    fairygui::GSlider* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -26679,18 +26679,18 @@ int lua_ax_fairygui_GSlider_setMax(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GSlider",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GSlider*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GSlider*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GSlider_setMax'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GSlider_setMax'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -26700,7 +26700,7 @@ int lua_ax_fairygui_GSlider_setMax(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GSlider_setMax'", nullptr);
             return 0;
         }
-        cobj->setMax(arg0);
+        obj->setMax(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -26717,7 +26717,7 @@ int lua_ax_fairygui_GSlider_setMax(lua_State* tolua_S)
 int lua_ax_fairygui_GSlider_getValue(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GSlider* cobj = nullptr;
+    fairygui::GSlider* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -26729,25 +26729,25 @@ int lua_ax_fairygui_GSlider_getValue(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GSlider",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GSlider*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GSlider*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GSlider_getValue'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GSlider_getValue'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GSlider_getValue'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getValue();
+        auto&& ret = obj->getValue();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -26764,7 +26764,7 @@ int lua_ax_fairygui_GSlider_getValue(lua_State* tolua_S)
 int lua_ax_fairygui_GSlider_setValue(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GSlider* cobj = nullptr;
+    fairygui::GSlider* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -26776,18 +26776,18 @@ int lua_ax_fairygui_GSlider_setValue(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GSlider",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GSlider*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GSlider*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GSlider_setValue'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GSlider_setValue'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -26797,7 +26797,7 @@ int lua_ax_fairygui_GSlider_setValue(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GSlider_setValue'", nullptr);
             return 0;
         }
-        cobj->setValue(arg0);
+        obj->setValue(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -26814,7 +26814,7 @@ int lua_ax_fairygui_GSlider_setValue(lua_State* tolua_S)
 int lua_ax_fairygui_GSlider_getWholeNumbers(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GSlider* cobj = nullptr;
+    fairygui::GSlider* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -26826,25 +26826,25 @@ int lua_ax_fairygui_GSlider_getWholeNumbers(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GSlider",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GSlider*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GSlider*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GSlider_getWholeNumbers'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GSlider_getWholeNumbers'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GSlider_getWholeNumbers'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getWholeNumbers();
+        auto&& ret = obj->getWholeNumbers();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -26861,7 +26861,7 @@ int lua_ax_fairygui_GSlider_getWholeNumbers(lua_State* tolua_S)
 int lua_ax_fairygui_GSlider_setWholeNumbers(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GSlider* cobj = nullptr;
+    fairygui::GSlider* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -26873,18 +26873,18 @@ int lua_ax_fairygui_GSlider_setWholeNumbers(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GSlider",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GSlider*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GSlider*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GSlider_setWholeNumbers'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GSlider_setWholeNumbers'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -26894,7 +26894,7 @@ int lua_ax_fairygui_GSlider_setWholeNumbers(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GSlider_setWholeNumbers'", nullptr);
             return 0;
         }
-        cobj->setWholeNumbers(arg0);
+        obj->setWholeNumbers(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -26945,7 +26945,7 @@ int lua_ax_fairygui_GSlider_create(lua_State* tolua_S)
 int lua_ax_fairygui_GSlider_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GSlider* cobj = nullptr;
+    fairygui::GSlider* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -26955,18 +26955,18 @@ int lua_ax_fairygui_GSlider_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GSlider_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::GSlider();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.GSlider");
+        obj = new fairygui::GSlider();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.GSlider");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.GSlider:GSlider",argc, 0);
@@ -27013,7 +27013,7 @@ int lua_register_ax_fairygui_GSlider(lua_State* tolua_S)
 int lua_ax_fairygui_GScrollBar_setScrollPane(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GScrollBar* cobj = nullptr;
+    fairygui::GScrollBar* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -27025,18 +27025,18 @@ int lua_ax_fairygui_GScrollBar_setScrollPane(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GScrollBar",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GScrollBar*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GScrollBar*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GScrollBar_setScrollPane'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GScrollBar_setScrollPane'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         fairygui::ScrollPane* arg0;
         bool arg1;
@@ -27049,7 +27049,7 @@ int lua_ax_fairygui_GScrollBar_setScrollPane(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GScrollBar_setScrollPane'", nullptr);
             return 0;
         }
-        cobj->setScrollPane(arg0, arg1);
+        obj->setScrollPane(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -27066,7 +27066,7 @@ int lua_ax_fairygui_GScrollBar_setScrollPane(lua_State* tolua_S)
 int lua_ax_fairygui_GScrollBar_setDisplayPerc(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GScrollBar* cobj = nullptr;
+    fairygui::GScrollBar* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -27078,18 +27078,18 @@ int lua_ax_fairygui_GScrollBar_setDisplayPerc(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GScrollBar",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GScrollBar*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GScrollBar*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GScrollBar_setDisplayPerc'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GScrollBar_setDisplayPerc'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -27099,7 +27099,7 @@ int lua_ax_fairygui_GScrollBar_setDisplayPerc(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GScrollBar_setDisplayPerc'", nullptr);
             return 0;
         }
-        cobj->setDisplayPerc(arg0);
+        obj->setDisplayPerc(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -27116,7 +27116,7 @@ int lua_ax_fairygui_GScrollBar_setDisplayPerc(lua_State* tolua_S)
 int lua_ax_fairygui_GScrollBar_setScrollPerc(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GScrollBar* cobj = nullptr;
+    fairygui::GScrollBar* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -27128,18 +27128,18 @@ int lua_ax_fairygui_GScrollBar_setScrollPerc(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GScrollBar",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GScrollBar*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GScrollBar*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GScrollBar_setScrollPerc'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GScrollBar_setScrollPerc'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -27149,7 +27149,7 @@ int lua_ax_fairygui_GScrollBar_setScrollPerc(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GScrollBar_setScrollPerc'", nullptr);
             return 0;
         }
-        cobj->setScrollPerc(arg0);
+        obj->setScrollPerc(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -27166,7 +27166,7 @@ int lua_ax_fairygui_GScrollBar_setScrollPerc(lua_State* tolua_S)
 int lua_ax_fairygui_GScrollBar_getMinSize(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GScrollBar* cobj = nullptr;
+    fairygui::GScrollBar* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -27178,25 +27178,25 @@ int lua_ax_fairygui_GScrollBar_getMinSize(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GScrollBar",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GScrollBar*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GScrollBar*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GScrollBar_getMinSize'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GScrollBar_getMinSize'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GScrollBar_getMinSize'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getMinSize();
+        auto&& ret = obj->getMinSize();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -27247,7 +27247,7 @@ int lua_ax_fairygui_GScrollBar_create(lua_State* tolua_S)
 int lua_ax_fairygui_GScrollBar_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GScrollBar* cobj = nullptr;
+    fairygui::GScrollBar* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -27257,18 +27257,18 @@ int lua_ax_fairygui_GScrollBar_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GScrollBar_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::GScrollBar();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.GScrollBar");
+        obj = new fairygui::GScrollBar();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.GScrollBar");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.GScrollBar:GScrollBar",argc, 0);
@@ -27309,7 +27309,7 @@ int lua_register_ax_fairygui_GScrollBar(lua_State* tolua_S)
 int lua_ax_fairygui_Window_show(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -27321,25 +27321,25 @@ int lua_ax_fairygui_Window_show(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_show'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_show'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_show'", nullptr);
             return 0;
         }
-        cobj->show();
+        obj->show();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -27356,7 +27356,7 @@ int lua_ax_fairygui_Window_show(lua_State* tolua_S)
 int lua_ax_fairygui_Window_hide(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -27368,25 +27368,25 @@ int lua_ax_fairygui_Window_hide(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_hide'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_hide'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_hide'", nullptr);
             return 0;
         }
-        cobj->hide();
+        obj->hide();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -27403,7 +27403,7 @@ int lua_ax_fairygui_Window_hide(lua_State* tolua_S)
 int lua_ax_fairygui_Window_hideImmediately(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -27415,25 +27415,25 @@ int lua_ax_fairygui_Window_hideImmediately(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_hideImmediately'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_hideImmediately'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_hideImmediately'", nullptr);
             return 0;
         }
-        cobj->hideImmediately();
+        obj->hideImmediately();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -27450,7 +27450,7 @@ int lua_ax_fairygui_Window_hideImmediately(lua_State* tolua_S)
 int lua_ax_fairygui_Window_toggleStatus(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -27462,25 +27462,25 @@ int lua_ax_fairygui_Window_toggleStatus(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_toggleStatus'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_toggleStatus'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_toggleStatus'", nullptr);
             return 0;
         }
-        cobj->toggleStatus();
+        obj->toggleStatus();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -27497,7 +27497,7 @@ int lua_ax_fairygui_Window_toggleStatus(lua_State* tolua_S)
 int lua_ax_fairygui_Window_bringToFront(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -27509,25 +27509,25 @@ int lua_ax_fairygui_Window_bringToFront(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_bringToFront'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_bringToFront'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_bringToFront'", nullptr);
             return 0;
         }
-        cobj->bringToFront();
+        obj->bringToFront();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -27544,7 +27544,7 @@ int lua_ax_fairygui_Window_bringToFront(lua_State* tolua_S)
 int lua_ax_fairygui_Window_isShowing(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -27556,25 +27556,25 @@ int lua_ax_fairygui_Window_isShowing(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_isShowing'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_isShowing'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_isShowing'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isShowing();
+        auto&& ret = obj->isShowing();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -27591,7 +27591,7 @@ int lua_ax_fairygui_Window_isShowing(lua_State* tolua_S)
 int lua_ax_fairygui_Window_isTop(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -27603,25 +27603,25 @@ int lua_ax_fairygui_Window_isTop(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_isTop'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_isTop'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_isTop'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isTop();
+        auto&& ret = obj->isTop();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -27638,7 +27638,7 @@ int lua_ax_fairygui_Window_isTop(lua_State* tolua_S)
 int lua_ax_fairygui_Window_isModal(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -27650,25 +27650,25 @@ int lua_ax_fairygui_Window_isModal(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_isModal'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_isModal'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_isModal'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isModal();
+        auto&& ret = obj->isModal();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -27685,7 +27685,7 @@ int lua_ax_fairygui_Window_isModal(lua_State* tolua_S)
 int lua_ax_fairygui_Window_setModal(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -27697,18 +27697,18 @@ int lua_ax_fairygui_Window_setModal(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_setModal'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_setModal'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -27718,7 +27718,7 @@ int lua_ax_fairygui_Window_setModal(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_setModal'", nullptr);
             return 0;
         }
-        cobj->setModal(arg0);
+        obj->setModal(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -27832,7 +27832,7 @@ int lua_ax_fairygui_Window_isEnableCustomAnimation(lua_State* tolua_S)
 int lua_ax_fairygui_Window_showModalWait(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 #if _AX_DEBUG >= 1
     tolua_Error tolua_err;
@@ -27841,30 +27841,30 @@ int lua_ax_fairygui_Window_showModalWait(lua_State* tolua_S)
 #if _AX_DEBUG >= 1
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_showModalWait'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_showModalWait'", nullptr);
         return 0;
     }
 #endif
     argc = lua_gettop(tolua_S)-1;
-    do{
+    do {
         if (argc == 1) {
             int arg0;
             ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0, "fgui.Window:showModalWait");
 
             if (!ok) { break; }
-            cobj->showModalWait(arg0);
+            obj->showModalWait(arg0);
             lua_settop(tolua_S, 1);
             return 1;
         }
     }while(0);
     ok  = true;
-    do{
+    do {
         if (argc == 0) {
-            cobj->showModalWait();
+            obj->showModalWait();
             lua_settop(tolua_S, 1);
             return 1;
         }
@@ -27883,7 +27883,7 @@ int lua_ax_fairygui_Window_showModalWait(lua_State* tolua_S)
 int lua_ax_fairygui_Window_closeModalWait(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 #if _AX_DEBUG >= 1
     tolua_Error tolua_err;
@@ -27892,30 +27892,30 @@ int lua_ax_fairygui_Window_closeModalWait(lua_State* tolua_S)
 #if _AX_DEBUG >= 1
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_closeModalWait'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_closeModalWait'", nullptr);
         return 0;
     }
 #endif
     argc = lua_gettop(tolua_S)-1;
-    do{
+    do {
         if (argc == 1) {
             int arg0;
             ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0, "fgui.Window:closeModalWait");
 
             if (!ok) { break; }
-            bool ret = cobj->closeModalWait(arg0);
+            bool ret = obj->closeModalWait(arg0);
             tolua_pushboolean(tolua_S,(bool)ret);
             return 1;
         }
     }while(0);
     ok  = true;
-    do{
+    do {
         if (argc == 0) {
-            bool ret = cobj->closeModalWait();
+            bool ret = obj->closeModalWait();
             tolua_pushboolean(tolua_S,(bool)ret);
             return 1;
         }
@@ -27934,7 +27934,7 @@ int lua_ax_fairygui_Window_closeModalWait(lua_State* tolua_S)
 int lua_ax_fairygui_Window_initWindow(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -27946,25 +27946,25 @@ int lua_ax_fairygui_Window_initWindow(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_initWindow'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_initWindow'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_initWindow'", nullptr);
             return 0;
         }
-        cobj->initWindow();
+        obj->initWindow();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -27981,7 +27981,7 @@ int lua_ax_fairygui_Window_initWindow(lua_State* tolua_S)
 int lua_ax_fairygui_Window_addUISource(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -27993,18 +27993,18 @@ int lua_ax_fairygui_Window_addUISource(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_addUISource'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_addUISource'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::IUISource* arg0;
 
@@ -28014,7 +28014,7 @@ int lua_ax_fairygui_Window_addUISource(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_addUISource'", nullptr);
             return 0;
         }
-        cobj->addUISource(arg0);
+        obj->addUISource(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -28031,7 +28031,7 @@ int lua_ax_fairygui_Window_addUISource(lua_State* tolua_S)
 int lua_ax_fairygui_Window_isBringToFrontOnClick(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -28043,25 +28043,25 @@ int lua_ax_fairygui_Window_isBringToFrontOnClick(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_isBringToFrontOnClick'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_isBringToFrontOnClick'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_isBringToFrontOnClick'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isBringToFrontOnClick();
+        auto&& ret = obj->isBringToFrontOnClick();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -28078,7 +28078,7 @@ int lua_ax_fairygui_Window_isBringToFrontOnClick(lua_State* tolua_S)
 int lua_ax_fairygui_Window_setBringToFrontOnClick(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -28090,18 +28090,18 @@ int lua_ax_fairygui_Window_setBringToFrontOnClick(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_setBringToFrontOnClick'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_setBringToFrontOnClick'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -28111,7 +28111,7 @@ int lua_ax_fairygui_Window_setBringToFrontOnClick(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_setBringToFrontOnClick'", nullptr);
             return 0;
         }
-        cobj->setBringToFrontOnClick(arg0);
+        obj->setBringToFrontOnClick(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -28128,7 +28128,7 @@ int lua_ax_fairygui_Window_setBringToFrontOnClick(lua_State* tolua_S)
 int lua_ax_fairygui_Window_getContentPane(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -28140,25 +28140,25 @@ int lua_ax_fairygui_Window_getContentPane(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_getContentPane'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_getContentPane'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_getContentPane'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getContentPane();
+        auto&& ret = obj->getContentPane();
         object_to_luaval<fairygui::GComponent>(tolua_S, "fgui.GComponent",(fairygui::GComponent*)ret);
         return 1;
     }
@@ -28175,7 +28175,7 @@ int lua_ax_fairygui_Window_getContentPane(lua_State* tolua_S)
 int lua_ax_fairygui_Window_setContentPane(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -28187,18 +28187,18 @@ int lua_ax_fairygui_Window_setContentPane(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_setContentPane'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_setContentPane'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GComponent* arg0;
 
@@ -28208,7 +28208,7 @@ int lua_ax_fairygui_Window_setContentPane(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_setContentPane'", nullptr);
             return 0;
         }
-        cobj->setContentPane(arg0);
+        obj->setContentPane(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -28225,7 +28225,7 @@ int lua_ax_fairygui_Window_setContentPane(lua_State* tolua_S)
 int lua_ax_fairygui_Window_getFrame(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -28237,25 +28237,25 @@ int lua_ax_fairygui_Window_getFrame(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_getFrame'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_getFrame'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_getFrame'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getFrame();
+        auto&& ret = obj->getFrame();
         object_to_luaval<fairygui::GComponent>(tolua_S, "fgui.GComponent",(fairygui::GComponent*)ret);
         return 1;
     }
@@ -28272,7 +28272,7 @@ int lua_ax_fairygui_Window_getFrame(lua_State* tolua_S)
 int lua_ax_fairygui_Window_getCloseButton(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -28284,25 +28284,25 @@ int lua_ax_fairygui_Window_getCloseButton(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_getCloseButton'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_getCloseButton'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_getCloseButton'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getCloseButton();
+        auto&& ret = obj->getCloseButton();
         object_to_luaval<fairygui::GObject>(tolua_S, "fgui.GObject",(fairygui::GObject*)ret);
         return 1;
     }
@@ -28319,7 +28319,7 @@ int lua_ax_fairygui_Window_getCloseButton(lua_State* tolua_S)
 int lua_ax_fairygui_Window_setCloseButton(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -28331,18 +28331,18 @@ int lua_ax_fairygui_Window_setCloseButton(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_setCloseButton'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_setCloseButton'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GObject* arg0;
 
@@ -28352,7 +28352,7 @@ int lua_ax_fairygui_Window_setCloseButton(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_setCloseButton'", nullptr);
             return 0;
         }
-        cobj->setCloseButton(arg0);
+        obj->setCloseButton(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -28369,7 +28369,7 @@ int lua_ax_fairygui_Window_setCloseButton(lua_State* tolua_S)
 int lua_ax_fairygui_Window_getDragArea(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -28381,25 +28381,25 @@ int lua_ax_fairygui_Window_getDragArea(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_getDragArea'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_getDragArea'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_getDragArea'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getDragArea();
+        auto&& ret = obj->getDragArea();
         object_to_luaval<fairygui::GObject>(tolua_S, "fgui.GObject",(fairygui::GObject*)ret);
         return 1;
     }
@@ -28416,7 +28416,7 @@ int lua_ax_fairygui_Window_getDragArea(lua_State* tolua_S)
 int lua_ax_fairygui_Window_setDragArea(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -28428,18 +28428,18 @@ int lua_ax_fairygui_Window_setDragArea(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_setDragArea'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_setDragArea'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GObject* arg0;
 
@@ -28449,7 +28449,7 @@ int lua_ax_fairygui_Window_setDragArea(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_setDragArea'", nullptr);
             return 0;
         }
-        cobj->setDragArea(arg0);
+        obj->setDragArea(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -28466,7 +28466,7 @@ int lua_ax_fairygui_Window_setDragArea(lua_State* tolua_S)
 int lua_ax_fairygui_Window_getContentArea(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -28478,25 +28478,25 @@ int lua_ax_fairygui_Window_getContentArea(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_getContentArea'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_getContentArea'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_getContentArea'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getContentArea();
+        auto&& ret = obj->getContentArea();
         object_to_luaval<fairygui::GObject>(tolua_S, "fgui.GObject",(fairygui::GObject*)ret);
         return 1;
     }
@@ -28513,7 +28513,7 @@ int lua_ax_fairygui_Window_getContentArea(lua_State* tolua_S)
 int lua_ax_fairygui_Window_setContentArea(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -28525,18 +28525,18 @@ int lua_ax_fairygui_Window_setContentArea(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_setContentArea'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_setContentArea'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GObject* arg0;
 
@@ -28546,7 +28546,7 @@ int lua_ax_fairygui_Window_setContentArea(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_setContentArea'", nullptr);
             return 0;
         }
-        cobj->setContentArea(arg0);
+        obj->setContentArea(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -28563,7 +28563,7 @@ int lua_ax_fairygui_Window_setContentArea(lua_State* tolua_S)
 int lua_ax_fairygui_Window_getModalWaitingPane(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -28575,25 +28575,25 @@ int lua_ax_fairygui_Window_getModalWaitingPane(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.Window",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::Window*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_Window_getModalWaitingPane'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_Window_getModalWaitingPane'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_getModalWaitingPane'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getModalWaitingPane();
+        auto&& ret = obj->getModalWaitingPane();
         object_to_luaval<fairygui::GObject>(tolua_S, "fgui.GObject",(fairygui::GObject*)ret);
         return 1;
     }
@@ -28644,7 +28644,7 @@ int lua_ax_fairygui_Window_create(lua_State* tolua_S)
 int lua_ax_fairygui_Window_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::Window* cobj = nullptr;
+    fairygui::Window* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -28654,18 +28654,18 @@ int lua_ax_fairygui_Window_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_Window_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::Window();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.Window");
+        obj = new fairygui::Window();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.Window");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.Window:Window",argc, 0);
@@ -28729,7 +28729,7 @@ int lua_register_ax_fairygui_Window(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_showWindow(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -28741,18 +28741,18 @@ int lua_ax_fairygui_GRoot_showWindow(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_showWindow'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_showWindow'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::Window* arg0;
 
@@ -28762,7 +28762,7 @@ int lua_ax_fairygui_GRoot_showWindow(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_showWindow'", nullptr);
             return 0;
         }
-        cobj->showWindow(arg0);
+        obj->showWindow(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -28779,7 +28779,7 @@ int lua_ax_fairygui_GRoot_showWindow(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_hideWindow(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -28791,18 +28791,18 @@ int lua_ax_fairygui_GRoot_hideWindow(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_hideWindow'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_hideWindow'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::Window* arg0;
 
@@ -28812,7 +28812,7 @@ int lua_ax_fairygui_GRoot_hideWindow(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_hideWindow'", nullptr);
             return 0;
         }
-        cobj->hideWindow(arg0);
+        obj->hideWindow(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -28829,7 +28829,7 @@ int lua_ax_fairygui_GRoot_hideWindow(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_hideWindowImmediately(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -28841,18 +28841,18 @@ int lua_ax_fairygui_GRoot_hideWindowImmediately(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_hideWindowImmediately'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_hideWindowImmediately'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::Window* arg0;
 
@@ -28862,7 +28862,7 @@ int lua_ax_fairygui_GRoot_hideWindowImmediately(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_hideWindowImmediately'", nullptr);
             return 0;
         }
-        cobj->hideWindowImmediately(arg0);
+        obj->hideWindowImmediately(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -28879,7 +28879,7 @@ int lua_ax_fairygui_GRoot_hideWindowImmediately(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_bringToFront(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -28891,18 +28891,18 @@ int lua_ax_fairygui_GRoot_bringToFront(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_bringToFront'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_bringToFront'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::Window* arg0;
 
@@ -28912,7 +28912,7 @@ int lua_ax_fairygui_GRoot_bringToFront(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_bringToFront'", nullptr);
             return 0;
         }
-        cobj->bringToFront(arg0);
+        obj->bringToFront(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -28929,7 +28929,7 @@ int lua_ax_fairygui_GRoot_bringToFront(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_showModalWait(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -28941,25 +28941,25 @@ int lua_ax_fairygui_GRoot_showModalWait(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_showModalWait'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_showModalWait'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_showModalWait'", nullptr);
             return 0;
         }
-        cobj->showModalWait();
+        obj->showModalWait();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -28976,7 +28976,7 @@ int lua_ax_fairygui_GRoot_showModalWait(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_closeModalWait(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -28988,25 +28988,25 @@ int lua_ax_fairygui_GRoot_closeModalWait(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_closeModalWait'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_closeModalWait'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_closeModalWait'", nullptr);
             return 0;
         }
-        cobj->closeModalWait();
+        obj->closeModalWait();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -29023,7 +29023,7 @@ int lua_ax_fairygui_GRoot_closeModalWait(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_closeAllExceptModals(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -29035,25 +29035,25 @@ int lua_ax_fairygui_GRoot_closeAllExceptModals(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_closeAllExceptModals'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_closeAllExceptModals'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_closeAllExceptModals'", nullptr);
             return 0;
         }
-        cobj->closeAllExceptModals();
+        obj->closeAllExceptModals();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -29070,7 +29070,7 @@ int lua_ax_fairygui_GRoot_closeAllExceptModals(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_closeAllWindows(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -29082,25 +29082,25 @@ int lua_ax_fairygui_GRoot_closeAllWindows(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_closeAllWindows'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_closeAllWindows'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_closeAllWindows'", nullptr);
             return 0;
         }
-        cobj->closeAllWindows();
+        obj->closeAllWindows();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -29117,7 +29117,7 @@ int lua_ax_fairygui_GRoot_closeAllWindows(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_getTopWindow(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -29129,25 +29129,25 @@ int lua_ax_fairygui_GRoot_getTopWindow(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_getTopWindow'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_getTopWindow'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_getTopWindow'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTopWindow();
+        auto&& ret = obj->getTopWindow();
         object_to_luaval<fairygui::Window>(tolua_S, "fgui.Window",(fairygui::Window*)ret);
         return 1;
     }
@@ -29164,7 +29164,7 @@ int lua_ax_fairygui_GRoot_getTopWindow(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_getModalWaitingPane(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -29176,25 +29176,25 @@ int lua_ax_fairygui_GRoot_getModalWaitingPane(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_getModalWaitingPane'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_getModalWaitingPane'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_getModalWaitingPane'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getModalWaitingPane();
+        auto&& ret = obj->getModalWaitingPane();
         object_to_luaval<fairygui::GObject>(tolua_S, "fgui.GObject",(fairygui::GObject*)ret);
         return 1;
     }
@@ -29211,7 +29211,7 @@ int lua_ax_fairygui_GRoot_getModalWaitingPane(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_getModalLayer(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -29223,25 +29223,25 @@ int lua_ax_fairygui_GRoot_getModalLayer(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_getModalLayer'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_getModalLayer'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_getModalLayer'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getModalLayer();
+        auto&& ret = obj->getModalLayer();
         object_to_luaval<fairygui::GGraph>(tolua_S, "fgui.GGraph",(fairygui::GGraph*)ret);
         return 1;
     }
@@ -29258,7 +29258,7 @@ int lua_ax_fairygui_GRoot_getModalLayer(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_hasModalWindow(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -29270,25 +29270,25 @@ int lua_ax_fairygui_GRoot_hasModalWindow(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_hasModalWindow'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_hasModalWindow'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_hasModalWindow'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->hasModalWindow();
+        auto&& ret = obj->hasModalWindow();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -29305,7 +29305,7 @@ int lua_ax_fairygui_GRoot_hasModalWindow(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_isModalWaiting(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -29317,25 +29317,25 @@ int lua_ax_fairygui_GRoot_isModalWaiting(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_isModalWaiting'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_isModalWaiting'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_isModalWaiting'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isModalWaiting();
+        auto&& ret = obj->isModalWaiting();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -29352,7 +29352,7 @@ int lua_ax_fairygui_GRoot_isModalWaiting(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_getInputProcessor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -29364,25 +29364,25 @@ int lua_ax_fairygui_GRoot_getInputProcessor(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_getInputProcessor'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_getInputProcessor'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_getInputProcessor'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getInputProcessor();
+        auto&& ret = obj->getInputProcessor();
         object_to_luaval<fairygui::InputProcessor>(tolua_S, "fgui.InputProcessor",(fairygui::InputProcessor*)ret);
         return 1;
     }
@@ -29399,7 +29399,7 @@ int lua_ax_fairygui_GRoot_getInputProcessor(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_getTouchPosition(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -29411,18 +29411,18 @@ int lua_ax_fairygui_GRoot_getTouchPosition(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_getTouchPosition'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_getTouchPosition'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -29432,7 +29432,7 @@ int lua_ax_fairygui_GRoot_getTouchPosition(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_getTouchPosition'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTouchPosition(arg0);
+        auto&& ret = obj->getTouchPosition(arg0);
         vec2_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -29449,7 +29449,7 @@ int lua_ax_fairygui_GRoot_getTouchPosition(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_getTouchTarget(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -29461,25 +29461,25 @@ int lua_ax_fairygui_GRoot_getTouchTarget(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_getTouchTarget'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_getTouchTarget'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_getTouchTarget'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTouchTarget();
+        auto&& ret = obj->getTouchTarget();
         object_to_luaval<fairygui::GObject>(tolua_S, "fgui.GObject",(fairygui::GObject*)ret);
         return 1;
     }
@@ -29496,7 +29496,7 @@ int lua_ax_fairygui_GRoot_getTouchTarget(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_worldToRoot(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -29508,18 +29508,18 @@ int lua_ax_fairygui_GRoot_worldToRoot(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_worldToRoot'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_worldToRoot'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         ax::Vec2 arg0;
 
@@ -29529,7 +29529,7 @@ int lua_ax_fairygui_GRoot_worldToRoot(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_worldToRoot'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->worldToRoot(arg0);
+        auto&& ret = obj->worldToRoot(arg0);
         vec2_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -29546,7 +29546,7 @@ int lua_ax_fairygui_GRoot_worldToRoot(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_rootToWorld(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -29558,18 +29558,18 @@ int lua_ax_fairygui_GRoot_rootToWorld(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_rootToWorld'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_rootToWorld'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         ax::Vec2 arg0;
 
@@ -29579,7 +29579,7 @@ int lua_ax_fairygui_GRoot_rootToWorld(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_rootToWorld'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->rootToWorld(arg0);
+        auto&& ret = obj->rootToWorld(arg0);
         vec2_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -29596,7 +29596,7 @@ int lua_ax_fairygui_GRoot_rootToWorld(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_showPopup(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 #if _AX_DEBUG >= 1
     tolua_Error tolua_err;
@@ -29605,16 +29605,16 @@ int lua_ax_fairygui_GRoot_showPopup(lua_State* tolua_S)
 #if _AX_DEBUG >= 1
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_showPopup'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_showPopup'", nullptr);
         return 0;
     }
 #endif
     argc = lua_gettop(tolua_S)-1;
-    do{
+    do {
         if (argc == 3) {
             fairygui::GObject* arg0;
             ok &= luaval_to_object<fairygui::GObject>(tolua_S, 2, "fgui.GObject",&arg0, "fgui.GRoot:showPopup");
@@ -29628,19 +29628,19 @@ int lua_ax_fairygui_GRoot_showPopup(lua_State* tolua_S)
             ok &= luaval_to_int32(tolua_S, 4,(int *)&arg2, "fgui.GRoot:showPopup");
 
             if (!ok) { break; }
-            cobj->showPopup(arg0, arg1, arg2);
+            obj->showPopup(arg0, arg1, arg2);
             lua_settop(tolua_S, 1);
             return 1;
         }
     }while(0);
     ok  = true;
-    do{
+    do {
         if (argc == 1) {
             fairygui::GObject* arg0;
             ok &= luaval_to_object<fairygui::GObject>(tolua_S, 2, "fgui.GObject",&arg0, "fgui.GRoot:showPopup");
 
             if (!ok) { break; }
-            cobj->showPopup(arg0);
+            obj->showPopup(arg0);
             lua_settop(tolua_S, 1);
             return 1;
         }
@@ -29659,7 +29659,7 @@ int lua_ax_fairygui_GRoot_showPopup(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_togglePopup(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 #if _AX_DEBUG >= 1
     tolua_Error tolua_err;
@@ -29668,16 +29668,16 @@ int lua_ax_fairygui_GRoot_togglePopup(lua_State* tolua_S)
 #if _AX_DEBUG >= 1
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_togglePopup'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_togglePopup'", nullptr);
         return 0;
     }
 #endif
     argc = lua_gettop(tolua_S)-1;
-    do{
+    do {
         if (argc == 3) {
             fairygui::GObject* arg0;
             ok &= luaval_to_object<fairygui::GObject>(tolua_S, 2, "fgui.GObject",&arg0, "fgui.GRoot:togglePopup");
@@ -29691,19 +29691,19 @@ int lua_ax_fairygui_GRoot_togglePopup(lua_State* tolua_S)
             ok &= luaval_to_int32(tolua_S, 4,(int *)&arg2, "fgui.GRoot:togglePopup");
 
             if (!ok) { break; }
-            cobj->togglePopup(arg0, arg1, arg2);
+            obj->togglePopup(arg0, arg1, arg2);
             lua_settop(tolua_S, 1);
             return 1;
         }
     }while(0);
     ok  = true;
-    do{
+    do {
         if (argc == 1) {
             fairygui::GObject* arg0;
             ok &= luaval_to_object<fairygui::GObject>(tolua_S, 2, "fgui.GObject",&arg0, "fgui.GRoot:togglePopup");
 
             if (!ok) { break; }
-            cobj->togglePopup(arg0);
+            obj->togglePopup(arg0);
             lua_settop(tolua_S, 1);
             return 1;
         }
@@ -29722,7 +29722,7 @@ int lua_ax_fairygui_GRoot_togglePopup(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_hidePopup(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 #if _AX_DEBUG >= 1
     tolua_Error tolua_err;
@@ -29731,30 +29731,30 @@ int lua_ax_fairygui_GRoot_hidePopup(lua_State* tolua_S)
 #if _AX_DEBUG >= 1
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_hidePopup'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_hidePopup'", nullptr);
         return 0;
     }
 #endif
     argc = lua_gettop(tolua_S)-1;
-    do{
+    do {
         if (argc == 1) {
             fairygui::GObject* arg0;
             ok &= luaval_to_object<fairygui::GObject>(tolua_S, 2, "fgui.GObject",&arg0, "fgui.GRoot:hidePopup");
 
             if (!ok) { break; }
-            cobj->hidePopup(arg0);
+            obj->hidePopup(arg0);
             lua_settop(tolua_S, 1);
             return 1;
         }
     }while(0);
     ok  = true;
-    do{
+    do {
         if (argc == 0) {
-            cobj->hidePopup();
+            obj->hidePopup();
             lua_settop(tolua_S, 1);
             return 1;
         }
@@ -29773,7 +29773,7 @@ int lua_ax_fairygui_GRoot_hidePopup(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_hasAnyPopup(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -29785,25 +29785,25 @@ int lua_ax_fairygui_GRoot_hasAnyPopup(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_hasAnyPopup'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_hasAnyPopup'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_hasAnyPopup'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->hasAnyPopup();
+        auto&& ret = obj->hasAnyPopup();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -29820,7 +29820,7 @@ int lua_ax_fairygui_GRoot_hasAnyPopup(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_getPoupPosition(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -29832,18 +29832,18 @@ int lua_ax_fairygui_GRoot_getPoupPosition(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_getPoupPosition'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_getPoupPosition'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 3) 
+    if (argc == 3)
     {
         fairygui::GObject* arg0;
         fairygui::GObject* arg1;
@@ -29859,7 +29859,7 @@ int lua_ax_fairygui_GRoot_getPoupPosition(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_getPoupPosition'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getPoupPosition(arg0, arg1, arg2);
+        auto&& ret = obj->getPoupPosition(arg0, arg1, arg2);
         vec2_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -29876,7 +29876,7 @@ int lua_ax_fairygui_GRoot_getPoupPosition(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_showTooltips(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -29888,18 +29888,18 @@ int lua_ax_fairygui_GRoot_showTooltips(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_showTooltips'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_showTooltips'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -29909,7 +29909,7 @@ int lua_ax_fairygui_GRoot_showTooltips(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_showTooltips'", nullptr);
             return 0;
         }
-        cobj->showTooltips(arg0);
+        obj->showTooltips(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -29926,7 +29926,7 @@ int lua_ax_fairygui_GRoot_showTooltips(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_showTooltipsWin(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -29938,18 +29938,18 @@ int lua_ax_fairygui_GRoot_showTooltipsWin(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_showTooltipsWin'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_showTooltipsWin'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GObject* arg0;
 
@@ -29959,7 +29959,7 @@ int lua_ax_fairygui_GRoot_showTooltipsWin(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_showTooltipsWin'", nullptr);
             return 0;
         }
-        cobj->showTooltipsWin(arg0);
+        obj->showTooltipsWin(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -29976,7 +29976,7 @@ int lua_ax_fairygui_GRoot_showTooltipsWin(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_hideTooltips(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -29988,25 +29988,25 @@ int lua_ax_fairygui_GRoot_hideTooltips(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_hideTooltips'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_hideTooltips'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_hideTooltips'", nullptr);
             return 0;
         }
-        cobj->hideTooltips();
+        obj->hideTooltips();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -30023,7 +30023,7 @@ int lua_ax_fairygui_GRoot_hideTooltips(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_playSound(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -30035,18 +30035,18 @@ int lua_ax_fairygui_GRoot_playSound(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_playSound'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_playSound'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -30056,11 +30056,11 @@ int lua_ax_fairygui_GRoot_playSound(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_playSound'", nullptr);
             return 0;
         }
-        cobj->playSound(arg0);
+        obj->playSound(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         std::string arg0;
         double arg1;
@@ -30073,7 +30073,7 @@ int lua_ax_fairygui_GRoot_playSound(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_playSound'", nullptr);
             return 0;
         }
-        cobj->playSound(arg0, arg1);
+        obj->playSound(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -30090,7 +30090,7 @@ int lua_ax_fairygui_GRoot_playSound(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_isSoundEnabled(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -30102,25 +30102,25 @@ int lua_ax_fairygui_GRoot_isSoundEnabled(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_isSoundEnabled'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_isSoundEnabled'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_isSoundEnabled'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isSoundEnabled();
+        auto&& ret = obj->isSoundEnabled();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -30137,7 +30137,7 @@ int lua_ax_fairygui_GRoot_isSoundEnabled(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_setSoundEnabled(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -30149,18 +30149,18 @@ int lua_ax_fairygui_GRoot_setSoundEnabled(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_setSoundEnabled'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_setSoundEnabled'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -30170,7 +30170,7 @@ int lua_ax_fairygui_GRoot_setSoundEnabled(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_setSoundEnabled'", nullptr);
             return 0;
         }
-        cobj->setSoundEnabled(arg0);
+        obj->setSoundEnabled(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -30187,7 +30187,7 @@ int lua_ax_fairygui_GRoot_setSoundEnabled(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_getSoundVolumeScale(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -30199,25 +30199,25 @@ int lua_ax_fairygui_GRoot_getSoundVolumeScale(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_getSoundVolumeScale'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_getSoundVolumeScale'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_getSoundVolumeScale'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getSoundVolumeScale();
+        auto&& ret = obj->getSoundVolumeScale();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -30234,7 +30234,7 @@ int lua_ax_fairygui_GRoot_getSoundVolumeScale(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_setSoundVolumeScale(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -30246,18 +30246,18 @@ int lua_ax_fairygui_GRoot_setSoundVolumeScale(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GRoot",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GRoot*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GRoot_setSoundVolumeScale'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GRoot_setSoundVolumeScale'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -30267,7 +30267,7 @@ int lua_ax_fairygui_GRoot_setSoundVolumeScale(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_setSoundVolumeScale'", nullptr);
             return 0;
         }
-        cobj->setSoundVolumeScale(arg0);
+        obj->setSoundVolumeScale(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -30466,7 +30466,7 @@ int lua_ax_fairygui_GRoot_getInstance(lua_State* tolua_S)
 int lua_ax_fairygui_GRoot_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GRoot* cobj = nullptr;
+    fairygui::GRoot* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -30476,18 +30476,18 @@ int lua_ax_fairygui_GRoot_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GRoot_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::GRoot();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.GRoot");
+        obj = new fairygui::GRoot();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.GRoot");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.GRoot:GRoot",argc, 0);
@@ -30558,7 +30558,7 @@ int lua_register_ax_fairygui_GRoot(lua_State* tolua_S)
 int lua_ax_fairygui_PopupMenu_addItem(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::PopupMenu* cobj = nullptr;
+    fairygui::PopupMenu* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -30570,18 +30570,18 @@ int lua_ax_fairygui_PopupMenu_addItem(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.PopupMenu",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_PopupMenu_addItem'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_PopupMenu_addItem'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         std::string arg0;
         std::function<void (fairygui::EventContext *)> arg1;
@@ -30590,7 +30590,7 @@ int lua_ax_fairygui_PopupMenu_addItem(lua_State* tolua_S)
 
         do {
 			// Lambda binding for lua is not supported.
-			assert(false);
+		    assert(false);
 		} while(0)
 		;
         if(!ok)
@@ -30598,7 +30598,7 @@ int lua_ax_fairygui_PopupMenu_addItem(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_PopupMenu_addItem'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->addItem(arg0, arg1);
+        auto&& ret = obj->addItem(arg0, arg1);
         object_to_luaval<fairygui::GButton>(tolua_S, "fgui.GButton",(fairygui::GButton*)ret);
         return 1;
     }
@@ -30615,7 +30615,7 @@ int lua_ax_fairygui_PopupMenu_addItem(lua_State* tolua_S)
 int lua_ax_fairygui_PopupMenu_addItemAt(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::PopupMenu* cobj = nullptr;
+    fairygui::PopupMenu* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -30627,18 +30627,18 @@ int lua_ax_fairygui_PopupMenu_addItemAt(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.PopupMenu",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_PopupMenu_addItemAt'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_PopupMenu_addItemAt'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 3) 
+    if (argc == 3)
     {
         std::string arg0;
         int arg1;
@@ -30650,7 +30650,7 @@ int lua_ax_fairygui_PopupMenu_addItemAt(lua_State* tolua_S)
 
         do {
 			// Lambda binding for lua is not supported.
-			assert(false);
+		    assert(false);
 		} while(0)
 		;
         if(!ok)
@@ -30658,7 +30658,7 @@ int lua_ax_fairygui_PopupMenu_addItemAt(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_PopupMenu_addItemAt'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->addItemAt(arg0, arg1, arg2);
+        auto&& ret = obj->addItemAt(arg0, arg1, arg2);
         object_to_luaval<fairygui::GButton>(tolua_S, "fgui.GButton",(fairygui::GButton*)ret);
         return 1;
     }
@@ -30675,7 +30675,7 @@ int lua_ax_fairygui_PopupMenu_addItemAt(lua_State* tolua_S)
 int lua_ax_fairygui_PopupMenu_addSeperator(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::PopupMenu* cobj = nullptr;
+    fairygui::PopupMenu* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -30687,25 +30687,25 @@ int lua_ax_fairygui_PopupMenu_addSeperator(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.PopupMenu",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_PopupMenu_addSeperator'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_PopupMenu_addSeperator'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_PopupMenu_addSeperator'", nullptr);
             return 0;
         }
-        cobj->addSeperator();
+        obj->addSeperator();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -30722,7 +30722,7 @@ int lua_ax_fairygui_PopupMenu_addSeperator(lua_State* tolua_S)
 int lua_ax_fairygui_PopupMenu_getItemName(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::PopupMenu* cobj = nullptr;
+    fairygui::PopupMenu* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -30734,18 +30734,18 @@ int lua_ax_fairygui_PopupMenu_getItemName(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.PopupMenu",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_PopupMenu_getItemName'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_PopupMenu_getItemName'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -30755,7 +30755,7 @@ int lua_ax_fairygui_PopupMenu_getItemName(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_PopupMenu_getItemName'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getItemName(arg0);
+        auto&& ret = obj->getItemName(arg0);
         lua_pushlstring(tolua_S,ret.c_str(),ret.length());
         return 1;
     }
@@ -30772,7 +30772,7 @@ int lua_ax_fairygui_PopupMenu_getItemName(lua_State* tolua_S)
 int lua_ax_fairygui_PopupMenu_setItemText(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::PopupMenu* cobj = nullptr;
+    fairygui::PopupMenu* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -30784,18 +30784,18 @@ int lua_ax_fairygui_PopupMenu_setItemText(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.PopupMenu",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_PopupMenu_setItemText'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_PopupMenu_setItemText'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         std::string arg0;
         std::string arg1;
@@ -30808,7 +30808,7 @@ int lua_ax_fairygui_PopupMenu_setItemText(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_PopupMenu_setItemText'", nullptr);
             return 0;
         }
-        cobj->setItemText(arg0, arg1);
+        obj->setItemText(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -30825,7 +30825,7 @@ int lua_ax_fairygui_PopupMenu_setItemText(lua_State* tolua_S)
 int lua_ax_fairygui_PopupMenu_setItemVisible(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::PopupMenu* cobj = nullptr;
+    fairygui::PopupMenu* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -30837,18 +30837,18 @@ int lua_ax_fairygui_PopupMenu_setItemVisible(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.PopupMenu",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_PopupMenu_setItemVisible'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_PopupMenu_setItemVisible'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         std::string arg0;
         bool arg1;
@@ -30861,7 +30861,7 @@ int lua_ax_fairygui_PopupMenu_setItemVisible(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_PopupMenu_setItemVisible'", nullptr);
             return 0;
         }
-        cobj->setItemVisible(arg0, arg1);
+        obj->setItemVisible(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -30878,7 +30878,7 @@ int lua_ax_fairygui_PopupMenu_setItemVisible(lua_State* tolua_S)
 int lua_ax_fairygui_PopupMenu_setItemGrayed(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::PopupMenu* cobj = nullptr;
+    fairygui::PopupMenu* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -30890,18 +30890,18 @@ int lua_ax_fairygui_PopupMenu_setItemGrayed(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.PopupMenu",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_PopupMenu_setItemGrayed'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_PopupMenu_setItemGrayed'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         std::string arg0;
         bool arg1;
@@ -30914,7 +30914,7 @@ int lua_ax_fairygui_PopupMenu_setItemGrayed(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_PopupMenu_setItemGrayed'", nullptr);
             return 0;
         }
-        cobj->setItemGrayed(arg0, arg1);
+        obj->setItemGrayed(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -30931,7 +30931,7 @@ int lua_ax_fairygui_PopupMenu_setItemGrayed(lua_State* tolua_S)
 int lua_ax_fairygui_PopupMenu_setItemCheckable(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::PopupMenu* cobj = nullptr;
+    fairygui::PopupMenu* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -30943,18 +30943,18 @@ int lua_ax_fairygui_PopupMenu_setItemCheckable(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.PopupMenu",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_PopupMenu_setItemCheckable'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_PopupMenu_setItemCheckable'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         std::string arg0;
         bool arg1;
@@ -30967,7 +30967,7 @@ int lua_ax_fairygui_PopupMenu_setItemCheckable(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_PopupMenu_setItemCheckable'", nullptr);
             return 0;
         }
-        cobj->setItemCheckable(arg0, arg1);
+        obj->setItemCheckable(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -30984,7 +30984,7 @@ int lua_ax_fairygui_PopupMenu_setItemCheckable(lua_State* tolua_S)
 int lua_ax_fairygui_PopupMenu_setItemChecked(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::PopupMenu* cobj = nullptr;
+    fairygui::PopupMenu* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -30996,18 +30996,18 @@ int lua_ax_fairygui_PopupMenu_setItemChecked(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.PopupMenu",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_PopupMenu_setItemChecked'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_PopupMenu_setItemChecked'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 2) 
+    if (argc == 2)
     {
         std::string arg0;
         bool arg1;
@@ -31020,7 +31020,7 @@ int lua_ax_fairygui_PopupMenu_setItemChecked(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_PopupMenu_setItemChecked'", nullptr);
             return 0;
         }
-        cobj->setItemChecked(arg0, arg1);
+        obj->setItemChecked(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -31037,7 +31037,7 @@ int lua_ax_fairygui_PopupMenu_setItemChecked(lua_State* tolua_S)
 int lua_ax_fairygui_PopupMenu_isItemChecked(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::PopupMenu* cobj = nullptr;
+    fairygui::PopupMenu* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -31049,18 +31049,18 @@ int lua_ax_fairygui_PopupMenu_isItemChecked(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.PopupMenu",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_PopupMenu_isItemChecked'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_PopupMenu_isItemChecked'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -31070,7 +31070,7 @@ int lua_ax_fairygui_PopupMenu_isItemChecked(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_PopupMenu_isItemChecked'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isItemChecked(arg0);
+        auto&& ret = obj->isItemChecked(arg0);
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -31087,7 +31087,7 @@ int lua_ax_fairygui_PopupMenu_isItemChecked(lua_State* tolua_S)
 int lua_ax_fairygui_PopupMenu_removeItem(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::PopupMenu* cobj = nullptr;
+    fairygui::PopupMenu* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -31099,18 +31099,18 @@ int lua_ax_fairygui_PopupMenu_removeItem(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.PopupMenu",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_PopupMenu_removeItem'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_PopupMenu_removeItem'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -31120,7 +31120,7 @@ int lua_ax_fairygui_PopupMenu_removeItem(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_PopupMenu_removeItem'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->removeItem(arg0);
+        auto&& ret = obj->removeItem(arg0);
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -31137,7 +31137,7 @@ int lua_ax_fairygui_PopupMenu_removeItem(lua_State* tolua_S)
 int lua_ax_fairygui_PopupMenu_clearItems(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::PopupMenu* cobj = nullptr;
+    fairygui::PopupMenu* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -31149,25 +31149,25 @@ int lua_ax_fairygui_PopupMenu_clearItems(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.PopupMenu",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_PopupMenu_clearItems'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_PopupMenu_clearItems'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_PopupMenu_clearItems'", nullptr);
             return 0;
         }
-        cobj->clearItems();
+        obj->clearItems();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -31184,7 +31184,7 @@ int lua_ax_fairygui_PopupMenu_clearItems(lua_State* tolua_S)
 int lua_ax_fairygui_PopupMenu_getItemCount(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::PopupMenu* cobj = nullptr;
+    fairygui::PopupMenu* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -31196,25 +31196,25 @@ int lua_ax_fairygui_PopupMenu_getItemCount(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.PopupMenu",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_PopupMenu_getItemCount'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_PopupMenu_getItemCount'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_PopupMenu_getItemCount'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getItemCount();
+        auto&& ret = obj->getItemCount();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -31231,7 +31231,7 @@ int lua_ax_fairygui_PopupMenu_getItemCount(lua_State* tolua_S)
 int lua_ax_fairygui_PopupMenu_getContentPane(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::PopupMenu* cobj = nullptr;
+    fairygui::PopupMenu* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -31243,25 +31243,25 @@ int lua_ax_fairygui_PopupMenu_getContentPane(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.PopupMenu",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_PopupMenu_getContentPane'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_PopupMenu_getContentPane'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_PopupMenu_getContentPane'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getContentPane();
+        auto&& ret = obj->getContentPane();
         object_to_luaval<fairygui::GComponent>(tolua_S, "fgui.GComponent",(fairygui::GComponent*)ret);
         return 1;
     }
@@ -31278,7 +31278,7 @@ int lua_ax_fairygui_PopupMenu_getContentPane(lua_State* tolua_S)
 int lua_ax_fairygui_PopupMenu_getList(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::PopupMenu* cobj = nullptr;
+    fairygui::PopupMenu* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -31290,25 +31290,25 @@ int lua_ax_fairygui_PopupMenu_getList(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.PopupMenu",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_PopupMenu_getList'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_PopupMenu_getList'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_PopupMenu_getList'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getList();
+        auto&& ret = obj->getList();
         object_to_luaval<fairygui::GList>(tolua_S, "fgui.GList",(fairygui::GList*)ret);
         return 1;
     }
@@ -31325,7 +31325,7 @@ int lua_ax_fairygui_PopupMenu_getList(lua_State* tolua_S)
 int lua_ax_fairygui_PopupMenu_show(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::PopupMenu* cobj = nullptr;
+    fairygui::PopupMenu* obj = nullptr;
     bool ok  = true;
 #if _AX_DEBUG >= 1
     tolua_Error tolua_err;
@@ -31334,16 +31334,16 @@ int lua_ax_fairygui_PopupMenu_show(lua_State* tolua_S)
 #if _AX_DEBUG >= 1
     if (!tolua_isusertype(tolua_S,1,"fgui.PopupMenu",0,&tolua_err)) goto tolua_lerror;
 #endif
-    cobj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::PopupMenu*)tolua_tousertype(tolua_S,1,0);
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_PopupMenu_show'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_PopupMenu_show'", nullptr);
         return 0;
     }
 #endif
     argc = lua_gettop(tolua_S)-1;
-    do{
+    do {
         if (argc == 2) {
             fairygui::GObject* arg0;
             ok &= luaval_to_object<fairygui::GObject>(tolua_S, 2, "fgui.GObject",&arg0, "fgui.PopupMenu:show");
@@ -31353,15 +31353,15 @@ int lua_ax_fairygui_PopupMenu_show(lua_State* tolua_S)
             ok &= luaval_to_int32(tolua_S, 3,(int *)&arg1, "fgui.PopupMenu:show");
 
             if (!ok) { break; }
-            cobj->show(arg0, arg1);
+            obj->show(arg0, arg1);
             lua_settop(tolua_S, 1);
             return 1;
         }
     }while(0);
     ok  = true;
-    do{
+    do {
         if (argc == 0) {
-            cobj->show();
+            obj->show();
             lua_settop(tolua_S, 1);
             return 1;
         }
@@ -31391,8 +31391,7 @@ int lua_ax_fairygui_PopupMenu_create(lua_State* tolua_S)
 
     argc = lua_gettop(tolua_S)-1;
 
-    do 
-    {
+    do {
         if (argc == 0)
         {
             fairygui::PopupMenu* ret = fairygui::PopupMenu::create();
@@ -31401,8 +31400,7 @@ int lua_ax_fairygui_PopupMenu_create(lua_State* tolua_S)
         }
     } while (0);
     ok  = true;
-    do 
-    {
+    do {
         if (argc == 1)
         {
             std::string arg0;
@@ -31425,7 +31423,7 @@ int lua_ax_fairygui_PopupMenu_create(lua_State* tolua_S)
 int lua_ax_fairygui_PopupMenu_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::PopupMenu* cobj = nullptr;
+    fairygui::PopupMenu* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -31435,18 +31433,18 @@ int lua_ax_fairygui_PopupMenu_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_PopupMenu_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::PopupMenu();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.PopupMenu");
+        obj = new fairygui::PopupMenu();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.PopupMenu");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.PopupMenu:PopupMenu",argc, 0);
@@ -31544,8 +31542,7 @@ int lua_ax_fairygui_UIObjectFactory_newObject(lua_State* tolua_S)
 
     argc = lua_gettop(tolua_S)-1;
 
-    do 
-    {
+    do {
         if (argc == 1)
         {
             fairygui::ObjectType arg0;
@@ -31557,8 +31554,7 @@ int lua_ax_fairygui_UIObjectFactory_newObject(lua_State* tolua_S)
         }
     } while (0);
     ok  = true;
-    do 
-    {
+    do {
         if (argc == 1)
         {
             fairygui::PackageItem* arg0;
@@ -31598,7 +31594,7 @@ int lua_ax_fairygui_UIObjectFactory_setLoaderExtension(lua_State* tolua_S)
         std::function<fairygui::GLoader * ()> arg0;
         do {
 			// Lambda binding for lua is not supported.
-			assert(false);
+		    assert(false);
 		} while(0)
 		;
         if(!ok)
@@ -31643,7 +31639,7 @@ int lua_register_ax_fairygui_UIObjectFactory(lua_State* tolua_S)
 int lua_ax_fairygui_DragDropManager_getAgent(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::DragDropManager* cobj = nullptr;
+    fairygui::DragDropManager* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -31655,25 +31651,25 @@ int lua_ax_fairygui_DragDropManager_getAgent(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.DragDropManager",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::DragDropManager*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::DragDropManager*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_DragDropManager_getAgent'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_DragDropManager_getAgent'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_DragDropManager_getAgent'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getAgent();
+        auto&& ret = obj->getAgent();
         object_to_luaval<fairygui::GLoader>(tolua_S, "fgui.GLoader",(fairygui::GLoader*)ret);
         return 1;
     }
@@ -31690,7 +31686,7 @@ int lua_ax_fairygui_DragDropManager_getAgent(lua_State* tolua_S)
 int lua_ax_fairygui_DragDropManager_isDragging(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::DragDropManager* cobj = nullptr;
+    fairygui::DragDropManager* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -31702,25 +31698,25 @@ int lua_ax_fairygui_DragDropManager_isDragging(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.DragDropManager",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::DragDropManager*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::DragDropManager*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_DragDropManager_isDragging'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_DragDropManager_isDragging'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_DragDropManager_isDragging'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isDragging();
+        auto&& ret = obj->isDragging();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -31737,7 +31733,7 @@ int lua_ax_fairygui_DragDropManager_isDragging(lua_State* tolua_S)
 int lua_ax_fairygui_DragDropManager_startDrag(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::DragDropManager* cobj = nullptr;
+    fairygui::DragDropManager* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -31749,18 +31745,18 @@ int lua_ax_fairygui_DragDropManager_startDrag(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.DragDropManager",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::DragDropManager*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::DragDropManager*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_DragDropManager_startDrag'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_DragDropManager_startDrag'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         std::string arg0;
 
@@ -31770,11 +31766,11 @@ int lua_ax_fairygui_DragDropManager_startDrag(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_DragDropManager_startDrag'", nullptr);
             return 0;
         }
-        cobj->startDrag(arg0);
+        obj->startDrag(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         std::string arg0;
         ax::Value arg1;
@@ -31787,11 +31783,11 @@ int lua_ax_fairygui_DragDropManager_startDrag(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_DragDropManager_startDrag'", nullptr);
             return 0;
         }
-        cobj->startDrag(arg0, arg1);
+        obj->startDrag(arg0, arg1);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 3) 
+    if (argc == 3)
     {
         std::string arg0;
         ax::Value arg1;
@@ -31807,7 +31803,7 @@ int lua_ax_fairygui_DragDropManager_startDrag(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_DragDropManager_startDrag'", nullptr);
             return 0;
         }
-        cobj->startDrag(arg0, arg1, arg2);
+        obj->startDrag(arg0, arg1, arg2);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -31824,7 +31820,7 @@ int lua_ax_fairygui_DragDropManager_startDrag(lua_State* tolua_S)
 int lua_ax_fairygui_DragDropManager_cancel(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::DragDropManager* cobj = nullptr;
+    fairygui::DragDropManager* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -31836,25 +31832,25 @@ int lua_ax_fairygui_DragDropManager_cancel(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.DragDropManager",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::DragDropManager*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::DragDropManager*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_DragDropManager_cancel'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_DragDropManager_cancel'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_DragDropManager_cancel'", nullptr);
             return 0;
         }
-        cobj->cancel();
+        obj->cancel();
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -31939,7 +31935,7 @@ int lua_ax_fairygui_DragDropManager_destroyInstance(lua_State* tolua_S)
 int lua_ax_fairygui_DragDropManager_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::DragDropManager* cobj = nullptr;
+    fairygui::DragDropManager* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -31949,15 +31945,15 @@ int lua_ax_fairygui_DragDropManager_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_DragDropManager_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::DragDropManager();
-        tolua_pushusertype(tolua_S,(void*)cobj,"fgui.DragDropManager");
+        obj = new fairygui::DragDropManager();
+        tolua_pushusertype(tolua_S,(void*)obj,"fgui.DragDropManager");
         tolua_register_gc(tolua_S,lua_gettop(tolua_S));
         return 1;
     }
@@ -32000,7 +31996,7 @@ int lua_register_ax_fairygui_DragDropManager(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_setDelay(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -32012,18 +32008,18 @@ int lua_ax_fairygui_GTweener_setDelay(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_setDelay'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_setDelay'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -32033,7 +32029,7 @@ int lua_ax_fairygui_GTweener_setDelay(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_setDelay'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->setDelay(arg0);
+        auto&& ret = obj->setDelay(arg0);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fgui.GTweener",(fairygui::GTweener*)ret);
         return 1;
     }
@@ -32050,7 +32046,7 @@ int lua_ax_fairygui_GTweener_setDelay(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_getDelay(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -32062,25 +32058,25 @@ int lua_ax_fairygui_GTweener_getDelay(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_getDelay'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_getDelay'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_getDelay'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getDelay();
+        auto&& ret = obj->getDelay();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -32097,7 +32093,7 @@ int lua_ax_fairygui_GTweener_getDelay(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_setDuration(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -32109,18 +32105,18 @@ int lua_ax_fairygui_GTweener_setDuration(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_setDuration'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_setDuration'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -32130,7 +32126,7 @@ int lua_ax_fairygui_GTweener_setDuration(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_setDuration'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->setDuration(arg0);
+        auto&& ret = obj->setDuration(arg0);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fgui.GTweener",(fairygui::GTweener*)ret);
         return 1;
     }
@@ -32147,7 +32143,7 @@ int lua_ax_fairygui_GTweener_setDuration(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_getDuration(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -32159,25 +32155,25 @@ int lua_ax_fairygui_GTweener_getDuration(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_getDuration'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_getDuration'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_getDuration'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getDuration();
+        auto&& ret = obj->getDuration();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -32194,7 +32190,7 @@ int lua_ax_fairygui_GTweener_getDuration(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_setBreakpoint(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -32206,18 +32202,18 @@ int lua_ax_fairygui_GTweener_setBreakpoint(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_setBreakpoint'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_setBreakpoint'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -32227,7 +32223,7 @@ int lua_ax_fairygui_GTweener_setBreakpoint(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_setBreakpoint'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->setBreakpoint(arg0);
+        auto&& ret = obj->setBreakpoint(arg0);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fgui.GTweener",(fairygui::GTweener*)ret);
         return 1;
     }
@@ -32244,7 +32240,7 @@ int lua_ax_fairygui_GTweener_setBreakpoint(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_setEase(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -32256,18 +32252,18 @@ int lua_ax_fairygui_GTweener_setEase(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_setEase'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_setEase'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::EaseType arg0;
 
@@ -32277,7 +32273,7 @@ int lua_ax_fairygui_GTweener_setEase(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_setEase'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->setEase(arg0);
+        auto&& ret = obj->setEase(arg0);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fgui.GTweener",(fairygui::GTweener*)ret);
         return 1;
     }
@@ -32294,7 +32290,7 @@ int lua_ax_fairygui_GTweener_setEase(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_setEasePeriod(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -32306,18 +32302,18 @@ int lua_ax_fairygui_GTweener_setEasePeriod(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_setEasePeriod'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_setEasePeriod'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -32327,7 +32323,7 @@ int lua_ax_fairygui_GTweener_setEasePeriod(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_setEasePeriod'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->setEasePeriod(arg0);
+        auto&& ret = obj->setEasePeriod(arg0);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fgui.GTweener",(fairygui::GTweener*)ret);
         return 1;
     }
@@ -32344,7 +32340,7 @@ int lua_ax_fairygui_GTweener_setEasePeriod(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_setEaseOvershootOrAmplitude(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -32356,18 +32352,18 @@ int lua_ax_fairygui_GTweener_setEaseOvershootOrAmplitude(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_setEaseOvershootOrAmplitude'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_setEaseOvershootOrAmplitude'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -32377,7 +32373,7 @@ int lua_ax_fairygui_GTweener_setEaseOvershootOrAmplitude(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_setEaseOvershootOrAmplitude'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->setEaseOvershootOrAmplitude(arg0);
+        auto&& ret = obj->setEaseOvershootOrAmplitude(arg0);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fgui.GTweener",(fairygui::GTweener*)ret);
         return 1;
     }
@@ -32394,7 +32390,7 @@ int lua_ax_fairygui_GTweener_setEaseOvershootOrAmplitude(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_setRepeat(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -32406,18 +32402,18 @@ int lua_ax_fairygui_GTweener_setRepeat(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_setRepeat'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_setRepeat'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         int arg0;
 
@@ -32427,11 +32423,11 @@ int lua_ax_fairygui_GTweener_setRepeat(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_setRepeat'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->setRepeat(arg0);
+        auto&& ret = obj->setRepeat(arg0);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fgui.GTweener",(fairygui::GTweener*)ret);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         int arg0;
         bool arg1;
@@ -32444,7 +32440,7 @@ int lua_ax_fairygui_GTweener_setRepeat(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_setRepeat'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->setRepeat(arg0, arg1);
+        auto&& ret = obj->setRepeat(arg0, arg1);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fgui.GTweener",(fairygui::GTweener*)ret);
         return 1;
     }
@@ -32461,7 +32457,7 @@ int lua_ax_fairygui_GTweener_setRepeat(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_getRepeat(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -32473,25 +32469,25 @@ int lua_ax_fairygui_GTweener_getRepeat(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_getRepeat'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_getRepeat'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_getRepeat'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getRepeat();
+        auto&& ret = obj->getRepeat();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -32508,7 +32504,7 @@ int lua_ax_fairygui_GTweener_getRepeat(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_setTimeScale(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -32520,18 +32516,18 @@ int lua_ax_fairygui_GTweener_setTimeScale(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_setTimeScale'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_setTimeScale'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -32541,7 +32537,7 @@ int lua_ax_fairygui_GTweener_setTimeScale(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_setTimeScale'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->setTimeScale(arg0);
+        auto&& ret = obj->setTimeScale(arg0);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fgui.GTweener",(fairygui::GTweener*)ret);
         return 1;
     }
@@ -32558,7 +32554,7 @@ int lua_ax_fairygui_GTweener_setTimeScale(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_setSnapping(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -32570,18 +32566,18 @@ int lua_ax_fairygui_GTweener_setSnapping(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_setSnapping'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_setSnapping'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -32591,7 +32587,7 @@ int lua_ax_fairygui_GTweener_setSnapping(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_setSnapping'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->setSnapping(arg0);
+        auto&& ret = obj->setSnapping(arg0);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fgui.GTweener",(fairygui::GTweener*)ret);
         return 1;
     }
@@ -32608,7 +32604,7 @@ int lua_ax_fairygui_GTweener_setSnapping(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_setTargetAny(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -32620,18 +32616,18 @@ int lua_ax_fairygui_GTweener_setTargetAny(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_setTargetAny'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_setTargetAny'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         void* arg0;
 
@@ -32642,7 +32638,7 @@ int lua_ax_fairygui_GTweener_setTargetAny(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_setTargetAny'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->setTargetAny(arg0);
+        auto&& ret = obj->setTargetAny(arg0);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fgui.GTweener",(fairygui::GTweener*)ret);
         return 1;
     }
@@ -32659,7 +32655,7 @@ int lua_ax_fairygui_GTweener_setTargetAny(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_setTarget(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -32671,18 +32667,18 @@ int lua_ax_fairygui_GTweener_setTarget(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_setTarget'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_setTarget'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         ax::Object* arg0;
 
@@ -32692,11 +32688,11 @@ int lua_ax_fairygui_GTweener_setTarget(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_setTarget'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->setTarget(arg0);
+        auto&& ret = obj->setTarget(arg0);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fgui.GTweener",(fairygui::GTweener*)ret);
         return 1;
     }
-    if (argc == 2) 
+    if (argc == 2)
     {
         ax::Object* arg0;
         fairygui::TweenPropType arg1;
@@ -32709,7 +32705,7 @@ int lua_ax_fairygui_GTweener_setTarget(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_setTarget'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->setTarget(arg0, arg1);
+        auto&& ret = obj->setTarget(arg0, arg1);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fgui.GTweener",(fairygui::GTweener*)ret);
         return 1;
     }
@@ -32726,7 +32722,7 @@ int lua_ax_fairygui_GTweener_setTarget(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_getTarget(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -32738,25 +32734,25 @@ int lua_ax_fairygui_GTweener_getTarget(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_getTarget'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_getTarget'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_getTarget'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getTarget();
+        auto&& ret = obj->getTarget();
         #pragma warning NO CONVERSION FROM NATIVE FOR void*;
         return 1;
     }
@@ -32773,7 +32769,7 @@ int lua_ax_fairygui_GTweener_getTarget(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_setUserData(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -32785,18 +32781,18 @@ int lua_ax_fairygui_GTweener_setUserData(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_setUserData'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_setUserData'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         ax::Value arg0;
 
@@ -32806,7 +32802,7 @@ int lua_ax_fairygui_GTweener_setUserData(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_setUserData'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->setUserData(arg0);
+        auto&& ret = obj->setUserData(arg0);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fgui.GTweener",(fairygui::GTweener*)ret);
         return 1;
     }
@@ -32823,7 +32819,7 @@ int lua_ax_fairygui_GTweener_setUserData(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_setPath(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -32835,18 +32831,18 @@ int lua_ax_fairygui_GTweener_setPath(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_setPath'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_setPath'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         fairygui::GPath* arg0;
 
@@ -32856,7 +32852,7 @@ int lua_ax_fairygui_GTweener_setPath(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_setPath'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->setPath(arg0);
+        auto&& ret = obj->setPath(arg0);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fgui.GTweener",(fairygui::GTweener*)ret);
         return 1;
     }
@@ -32873,7 +32869,7 @@ int lua_ax_fairygui_GTweener_setPath(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_getUserData(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -32885,25 +32881,25 @@ int lua_ax_fairygui_GTweener_getUserData(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_getUserData'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_getUserData'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_getUserData'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getUserData();
+        auto&& ret = obj->getUserData();
         ccvalue_to_luaval(tolua_S, ret);
         return 1;
     }
@@ -32920,7 +32916,7 @@ int lua_ax_fairygui_GTweener_getUserData(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_getNormalizedTime(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -32932,25 +32928,25 @@ int lua_ax_fairygui_GTweener_getNormalizedTime(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_getNormalizedTime'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_getNormalizedTime'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_getNormalizedTime'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->getNormalizedTime();
+        auto&& ret = obj->getNormalizedTime();
         tolua_pushnumber(tolua_S,(lua_Number)ret);
         return 1;
     }
@@ -32967,7 +32963,7 @@ int lua_ax_fairygui_GTweener_getNormalizedTime(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_isCompleted(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -32979,25 +32975,25 @@ int lua_ax_fairygui_GTweener_isCompleted(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_isCompleted'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_isCompleted'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_isCompleted'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->isCompleted();
+        auto&& ret = obj->isCompleted();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -33014,7 +33010,7 @@ int lua_ax_fairygui_GTweener_isCompleted(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_allCompleted(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -33026,25 +33022,25 @@ int lua_ax_fairygui_GTweener_allCompleted(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_allCompleted'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_allCompleted'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_allCompleted'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->allCompleted();
+        auto&& ret = obj->allCompleted();
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
@@ -33061,7 +33057,7 @@ int lua_ax_fairygui_GTweener_allCompleted(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_setPaused(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -33073,18 +33069,18 @@ int lua_ax_fairygui_GTweener_setPaused(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_setPaused'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_setPaused'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -33094,7 +33090,7 @@ int lua_ax_fairygui_GTweener_setPaused(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_setPaused'", nullptr);
             return 0;
         }
-        auto&& ret = cobj->setPaused(arg0);
+        auto&& ret = obj->setPaused(arg0);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fgui.GTweener",(fairygui::GTweener*)ret);
         return 1;
     }
@@ -33111,7 +33107,7 @@ int lua_ax_fairygui_GTweener_setPaused(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_seek(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -33123,18 +33119,18 @@ int lua_ax_fairygui_GTweener_seek(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_seek'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_seek'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 1)
     {
         double arg0;
 
@@ -33144,7 +33140,7 @@ int lua_ax_fairygui_GTweener_seek(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_seek'", nullptr);
             return 0;
         }
-        cobj->seek(arg0);
+        obj->seek(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -33161,7 +33157,7 @@ int lua_ax_fairygui_GTweener_seek(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_kill(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -33173,29 +33169,29 @@ int lua_ax_fairygui_GTweener_kill(lua_State* tolua_S)
     if (!tolua_isusertype(tolua_S,1,"fgui.GTweener",0,&tolua_err)) goto tolua_lerror;
 #endif
 
-    cobj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
+    obj = (fairygui::GTweener*)tolua_tousertype(tolua_S,1,0);
 
 #if _AX_DEBUG >= 1
-    if (!cobj)
+    if (!obj)
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_ax_fairygui_GTweener_kill'", nullptr);
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_fairygui_GTweener_kill'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_kill'", nullptr);
             return 0;
         }
-        cobj->kill();
+        obj->kill();
         lua_settop(tolua_S, 1);
         return 1;
     }
-    if (argc == 1) 
+    if (argc == 1)
     {
         bool arg0;
 
@@ -33205,7 +33201,7 @@ int lua_ax_fairygui_GTweener_kill(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_kill'", nullptr);
             return 0;
         }
-        cobj->kill(arg0);
+        obj->kill(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -33222,7 +33218,7 @@ int lua_ax_fairygui_GTweener_kill(lua_State* tolua_S)
 int lua_ax_fairygui_GTweener_constructor(lua_State* tolua_S)
 {
     int argc = 0;
-    fairygui::GTweener* cobj = nullptr;
+    fairygui::GTweener* obj = nullptr;
     bool ok  = true;
 
 #if _AX_DEBUG >= 1
@@ -33232,18 +33228,18 @@ int lua_ax_fairygui_GTweener_constructor(lua_State* tolua_S)
 
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
+    if (argc == 0)
     {
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_ax_fairygui_GTweener_constructor'", nullptr);
             return 0;
         }
-        cobj = new fairygui::GTweener();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)cobj,"fgui.GTweener");
+        obj = new fairygui::GTweener();
+        obj->autorelease();
+        int ID =  (int)obj->_ID ;
+        int* luaID =  &obj->_luaID ;
+        toluafix_pushusertype_object(tolua_S, ID, luaID, (void*)obj,"fgui.GTweener");
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fgui.GTweener:GTweener",argc, 0);
@@ -33887,46 +33883,46 @@ int lua_register_ax_fairygui_GTween(lua_State* tolua_S)
 }
 TOLUA_API int register_all_ax_fairygui(lua_State* tolua_S)
 {
-	tolua_open(tolua_S);
-	
-	tolua_module(tolua_S,"fgui",0);
-	tolua_beginmodule(tolua_S,"fgui");
+    tolua_open(tolua_S);
 
-	lua_register_ax_fairygui_InputEvent(tolua_S);
-	lua_register_ax_fairygui_EventContext(tolua_S);
-	lua_register_ax_fairygui_UIEventDispatcher(tolua_S);
-	lua_register_ax_fairygui_GController(tolua_S);
-	lua_register_ax_fairygui_GObject(tolua_S);
-	lua_register_ax_fairygui_UIPackage(tolua_S);
-	lua_register_ax_fairygui_GImage(tolua_S);
-	lua_register_ax_fairygui_GMovieClip(tolua_S);
-	lua_register_ax_fairygui_GTextField(tolua_S);
-	lua_register_ax_fairygui_GBasicTextField(tolua_S);
-	lua_register_ax_fairygui_GRichTextField(tolua_S);
-	lua_register_ax_fairygui_GTextInput(tolua_S);
-	lua_register_ax_fairygui_GGraph(tolua_S);
-	lua_register_ax_fairygui_GLoader(tolua_S);
-	lua_register_ax_fairygui_GGroup(tolua_S);
-	lua_register_ax_fairygui_ScrollPane(tolua_S);
-	lua_register_ax_fairygui_Transition(tolua_S);
-	lua_register_ax_fairygui_GComponent(tolua_S);
-	lua_register_ax_fairygui_GButton(tolua_S);
-	lua_register_ax_fairygui_GObjectPool(tolua_S);
-	lua_register_ax_fairygui_GList(tolua_S);
-	lua_register_ax_fairygui_GComboBox(tolua_S);
-	lua_register_ax_fairygui_GProgressBar(tolua_S);
-	lua_register_ax_fairygui_GSlider(tolua_S);
-	lua_register_ax_fairygui_GScrollBar(tolua_S);
-	lua_register_ax_fairygui_Window(tolua_S);
-	lua_register_ax_fairygui_GRoot(tolua_S);
-	lua_register_ax_fairygui_PopupMenu(tolua_S);
-	lua_register_ax_fairygui_UIObjectFactory(tolua_S);
-	lua_register_ax_fairygui_DragDropManager(tolua_S);
-	lua_register_ax_fairygui_GTweener(tolua_S);
-	lua_register_ax_fairygui_GTween(tolua_S);
+    tolua_module(tolua_S,"fgui",0);
+    tolua_beginmodule(tolua_S,"fgui");
 
-	tolua_endmodule(tolua_S);
-	return 1;
+    lua_register_ax_fairygui_InputEvent(tolua_S);
+    lua_register_ax_fairygui_EventContext(tolua_S);
+    lua_register_ax_fairygui_UIEventDispatcher(tolua_S);
+    lua_register_ax_fairygui_GController(tolua_S);
+    lua_register_ax_fairygui_GObject(tolua_S);
+    lua_register_ax_fairygui_UIPackage(tolua_S);
+    lua_register_ax_fairygui_GImage(tolua_S);
+    lua_register_ax_fairygui_GMovieClip(tolua_S);
+    lua_register_ax_fairygui_GTextField(tolua_S);
+    lua_register_ax_fairygui_GBasicTextField(tolua_S);
+    lua_register_ax_fairygui_GRichTextField(tolua_S);
+    lua_register_ax_fairygui_GTextInput(tolua_S);
+    lua_register_ax_fairygui_GGraph(tolua_S);
+    lua_register_ax_fairygui_GLoader(tolua_S);
+    lua_register_ax_fairygui_GGroup(tolua_S);
+    lua_register_ax_fairygui_ScrollPane(tolua_S);
+    lua_register_ax_fairygui_Transition(tolua_S);
+    lua_register_ax_fairygui_GComponent(tolua_S);
+    lua_register_ax_fairygui_GButton(tolua_S);
+    lua_register_ax_fairygui_GObjectPool(tolua_S);
+    lua_register_ax_fairygui_GList(tolua_S);
+    lua_register_ax_fairygui_GComboBox(tolua_S);
+    lua_register_ax_fairygui_GProgressBar(tolua_S);
+    lua_register_ax_fairygui_GSlider(tolua_S);
+    lua_register_ax_fairygui_GScrollBar(tolua_S);
+    lua_register_ax_fairygui_Window(tolua_S);
+    lua_register_ax_fairygui_GRoot(tolua_S);
+    lua_register_ax_fairygui_PopupMenu(tolua_S);
+    lua_register_ax_fairygui_UIObjectFactory(tolua_S);
+    lua_register_ax_fairygui_DragDropManager(tolua_S);
+    lua_register_ax_fairygui_GTweener(tolua_S);
+    lua_register_ax_fairygui_GTween(tolua_S);
+
+    tolua_endmodule(tolua_S);
+    return 1;
 }
 
 #endif
