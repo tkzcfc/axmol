@@ -31,7 +31,6 @@ set(lua_bindings_manual_headers
   manual/fairygui/lua_fairygui.hpp
   manual/fairygui/axlua_fairygui_manual.hpp
   manual/fairygui/axlua_fairygui_conversions.h
-  manual/webm/ax_webm_manual.hpp
 )
 
 set(lua_bindings_manual_files
@@ -68,7 +67,6 @@ set(lua_bindings_manual_files
   manual/fairygui/lua_fairygui.cpp
   manual/fairygui/axlua_fairygui_manual.cpp
   manual/fairygui/axlua_fairygui_conversions.cpp
-  manual/webm/ax_webm_manual.cpp
 )
 
 set(lua_bindings_auto_headers
@@ -86,7 +84,6 @@ set(lua_bindings_auto_headers
   auto/axlua_extension_auto.hpp
   auto/axlua_backend_auto.hpp
   auto/axlua_fairygui_auto.hpp
-  auto/axlua_webm_auto.hpp
 )
 
 set(lua_bindings_auto_files
@@ -104,8 +101,33 @@ set(lua_bindings_auto_files
   auto/axlua_navmesh_auto.cpp
   auto/axlua_backend_auto.cpp
   auto/axlua_fairygui_auto.cpp
-  auto/axlua_webm_auto.cpp
 )
+
+if(AX_ENABLE_EXT_WEBM)
+set(lua_bindings_manual_headers
+    ${lua_bindings_manual_headers}
+    auto/axlua_webm_auto.hpp
+    manual/webm/ax_webm_manual.hpp
+)
+set(lua_bindings_manual_files
+    ${lua_bindings_manual_files}
+    auto/axlua_webm_auto.cpp
+    manual/webm/ax_webm_manual.cpp
+)
+endif()
+
+if(AX_ENABLE_EXT_MPEGPLAYER)
+set(lua_bindings_manual_headers
+    ${lua_bindings_manual_headers}
+    auto/axlua_mpegplayer_auto.hpp
+    manual/mpegplayer/ax_mpegplayer_manual.hpp
+    )
+set(lua_bindings_manual_files
+    ${lua_bindings_manual_files}
+    auto/axlua_mpegplayer_auto.cpp
+    manual/mpegplayer/ax_mpegplayer_manual.cpp
+    )
+endif()
 
 if(WINDOWS OR MACOSX)
 set(lua_bindings_manual_headers
@@ -247,6 +269,8 @@ endif()
 
 ax_config_pred(${_AX_LUA_LIB} AX_ENABLE_EXT_SPINE)
 ax_config_pred(${_AX_LUA_LIB} AX_ENABLE_EXT_FAIRYGUI)
+ax_config_pred(${_AX_LUA_LIB} AX_ENABLE_EXT_WEBM)
+ax_config_pred(${_AX_LUA_LIB} AX_ENABLE_EXT_MPEGPLAYER)
 
 get_target_property(lua_ext_depend 3rdparty AX_LUA_DEPEND)
 target_link_libraries(${_AX_LUA_LIB} ${lua_ext_depend})

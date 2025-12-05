@@ -82,6 +82,10 @@ if(AX_ENABLE_EXT_WEBM)
   add_subdirectory(webm)
 endif()
 
+if(AX_ENABLE_EXT_MPEGPLAYER)
+  add_subdirectory(MPEGPlayer)
+endif()
+
 if(AX_ENABLE_EXT_IMGUI)
   add_subdirectory(ImGui)
   option(AX_ENABLE_EXT_INSPECTOR "Enable extension Inspector" ON)

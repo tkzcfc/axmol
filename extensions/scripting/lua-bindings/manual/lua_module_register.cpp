@@ -35,7 +35,12 @@
 #include "lua-bindings/manual/audioengine/axlua_audioengine_manual.h"
 #include "lua-bindings/manual/physics3d/axlua_physics3d_manual.h"
 #include "lua-bindings/manual/navmesh/axlua_navmesh_manual.h"
+#if defined(AX_ENABLE_EXT_WEBM)
 #include "lua-bindings/manual/webm/ax_webm_manual.hpp"
+#endif
+#if defined(AX_ENABLE_EXT_MPEGPLAYER)
+#include "lua-bindings/manual/mpegplayer/ax_mpegplayer_manual.hpp"
+#endif
 #ifdef AX_PLATFORM_PC
 #include "lua-bindings/manual/imgui/imgui_lua.hpp"
 #endif  // defined(AX_PLATFORM_PC)
@@ -124,7 +129,12 @@ int lua_module_register(lua_State* L)
 #endif  // defined(AX_USE_ENGINE_FAIRYGUI_LUA_BINDING)
 #endif // defined(AX_ENABLE_EXT_FAIRYGUI)
 
+#if defined(AX_ENABLE_EXT_WEBM)
     register_webm_module(L);
+#endif
+#if defined(AX_ENABLE_EXT_MPEGPLAYER)
+    register_mpegplayer_module(L);
+#endif
 
     // register extensions: yaiso, lua-cjson
     lua_register_extensions(L);

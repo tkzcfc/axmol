@@ -252,6 +252,7 @@ def main():
                     'ax_navmesh.ini' : ('ax_navmesh', 'axlua_navmesh_auto'), \
                     'ax_fairygui.ini' : ('ax_fairygui', 'axlua_fairygui_auto'), \
                     'ax_webm.ini' : ('ax_webm', 'axlua_webm_auto'), \
+                    'ax_mpegplayer.ini' : ('ax_mpegplayer', 'axlua_mpegplayer_auto'), \
                     }
         target = 'lua'
         generator_py = '%s/generator.py' % cxx_generator_root
