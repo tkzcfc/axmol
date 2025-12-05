@@ -47,7 +47,7 @@ bool MPEGPlayer::initWithMPEG(const std::string& filename, bool useAsyncDecoding
     else
         m_decoder = std::make_unique<mpeg::SyncDecodeStrategy>();
 
-    if (m_decoder || !m_decoder->initialize(filename))
+    if (!m_decoder || !m_decoder->initialize(filename))
     {
         m_decoder = nullptr;
         return false;
