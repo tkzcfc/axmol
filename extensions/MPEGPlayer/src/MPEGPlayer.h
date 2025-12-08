@@ -14,23 +14,48 @@ public:
 
     virtual ~MPEGPlayer();
 
-    static MPEGPlayer* create(const std::string& filename, bool useAsyncDecoding = true);
+    static MPEGPlayer* create();
 
     virtual bool init() override;
 
-    bool initWithMPEG(const std::string& filename, bool useAsyncDecoding);
+    /**
+     * Set the MPEG file to play
+    */
+    virtual void setVideoFile(const std::string& filename);
 
     /**
-     * @brief Set if playback is done in loop mode
+     * Get the MPEG file
      *
-     * @param looping the video will or not automatically restart at the end
+     * @return The video file name.
      */
-    virtual void setLooping(bool looping);
+    virtual const std::string getVideoFile() const;
+
+    /**
+    * Set if use async decoding
+    */
+    virtual void setUseAsyncDecoding(bool useAsyncDecoding);
+
+    /**
+     * Get if use async decoding
+     *
+     * @return true if use async decoding
+     */
+    virtual bool isUseAsyncDecoding() const;
+
+    /**
+     * Get video width
+    */
+    virtual int getVideoWidth() const;
+
+    /**
+     * Get video height
+    */
+    virtual int getVideoHeight() const;
 
     /**
      * Starts playback.
      */
-    virtual void play();
+    virtual bool play();
 
     /**
      * Pauses actions and playback.
@@ -43,16 +68,16 @@ public:
     void resume() override;
 
     /**
-     * @brief Pauses playback
+     * Pauses playback
      *
      */
-    void pausePlayback();
+    virtual void pausePlayback();
 
     /**
-     * @brief Resumes playback
+     * Resumes playback
      *
      */
-    void resumePlayback();
+    virtual void resumePlayback();
 
     /**
      * Stops playback.
@@ -81,18 +106,59 @@ public:
     virtual double getDuration();
 
     /**
-     * Checks whether the MediaPlayer is playing.
+     * Checks whether the MPEGPlayer is playing.
      *
      * @return True if currently playing, false otherwise.
      */
     virtual bool isPlaying() const;
 
     /**
-     * Checks whether the MediaPlayer is set with looping mode.
+     * Set if playback is done in loop mode
+     *
+     * @param looping the video will or not automatically restart at the end
+     */
+    virtual void setLooping(bool looping);
+
+    /**
+     * Checks whether the MPEGPlayer is set with looping mode.
      *
      * @return true if the videoplayer is set to loop, false otherwise.
      */
     virtual bool isLooping() const;
+
+    /**
+     * Enable or disable audio playback
+    */
+    virtual void setAudioEnabled(bool enabled);
+
+    /**
+     * Checks whether audio playback is enabled.
+    */
+    virtual bool isAudioEnabled() const;
+
+    /**
+     * Enable or disable video playback
+    */
+    virtual void setVideoEnabled(bool enabled);
+
+    /**
+     * Checks whether video playback is enabled.
+    */
+    virtual bool isVideoEnabled() const;
+
+    /**
+     * Set the audio volume
+     *
+     * @param volume The volume value (range from 0.0 to 1.0).
+     */
+    void setVolume(float volume);
+
+    /**
+     * Get the audio volume
+     *
+     * @return The volume value (range from 0.0 to 1.0).
+     */
+    float getVolume() const;
 
 private:
     void update(float dt) override;
@@ -102,6 +168,11 @@ private:
     Texture2D* m_texture_cb;
     Texture2D* m_texture_cr;
     bool m_isPasued;
+    bool m_useAsyncDecoding;
+    bool m_audioEnabled;
+    bool m_videoEnabled;
+    std::string m_videoFile;
+    float m_volume;
 };
 
 }  // namespace ax
