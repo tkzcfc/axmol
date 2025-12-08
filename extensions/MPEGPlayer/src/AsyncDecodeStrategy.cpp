@@ -28,6 +28,7 @@ struct AsyncVideoFrame
 static void decoder_loop(
     plm_t* plm,
     ax::IFileStream* fs,
+    std::shared_ptr<std::atomic_bool> startFlag,
     std::shared_ptr<std::atomic_bool> exitFlag,
     std::shared_ptr<std::atomic_bool> isReady,
     std::shared_ptr<std::atomic_bool> isPlayEnd,
@@ -39,11 +40,18 @@ static void decoder_loop(
     AsyncVideoFrame* videoFrame = nullptr;
     plm_frame_t* plmFrame       = nullptr;
 
-    plm_set_audio_enabled(plm, 0);
     plm_set_video_decode_callback(plm, [](plm_t* mpeg, plm_frame_t* frame, void* user) -> void {
         plm_frame_t** plmFramePtr = static_cast<plm_frame_t**>(user);
         *plmFramePtr              = frame;
     }, &plmFrame);
+    plm_set_audio_decode_callback(plm, [](plm_t* self, plm_samples_t* samples, void* user) -> void {
+
+    }, nullptr);
+
+    while (!startFlag->load())
+    {
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
+    }
 
     while (!exitFlag->load())
     {
@@ -138,6 +146,7 @@ AsyncDecodeStrategy::AsyncDecodeStrategy()
     , m_decodingThread(nullptr)
     , m_looping(false)
     , m_unusedVideoFrame(nullptr)
+    , m_waitFirstFrame(true)
 {}
 
 AsyncDecodeStrategy::~AsyncDecodeStrategy()
@@ -153,6 +162,11 @@ AsyncDecodeStrategy::~AsyncDecodeStrategy()
     if (m_unusedVideoFrame)
     {
         AX_SAFE_DELETE(m_unusedVideoFrame);
+    }
+
+    if (m_startFlag)
+    {
+        m_startFlag->store(true);
     }
 
     if (m_exitFlag)
@@ -175,12 +189,14 @@ bool AsyncDecodeStrategy::initialize(const std::string& filename)
     if (plm == nullptr)
         return false;
 
+    m_waitFirstFrame = true;
     m_currentTime = 0.0;
     m_duration    = plm_get_duration(plm);
     m_videoWidth  = plm_get_width(plm);
     m_videoHeight = plm_get_height(plm);
     m_looping     = plm_get_loop(plm) != 0;
 
+    m_startFlag = std::make_shared<std::atomic_bool>(false);
     m_exitFlag                = std::make_shared<std::atomic_bool>(false);
     m_isReady                 = std::make_shared<std::atomic_bool>(false);
     m_isPlayEnd               = std::make_shared<std::atomic_bool>(false);
@@ -202,7 +218,7 @@ bool AsyncDecodeStrategy::initialize(const std::string& filename)
         }
     }
 
-    m_decodingThread = std::make_unique<std::thread>(decoder_loop, plm, fs, m_exitFlag, m_isReady, m_isPlayEnd,
+    m_decodingThread = std::make_unique<std::thread>(decoder_loop, plm, fs, m_startFlag, m_exitFlag, m_isReady, m_isPlayEnd,
                                                      m_freeVideoFrame, m_decodedVideoFrame, m_decodingThreadOperation);
     if (!m_decodingThread)
     {
@@ -240,15 +256,53 @@ VideoFrame* AsyncDecodeStrategy::decode(double dt)
 
     if (m_unusedVideoFrame)
     {
-        if (m_currentTime >= m_unusedVideoFrame->frame.time)
+        if (m_waitFirstFrame)
         {
-            m_videoFrame.frame = &m_unusedVideoFrame->frame;
+            if (m_currentTime >= m_unusedVideoFrame->frame.time)
+            {
+                m_videoFrame.frame = &m_unusedVideoFrame->frame;
+                m_waitFirstFrame   = false;
+            }
             m_renderVideoFrame->enqueue(m_unusedVideoFrame);
             m_unusedVideoFrame = nullptr;
+        }
+        else
+        {
+            if (m_currentTime >= m_unusedVideoFrame->frame.time)
+            {
+                m_videoFrame.frame = &m_unusedVideoFrame->frame;
+                m_renderVideoFrame->enqueue(m_unusedVideoFrame);
+                m_unusedVideoFrame = nullptr;
+            }
+        }
+    }
+
+    if (m_currentTime > m_duration)
+    {
+        if (m_looping)
+        {
+            m_currentTime    = 0.0f;
+            m_waitFirstFrame = true;
+        }
+        else
+        {
+            m_currentTime = m_duration;
         }
     }
 
     return &m_videoFrame;
+}
+
+void AsyncDecodeStrategy::start()
+{
+    if (m_startFlag)
+    {
+        m_startFlag->store(true);
+    }
+}
+
+void AsyncDecodeStrategy::stop()
+{
 }
 
 bool AsyncDecodeStrategy::seekTo(double time_sec)
@@ -281,21 +335,36 @@ bool AsyncDecodeStrategy::isLooping() const
 {
     return m_looping;
 }
+
 double AsyncDecodeStrategy::getDuration() const
 {
     return m_duration;
 }
+
 double AsyncDecodeStrategy::getCurrentTime() const
 {
     return m_currentTime;
 }
+
 int AsyncDecodeStrategy::getVideoWidth() const
 {
     return m_videoWidth;
 }
+
 int AsyncDecodeStrategy::getVideoHeight() const
 {
     return m_videoHeight;
 }
+void AsyncDecodeStrategy::setAudioEnabled(bool enabled)
+{
+    m_decodingThreadOperation->enqueue([enabled](plm_t* plm) { plm_set_audio_enabled(plm, enabled ? 1 : 0); });
+}
+
+void AsyncDecodeStrategy::setVideoEnabled(bool enabled)
+{
+    m_decodingThreadOperation->enqueue([enabled](plm_t* plm) { plm_set_video_enabled(plm, enabled ? 1 : 0); });
+}
+
+void AsyncDecodeStrategy::setVolume(float volume) {}
 
 }  // namespace mpeg

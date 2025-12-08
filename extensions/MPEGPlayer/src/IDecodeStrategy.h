@@ -19,6 +19,8 @@ public:
 
     virtual VideoFrame* decode(double dt) = 0;
 
+    virtual void start()                  = 0;
+    virtual void stop()                   = 0;
     virtual bool seekTo(double time_sec)  = 0;
     virtual void setLooping(bool loop)    = 0;
     virtual bool isLooping() const        = 0;
@@ -26,6 +28,9 @@ public:
     virtual double getCurrentTime() const = 0;
     virtual int getVideoWidth() const     = 0;
     virtual int getVideoHeight() const    = 0;
+    virtual void setAudioEnabled(bool enabled) = 0;
+    virtual void setVideoEnabled(bool enabled) = 0;
+    virtual void setVolume(float volume)       = 0;
 };
 
 }  // namespace mpeg

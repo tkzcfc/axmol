@@ -5,10 +5,18 @@
 namespace mpeg
 {
 
-SyncDecodeStrategy::SyncDecodeStrategy() : m_fs(nullptr), m_plm(nullptr), m_frame(nullptr) {}
+SyncDecodeStrategy::SyncDecodeStrategy()
+    : m_fs(nullptr)
+    , m_plm(nullptr)
+    , m_frame(nullptr)
+    , m_audioPlayer(nullptr)
+    , m_samplerate(0)
+    , m_volume(1.0f)
+{}
 
 SyncDecodeStrategy::~SyncDecodeStrategy()
 {
+    AX_SAFE_DELETE(m_audioPlayer);
     if (m_plm)
     {
         plm_destroy(m_plm);
@@ -26,11 +34,20 @@ bool SyncDecodeStrategy::initialize(const std::string& filename)
     if (m_plm == nullptr)
         return false;
 
-    plm_set_audio_enabled(m_plm, 0);
-    plm_set_video_decode_callback(m_plm, [](plm_t* mpeg, plm_frame_t* frame, void* user) -> void {
+    m_samplerate = plm_get_samplerate(m_plm);
+
+    plm_set_video_decode_callback(m_plm, [](plm_t* plm, plm_frame_t* frame, void* user) -> void {
         auto* self          = static_cast<SyncDecodeStrategy*>(user);
         self->m_frame.frame = frame;
     }, this);
+    plm_set_audio_decode_callback(m_plm, [](plm_t* plm, plm_samples_t* samples, void* user) -> void {}, nullptr);
+    
+	plm_set_audio_stream(m_plm, 0);
+    if (plm_get_num_audio_streams(m_plm) > 0)
+    {
+        // Adjust the audio lead time according to the audio_spec buffer size
+        plm_set_audio_lead_time(m_plm, (double)4096 / (double)m_samplerate);
+    }
 
     return true;
 }
@@ -44,6 +61,25 @@ VideoFrame* SyncDecodeStrategy::decode(double dt)
     m_frame.frame = nullptr;
     plm_decode(m_plm, static_cast<double>(dt));
     return &m_frame;
+}
+
+void SyncDecodeStrategy::start()
+{
+    if (m_plm && plm_get_audio_enabled(m_plm))
+    {
+        assert(!m_audioPlayer);
+        m_audioPlayer = new AudioStreamPlayer(m_samplerate, 2);
+        m_audioPlayer->setVolume(m_volume);
+
+        plm_set_audio_decode_callback(m_plm, [](plm_t* plm, plm_samples_t* samples, void* user) -> void {
+            auto* player = (AudioStreamPlayer*)user;
+            player->pushFrame(samples->interleaved, samples->count);
+        }, m_audioPlayer);
+    }
+}
+
+void SyncDecodeStrategy::stop()
+{
 }
 
 bool SyncDecodeStrategy::seekTo(double time_sec)
@@ -75,6 +111,7 @@ double SyncDecodeStrategy::getDuration() const
     else
         return 0.0;
 }
+
 double SyncDecodeStrategy::getCurrentTime() const
 {
     if (m_plm)
@@ -90,6 +127,7 @@ int SyncDecodeStrategy::getVideoWidth() const
     else
         return 0;
 }
+
 int SyncDecodeStrategy::getVideoHeight() const
 {
     if (m_plm)
@@ -97,4 +135,25 @@ int SyncDecodeStrategy::getVideoHeight() const
     else
         return 0;
 }
+
+void SyncDecodeStrategy::setAudioEnabled(bool enabled)
+{
+    if (m_plm)
+        plm_set_audio_enabled(m_plm, enabled ? 1 : 0);
+}
+
+void SyncDecodeStrategy::setVideoEnabled(bool enabled)
+{
+    if (m_plm)
+        plm_set_video_enabled(m_plm, enabled ? 1 : 0);
+}
+
+void SyncDecodeStrategy::setVolume(float volume)
+{
+    if (m_audioPlayer)
+        m_audioPlayer->setVolume(volume);
+    else
+        m_volume = volume;
+}
+
 }  // namespace mpeg

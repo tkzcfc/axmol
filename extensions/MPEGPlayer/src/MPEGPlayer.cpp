@@ -5,7 +5,15 @@
 namespace ax
 {
 MPEGPlayer::MPEGPlayer()
-    : m_decoder(nullptr), m_texture_y(nullptr), m_texture_cb(nullptr), m_texture_cr(nullptr), m_isPasued(false)
+    : m_decoder(nullptr)
+    , m_texture_y(nullptr)
+    , m_texture_cb(nullptr)
+    , m_texture_cr(nullptr)
+    , m_isPasued(false)
+    , m_audioEnabled(false)
+    , m_videoEnabled(true)
+    , m_useAsyncDecoding(true)
+    , m_volume(1.0f)
 {}
 
 MPEGPlayer::~MPEGPlayer()
@@ -16,10 +24,10 @@ MPEGPlayer::~MPEGPlayer()
     m_decoder = nullptr;
 }
 
-MPEGPlayer* MPEGPlayer::create(const std::string& filename, bool useAsyncDecoding)
+MPEGPlayer* MPEGPlayer::create()
 {
     MPEGPlayer* mpeg = new MPEGPlayer();
-    if (mpeg && mpeg->init() && mpeg->initWithMPEG(filename, useAsyncDecoding))
+    if (mpeg && mpeg->init())
     {
         mpeg->autorelease();
         return mpeg;
@@ -36,42 +44,77 @@ bool MPEGPlayer::init()
     return true;
 }
 
-bool MPEGPlayer::initWithMPEG(const std::string& filename, bool useAsyncDecoding)
+void MPEGPlayer::setVideoFile(const std::string& filename)
 {
+    m_videoFile = filename;
+}
+
+const std::string MPEGPlayer::getVideoFile() const
+{
+    return m_videoFile;
+}
+
+void MPEGPlayer::setUseAsyncDecoding(bool useAsyncDecoding)
+{
+    m_useAsyncDecoding = useAsyncDecoding;
+}
+
+bool MPEGPlayer::isUseAsyncDecoding() const
+{
+    return m_useAsyncDecoding;
+}
+
+int MPEGPlayer::getVideoWidth() const
+{
+    if (m_decoder)
+        return m_decoder->getVideoWidth();
+    else
+        return 0;
+}
+
+int MPEGPlayer::getVideoHeight() const
+{
+    if (m_decoder)
+        return m_decoder->getVideoHeight();
+    else
+        return 0;
+}
+
+bool MPEGPlayer::play()
+{
+    if (m_decoder)
+        return true;
+
     AX_SAFE_RELEASE_NULL(m_texture_y);
     AX_SAFE_RELEASE_NULL(m_texture_cb);
     AX_SAFE_RELEASE_NULL(m_texture_cr);
 
-    if (useAsyncDecoding)
+    if (m_useAsyncDecoding)
         m_decoder = std::make_unique<mpeg::AsyncDecodeStrategy>();
     else
         m_decoder = std::make_unique<mpeg::SyncDecodeStrategy>();
 
-    if (!m_decoder || !m_decoder->initialize(filename))
+    if (!m_decoder || !m_decoder->initialize(m_videoFile))
     {
         m_decoder = nullptr;
         return false;
     }
 
+    m_decoder->setAudioEnabled(m_audioEnabled);
+    m_decoder->setVideoEnabled(m_videoEnabled);
+    m_decoder->setVolume(m_volume);
+    m_decoder->start();
+
     this->setContentSize(
         Size(static_cast<float>(m_decoder->getVideoWidth()), static_cast<float>(m_decoder->getVideoHeight())));
     this->scheduleUpdate();
 
-    return true;
+    return false;
 }
 
-void MPEGPlayer::setLooping(bool looping)
+void MPEGPlayer::stop()
 {
-    if (m_decoder)
-    {
-        m_decoder->setLooping(looping);
-    }
-}
-
-void MPEGPlayer::play()
-{
-    seekTo(.0);
-    resumePlayback();
+    m_decoder = nullptr;
 }
 
 void MPEGPlayer::pause()
@@ -92,11 +135,6 @@ void MPEGPlayer::pausePlayback()
 }
 
 void MPEGPlayer::resumePlayback()
-{
-    m_isPasued = false;
-}
-
-void MPEGPlayer::stop()
 {
     m_isPasued = false;
 }
@@ -134,6 +172,14 @@ bool MPEGPlayer::isPlaying() const
     return !m_isPasued;
 }
 
+void MPEGPlayer::setLooping(bool looping)
+{
+    if (m_decoder)
+    {
+        m_decoder->setLooping(looping);
+    }
+}
+
 bool MPEGPlayer::isLooping() const
 {
     if (m_decoder)
@@ -146,11 +192,51 @@ bool MPEGPlayer::isLooping() const
     }
 }
 
+void MPEGPlayer::setAudioEnabled(bool enabled)
+{
+    if (m_decoder)
+    {
+        return;
+    }
+    m_audioEnabled = enabled;
+}
+
+bool MPEGPlayer::isAudioEnabled() const
+{
+    return m_audioEnabled;
+}
+
+void MPEGPlayer::setVideoEnabled(bool enabled)
+{
+    if (m_decoder)
+    {
+        return;
+    }
+    m_videoEnabled = enabled;
+}
+
+bool MPEGPlayer::isVideoEnabled() const
+{
+    return m_videoEnabled;
+}
+
+void MPEGPlayer::setVolume(float volume)
+{
+    m_volume = std::clamp(volume, 0.0f, 1.0f);
+    if (m_decoder)
+        m_decoder->setVolume(m_volume);
+}
+
+float MPEGPlayer::getVolume() const
+{
+    return m_volume;
+}
+
 void MPEGPlayer::update(float dt)
 {
     Sprite::update(dt);
 
-    if (m_decoder == nullptr)
+    if (m_decoder == nullptr || m_isPasued)
         return;
 
     auto videoFrame = m_decoder->decode(static_cast<double>(dt));
