@@ -109,7 +109,7 @@ bool MPEGPlayer::play()
         Size(static_cast<float>(m_decoder->getVideoWidth()), static_cast<float>(m_decoder->getVideoHeight())));
     this->scheduleUpdate();
 
-    return false;
+    return true;
 }
 
 void MPEGPlayer::stop()
