@@ -8,7 +8,6 @@ namespace mpeg
 SyncDecodeStrategy::SyncDecodeStrategy()
     : m_fs(nullptr)
     , m_plm(nullptr)
-    , m_frame(nullptr)
     , m_audioPlayer(nullptr)
     , m_samplerate(0)
     , m_volume(1.0f)
