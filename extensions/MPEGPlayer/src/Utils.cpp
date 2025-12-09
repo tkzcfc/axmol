@@ -1,3 +1,4 @@
+#include <cstddef>
 #define PL_MPEG_IMPLEMENTATION
 #define PLM_NO_STDIO
 #include "pl_mpeg.h"
