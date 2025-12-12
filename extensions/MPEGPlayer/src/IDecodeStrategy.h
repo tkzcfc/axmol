@@ -21,6 +21,8 @@ public:
 
     virtual void start()                  = 0;
     virtual void stop()                   = 0;
+    virtual void pause()                  = 0;
+    virtual void resume()                 = 0;
     virtual bool seekTo(double time_sec)  = 0;
     virtual void setLooping(bool loop)    = 0;
     virtual bool isLooping() const        = 0;

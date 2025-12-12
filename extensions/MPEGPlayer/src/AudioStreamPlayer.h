@@ -15,6 +15,12 @@ public:
 
     void setVolume(float volume);
 
+    void pause();
+
+    void resume();
+
+    void clearBuffers();
+
 private:
     void checkALError(const char* msg);
 

@@ -305,6 +305,14 @@ void AsyncDecodeStrategy::stop()
 {
 }
 
+void AsyncDecodeStrategy::pause()
+{
+}
+
+void AsyncDecodeStrategy::resume()
+{
+}
+
 bool AsyncDecodeStrategy::seekTo(double time_sec)
 {
     if (m_unusedVideoFrame)

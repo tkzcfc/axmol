@@ -79,10 +79,34 @@ void SyncDecodeStrategy::start()
 
 void SyncDecodeStrategy::stop()
 {
+    if (m_audioPlayer)
+    {
+        m_audioPlayer->clearBuffers();
+    }
+}
+
+void SyncDecodeStrategy::pause()
+{
+    if (m_audioPlayer)
+    {
+        m_audioPlayer->pause();
+    }
+}
+
+void SyncDecodeStrategy::resume()
+{
+    if (m_audioPlayer)
+    {
+        m_audioPlayer->resume();
+    }
 }
 
 bool SyncDecodeStrategy::seekTo(double time_sec)
 {
+    if (m_audioPlayer)
+    {
+        m_audioPlayer->clearBuffers();
+    }
     if (m_plm)
         return !!plm_seek(m_plm, time_sec, 0);
     else
