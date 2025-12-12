@@ -132,11 +132,19 @@ void MPEGPlayer::resume()
 void MPEGPlayer::pausePlayback()
 {
     m_isPasued = true;
+    if (m_decoder)
+    {
+        m_decoder->pause();
+    }
 }
 
 void MPEGPlayer::resumePlayback()
 {
     m_isPasued = false;
+    if (m_decoder)
+    {
+        m_decoder->resume();
+    }
 }
 
 void MPEGPlayer::seekTo(double sec)

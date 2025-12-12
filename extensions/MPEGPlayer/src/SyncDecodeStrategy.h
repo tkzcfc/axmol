@@ -21,6 +21,8 @@ public:
 
     virtual void start() override;
     virtual void stop() override;
+    virtual void pause() override;
+    virtual void resume() override;
     virtual bool seekTo(double time_sec) override;
     virtual void setLooping(bool looping) override;
     virtual bool isLooping() const override;

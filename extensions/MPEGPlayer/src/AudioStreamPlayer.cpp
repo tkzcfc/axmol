@@ -29,7 +29,9 @@ AudioStreamPlayer::AudioStreamPlayer(int sampleRate, int channels) : sampleRate(
 AudioStreamPlayer::~AudioStreamPlayer()
 {
     if (source)
+    {
         alDeleteSources(1, &source);
+    }
 }
 
 void AudioStreamPlayer::pushFrame(const float* data, int samples)
@@ -82,8 +84,50 @@ void AudioStreamPlayer::setVolume(float volume)
 {
     if (!valid)
         return;
+
     alSourcef(source, AL_GAIN, (ALfloat)volume);
     checkALError("AudioStreamPlayer::setVolume");
+}
+
+void AudioStreamPlayer::pause()
+{
+    if (!valid)
+        return;
+
+    alSourcePause(source);
+    checkALError("AudioStreamPlayer::pause");
+}
+
+void AudioStreamPlayer::resume()
+{
+    if (!valid)
+        return;
+
+    ALint state;
+    alGetSourcei(source, AL_SOURCE_STATE, &state);
+    if (state != AL_PLAYING)
+    {
+        alSourcePlay(source);
+        checkALError("AudioStreamPlayer::resume");
+    }
+}
+
+void AudioStreamPlayer::clearBuffers()
+{
+    if (!valid)
+        return;
+
+    alSourceStop(source);
+
+    ALint queued = 0;
+    alGetSourcei(source, AL_BUFFERS_QUEUED, &queued);
+
+    while (queued-- > 0)
+    {
+        ALuint buf;
+        alSourceUnqueueBuffers(source, 1, &buf);
+        alDeleteBuffers(1, &buf);
+    }
 }
 
 void AudioStreamPlayer::checkALError(const char* msg)
