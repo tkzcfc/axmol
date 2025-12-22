@@ -777,7 +777,7 @@ protected:
         std::array<CustomCommand*, 3> getCommandArray();
 
         CustomCommand textCommand;
-        CustomCommand effectCommand; // effect: outline or glow 
+        CustomCommand effectCommand; // effect: outline or glow
         CustomCommand shadowCommand;
     };
 
@@ -798,7 +798,9 @@ protected:
     void rescaleWithOriginalFontSize();
 
     void updateLabelLetters();
-    virtual bool alignText();
+    void alignText();
+    bool tryTextPlacement(float fontSize);
+    void updateBatchNode();
     void computeAlignmentOffset();
     bool computeHorizontalKernings(const std::u32string& stringToRender);
 
