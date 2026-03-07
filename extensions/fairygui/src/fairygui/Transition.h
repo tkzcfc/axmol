@@ -54,6 +54,7 @@ public:
 
     
     SCRIPT_HANDLER_SYNTHESIZE(Play);
+    SCRIPT_HANDLER_SYNTHESIZE(Hook);
 
 private:
     void play(int times, float delay, float startTime, float endTime, PlayCompleteCallback onComplete, bool reverse);

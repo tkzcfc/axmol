@@ -12942,7 +12942,13 @@ static int lua_fairygui_Transition_setHook(lua_State* tolua_S)
         cobj->setHook(arg0, [handler]() {
                 LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 0);
                 });
-        ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
+        if (cobj->getScriptHandlerHook() != 0)
+        {
+            ScriptHandlerMgr::getInstance()->removeObjectHandler((void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerHook());
+            cobj->setScriptHandlerHook(0);
+        }
+        auto scriptHandler = ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
+        cobj->setScriptHandlerHook((int)scriptHandler);
         return 0;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fairygui.Transition:setHook",argc, 2);
@@ -28061,7 +28067,14 @@ static int lua_fairygui_GTweener_onUpdate(lua_State* tolua_S)
             object_to_luaval<fairygui::GTweener>(L, "fairygui.GTweener", tweener);
             LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 1);
         });
-        ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
+        if (cobj->getScriptHandlerOnUpdate() != 0)
+        {
+            ScriptHandlerMgr::getInstance()->removeObjectHandler(
+                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerOnUpdate());
+            cobj->setScriptHandlerOnUpdate(0);
+        }
+        auto scriptHandler = ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
+        cobj->setScriptHandlerOnUpdate((int)scriptHandler);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fairygui.GTweener", (fairygui::GTweener*)ret);
         return 1;
     }
@@ -28111,7 +28124,14 @@ static int lua_fairygui_GTweener_onStart(lua_State* tolua_S)
             object_to_luaval<fairygui::GTweener>(L, "fairygui.GTweener", tweener);
             LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 1);
         });
-        ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
+        if (cobj->getScriptHandlerOnStart() != 0)
+        {
+            ScriptHandlerMgr::getInstance()->removeObjectHandler(
+                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerOnStart());
+            cobj->setScriptHandlerOnStart(0);
+        }
+        auto scriptHandler = ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
+        cobj->setScriptHandlerOnStart((int)scriptHandler);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fairygui.GTweener", (fairygui::GTweener*)ret);
         return 1;
     }
@@ -28158,7 +28178,14 @@ static int lua_fairygui_GTweener_onComplete(lua_State* tolua_S)
         auto ret = cobj->onComplete([handler]() {
             LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 0);
         });
-        ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
+        if (cobj->getScriptHandlerOnComplete() != 0)
+        {
+            ScriptHandlerMgr::getInstance()->removeObjectHandler(
+                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerOnComplete());
+            cobj->setScriptHandlerOnComplete(0);
+        }
+        auto scriptHandler = ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
+        cobj->setScriptHandlerOnComplete((int)scriptHandler);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fairygui.GTweener", (fairygui::GTweener*)ret);
         return 1;
     }
@@ -28207,7 +28234,14 @@ static int lua_fairygui_GTweener_onComplete1(lua_State* tolua_S)
             object_to_luaval<fairygui::GTweener>(L, "fairygui.GTweener", tweener);
             LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 1);
         });
-        ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
+        if (cobj->getScriptHandlerOnComplete1() != 0)
+        {
+            ScriptHandlerMgr::getInstance()->removeObjectHandler(
+                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerOnComplete1());
+            cobj->setScriptHandlerOnComplete1(0);
+        }
+        auto scriptHandler = ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
+        cobj->setScriptHandlerOnComplete1((int)scriptHandler);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fairygui.GTweener", (fairygui::GTweener*)ret);
         return 1;
     }

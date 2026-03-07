@@ -54,6 +54,11 @@ public:
     TweenValue value;
     TweenValue deltaValue;
 
+    SCRIPT_HANDLER_SYNTHESIZE(OnUpdate);
+    SCRIPT_HANDLER_SYNTHESIZE(OnStart);
+    SCRIPT_HANDLER_SYNTHESIZE(OnComplete);
+    SCRIPT_HANDLER_SYNTHESIZE(OnComplete1);
+
 private:
     GTweener* _to(float start, float end, float duration);
     GTweener* _to(const ax::Vec2& start, const ax::Vec2& end, float duration);
