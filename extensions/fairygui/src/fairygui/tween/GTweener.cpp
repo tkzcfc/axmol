@@ -281,31 +281,6 @@ void GTweener::_reset()
     _path = nullptr;
     _onStart = _onUpdate = _onComplete = nullptr;
     _onComplete0 = nullptr;
-
-    if (UIConfig::onRemoveScriptObjectHandlerCallback != nullptr)
-    {
-
-        if (this->getScriptHandlerOnStart() != 0)
-        {
-            UIConfig::onRemoveScriptObjectHandlerCallback((void*)this, this->getScriptHandlerOnStart());
-            this->setScriptHandlerOnStart(0);
-        }
-        if (this->getScriptHandlerOnUpdate() != 0)
-        {
-            UIConfig::onRemoveScriptObjectHandlerCallback((void*)this, this->getScriptHandlerOnUpdate());
-            this->setScriptHandlerOnUpdate(0);
-        }
-        if (this->getScriptHandlerOnComplete() != 0)
-        {
-            UIConfig::onRemoveScriptObjectHandlerCallback((void*)this, this->getScriptHandlerOnComplete());
-            this->setScriptHandlerOnComplete(0);
-        }
-        if (this->getScriptHandlerOnComplete1() != 0)
-        {
-            UIConfig::onRemoveScriptObjectHandlerCallback((void*)this, this->getScriptHandlerOnComplete1());
-            this->setScriptHandlerOnComplete1(0);
-        }
-    }
 }
 
 void GTweener::_update(float dt)

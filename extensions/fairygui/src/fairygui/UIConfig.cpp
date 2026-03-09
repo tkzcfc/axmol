@@ -27,7 +27,6 @@ std::string UIConfig::popupMenu_seperator                              = "";
 bool UIConfig::useEngineTextureCache = true;
 bool UIConfig::useSkeletonCache = false;
 std::function<void(const std::string& path, float volumnScale)> UIConfig::onMusicCallback = nullptr;
-std::function<void(void*, int)> UIConfig::onRemoveScriptObjectHandlerCallback = nullptr;
 
 std::unordered_map<std::string, UIConfig::FontNameItem> UIConfig::_fontNames;
 
