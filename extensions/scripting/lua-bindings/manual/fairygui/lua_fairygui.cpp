@@ -28,6 +28,37 @@ static void luaval_to_native_err(lua_State* L, const char* msg, tolua_Error* err
 #endif
 #endif
 
+class HandlerAutoRemover final
+{
+public:
+    explicit HandlerAutoRemover(void* cobj, int luaFuncHandler) noexcept : m_cobj(cobj)
+    {
+        m_handlerType = (int)ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, luaFuncHandler);
+    }
+
+    ~HandlerAutoRemover() noexcept
+    {
+        if (m_handlerType != 0)
+        {
+            ScriptHandlerMgr::getInstance()->removeObjectHandler((void*)m_cobj,
+                                                                 (ScriptHandlerMgr::HandlerType)m_handlerType);
+        }
+    }
+
+    HandlerAutoRemover(const HandlerAutoRemover&)            = delete;
+    HandlerAutoRemover& operator=(const HandlerAutoRemover&) = delete;
+
+    HandlerAutoRemover(HandlerAutoRemover&& other) noexcept
+        : m_cobj(std::exchange(other.m_cobj, nullptr)), m_handlerType(std::exchange(other.m_handlerType, 0))
+    {}
+
+    HandlerAutoRemover& operator=(HandlerAutoRemover&&) = delete;
+
+private:
+    void* m_cobj      = nullptr;
+    int m_handlerType = 0;
+};
+
 // 兼容unity
 static void fgui_size_to_luaval(lua_State* L, const ax::Size& sz)
 {
@@ -7411,12 +7442,6 @@ static int lua_fairygui_GMovieClip_setPlaySettings(lua_State* tolua_S)
     argc = lua_gettop(tolua_S)-1;
     if (argc == 0) {
         cobj->setPlaySettings();
-        if (cobj->getScriptHandlerPlaySettings() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlaySettings());
-            cobj->setScriptHandlerPlaySettings(0);
-        }
         return 0;
     }
     if (argc == 1) {
@@ -7427,13 +7452,6 @@ static int lua_fairygui_GMovieClip_setPlaySettings(lua_State* tolua_S)
             return 0;
         }
         cobj->setPlaySettings(arg0);
-
-        if (cobj->getScriptHandlerPlaySettings() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlaySettings());
-            cobj->setScriptHandlerPlaySettings(0);
-        }
         return 0;
     }
     if (argc == 2) {
@@ -7446,13 +7464,6 @@ static int lua_fairygui_GMovieClip_setPlaySettings(lua_State* tolua_S)
             return 0;
         }
         cobj->setPlaySettings(arg0, arg1);
-
-        if (cobj->getScriptHandlerPlaySettings() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlaySettings());
-            cobj->setScriptHandlerPlaySettings(0);
-        }
         return 0;
     }
     if (argc == 3) {
@@ -7467,13 +7478,6 @@ static int lua_fairygui_GMovieClip_setPlaySettings(lua_State* tolua_S)
             return 0;
         }
         cobj->setPlaySettings(arg0, arg1, arg2);
-
-        if (cobj->getScriptHandlerPlaySettings() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlaySettings());
-            cobj->setScriptHandlerPlaySettings(0);
-        }
         return 0;
     }
     if (argc == 4) {
@@ -7490,13 +7494,6 @@ static int lua_fairygui_GMovieClip_setPlaySettings(lua_State* tolua_S)
             return 0;
         }
         cobj->setPlaySettings(arg0, arg1, arg2, arg3);
-
-        if (cobj->getScriptHandlerPlaySettings() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlaySettings());
-            cobj->setScriptHandlerPlaySettings(0);
-        }
         return 0;
     }
     if (argc == 5) {
@@ -7513,18 +7510,10 @@ static int lua_fairygui_GMovieClip_setPlaySettings(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_fairygui_GMovieClip_setPlaySettings'", nullptr);
             return 0;
         }
-        cobj->setPlaySettings(arg0, arg1, arg2, arg3, [handler]() {
-                LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 0);
-                });
-
-        if (cobj->getScriptHandlerPlaySettings() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlaySettings());
-            cobj->setScriptHandlerPlaySettings(0);
-        }
-        auto scriptHandler = ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
-        cobj->setScriptHandlerPlaySettings((int)scriptHandler);
+        auto life = std::make_shared<HandlerAutoRemover>((void*)cobj, handler);
+        cobj->setPlaySettings(arg0, arg1, arg2, arg3, [handler, life]() {
+            LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 0);
+        });
         return 0;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fairygui.GMovieClip:setPlaySettings",argc, 0);
@@ -7965,12 +7954,6 @@ static int lua_fairygui_ActionMovieClip_setPlaySettings(lua_State* tolua_S)
     if (argc == 0)
     {
         cobj->setPlaySettings(0, -1, 0, -1);
-        if (cobj->getScriptHandlerPlaySettings() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlaySettings());
-            cobj->setScriptHandlerPlaySettings(0);
-        }
         return 0;
     }
     if (argc == 1)
@@ -7984,12 +7967,6 @@ static int lua_fairygui_ActionMovieClip_setPlaySettings(lua_State* tolua_S)
             return 0;
         }
         cobj->setPlaySettings(arg0, -1, 0, -1);
-        if (cobj->getScriptHandlerPlaySettings() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlaySettings());
-            cobj->setScriptHandlerPlaySettings(0);
-        }
         return 0;
     }
     if (argc == 2)
@@ -8005,12 +7982,6 @@ static int lua_fairygui_ActionMovieClip_setPlaySettings(lua_State* tolua_S)
             return 0;
         }
         cobj->setPlaySettings(arg0, arg1, 0, -1);
-        if (cobj->getScriptHandlerPlaySettings() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlaySettings());
-            cobj->setScriptHandlerPlaySettings(0);
-        }
         return 0;
     }
     if (argc == 3)
@@ -8028,12 +7999,6 @@ static int lua_fairygui_ActionMovieClip_setPlaySettings(lua_State* tolua_S)
             return 0;
         }
         cobj->setPlaySettings(arg0, arg1, arg2, -1);
-        if (cobj->getScriptHandlerPlaySettings() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlaySettings());
-            cobj->setScriptHandlerPlaySettings(0);
-        }
         return 0;
     }
     if (argc == 4)
@@ -8053,12 +8018,6 @@ static int lua_fairygui_ActionMovieClip_setPlaySettings(lua_State* tolua_S)
             return 0;
         }
         cobj->setPlaySettings(arg0, arg1, arg2, arg3);
-        if (cobj->getScriptHandlerPlaySettings() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlaySettings());
-            cobj->setScriptHandlerPlaySettings(0);
-        }
         return 0;
     }
     if (argc == 5)
@@ -8078,17 +8037,10 @@ static int lua_fairygui_ActionMovieClip_setPlaySettings(lua_State* tolua_S)
                         nullptr);
             return 0;
         }
-        cobj->setPlaySettings(arg0, arg1, arg2, arg3, [handler]() {
+        auto life = std::make_shared<HandlerAutoRemover>((void*)cobj, handler);
+        cobj->setPlaySettings(arg0, arg1, arg2, arg3, [handler, life]() {
             LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 0);
         });
-        if (cobj->getScriptHandlerPlaySettings() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlaySettings());
-            cobj->setScriptHandlerPlaySettings(0);
-        }
-        auto scriptHandler = ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
-        cobj->setScriptHandlerPlaySettings((int)scriptHandler);
         return 0;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n",
@@ -12952,17 +12904,10 @@ static int lua_fairygui_Transition_setHook(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_fairygui_Transition_setHook'", nullptr);
             return 0;
         }
-        cobj->setHook(arg0, [handler]() {
-                LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 0);
-                });
-        if (cobj->getScriptHandlerHookByName(arg0) != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerHookByName(arg0));
-            cobj->setScriptHandlerHookByName(arg0, 0);
-        }
-        auto scriptHandler = ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
-        cobj->setScriptHandlerHookByName(arg0, (int)scriptHandler);
+
+        auto life = std::make_shared<HandlerAutoRemover>((void*)cobj, handler);
+        cobj->setHook(
+            arg0, [handler, life]() { LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 0); });
         return 0;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fairygui.Transition:setHook",argc, 2);
@@ -13157,13 +13102,6 @@ static int lua_fairygui_Transition_playReverse(lua_State* tolua_S)
     argc = lua_gettop(tolua_S)-1;
     if (argc == 0) {
         cobj->playReverse();
-
-        if (cobj->getScriptHandlerPlay() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlay());
-            cobj->setScriptHandlerPlay(0);
-        }
         return 0;
     }
     if (argc == 1) {
@@ -13172,17 +13110,10 @@ static int lua_fairygui_Transition_playReverse(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_fairygui_Transition_playReverse'", nullptr);
             return 0;
         }
-        cobj->playReverse([handler]() {
-                LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 0);
-                });
-        if (cobj->getScriptHandlerPlay() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlay());
-            cobj->setScriptHandlerPlay(0);
-        }
-        auto scriptHandler = ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
-        cobj->setScriptHandlerPlay((int)scriptHandler);
+
+        auto life = std::make_shared<HandlerAutoRemover>((void*)cobj, handler);
+        cobj->playReverse(
+            [handler, life]() { LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 0); });
         return 0;
     }
     if (argc == 2) {
@@ -13191,12 +13122,6 @@ static int lua_fairygui_Transition_playReverse(lua_State* tolua_S)
         ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0, "fairygui.Transition:playReverse");
         ok &= luaval_to_number(tolua_S, 3,&arg1, "fairygui.Transition:playReverse");
         cobj->playReverse(arg0, arg1);
-        if (cobj->getScriptHandlerPlay() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlay());
-            cobj->setScriptHandlerPlay(0);
-        }
         return 0;
     }
     if (argc == 3) {
@@ -13209,18 +13134,10 @@ static int lua_fairygui_Transition_playReverse(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_fairygui_Transition_playReverse'", nullptr);
             return 0;
         }
-        cobj->playReverse(
-            arg0, arg1, [handler]() {
-                LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 0);
-                });
-        if (cobj->getScriptHandlerPlay() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlay());
-            cobj->setScriptHandlerPlay(0);
-        }
-        auto scriptHandler = ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
-        cobj->setScriptHandlerPlay((int)scriptHandler);
+        auto life = std::make_shared<HandlerAutoRemover>((void*)cobj, handler);
+        cobj->playReverse(arg0, arg1, [handler, life]() {
+            LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 0);
+        });
         return 0;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n",  "fairygui.Transition:playReverse",argc, 0);
@@ -13254,12 +13171,6 @@ static int lua_fairygui_Transition_play(lua_State* tolua_S)
     argc = lua_gettop(tolua_S)-1;
     if (argc == 0) {
         cobj->play();
-        if (cobj->getScriptHandlerPlay() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlay());
-            cobj->setScriptHandlerPlay(0);
-        }
         return 0;
     }
     if (argc == 1) {
@@ -13268,19 +13179,9 @@ static int lua_fairygui_Transition_play(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_fairygui_Transition_play'", nullptr);
             return 0;
         }
-        cobj->play([handler]() {
-                LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 0);
-                });
-
-        if (cobj->getScriptHandlerPlay() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlay());
-            cobj->setScriptHandlerPlay(0);
-        }
-
-        auto scriptHandler = ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
-        cobj->setScriptHandlerPlay((int)scriptHandler);
+        auto life = std::make_shared<HandlerAutoRemover>((void*)cobj, handler);
+        cobj->play(
+            [handler, life]() { LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 0); });
         return 0;
     }
     if (argc == 2) {
@@ -13289,14 +13190,6 @@ static int lua_fairygui_Transition_play(lua_State* tolua_S)
         ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0, "fairygui.Transition:play");
         ok &= luaval_to_number(tolua_S, 3,&arg1, "fairygui.Transition:play");
         cobj->play(arg0, arg1);
-
-        if (cobj->getScriptHandlerPlay() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlay());
-            cobj->setScriptHandlerPlay(0);
-        }
-
         return 0;
     }
     if (argc == 3) {
@@ -13309,19 +13202,10 @@ static int lua_fairygui_Transition_play(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_fairygui_Transition_play'", nullptr);
             return 0;
         }
-        cobj->play(arg0, arg1,
-                   [handler]() {
-                LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 0);
-                });
-        if (cobj->getScriptHandlerPlay() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlay());
-            cobj->setScriptHandlerPlay(0);
-        }
-
-        auto scriptHandler = ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
-        cobj->setScriptHandlerPlay((int)scriptHandler);
+        auto life = std::make_shared<HandlerAutoRemover>((void*)cobj, handler);
+        cobj->play(arg0, arg1, [handler, life]() {
+            LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 0);
+        });
         return 0;
     }
     if (argc == 4) {
@@ -13334,14 +13218,6 @@ static int lua_fairygui_Transition_play(lua_State* tolua_S)
         ok &= luaval_to_number(tolua_S, 4,&arg2, "fairygui.Transition:play");
         ok &= luaval_to_number(tolua_S, 5,&arg3, "fairygui.Transition:play");
         cobj->play(arg0, arg1, arg2, arg3);
-
-        if (cobj->getScriptHandlerPlay() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlay());
-            cobj->setScriptHandlerPlay(0);
-        }
-
         return 0;
     }
     if (argc == 5) {
@@ -13358,18 +13234,10 @@ static int lua_fairygui_Transition_play(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_fairygui_Transition_play'", nullptr);
             return 0;
         }
-        cobj->play(arg0, arg1, arg2, arg3,
-                   [handler]() {
-                LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 0); });
-
-        if (cobj->getScriptHandlerPlay() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlay());
-            cobj->setScriptHandlerPlay(0);
-        }
-        auto scriptHandler = ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
-        cobj->setScriptHandlerPlay((int)scriptHandler);
+        auto life = std::make_shared<HandlerAutoRemover>((void*)cobj, handler);
+        cobj->play(arg0, arg1, arg2, arg3, [handler, life]() {
+            LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 0);
+        });
         return 0;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n",  "fairygui.Transition:play",argc, 0);
@@ -25120,12 +24988,12 @@ static int lua_fairygui_PopupMenu_addItem(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_fairygui_PopupMenu_addItem'", nullptr);
             return 0;
         }
-        fairygui::GButton* ret = cobj->addItem(arg0, [handler](fairygui::EventContext* context) {
+        auto life              = std::make_shared<HandlerAutoRemover>((void*)cobj, handler);
+        fairygui::GButton* ret = cobj->addItem(arg0, [handler, life](fairygui::EventContext* context) {
                 auto L = LuaEngine::getInstance()->getLuaStack()->getLuaState();
                 object_to_luaval<fairygui::EventContext>(L, "fairygui.EventContext", context);
                 LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 1);
                 });
-        ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
         object_to_luaval<fairygui::GButton>(tolua_S, "fairygui.GButton",(fairygui::GButton*)ret);
         return 1;
     }
@@ -25201,12 +25069,12 @@ static int lua_fairygui_PopupMenu_addItemAt(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_fairygui_PopupMenu_addItemAt'", nullptr);
             return 0;
         }
-        fairygui::GButton* ret = cobj->addItemAt(arg0, arg1, [handler](fairygui::EventContext* context) {
+        auto life              = std::make_shared<HandlerAutoRemover>((void*)cobj, handler);
+        fairygui::GButton* ret = cobj->addItemAt(arg0, arg1, [handler, life](fairygui::EventContext* context) {
                 auto L = LuaEngine::getInstance()->getLuaStack()->getLuaState();
                 object_to_luaval<fairygui::EventContext>(L, "fairygui.EventContext", context);
                 LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 1);
                 });
-        ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
         object_to_luaval<fairygui::GButton>(tolua_S, "fairygui.GButton",(fairygui::GButton*)ret);
         return 1;
     }
@@ -28076,19 +27944,12 @@ static int lua_fairygui_GTweener_onUpdate(lua_State* tolua_S)
             tolua_error(tolua_S, "invalid arguments in function 'lua_fairygui_GTweener_onUpdate'", nullptr);
             return 0;
         }
-        auto ret = cobj->onUpdate([handler](fairygui::GTweener* tweener) {
+        auto life = std::make_shared<HandlerAutoRemover>((void*)cobj, handler);
+        auto ret  = cobj->onUpdate([handler, life](fairygui::GTweener* tweener) {
             auto L = LuaEngine::getInstance()->getLuaStack()->getLuaState();
             object_to_luaval<fairygui::GTweener>(L, "fairygui.GTweener", tweener);
             LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 1);
         });
-        if (cobj->getScriptHandlerOnUpdate() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerOnUpdate());
-            cobj->setScriptHandlerOnUpdate(0);
-        }
-        auto scriptHandler = ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
-        cobj->setScriptHandlerOnUpdate((int)scriptHandler);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fairygui.GTweener", (fairygui::GTweener*)ret);
         return 1;
     }
@@ -28133,19 +27994,13 @@ static int lua_fairygui_GTweener_onStart(lua_State* tolua_S)
             tolua_error(tolua_S, "invalid arguments in function 'lua_fairygui_GTweener_onStart'", nullptr);
             return 0;
         }
-        auto ret = cobj->onStart([handler](fairygui::GTweener* tweener) {
+
+        auto life = std::make_shared<HandlerAutoRemover>((void*)cobj, handler);
+        auto ret  = cobj->onStart([handler, life](fairygui::GTweener* tweener) {
             auto L = LuaEngine::getInstance()->getLuaStack()->getLuaState();
             object_to_luaval<fairygui::GTweener>(L, "fairygui.GTweener", tweener);
             LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 1);
         });
-        if (cobj->getScriptHandlerOnStart() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerOnStart());
-            cobj->setScriptHandlerOnStart(0);
-        }
-        auto scriptHandler = ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
-        cobj->setScriptHandlerOnStart((int)scriptHandler);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fairygui.GTweener", (fairygui::GTweener*)ret);
         return 1;
     }
@@ -28189,17 +28044,9 @@ static int lua_fairygui_GTweener_onComplete(lua_State* tolua_S)
             tolua_error(tolua_S, "invalid arguments in function 'lua_fairygui_GTweener_onComplete'", nullptr);
             return 0;
         }
-        auto ret = cobj->onComplete([handler]() {
-            LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 0);
-        });
-        if (cobj->getScriptHandlerOnComplete() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerOnComplete());
-            cobj->setScriptHandlerOnComplete(0);
-        }
-        auto scriptHandler = ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
-        cobj->setScriptHandlerOnComplete((int)scriptHandler);
+        auto life = std::make_shared<HandlerAutoRemover>((void*)cobj, handler);
+        auto ret  = cobj->onComplete(
+            [handler, life]() { LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 0); });
         object_to_luaval<fairygui::GTweener>(tolua_S, "fairygui.GTweener", (fairygui::GTweener*)ret);
         return 1;
     }
@@ -28243,19 +28090,13 @@ static int lua_fairygui_GTweener_onComplete1(lua_State* tolua_S)
             tolua_error(tolua_S, "invalid arguments in function 'lua_fairygui_GTweener_onComplete1'", nullptr);
             return 0;
         }
-        auto ret = cobj->onComplete1([handler](fairygui::GTweener* tweener) {
+
+        auto life = std::make_shared<HandlerAutoRemover>((void*)cobj, handler);
+        auto ret  = cobj->onComplete1([handler, life](fairygui::GTweener* tweener) {
             auto L = LuaEngine::getInstance()->getLuaStack()->getLuaState();
             object_to_luaval<fairygui::GTweener>(L, "fairygui.GTweener", tweener);
             LuaEngine::getInstance()->getLuaStack()->executeFunctionByHandler(handler, 1);
         });
-        if (cobj->getScriptHandlerOnComplete1() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerOnComplete1());
-            cobj->setScriptHandlerOnComplete1(0);
-        }
-        auto scriptHandler = ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, handler);
-        cobj->setScriptHandlerOnComplete1((int)scriptHandler);
         object_to_luaval<fairygui::GTweener>(tolua_S, "fairygui.GTweener", (fairygui::GTweener*)ret);
         return 1;
     }
@@ -32934,14 +32775,8 @@ static int lua_register_fairygui_TextFormat(lua_State* tolua_S)
     return 1;
 }
 
-static void fgui_luaval_onRemoveScriptObjectHandler(void* cobj, int handlerType)
-{
-    ScriptHandlerMgr::getInstance()->removeObjectHandler((void*)cobj, (ScriptHandlerMgr::HandlerType)handlerType);
-}
-
 TOLUA_API int register_fairygui_manual(lua_State* tolua_S)
 {
-    fairygui::UIConfig::onRemoveScriptObjectHandlerCallback = &fgui_luaval_onRemoveScriptObjectHandler;
     lua_getglobal(tolua_S, "_G");
     if (lua_istable(tolua_S, -1)) {
         tolua_open(tolua_S);
@@ -33018,8 +32853,9 @@ TOLUA_API int register_fairygui_manual(lua_State* tolua_S)
         //      7      2023-8-16 12:08:14 添加webm支持
         //      8      2024-4-11 10:45:37 AppDelegate::onUpdate() 修复在FGUI使用 scheduleUpdateWithPriorityLua 函数  重启时Node析构函数无法获取到LuaEngine 导致崩溃问题 9      2024-5-6 11:44:04
         //      9      2025-8-13 13:24:04 GRoot添加 setIgnoreWindowSizeChanged  isIgnoreWindowSizeChanged 方法
+		//      10     2025-3-9 17:05:00 添加HandlerAutoRemover类型自动管理lua函数引用
 
-        lua_pushnumber(tolua_S, 9);
+        lua_pushnumber(tolua_S, 10);
         lua_rawset(tolua_S, -3);
 
 

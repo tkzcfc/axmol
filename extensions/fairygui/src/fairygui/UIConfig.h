@@ -33,7 +33,6 @@ public:
     static bool useEngineTextureCache;
     static bool useSkeletonCache;
     static std::function<void(const std::string& path, float volumnScale)> onMusicCallback;
-    static std::function<void(void*, int)> onRemoveScriptObjectHandlerCallback;
 
     static void registerFont(const std::string& aliasName, const std::string& realName);
     static const std::string& getRealFontName(const std::string& aliasName, bool* isTTF = nullptr);
