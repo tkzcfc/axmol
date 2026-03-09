@@ -15,7 +15,7 @@ class UIPackage : public ax::Object
 {
 public:
     UIPackage();
-    ~UIPackage();
+    virtual ~UIPackage();
 
     static UIPackage* getById(const std::string& id);
     static UIPackage* getByName(const std::string& name);

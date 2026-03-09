@@ -18,7 +18,7 @@ public:
     typedef std::function<void()> GTweenCallback0;
 
     GTweener();
-    ~GTweener();
+    virtual ~GTweener();
     GTweener* setDelay(float value);
     float getDelay() const { return _delay; }
     GTweener* setDuration(float value);

@@ -655,6 +655,15 @@ void Transition::clearHooks()
         if (item->tweenConfig != nullptr)
             item->tweenConfig->endHook = nullptr;
     }
+
+    if (UIConfig::onRemoveScriptObjectHandlerCallback)
+    {
+        for (auto& pair : _scriptHandlerMap_Hook)
+        {
+            UIConfig::onRemoveScriptObjectHandlerCallback((void*)this, pair.second);
+        }
+        _scriptHandlerMap_Hook.clear();
+    }
 }
 
 void Transition::setTarget(const std::string& label, GObject* newTarget)
