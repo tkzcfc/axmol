@@ -32934,8 +32934,14 @@ static int lua_register_fairygui_TextFormat(lua_State* tolua_S)
     return 1;
 }
 
+static void fgui_luaval_onRemoveScriptObjectHandler(void* cobj, int handlerType)
+{
+    ScriptHandlerMgr::getInstance()->removeObjectHandler((void*)cobj, (ScriptHandlerMgr::HandlerType)handlerType);
+}
+
 TOLUA_API int register_fairygui_manual(lua_State* tolua_S)
 {
+    fairygui::UIConfig::onRemoveScriptObjectHandlerCallback = &fgui_luaval_onRemoveScriptObjectHandler;
     lua_getglobal(tolua_S, "_G");
     if (lua_istable(tolua_S, -1)) {
         tolua_open(tolua_S);
