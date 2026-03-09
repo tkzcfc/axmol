@@ -12773,7 +12773,6 @@ static int lua_fairygui_Transition_clearHooks(lua_State* tolua_S)
     argc = lua_gettop(tolua_S)-1;
     if (argc == 0) {
         cobj->clearHooks();// not remove removeObjectAllHandlers
-        cobj->clearScriptHandlerMapHook();
         return 0;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "fairygui.Transition:clearHooks",argc, 0);
@@ -12808,12 +12807,6 @@ static int lua_fairygui_Transition_stop(lua_State* tolua_S)
     argc = lua_gettop(tolua_S)-1;
     if (argc == 0) {
         cobj->stop();// not remove removeObjectAllHandlers
-        if (cobj->getScriptHandlerPlay() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlay());
-            cobj->setScriptHandlerPlay(0);
-        }
         return 0;
     }
     if (argc == 2) {
@@ -12826,12 +12819,6 @@ static int lua_fairygui_Transition_stop(lua_State* tolua_S)
             return 0;
         }
         cobj->stop(arg0, arg1);// not remove removeObjectAllHandlers
-        if (cobj->getScriptHandlerPlay() != 0)
-        {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler(
-                (void*)cobj, (ScriptHandlerMgr::HandlerType)cobj->getScriptHandlerPlay());
-            cobj->setScriptHandlerPlay(0);
-        }
         return 0;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n",  "fairygui.Transition:stop",argc, 0);
@@ -28965,6 +28952,7 @@ static int lua_fairygui_TweenValue_setZero(lua_State* tolua_S)
 #endif
 
     cobj->setZero();
+    return 0;
 
 #if _TYPE_CHECK_ENABLED >= 1
 tolua_lerror:
