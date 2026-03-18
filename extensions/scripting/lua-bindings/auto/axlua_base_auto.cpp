@@ -94487,6 +94487,56 @@ int lua_ax_base_GridBase_getGridRect(lua_State* tolua_S)
 
     return 0;
 }
+int lua_ax_base_GridBase_setBlendFunc(lua_State* tolua_S)
+{
+    int argc = 0;
+    ax::GridBase* obj = nullptr;
+    bool ok  = true;
+
+#if _AX_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if _AX_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"ax.GridBase",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    obj = (ax::GridBase*)tolua_tousertype(tolua_S,1,0);
+
+#if _AX_DEBUG >= 1
+    if (!obj)
+    {
+        tolua_error(tolua_S,"invalid 'obj' in function 'lua_ax_base_GridBase_setBlendFunc'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1)
+    {
+        ax::BlendFunc arg0;
+
+        ok &= luaval_to_blendfunc(tolua_S, 2, &arg0, "ax.GridBase:setBlendFunc");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_ax_base_GridBase_setBlendFunc'", nullptr);
+            return 0;
+        }
+        obj->setBlendFunc(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "ax.GridBase:setBlendFunc",argc, 1);
+    return 0;
+
+#if _AX_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_ax_base_GridBase_setBlendFunc'.",&tolua_err);
+#endif
+
+    return 0;
+}
 static int lua_ax_base_GridBase_finalize(lua_State* tolua_S)
 {
     AXLOGV("luabindings: finalizing LUA object (GridBase)");
@@ -94520,6 +94570,7 @@ int lua_register_ax_base_GridBase(lua_State* tolua_S)
         tolua_function(tolua_S,"set2DProjection",lua_ax_base_GridBase_set2DProjection);
         tolua_function(tolua_S,"setGridRect",lua_ax_base_GridBase_setGridRect);
         tolua_function(tolua_S,"getGridRect",lua_ax_base_GridBase_getGridRect);
+        tolua_function(tolua_S,"setBlendFunc",lua_ax_base_GridBase_setBlendFunc);
     tolua_endmodule(tolua_S);
     auto typeName = typeid(ax::GridBase).name(); // rtti is literal storage
     g_luaType[reinterpret_cast<uintptr_t>(typeName)] = "ax.GridBase";
