@@ -138,6 +138,11 @@ public:
      */
     const Rect& getGridRect() const { return _gridRect; }
 
+    /**
+     * @brief Set then blend function for the grid effect.
+    */
+    void setBlendFunc(BlendFunc func) { _blendFunc = func; }
+
 protected:
     void updateBlendState();
 
