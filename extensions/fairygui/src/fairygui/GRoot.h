@@ -63,6 +63,7 @@ public:
     void setSoundVolumeScale(float value);
     void setIgnoreWindowSizeChanged(bool value);
     bool isIgnoreWindowSizeChanged() { return _isIgnoreWindowSizeChanged; }
+    
 
     static int contentScaleLevel;
 
@@ -73,7 +74,7 @@ protected:
 
 private:
     bool initWithScene(ax::Scene* scene, int zOrder);
-    void onWindowSizeChanged();
+    void onWindowSizeChanged(ax::EventCustom* e);
     void createModalLayer();
     void adjustModalLayer();
     void closePopup(GObject* target);
