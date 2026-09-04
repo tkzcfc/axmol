@@ -393,7 +393,7 @@ bool UIPackage::loadPackage(ByteBuffer* buffer)
 
     PackageItem* pi;
     string path = _assetPath;
-    size_t pos = path.find('/');
+    size_t pos = path.rfind('/');
     string shortPath = pos == -1 ? STD_STRING_EMPTY : path.substr(0, pos + 1);
     path += "_";
 
