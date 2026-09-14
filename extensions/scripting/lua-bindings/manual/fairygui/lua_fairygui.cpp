@@ -33,15 +33,15 @@ class HandlerAutoRemover final
 public:
     explicit HandlerAutoRemover(void* cobj, int luaFuncHandler) noexcept : m_cobj(cobj)
     {
-        m_handlerType = (int)ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, luaFuncHandler);
+        ScriptHandlerMgr::getInstance()->addCustomHandler((void*)cobj, luaFuncHandler);
+        m_luaFuncHandler = luaFuncHandler;
     }
 
     ~HandlerAutoRemover() noexcept
     {
-        if (m_handlerType != 0)
+        if (m_luaFuncHandler != 0)
         {
-            ScriptHandlerMgr::getInstance()->removeObjectHandler((void*)m_cobj,
-                                                                 (ScriptHandlerMgr::HandlerType)m_handlerType);
+            LuaEngine::getInstance()->removeScriptHandler(m_luaFuncHandler);
         }
     }
 
@@ -49,14 +49,14 @@ public:
     HandlerAutoRemover& operator=(const HandlerAutoRemover&) = delete;
 
     HandlerAutoRemover(HandlerAutoRemover&& other) noexcept
-        : m_cobj(std::exchange(other.m_cobj, nullptr)), m_handlerType(std::exchange(other.m_handlerType, 0))
+        : m_cobj(std::exchange(other.m_cobj, nullptr)), m_luaFuncHandler(std::exchange(other.m_luaFuncHandler, 0))
     {}
 
     HandlerAutoRemover& operator=(HandlerAutoRemover&&) = delete;
 
 private:
-    void* m_cobj      = nullptr;
-    int m_handlerType = 0;
+    void* m_cobj         = nullptr;
+    int m_luaFuncHandler = 0;
 };
 
 // 兼容unity
