@@ -199,9 +199,9 @@ int LuaObjcBridge::callObjcStaticMethod(lua_State* L)
         {
             if (strcmp(returnType, @encode(id)) == 0)
             {
-                id ret;
+                __unsafe_unretained id ret = nil;
                 [invocation getReturnValue:&ret];
-                pushValue(L, ret);
+                pushValue(L, (__bridge void*)ret);
             }
             else if (strcmp(returnType, @encode(BOOL)) == 0)  // BOOL
             {
@@ -301,7 +301,7 @@ int LuaObjcBridge::checkObjcStaticMethod(lua_State* L)
 
 void LuaObjcBridge::pushValue(lua_State* L, void* val)
 {
-    id oval = (id)val;
+    id oval = (__bridge id)val;
     if (oval == nil)
     {
         lua_pushnil(L);
@@ -335,7 +335,7 @@ void LuaObjcBridge::pushValue(lua_State* L, void* val)
         {
             const char* key_ = [[NSString stringWithFormat:@"%@", key] cStringUsingEncoding:NSUTF8StringEncoding];
             lua_pushstring(L, key_);
-            pushValue(L, [oval objectForKey:key]);
+            pushValue(L, (__bridge void*)[oval objectForKey:key]);
             lua_rawset(L, -3);
         }
 
