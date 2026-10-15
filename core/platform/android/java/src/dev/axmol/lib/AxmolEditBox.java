@@ -26,20 +26,18 @@ THE SOFTWARE.
 package dev.axmol.lib;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.text.InputFilter;
 import android.text.InputType;
 import android.text.method.PasswordTransformationMethod;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
-import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 
-public class AxmolEditBox extends EditText {
+import androidx.appcompat.widget.AppCompatEditText;
+
+public class AxmolEditBox extends AppCompatEditText {
     /**
      * The user is allowed to enter any text, including line breaks.
      */
@@ -147,6 +145,8 @@ public class AxmolEditBox extends EditText {
 
     public  AxmolEditBox(Context context){
         super(context);
+        this.setTextHorizontalAlignment(kTextHorizontalAlignmentLeft);
+        this.setTextVerticalAlignment(kTextVerticalAlignmentCenter);
     }
 
     public void setEditBoxViewRect(int left, int top, int maxWidth, int maxHeight) {
@@ -207,18 +207,19 @@ public class AxmolEditBox extends EditText {
 
     public void setTextHorizontalAlignment(int alignment) {
         int gravity = this.getGravity();
+        gravity &= ~Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK;
         switch (alignment) {
             case kTextHorizontalAlignmentLeft:
-                gravity = (gravity & ~Gravity.RIGHT) | Gravity.LEFT ;
+                gravity |= Gravity.LEFT;
                 break;
             case kTextHorizontalAlignmentCenter:
-                gravity =(gravity & ~Gravity.RIGHT & ~Gravity.LEFT) | Gravity.CENTER_HORIZONTAL;
+                gravity |= Gravity.CENTER_HORIZONTAL;
                 break;
             case kTextHorizontalAlignmentRight:
-                gravity = (gravity & ~Gravity.LEFT) | Gravity.RIGHT ;
+                gravity |= Gravity.RIGHT;
                 break;
             default:
-                gravity = (gravity & ~Gravity.RIGHT) | Gravity.LEFT ;
+                gravity |= Gravity.LEFT;
                 break;
         }
         this.setGravity(gravity);
@@ -250,8 +251,6 @@ public class AxmolEditBox extends EditText {
     }
 
     public  void setInputMode(int inputMode){
-        this.setTextHorizontalAlignment(kTextHorizontalAlignmentLeft);
-        this.setTextVerticalAlignment(kTextVerticalAlignmentCenter);
         switch (inputMode) {
             case kEditBoxInputModeAny:
                 this.setTextVerticalAlignment(kTextVerticalAlignmentTop);
