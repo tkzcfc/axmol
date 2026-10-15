@@ -2,6 +2,7 @@
 
 #define LIBYUV_API
 
+#include <cstring>
 #include "ebml_parser.h"
 
 #define SVPNG_LINKAGE inline

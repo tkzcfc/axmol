@@ -1,3 +1,4 @@
+#include <cstring>
 #include "WebmUnpacker.h"
 
 #include "XWebm.h"
