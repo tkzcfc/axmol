@@ -1,5 +1,6 @@
 ﻿#pragma once
 // 这段 ebml 解析抄自 github.com/rubu/WebM-Player
+#include <cstring>
 #include <string>
 #include <list>
 #include <vector>
