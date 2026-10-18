@@ -33,6 +33,8 @@ public:
 
     void preloadSkeletonData(const std::string& skeletonDataFile, const std::string& atlasFile);
 
+    void removeSkeletonData(const std::string& skeletonDataFile, const std::string& atlasFile);
+
     void clearSkeletonData();
 
 private:
