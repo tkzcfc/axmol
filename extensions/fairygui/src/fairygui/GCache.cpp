@@ -96,6 +96,19 @@ void GCache::preloadSkeletonData(const std::string& skeletonDataFile, const std:
     }
 }
 
+void GCache::removeSkeletonData(const std::string& skeletonDataFile, const std::string& atlasFile)
+{
+    auto key = skeletonDataFile + atlasFile;
+    auto it  = _skeletonCacheMap.find(key);
+    if (it == _skeletonCacheMap.end())
+        return;
+
+    delete it->second.atlas;
+    delete it->second.attachmentLoader;
+    delete it->second.data;
+    _skeletonCacheMap.erase(it);
+}
+
 void GCache::clearSkeletonData()
 {
     for (auto& it : _skeletonCacheMap)
